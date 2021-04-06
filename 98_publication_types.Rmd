@@ -1,0 +1,44 @@
+---
+title: "Publications types that were included and excluded"
+output: pdf_document
+---
+
+```{r, include=FALSE}
+# run from 0_publication_types.R
+
+knitr::opts_chunk$set(echo = FALSE, warning=FALSE, message=FALSE, error=FALSE, comment='', dpi=400)
+options(width=1000) # Wide pages
+options(scipen=999) # avoid scientific presentation
+
+library(dplyr)
+library(flextable)
+
+# Split into two tables
+included = filter(pub_types, include==1) %>% select(-include)
+excluded = filter(pub_types, include==0) %>% select(-include)
+```
+
+The full list of types is available on the _PubMed_ site here: [https://pubmed.ncbi.nlm.nih.gov/help/#publication-types](https://pubmed.ncbi.nlm.nih.gov/help/#publication-types).
+
+### List of included publication types
+
+```{r}
+#
+ftab = arrange(included, type) %>%
+  flextable() %>%
+	theme_box()%>%
+	autofit()
+ftab
+```
+
+### List of excluded publication types
+
+```{r}
+#
+ftab = arrange(excluded, type) %>%
+  flextable() %>%
+	theme_box()%>%
+	autofit()
+ftab
+```
+

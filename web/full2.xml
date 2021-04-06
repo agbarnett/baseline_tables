@@ -1,0 +1,900 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OAI-PMH xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/ http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd">
+  <responseDate>2021-04-01T11:19:30Z</responseDate>
+  <request verb="GetRecord" identifier="oai:pubmedcentral.nih.gov:7941094" metadataPrefix="pmc">https:/www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi</request>
+  <GetRecord>
+    <record>
+      <header>
+        <identifier>oai:pubmedcentral.nih.gov:7941094</identifier>
+        <datestamp>2021-03-15</datestamp>
+        <setSpec>f1000res</setSpec>
+        <setSpec>pmc-open</setSpec>
+      </header>
+      <metadata>
+        <article xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="https://jats.nlm.nih.gov/ns/archiving/1.2/ https://jats.nlm.nih.gov/archiving/1.2/xsd/JATS-archivearticle1.xsd" article-type="research-article">
+          <front>
+            <journal-meta>
+              <journal-id journal-id-type="nlm-ta">F1000Res</journal-id>
+              <journal-id journal-id-type="iso-abbrev">F1000Res</journal-id>
+              <journal-id journal-id-type="pmc">F1000Research</journal-id>
+              <journal-title-group>
+                <journal-title>F1000Research</journal-title>
+              </journal-title-group>
+              <issn pub-type="epub">2046-1402</issn>
+              <publisher>
+                <publisher-name>F1000 Research Limited</publisher-name>
+                <publisher-loc>London, UK</publisher-loc>
+              </publisher>
+            </journal-meta>
+            <article-meta>
+              <article-id pub-id-type="accession">PMC7941094</article-id>
+              <article-id pub-id-type="pmcid">PMC7941094</article-id>
+              <article-id pub-id-type="pmc-uid">7941094</article-id>
+              <article-id pub-id-type="pmid">33728040</article-id>
+              <article-id pub-id-type="doi">10.12688/f1000research.23651.1</article-id>
+              <article-categories>
+                <subj-group subj-group-type="heading">
+                  <subject>Research Article</subject>
+                </subj-group>
+                <subj-group>
+                  <subject>Articles</subject>
+                </subj-group>
+              </article-categories>
+              <title-group>
+                <article-title>Enclosing a pen to improve response rate to postal questionnaire: an embedded randomised controlled trial</article-title>
+                <fn-group content-type="pub-status">
+                  <fn>
+                    <p>[version 1; peer review: 2 approved]</p>
+                  </fn>
+                </fn-group>
+              </title-group>
+              <contrib-group>
+                <contrib contrib-type="author">
+                  <name>
+                    <surname>Cunningham-Burley</surname>
+                    <given-names>Rachel</given-names>
+                  </name>
+                  <role content-type="http://credit.casrai.org/">Investigation</role>
+                  <role content-type="http://credit.casrai.org/">Methodology</role>
+                  <role content-type="http://credit.casrai.org/">Project Administration</role>
+                  <role content-type="http://credit.casrai.org/">Visualization</role>
+                  <role content-type="http://credit.casrai.org/">Writing – Original Draft Preparation</role>
+                  <role content-type="http://credit.casrai.org/">Writing – Review &amp; Editing</role>
+                  <contrib-id contrib-id-type="orcid">https://orcid.org/0000-0001-8724-8276</contrib-id>
+                  <xref ref-type="corresp" rid="c1">a</xref>
+                  <xref ref-type="aff" rid="a1">1</xref>
+                </contrib>
+                <contrib contrib-type="author">
+                  <name>
+                    <surname>Roche</surname>
+                    <given-names>Jenny</given-names>
+                  </name>
+                  <role content-type="http://credit.casrai.org/">Data Curation</role>
+                  <role content-type="http://credit.casrai.org/">Formal Analysis</role>
+                  <role content-type="http://credit.casrai.org/">Methodology</role>
+                  <role content-type="http://credit.casrai.org/">Software</role>
+                  <role content-type="http://credit.casrai.org/">Validation</role>
+                  <role content-type="http://credit.casrai.org/">Visualization</role>
+                  <role content-type="http://credit.casrai.org/">Writing – Original Draft Preparation</role>
+                  <role content-type="http://credit.casrai.org/">Writing – Review &amp; Editing</role>
+                  <xref ref-type="aff" rid="a1">1</xref>
+                </contrib>
+                <contrib contrib-type="author">
+                  <name>
+                    <surname>Fairhurst</surname>
+                    <given-names>Caroline</given-names>
+                  </name>
+                  <role content-type="http://credit.casrai.org/">Conceptualization</role>
+                  <role content-type="http://credit.casrai.org/">Data Curation</role>
+                  <role content-type="http://credit.casrai.org/">Formal Analysis</role>
+                  <role content-type="http://credit.casrai.org/">Funding Acquisition</role>
+                  <role content-type="http://credit.casrai.org/">Investigation</role>
+                  <role content-type="http://credit.casrai.org/">Methodology</role>
+                  <role content-type="http://credit.casrai.org/">Software</role>
+                  <role content-type="http://credit.casrai.org/">Validation</role>
+                  <role content-type="http://credit.casrai.org/">Visualization</role>
+                  <role content-type="http://credit.casrai.org/">Writing – Review &amp; Editing</role>
+                  <xref ref-type="aff" rid="a1">1</xref>
+                </contrib>
+                <contrib contrib-type="author">
+                  <name>
+                    <surname>Cockayne</surname>
+                    <given-names>Sarah</given-names>
+                  </name>
+                  <role content-type="http://credit.casrai.org/">Conceptualization</role>
+                  <role content-type="http://credit.casrai.org/">Funding Acquisition</role>
+                  <role content-type="http://credit.casrai.org/">Investigation</role>
+                  <role content-type="http://credit.casrai.org/">Methodology</role>
+                  <role content-type="http://credit.casrai.org/">Project Administration</role>
+                  <role content-type="http://credit.casrai.org/">Resources</role>
+                  <role content-type="http://credit.casrai.org/">Visualization</role>
+                  <role content-type="http://credit.casrai.org/">Writing – Review &amp; Editing</role>
+                  <contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-1288-5497</contrib-id>
+                  <xref ref-type="aff" rid="a1">1</xref>
+                </contrib>
+                <contrib contrib-type="author">
+                  <name>
+                    <surname>Hewitt</surname>
+                    <given-names>Catherine</given-names>
+                  </name>
+                  <role content-type="http://credit.casrai.org/">Conceptualization</role>
+                  <role content-type="http://credit.casrai.org/">Data Curation</role>
+                  <role content-type="http://credit.casrai.org/">Formal Analysis</role>
+                  <role content-type="http://credit.casrai.org/">Funding Acquisition</role>
+                  <role content-type="http://credit.casrai.org/">Methodology</role>
+                  <role content-type="http://credit.casrai.org/">Resources</role>
+                  <role content-type="http://credit.casrai.org/">Software</role>
+                  <role content-type="http://credit.casrai.org/">Validation</role>
+                  <role content-type="http://credit.casrai.org/">Visualization</role>
+                  <role content-type="http://credit.casrai.org/">Writing – Review &amp; Editing</role>
+                  <xref ref-type="aff" rid="a1">1</xref>
+                </contrib>
+                <contrib contrib-type="author">
+                  <name>
+                    <surname>Iles-Smith</surname>
+                    <given-names>Heather</given-names>
+                  </name>
+                  <role content-type="http://credit.casrai.org/">Funding Acquisition</role>
+                  <role content-type="http://credit.casrai.org/">Methodology</role>
+                  <role content-type="http://credit.casrai.org/">Project Administration</role>
+                  <role content-type="http://credit.casrai.org/">Writing – Review &amp; Editing</role>
+                  <xref ref-type="aff" rid="a2">2</xref>
+                </contrib>
+                <contrib contrib-type="author">
+                  <name>
+                    <surname>Torgerson</surname>
+                    <given-names>David J.</given-names>
+                  </name>
+                  <role content-type="http://credit.casrai.org/">Conceptualization</role>
+                  <role content-type="http://credit.casrai.org/">Funding Acquisition</role>
+                  <role content-type="http://credit.casrai.org/">Methodology</role>
+                  <role content-type="http://credit.casrai.org/">Resources</role>
+                  <role content-type="http://credit.casrai.org/">Supervision</role>
+                  <role content-type="http://credit.casrai.org/">Validation</role>
+                  <role content-type="http://credit.casrai.org/">Writing – Review &amp; Editing</role>
+                  <contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-1667-4275</contrib-id>
+                  <xref ref-type="aff" rid="a1">1</xref>
+                </contrib>
+                <contrib contrib-type="author">
+                  <collab>SSHeW Study Team</collab>
+                </contrib>
+                <aff id="a1"><label>1</label>York Trials Unit, Department of Health Sciences, University of York, York, YO10 5DD, UK</aff>
+                <aff id="a2"><label>2</label>Research and Innovation Department, The Leeds Teaching Hospitals NHS Trust, Leeds, LS9 7TF, UK</aff>
+              </contrib-group>
+              <author-notes>
+                <corresp id="c1">
+                  <label>a</label>
+                  <email xlink:href="mailto:rachel.cunningham-burley@york.ac.uk">rachel.cunningham-burley@york.ac.uk</email>
+                </corresp>
+                <fn fn-type="COI-statement">
+                  <p><bold>Competing interests: </bold>David Torgerson declares previous membership of NIHR HTA Commissioning Board and is Director of York Trials Unit which receives CTU funding from NIHR.
+Catherine Hewitt declares membership of NIHR HTA Commissioning Committee 2015-2020
+David Torgerson is Chief Investigator of the Prometheus project.
+Catherine Hewitt is co-applicant on the Prometheus grant. 
+</p>
+                </fn>
+              </author-notes>
+              <pub-date pub-type="epub">
+                <day>9</day>
+                <month>6</month>
+                <year>2020</year>
+              </pub-date>
+              <pub-date pub-type="collection">
+                <year>2020</year>
+              </pub-date>
+              <volume>9</volume>
+              <elocation-id>577</elocation-id>
+              <history>
+                <date date-type="accepted">
+                  <day>28</day>
+                  <month>5</month>
+                  <year>2020</year>
+                </date>
+              </history>
+              <permissions>
+                <copyright-statement>Copyright: © 2020 Cunningham-Burley R et al.</copyright-statement>
+                <copyright-year>2020</copyright-year>
+                <license xlink:href="http://creativecommons.org/licenses/by/4.0/">
+                  <license-p>This is an open access article distributed under the terms of the Creative Commons Attribution Licence, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.</license-p>
+                </license>
+              </permissions>
+              <self-uri content-type="pdf" xlink:href="f1000research-9-26098.pdf"/>
+              <abstract>
+                <p><bold>Background:</bold> Poor response to questionnaires collecting outcome data in randomised controlled trials (RCTs) can affect the validity of trial results. The aim of this study within a trial (SWAT) was to evaluate the effectiveness of including a pen with a follow-up postal questionnaire on response rate.</p>
+                <p><bold>Methods:</bold> A two-armed RCT was embedded within SSHeW (Stopping Slips among Healthcare Workers), a trial of slip-resistant footwear to reduce slips in NHS staff.  Participants were randomised 1:1 to receive a pen or no pen with their follow-up questionnaire. The primary outcome was the proportion of participants who returned the questionnaire. Secondary outcomes were: time to response, completeness of response, and whether a postal reminder notice was required. Data were analysed using logistic regression, linear regression and Cox proportional hazards regression.</p>
+                <p><bold>Results:</bold> Overall, 1466 SSHEW trial participants were randomised into the SWAT. In total, 13 withdrew from the host trial before they were due to be sent their follow-up questionnaire, 728 participants received a pen with their questionnaire, and 725 did not receive a pen.  A questionnaire was returned from 67.7% of the pen group and 64.7% of the group who did not receive a pen. There was no significant difference in return rates between the two groups (OR 1.15, 95% CI 0.92 to 1.43, p=0.22), nor level of completeness of the questionnaires (AMD -0.01, 95% CI 0.06 to 0.05, p=0.77).  There was weak evidence of a reduction in the proportion of participants requiring a reminder and in time to response in the pen group.</p>
+                <p><bold>Conclusion: </bold>Inclusion of a pen with the follow-up postal questionnaire sent to participants in the SSHeW trial did not statistically significantly increase the response rate. These results add to the body of evidence around improving response rates in trials.</p>
+                <p><bold>Trial registration:</bold> ISRCTN
+<ext-link ext-link-type="uri" xlink:href="http://www.isrctn.com/ISRCTN33051393">33051393</ext-link> (for SSHEW). Registered on 14/03/2017.</p>
+              </abstract>
+              <kwd-group kwd-group-type="author">
+                <kwd>randomised controlled trial</kwd>
+                <kwd>embedded trial</kwd>
+                <kwd>postal questionnaire</kwd>
+                <kwd>response rate</kwd>
+                <kwd>pen</kwd>
+              </kwd-group>
+              <funding-group>
+                <award-group id="fund-1" xlink:href="http://dx.doi.org/10.13039/100008953">
+                  <funding-source>MRC Prometheus</funding-source>
+                  <award-id>MR/R013748/1</award-id>
+                </award-group>
+                <award-group id="fund-2">
+                  <funding-source>University of York</funding-source>
+                </award-group>
+                <award-group id="fund-3">
+                  <funding-source>NIHR Public Health Research Programme</funding-source>
+                  <award-id>15/05/28</award-id>
+                </award-group>
+                <funding-statement>This work was conducted as part of the SSHeW Trial which was funded by the NIHR Public Health Research Programme (Project reference number 15/05/28) and the Health and Safety Executive (HSE). The views expressed are those of the authors and not necessarily those of the NHS, the NIHR, HSE or the Department of Health and Social Care. The University of York is the study sponsor and has legal responsibility for the initiation and management of the study: sponsor representative Mr Michael Barber, Research and Enterprise Directorate, Innovation Office, York Science Park, Heslington, York, YO10 5DG, UK. The embedded trial was supported by the MRC PROMETHEUS programme (grant number MR/R013748/1).</funding-statement>
+                <funding-statement>
+                  <italic>The funders had no role in study design, data collection and analysis, decision to publish, or preparation of the manuscript.</italic>
+                </funding-statement>
+              </funding-group>
+            </article-meta>
+          </front>
+          <body>
+            <sec sec-type="intro">
+              <title>Introduction</title>
+              <p>Randomised controlled trials (RCTs) are key to evaluating the effectiveness of interventions and often use postal questionnaires to collect outcome data. However, low response rates can limit the validity of the trial findings by reducing the power of the study and introducing bias
+<sup><xref rid="ref-1" ref-type="bibr">1</xref></sup>.</p>
+              <p>Numerous strategies to increase response rates have been studied
+<sup><xref rid="ref-2" ref-type="bibr">2</xref>,
+<xref rid="ref-3" ref-type="bibr">3</xref></sup> including sending a pen with the questionnaire. The pen acts both as a facilitator to aid completion of the questionnaire, and an incentive to return it
+<sup><xref rid="ref-4" ref-type="bibr">4</xref>,
+<xref rid="ref-5" ref-type="bibr">5</xref></sup>. The effectiveness of this intervention is equivocal with some studies reporting an increase in response rate
+<sup><xref rid="ref-5" ref-type="bibr">5</xref>–
+<xref rid="ref-7" ref-type="bibr">7</xref></sup> whilst others failed to show a positive impact
+<sup><xref rid="ref-4" ref-type="bibr">4</xref>,
+<xref rid="ref-8" ref-type="bibr">8</xref></sup>. These studies displayed considerable heterogeneity and only two were embedded in RCTs
+<sup><xref rid="ref-6" ref-type="bibr">6</xref>,
+<xref rid="ref-7" ref-type="bibr">7</xref></sup>. A Study within a Trial (SWAT) is a self-contained study embedded within a host trial that can be used to evaluate strategies designed to improve trial efficiency
+<sup><xref rid="ref-9" ref-type="bibr">9</xref></sup>. This SWAT evaluated the effectiveness of enclosing a pen with a follow-up postal questionnaire on response rates in the SSHeW trial
+<sup><xref rid="ref-10" ref-type="bibr">10</xref></sup>.</p>
+            </sec>
+            <sec sec-type="methods">
+              <title>Methods</title>
+              <sec>
+                <title>Design</title>
+                <p>This two-armed RCT was embedded in the SSHeW trial, a trial evaluating the effectiveness of slip-resistant footwear to reduce slips in NHS staff
+<sup><xref rid="ref-10" ref-type="bibr">10</xref></sup>. The SSHeW trial was registered (ISRCTN 33051393) and the trial protocol has been published
+<sup><xref rid="ref-10" ref-type="bibr">10</xref></sup>.</p>
+              </sec>
+              <sec sec-type="subjects">
+                <title>Participants</title>
+                <p>The SWAT was conducted in seven NHS Trusts in England and included all eligible participants in the SSHeW trial who were due to be sent their 14-week postal questionnaire between 04.07.2018 and 12.02.2019.</p>
+              </sec>
+              <sec>
+                <title>Intervention</title>
+                <p>The intervention group were sent a York Trials Unit, University of York branded pen with their questionnaire. The control group did not receive a pen.</p>
+              </sec>
+              <sec>
+                <title>Outcomes</title>
+                <p>The SWAT outcomes are outlined in
+<xref rid="T1" ref-type="table">Table 1</xref>.</p>
+                <table-wrap id="T1" orientation="portrait" position="anchor">
+                  <label>Table 1. </label>
+                  <caption>
+                    <title>SWAT outcomes.</title>
+                  </caption>
+                  <table frame="hsides" rules="groups" content-type="article-table">
+                    <thead>
+                      <tr>
+                        <th align="left" rowspan="1" colspan="1">Outcome</th>
+                        <th align="left" rowspan="1" colspan="1">Type</th>
+                        <th align="left" rowspan="1" colspan="1">Definition</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td align="left" valign="top" rowspan="1" colspan="1">Proportion of participants
+who return questionnaire
+(Primary Outcome)</td>
+                        <td align="left" valign="top" rowspan="1" colspan="1">Binary (returned/not
+returned)</td>
+                        <td align="left" valign="top" rowspan="1" colspan="1">Proportion of 14-week questionnaires returned to York Trials Unit.
+(Returns were censored at 11.06.2019)</td>
+                      </tr>
+                      <tr>
+                        <td align="left" valign="top" rowspan="1" colspan="1">Time to response</td>
+                        <td align="left" valign="top" rowspan="1" colspan="1">Time to event (days)</td>
+                        <td align="left" valign="top" rowspan="1" colspan="1">Number of days between the date the 14-week questionnaire was sent
+and the date the returned questionnaire was received by York Trials Unit.</td>
+                      </tr>
+                      <tr>
+                        <td align="left" valign="top" rowspan="1" colspan="1">Completeness of response</td>
+                        <td align="left" valign="top" rowspan="1" colspan="1">Continuous (0–5)</td>
+                        <td align="left" valign="top" rowspan="1" colspan="1">Number of completed responses to 5 key questions on the 14-week
+questionnaire.</td>
+                      </tr>
+                      <tr>
+                        <td align="left" valign="top" rowspan="1" colspan="1">Reminder notice sent</td>
+                        <td align="left" valign="top" rowspan="1" colspan="1">Binary (sent/not sent)</td>
+                        <td align="left" valign="top" rowspan="1" colspan="1">Proportion of participants sent a reminder questionnaire (sent three
+weeks after the initial questionnaire if no response had been received,
+no additional pens were sent with reminders).</td>
+                      </tr>
+                      <tr>
+                        <td align="left" valign="top" rowspan="1" colspan="1">Cost</td>
+                        <td align="left" valign="top" rowspan="1" colspan="1">Continuous</td>
+                        <td align="left" valign="top" rowspan="1" colspan="1">Consideration of cost effectiveness of pen inclusion</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </table-wrap>
+              </sec>
+              <sec>
+                <title>Sample size</title>
+                <p>As is usual with an embedded trial, a formal sample size calculation was not undertaken as the sample size was determined by the number of participants due to receive their 14-week questionnaire.</p>
+                <p>We anticipated that randomising 2,000 participants into the SWAT would provide 80% power to detect an absolute difference of 6% (two-sided α=0.05) in response rates between the two groups, assuming a control rate of 60%.</p>
+              </sec>
+              <sec>
+                <title>Randomisation</title>
+                <p>Participants were allocated to either the intervention (pen) or control (no pen) group using simple randomisation in a 1:1 ratio. The allocation sequence was generated by the SSHeW trial statistician, who was not involved in sending out the questionnaires.</p>
+              </sec>
+              <sec>
+                <title>Blinding</title>
+                <p>Participants were not aware of their involvement in this SWAT but due to the nature of the intervention participants and study team members could not be blinded to group allocation.</p>
+              </sec>
+              <sec>
+                <title>Approvals</title>
+                <p>This SWAT was approved by the Department of Health Sciences Research Ethics Committee at the University of York and the Health Research Authority (HSRGC/2016/187/A).</p>
+              </sec>
+              <sec>
+                <title>Statistical analysis</title>
+                <p>Data were analysed using Stata version 15
+<sup><xref rid="ref-11" ref-type="bibr">11</xref></sup> on an intention-to-treat basis, using two-sided tests at the 5% significance level. The models used for each outcome are given in
+<xref rid="T2" ref-type="table">Table 2</xref>, the values associated with the pen allocation from each model is presented with its 95% confidence interval and p-value. All models were adjusted for main trial group allocation (slip-resistant footwear or wait-list control) and pen sub-study allocation (pen or no pen).</p>
+                <table-wrap id="T2" orientation="portrait" position="anchor">
+                  <label>Table 2. </label>
+                  <caption>
+                    <title>Analysis models.</title>
+                  </caption>
+                  <table frame="hsides" rules="groups" content-type="article-table">
+                    <thead>
+                      <tr>
+                        <th align="left" rowspan="1" colspan="1">Outcome</th>
+                        <th align="left" rowspan="1" colspan="1">Analysis model</th>
+                        <th align="left" rowspan="1" colspan="1">Value presented</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td align="left" valign="top" rowspan="1" colspan="1">Proportion of participants who
+return questionnaire</td>
+                        <td align="left" valign="top" rowspan="1" colspan="1">Logistic regression</td>
+                        <td align="left" valign="top" rowspan="1" colspan="1">Odds ratio (OR)</td>
+                      </tr>
+                      <tr>
+                        <td align="left" valign="top" rowspan="1" colspan="1">Time to response</td>
+                        <td align="left" valign="top" rowspan="1" colspan="1">Cox proportional hazards
+regression</td>
+                        <td align="left" valign="top" rowspan="1" colspan="1">Hazard ratio</td>
+                      </tr>
+                      <tr>
+                        <td align="left" valign="top" rowspan="1" colspan="1">Completeness of response</td>
+                        <td align="left" valign="top" rowspan="1" colspan="1">Linear regression</td>
+                        <td align="left" valign="top" rowspan="1" colspan="1">Adjusted mean difference</td>
+                      </tr>
+                      <tr>
+                        <td align="left" valign="top" rowspan="1" colspan="1">Reminder notice sent</td>
+                        <td align="left" valign="top" rowspan="1" colspan="1">Logistic regression</td>
+                        <td align="left" valign="top" rowspan="1" colspan="1">OR</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </table-wrap>
+              </sec>
+              <sec>
+                <title>Costing</title>
+                <p>The total cost of a standard SSHeW questionnaire pack was £2.42 (envelope and postage: £0.86; questionnaire and cover letter: £0.65; pre-paid envelope and postage: £0.91). The additional cost of including a pen was £0.32. The cost analysis incorporates the changes in number of questionnaires returned and reminders required.</p>
+              </sec>
+            </sec>
+            <sec sec-type="results">
+              <title>Results</title>
+              <p>A total of 1466 participants were included in the SWAT (pen, n=733; no pen, n=733). In total, 13 participants withdrew from the main SSHeW trial after they had been randomised into the SWAT but before being sent their follow-up questionnaire, leaving 1453 participants (
+<xref ref-type="fig" rid="f1">Figure 1</xref>). Baseline characteristics are summarised descriptively in
+<xref rid="T3" ref-type="table">Table 3</xref>.</p>
+              <table-wrap id="T3" orientation="portrait" position="anchor">
+                <label>Table 3. </label>
+                <caption>
+                  <title>Baseline characteristics of participants included in the analysis.</title>
+                </caption>
+                <table frame="hsides" rules="groups" content-type="article-table">
+                  <tbody>
+                    <tr>
+                      <th align="left" rowspan="1" colspan="1"/>
+                      <th align="left" valign="top" rowspan="1" colspan="1">Pen (n = 728)</th>
+                      <th align="left" valign="top" rowspan="1" colspan="1">No pen (n = 725)</th>
+                      <th align="left" valign="top" rowspan="1" colspan="1">Overall (n = 1453)</th>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top" rowspan="1" colspan="1"><bold>Main trial allocation, n (%)</bold>Usual Care
+Intervention</td>
+                      <td align="left" valign="top" rowspan="1" colspan="1">355 (48.8)
+373 (51.2)</td>
+                      <td align="left" valign="top" rowspan="1" colspan="1">376 (51.9)
+349 (48.1)</td>
+                      <td align="left" valign="top" rowspan="1" colspan="1">731 (50.3)
+722 (49.7)</td>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top" rowspan="1" colspan="1">
+                        <bold>Age (years),</bold>
+                        
+                        <bold>mean (SD)</bold>
+                      </td>
+                      <td align="left" valign="top" rowspan="1" colspan="1">43.0 (11.1)</td>
+                      <td align="left" valign="top" rowspan="1" colspan="1">42.9 (11.5)</td>
+                      <td align="left" valign="top" rowspan="1" colspan="1">43.0 (11.3)</td>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top" rowspan="1" colspan="1"><bold>Gender, n (%)</bold>Male
+Female
+Prefer not to say</td>
+                      <td align="left" valign="top" rowspan="1" colspan="1">111 (15.3)
+616 (84.6)
+1 (0.1)</td>
+                      <td align="left" valign="top" rowspan="1" colspan="1">90 (12.4)
+635 (87.6)
+0 (0.0)</td>
+                      <td align="left" valign="top" rowspan="1" colspan="1">201 (13.8)
+1251 (86.1)
+1 (0.1)</td>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top" rowspan="1" colspan="1"><bold>Job role, n (%)</bold>Admin and IT
+Facilities
+Direct patient care
+Other</td>
+                      <td align="left" valign="top" rowspan="1" colspan="1">44 (6.0)
+50 (6.9)
+610 (83.8)
+24 (3.3)</td>
+                      <td align="left" valign="top" rowspan="1" colspan="1">51 (7.0)
+38 (5.2)
+614 (84.7)
+22 (3.0)</td>
+                      <td align="left" valign="top" rowspan="1" colspan="1">95 (6.5)
+88 (6.1)
+1224 (84.2)
+46 (3.2)</td>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top" rowspan="1" colspan="1">
+                        <bold>Average working hours, mean (SD)</bold>
+                      </td>
+                      <td align="left" valign="top" rowspan="1" colspan="1">35.0 (5.2)</td>
+                      <td align="left" valign="top" rowspan="1" colspan="1">35.1 (4.9)</td>
+                      <td align="left" valign="top" rowspan="1" colspan="1">35.0 (5.0)</td>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top" rowspan="1" colspan="1">
+                        <bold>Injury resulting from a slip or fall</bold>
+                        
+                        <bold>(in previous 12 months), n (%)</bold>
+                      </td>
+                      <td align="left" valign="top" rowspan="1" colspan="1">43 (5.9)</td>
+                      <td align="left" valign="top" rowspan="1" colspan="1">30 (4.1)</td>
+                      <td align="left" valign="top" rowspan="1" colspan="1">73 (5.0)</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </table-wrap>
+              <fig fig-type="figure" id="f1" orientation="portrait" position="anchor">
+                <label>Figure 1. </label>
+                <caption>
+                  <title>CONSORT flow diagram of participants in the embedded trial.</title>
+                </caption>
+                <graphic xlink:href="f1000research-9-26098-g0000"/>
+              </fig>
+              <p>Results are presented in
+<xref rid="T4" ref-type="table">Table 4</xref>. Overall, 962 (66.2%) questionnaires were returned (pen, 67.7%; no pen, 64.7%) and an average of 4.9/5 items were completed. There was no evidence of a difference in return rate between the groups (OR 1.15, 95% CI 0.92 to 1.43, p=0.22), nor number of items completed (AMD -0.01, 95% CI 0.06 to 0.05, p=0.77).</p>
+              <table-wrap id="T4" orientation="portrait" position="anchor">
+                <label>Table 4. </label>
+                <caption>
+                  <title>Summary of results.</title>
+                  <p>OD, odds ratio; HR, hazards ratio; AMD, adjusted mean difference</p>
+                </caption>
+                <table frame="hsides" rules="groups" content-type="article-table">
+                  <tbody>
+                    <tr>
+                      <td align="left" colspan="6" valign="top" rowspan="1">Results</td>
+                    </tr>
+                    <tr>
+                      <td align="left" colspan="3" valign="top" rowspan="1">Returns, n/total (%)</td>
+                      <td align="left" rowspan="2" valign="middle" colspan="1">OR</td>
+                      <td align="left" rowspan="2" valign="middle" colspan="1">95% CI</td>
+                      <td align="left" rowspan="2" valign="middle" colspan="1">p-value</td>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top" rowspan="1" colspan="1">Pen</td>
+                      <td align="left" valign="top" rowspan="1" colspan="1">No pen</td>
+                      <td align="left" valign="top" rowspan="1" colspan="1">Overall</td>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top" rowspan="1" colspan="1">493/728 (67.7)</td>
+                      <td align="left" valign="top" rowspan="1" colspan="1">469/725 (64.7)</td>
+                      <td align="left" valign="top" rowspan="1" colspan="1">962/1453 (66.2)</td>
+                      <td align="left" valign="top" rowspan="1" colspan="1">1.15</td>
+                      <td align="left" valign="top" rowspan="1" colspan="1">0.92, 1.43</td>
+                      <td align="left" valign="top" rowspan="1" colspan="1">0.22</td>
+                    </tr>
+                    <tr>
+                      <td align="left" colspan="3" valign="top" rowspan="1">Time to response (days), median (IQR)</td>
+                      <td align="left" rowspan="2" valign="middle" colspan="1">HR</td>
+                      <td align="left" rowspan="2" valign="middle" colspan="1">95% CI</td>
+                      <td align="left" rowspan="2" valign="middle" colspan="1">p-value</td>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top" rowspan="1" colspan="1">Pen</td>
+                      <td align="left" valign="top" rowspan="1" colspan="1">No pen</td>
+                      <td align="left" valign="top" rowspan="1" colspan="1">Overall</td>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top" rowspan="1" colspan="1">15 (9-33)</td>
+                      <td align="left" valign="top" rowspan="1" colspan="1">18 (9-37)</td>
+                      <td align="left" valign="top" rowspan="1" colspan="1">16 (9-35)</td>
+                      <td align="left" valign="top" rowspan="1" colspan="1">1.12</td>
+                      <td align="left" valign="top" rowspan="1" colspan="1">0.98, 1.27</td>
+                      <td align="left" valign="top" rowspan="1" colspan="1">0.09</td>
+                    </tr>
+                    <tr>
+                      <td align="left" colspan="3" valign="top" rowspan="1">Completeness of response, mean (SD)</td>
+                      <td align="left" rowspan="2" valign="middle" colspan="1">AMD</td>
+                      <td align="left" rowspan="2" valign="middle" colspan="1">95% CI</td>
+                      <td align="left" rowspan="2" valign="middle" colspan="1">p-value</td>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top" rowspan="1" colspan="1">Pen</td>
+                      <td align="left" valign="top" rowspan="1" colspan="1">No pen</td>
+                      <td align="left" valign="top" rowspan="1" colspan="1">Overall</td>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top" rowspan="1" colspan="1">4.9 (0.4)</td>
+                      <td align="left" valign="top" rowspan="1" colspan="1">4.9 (0.4)</td>
+                      <td align="left" valign="top" rowspan="1" colspan="1">4.9 (0.4)</td>
+                      <td align="left" valign="top" rowspan="1" colspan="1">-0.01</td>
+                      <td align="left" valign="top" rowspan="1" colspan="1">-0.06, 0.05</td>
+                      <td align="left" valign="top" rowspan="1" colspan="1">0.77</td>
+                    </tr>
+                    <tr>
+                      <td align="left" colspan="3" valign="top" rowspan="1">Reminder sent, n/total (%)</td>
+                      <td align="left" rowspan="2" valign="middle" colspan="1">OR</td>
+                      <td align="left" rowspan="2" valign="middle" colspan="1">95% CI</td>
+                      <td align="left" rowspan="2" valign="middle" colspan="1">p-value</td>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top" rowspan="1" colspan="1">Pen</td>
+                      <td align="left" valign="top" rowspan="1" colspan="1">No pen</td>
+                      <td align="left" valign="top" rowspan="1" colspan="1">Overall</td>
+                    </tr>
+                    <tr>
+                      <td align="left" valign="top" rowspan="1" colspan="1">339/728 (46.6)</td>
+                      <td align="left" valign="top" rowspan="1" colspan="1">369/725 (50.9)</td>
+                      <td align="left" valign="top" rowspan="1" colspan="1">708/1453 (48.7)</td>
+                      <td align="left" valign="top" rowspan="1" colspan="1">0.83</td>
+                      <td align="left" valign="top" rowspan="1" colspan="1">0.68, 1.02</td>
+                      <td align="left" valign="top" rowspan="1" colspan="1">0.08</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </table-wrap>
+              <p>There was weak evidence of a difference, in favour of the pen group, in both time to return (median time to return 15 vs 18 days; HR 1.12, 95% CI 0.98 to 1.27, p=0.09) (
+<xref ref-type="fig" rid="f2">Figure 2</xref>), and in the proportion of participants requiring a reminder (OR 0.83, 95% CI 0.68 to 1.02, p=0.08).</p>
+              <fig fig-type="figure" id="f2" orientation="portrait" position="anchor">
+                <label>Figure 2. </label>
+                <caption>
+                  <title>Kaplan-Meier curve for time to questionnaire return.</title>
+                </caption>
+                <graphic xlink:href="f1000research-9-26098-g0001"/>
+              </fig>
+              <sec>
+                <title>Costing</title>
+                <p>A 3% difference in questionnaire response rate and an absolute difference in the percentage of participants who required a reminder of 1.1% were found. Considering these to be true effects, in order to receive one additional questionnaire, 33 participants would have to be sent a pen, at a cost of approximately 33x32p=£10.56. Approximately 91 participants would need to be sent a pen to prevent one reminder mailing and therefore to save £2.42. Hence, roughly one reminder is required per three retained participants, and the cost per retained participant is approximately £10.</p>
+              </sec>
+            </sec>
+            <sec sec-type="discussion">
+              <title>Discussion</title>
+              <p>Whilst the results of all outcomes in this SWAT favoured the pen group, we found that the addition of a pen did not statistically significantly increase the response rate to, or completeness of, a follow-up questionnaire sent at 14 weeks post-randomisation among participants of the SSHeW trial. There was some evidence of a reduction in time to response and the number of reminders required.</p>
+              <p>It may be that, in this group of participants, the pen failed to act as a facilitator or was not a sufficient incentive to return the questionnaire, given the fact that participants in the trial already received a free pair of shoes (although offer of shoes was not conditional on returning the questionnaire).</p>
+              <p>However, the trial ultimately only had about 40% power to detect a difference of 3% in response rates (from 64.7 to 67.7%) and is therefore at risk of a type II error. Another potential weakness is that, due to the select population of healthcare workers, the results may not be generalisable to other populations or contexts.</p>
+              <p>The strength of this study is that it was a randomised trial.</p>
+            </sec>
+            <sec sec-type="conclusions">
+              <title>Conclusion</title>
+              <p>This SWAT suggests that enclosing a pen in a questionnaire mail out may be an effective method to increase response rates but was likely underpowered to detect a statistically significant difference of the 3% observed. Since pens are inexpensive, even a small difference is likely to be cost-effective. The results contribute to the body of evidence regarding this intervention and may be included in future meta-analyses to improve power.</p>
+            </sec>
+            <sec sec-type="data-availability">
+              <title>Data availability</title>
+              <sec>
+                <title>Underlying data</title>
+                <p>Open Science Framework: SSHeW Trial Pen SWAT,
+<ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.17605/OSF.IO/YQ76U">https://doi.org/10.17605/OSF.IO/YQ76U</ext-link>
+<sup><xref rid="ref-12" ref-type="bibr">12</xref></sup>.</p>
+              </sec>
+              <sec>
+                <title>Reporting guidelines</title>
+                <p>Open Science Framework: CONSORT checklist for ‘Enclosing a pen to improve response rate to postal questionnaire: an embedded randomised controlled trial’,
+<ext-link ext-link-type="uri" xlink:href="http://dx.doi.org/10.17605/OSF.IO/YQ76U">https://doi.org/10.17605/OSF.IO/YQ76U</ext-link>
+<sup><xref rid="ref-12" ref-type="bibr">12</xref></sup>.</p>
+                <p>Data are available under the terms of the
+<ext-link ext-link-type="uri" xlink:href="http://creativecommons.org/publicdomain/zero/1.0/">Creative Commons Zero "No rights reserved" data waiver</ext-link> (CC0 1.0 Public domain dedication).</p>
+              </sec>
+            </sec>
+          </body>
+          <back>
+            <ack>
+              <title>Acknowledgements</title>
+              <p>The authors would like to thank the embedded trial participants who returned their trial documentation and the data administration staff at the YTU who worked to support the study.</p>
+              <p>The paper was written by the authors on behalf of the SSHeW Trial team, which is made up of the following individuals: Emily Bain (Health and Safety Executive); Sarah Cockayne (University of York); Rachel Cunningham-Burley (University of York); Caroline Fairhurst (University of York); Gillian Frost (Health and Safety Executive); Catherine Hewitt (University of York); Heather Iles-Smith (Leeds Teaching Hospital NHS Trust); Mark Liddle (Health and Safety Executive), Misbah Mogradia (Health and Safety Executive); David Torgerson (University of York), Michael Zand (Health and Safety Executive) and others. With the exception of Emily Bain and Misbah Morgradia, who supported Health Economic Evaluation for the host SSHeW Trial, all members of the SSHeW study team were involved in the designing this SWAT.</p>
+              <p>We would also like to acknowledge the support of individuals from the PROMETHEUS programme.</p>
+            </ack>
+            <ref-list>
+              <ref id="ref-1">
+                <label>1</label>
+                <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Edwards</surname><given-names>P</given-names></name><name><surname>Roberts</surname><given-names>I</given-names></name><name><surname>Clarke</surname><given-names>M</given-names></name><etal/></person-group>:
+<article-title>Increasing response rates to postal questionnaires: systematic review.</article-title><source><italic toggle="yes">BMJ.</italic></source><year>2002</year>;<volume>324</volume>(<issue>7347</issue>):<fpage>1183</fpage>.
+<pub-id pub-id-type="doi">10.1136/bmj.324.7347.1183</pub-id><!--<pub-id pub-id-type="pmcid">111107</pub-id>--><?supplied-pmid 12016181?><pub-id pub-id-type="pmid">12016181</pub-id></mixed-citation>
+              </ref>
+              <ref id="ref-2">
+                <label>2</label>
+                <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Edwards</surname><given-names>PJ</given-names></name><name><surname>Roberts</surname><given-names>I</given-names></name><name><surname>Clarke</surname><given-names>MJ</given-names></name><etal/></person-group>:
+<article-title>Methods to increase response to postal and electronic questionnaires.</article-title><source><italic toggle="yes">Cochrane Database Syst Rev.</italic></source><year>2009</year>; (<issue>3</issue>):<fpage>MR000008</fpage>.
+<pub-id pub-id-type="doi">10.1002/14651858.MR000008.pub4</pub-id><?supplied-pmid 19588449?><pub-id pub-id-type="pmid">19588449</pub-id></mixed-citation>
+              </ref>
+              <ref id="ref-3">
+                <label>3</label>
+                <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Brueton</surname><given-names>VC</given-names></name><name><surname>Tierney</surname><given-names>JF</given-names></name><name><surname>Stenning</surname><given-names>S</given-names></name><etal/></person-group>:
+<article-title>Strategies to improve retention in randomised trials: a Cochrane systematic review and meta-analysis.</article-title><source><italic toggle="yes">BMJ Open.</italic></source><year>2014</year>;<volume>4</volume>(<issue>2</issue>):<fpage>e003821</fpage>.
+<pub-id pub-id-type="doi">10.1136/bmjopen-2013-003821</pub-id><!--<pub-id pub-id-type="pmcid">3918995</pub-id>--><?supplied-pmid 24496696?><pub-id pub-id-type="pmid">24496696</pub-id></mixed-citation>
+              </ref>
+              <ref id="ref-4">
+                <label>4</label>
+                <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Clark</surname><given-names>T</given-names></name><name><surname>Khan</surname><given-names>K</given-names></name><name><surname>Gupta</surname><given-names>J</given-names></name></person-group>:
+<article-title>Provision of pen along with questionnaire does not increase the response rate to a postal survey: a randomised controlled trial.</article-title><source><italic toggle="yes">J Epidemiol Community Health.</italic></source><year>2001</year>;<volume>55</volume>(<issue>8</issue>):<fpage>595</fpage>–<lpage>6</lpage>.
+<pub-id pub-id-type="doi">10.1136/jech.55.8.595</pub-id>
+<!--<pub-id pub-id-type="pmcid">1731952</pub-id>-->
+<?supplied-pmid 11449019?><pub-id pub-id-type="pmid">11449019</pub-id></mixed-citation>
+              </ref>
+              <ref id="ref-5">
+                <label>5</label>
+                <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>White</surname><given-names>E</given-names></name><name><surname>Carney</surname><given-names>PA</given-names></name><name><surname>Kolar</surname><given-names>AS</given-names></name></person-group>:
+<article-title>Increasing response to mailed questionnaires by including a pencil/pen.</article-title><source><italic toggle="yes">Am J Epidemiol.</italic></source><year>2005</year>;<volume>162</volume>(<issue>3</issue>):<fpage>261</fpage>–<lpage>6</lpage>.
+<pub-id pub-id-type="doi">10.1093/aje/kwi194</pub-id>
+<?supplied-pmid 15972931?><pub-id pub-id-type="pmid">15972931</pub-id></mixed-citation>
+              </ref>
+              <ref id="ref-6">
+                <label>6</label>
+                <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Sharp</surname><given-names>L</given-names></name><name><surname>Cochran</surname><given-names>C</given-names></name><name><surname>Cotton</surname><given-names>SC</given-names></name><etal/></person-group>:
+<article-title>Enclosing a pen with a postal questionnaire can significantly increase the response rate.</article-title><source><italic toggle="yes">J Clin Epidemiol.</italic></source><year>2006</year>;<volume>59</volume>(<issue>7</issue>):<fpage>747</fpage>–<lpage>54</lpage>.
+<pub-id pub-id-type="doi">10.1016/j.jclinepi.2005.10.014</pub-id>
+<?supplied-pmid 16765279?><pub-id pub-id-type="pmid">16765279</pub-id></mixed-citation>
+              </ref>
+              <ref id="ref-7">
+                <label>7</label>
+                <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Bell</surname><given-names>K</given-names></name><name><surname>Clark</surname><given-names>L</given-names></name><name><surname>Fairhurst</surname><given-names>C</given-names></name><etal/></person-group>:
+<article-title>Enclosing a pen reduced time to response to questionnaire mailings.</article-title><source><italic toggle="yes">J Clin Epidemiol.</italic></source><year>2016</year>;<volume>74</volume>:<fpage>144</fpage>–<lpage>50</lpage>.
+<pub-id pub-id-type="doi">10.1016/j.jclinepi.2015.12.004</pub-id>
+<?supplied-pmid 26738971?><pub-id pub-id-type="pmid">26738971</pub-id></mixed-citation>
+              </ref>
+              <ref id="ref-8">
+                <label>8</label>
+                <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Aveyard</surname><given-names>P</given-names></name><name><surname>Manaseki</surname><given-names>S</given-names></name><name><surname>Griffin</surname><given-names>C</given-names></name></person-group>:
+<article-title>The cost effectiveness of including pencils and erasers with self-completion epidemiological questionnaires.</article-title><source><italic toggle="yes">Public Health.</italic></source><year>2001</year>;<volume>115</volume>(<issue>1</issue>):<fpage>80</fpage>–<lpage>1</lpage>.
+<pub-id pub-id-type="doi">10.1038/sj.ph.1900714</pub-id>
+<?supplied-pmid 11402357?><pub-id pub-id-type="pmid">11402357</pub-id></mixed-citation>
+              </ref>
+              <ref id="ref-9">
+                <label>9</label>
+                <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Treweek</surname><given-names>S</given-names></name><name><surname>Bevan</surname><given-names>S</given-names></name><name><surname>Bower</surname><given-names>P</given-names></name><etal/></person-group>:
+<article-title>Trial forge guidance 1: what is a study within a trial (SWAT)?</article-title><source><italic toggle="yes">Trials.</italic></source><year>2018</year>;<volume>19</volume>(<issue>1</issue>):<fpage>139</fpage>.
+<pub-id pub-id-type="doi">10.1186/s13063-018-2535-5</pub-id><!--<pub-id pub-id-type="pmcid">5824570</pub-id>--><?supplied-pmid 29475444?><pub-id pub-id-type="pmid">29475444</pub-id></mixed-citation>
+              </ref>
+              <ref id="ref-10">
+                <label>10</label>
+                <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Cockayne</surname><given-names>S</given-names></name><name><surname>Fairhurst</surname><given-names>C</given-names></name><name><surname>Frost</surname><given-names>G</given-names></name><etal/></person-group>:
+<article-title>SSHeW study protocol: does slip resistant footwear reduce slips among healthcare workers? A randomised controlled trial.</article-title><source><italic toggle="yes">BMJ Open.</italic></source><year> 2018</year>;<volume>8</volume>(<issue>11</issue>):<fpage>e026023</fpage>.
+<pub-id pub-id-type="doi">10.1136/bmjopen-2018-026023</pub-id><!--<pub-id pub-id-type="pmcid">6252757</pub-id>--><?supplied-pmid 30446577?><pub-id pub-id-type="pmid">30446577</pub-id></mixed-citation>
+              </ref>
+              <ref id="ref-11">
+                <label>11</label>
+                <mixed-citation publication-type="journal"><collab>StataCorp</collab>:
+<article-title>Stata Statistical Software: Release 15.</article-title>In: College Station, TX:StataCorp LLC;<year>2017</year>.
+<ext-link ext-link-type="uri" xlink:href="https://www.stata.com/support/faqs/resources/citing-software-documentation-faqs/">Reference Source</ext-link></mixed-citation>
+              </ref>
+              <ref id="ref-12">
+                <label>12</label>
+                <mixed-citation publication-type="journal"><person-group person-group-type="author"><name><surname>Cunningham-Burley</surname><given-names>R</given-names></name><name><surname>Roche</surname><given-names>J</given-names></name><name><surname>Fairhurst</surname><given-names>C</given-names></name><etal/></person-group>:
+<article-title>SSHeW Trial Pen SWAT.</article-title><year> 2020</year>.
+<pub-id pub-id-type="doi">10.17605/OSF.IO/YQ76U</pub-id></mixed-citation>
+              </ref>
+            </ref-list>
+          </back>
+          <sub-article id="report80788" article-type="peer-review">
+            <front-stub>
+              <article-id pub-id-type="doi">10.5256/f1000research.26098.r80788</article-id>
+              <title-group>
+                <article-title>Reviewer response for version 1</article-title>
+              </title-group>
+              <contrib-group>
+                <contrib contrib-type="author">
+                  <name>
+                    <surname>Bracken</surname>
+                    <given-names>Karen</given-names>
+                  </name>
+                  <xref ref-type="aff" rid="r80788a1">1</xref>
+                  <role>Referee</role>
+                </contrib>
+                <aff id="r80788a1"><label>1</label>NHMRC Clinical Trials Centre, The University of Sydney, Sydney, NSW, Australia</aff>
+              </contrib-group>
+              <author-notes>
+                <fn fn-type="COI-statement">
+                  <p><bold>Competing interests: </bold>No competing interests were disclosed.</p>
+                </fn>
+              </author-notes>
+              <pub-date pub-type="epub">
+                <day>8</day>
+                <month>3</month>
+                <year>2021</year>
+              </pub-date>
+              <permissions>
+                <copyright-statement>Copyright: © 2021 Bracken K</copyright-statement>
+                <copyright-year>2021</copyright-year>
+                <license xlink:href="http://creativecommons.org/licenses/by/4.0/">
+                  <license-p>This is an open access peer review report distributed under the terms of the Creative Commons Attribution Licence, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.</license-p>
+                </license>
+              </permissions>
+              <related-article related-article-type="peer-reviewed-article" id="d39e1587" ext-link-type="doi" xlink:href="10.12688/f1000research.23651.1">Version 1</related-article>
+              <custom-meta-group>
+                <custom-meta>
+                  <meta-name>recommendation</meta-name>
+                  <meta-value>approve</meta-value>
+                </custom-meta>
+              </custom-meta-group>
+            </front-stub>
+            <body>
+              <p>This paper describes the result of a SWAT embedded within the SSHeW trial. The SWAT aimed to evaluate whether including a pen with a follow-up postal questionnaire would impact questionnaire response rate. The authors indicate that previous studies have yielded mixed results. The results of this SWAT add to the body of existing evidence.</p>
+              <p> The paper is clear and concise and addresses a common problem faced by trials; low response rates to questionnaires. The paper provides adequate detail for other trialists to replicate the intervention within their own trial. The inclusion of cost analyses is particularly useful.</p>
+              <p> I was interested to see that the cost of including the pen was very low and would have liked an explanation of the components of the cost (cost of pen, additional cost of postage and posting materials).</p>
+              <p> Like many SWATs, this SWAT was unavoidably constrained in sample size by the host trial, making conclusions difficult due to lack of power. It is unclear from the paper whether the authors expected that the sample size of 1466 was sufficient to detect an operationally important difference between groups. If not, then I suggest the conclusion be updated to make this clear, rather than stating that a statistically significant increase was not found. Would the authors suggest that further SWATs are needed in this area based on the Trial Forge guidance? (https://trialsjournal.biomedcentral.com/articles/10.1186/s13063-019-3980-5
+<sup><xref rid="rep-ref-80788-1" ref-type="bibr">1</xref></sup>)</p>
+              <p> Also, I suggest removing the observed power calculation from the discussion (https://lesslikely.com/statistics/observed-power-magic/ provides an explanation as to why observed power calculations should be avoided).</p>
+              <p>Is the work clearly and accurately presented and does it cite the current literature?</p>
+              <p>Yes</p>
+              <p>If applicable, is the statistical analysis and its interpretation appropriate?</p>
+              <p>Partly</p>
+              <p>Are all the source data underlying the results available to ensure full reproducibility?</p>
+              <p>Yes</p>
+              <p>Is the study design appropriate and is the work technically sound?</p>
+              <p>Yes</p>
+              <p>Are the conclusions drawn adequately supported by the results?</p>
+              <p>Partly</p>
+              <p>Are sufficient details of methods and analysis provided to allow replication by others?</p>
+              <p>Yes</p>
+              <p>Reviewer Expertise:</p>
+              <p>Trial operations and recruitment</p>
+              <p>I confirm that I have read this submission and believe that I have an appropriate level of expertise to confirm that it is of an acceptable scientific standard.</p>
+            </body>
+            <back>
+              <ref-list>
+                <title>References</title>
+                <ref id="rep-ref-80788-1">
+                  <label>1</label>
+                  <mixed-citation publication-type="journal">
+:
+<article-title>Trial Forge Guidance 2: how to decide if a further Study Within A Trial (SWAT) is needed.</article-title>
+<source><italic toggle="yes">Trials</italic></source>.<year>2020</year>;<volume>21</volume>(<issue>1</issue>) :
+<elocation-id>10.1186/s13063-019-3980-5</elocation-id>
+<fpage>33</fpage>
+<pub-id pub-id-type="doi">10.1186/s13063-019-3980-5</pub-id>
+<?supplied-pmid 31910861?><pub-id pub-id-type="pmid">31900198</pub-id></mixed-citation>
+                </ref>
+              </ref-list>
+            </back>
+          </sub-article>
+          <sub-article id="report68921" article-type="peer-review">
+            <front-stub>
+              <article-id pub-id-type="doi">10.5256/f1000research.26098.r68921</article-id>
+              <title-group>
+                <article-title>Reviewer response for version 1</article-title>
+              </title-group>
+              <contrib-group>
+                <contrib contrib-type="author">
+                  <name>
+                    <surname>Bruhn</surname>
+                    <given-names>Hanne</given-names>
+                  </name>
+                  <xref ref-type="aff" rid="r68921a3">3</xref>
+                  <role>Referee</role>
+                  <contrib-id contrib-id-type="orcid">https://orcid.org/0000-0002-9309-9809</contrib-id>
+                </contrib>
+                <contrib contrib-type="author">
+                  <name>
+                    <surname>Duncan</surname>
+                    <given-names>Anna</given-names>
+                  </name>
+                  <xref ref-type="aff" rid="r68921a1">1</xref>
+                  <role>Co-referee</role>
+                </contrib>
+                <contrib contrib-type="author">
+                  <name>
+                    <surname>Aceves Martins</surname>
+                    <given-names>Magaly</given-names>
+                  </name>
+                  <xref ref-type="aff" rid="r68921a2">2</xref>
+                  <role>Co-referee</role>
+                </contrib>
+                <aff id="r68921a1"><label>1</label>CHaRT, University of Aberdeen, Aberdeen, UK</aff>
+                <aff id="r68921a2"><label>2</label>HSRU, University of Aberdeen, Aberdeen, UK</aff>
+                <aff id="r68921a3"><label>3</label>Health Services Research Unit, University of Aberdeen, Aberdeen, UK</aff>
+              </contrib-group>
+              <author-notes>
+                <fn fn-type="COI-statement">
+                  <p><bold>Competing interests: </bold>Hanne Bruhn: None. Anne Duncan: None. Magaly Aceves Martins: I am participating in the Cochrane Review Update on Strategies to improve retention in randomised trials.</p>
+                </fn>
+              </author-notes>
+              <pub-date pub-type="epub">
+                <day>2</day>
+                <month>9</month>
+                <year>2020</year>
+              </pub-date>
+              <permissions>
+                <copyright-statement>Copyright: © 2020 Duncan A et al.</copyright-statement>
+                <copyright-year>2020</copyright-year>
+                <license xlink:href="http://creativecommons.org/licenses/by/4.0/">
+                  <license-p>This is an open access peer review report distributed under the terms of the Creative Commons Attribution Licence, which permits unrestricted use, distribution, and reproduction in any medium, provided the original work is properly cited.</license-p>
+                </license>
+              </permissions>
+              <related-article related-article-type="peer-reviewed-article" id="d39e1757" ext-link-type="doi" xlink:href="10.12688/f1000research.23651.1">Version 1</related-article>
+              <custom-meta-group>
+                <custom-meta>
+                  <meta-name>recommendation</meta-name>
+                  <meta-value>approve</meta-value>
+                </custom-meta>
+              </custom-meta-group>
+            </front-stub>
+            <body>
+              <p>The current study is a SWAT – a Study Within A Trial. A SWAT is a methodological study aiming to add to the evidence base for randomised controlled rial design and conduct. In a SWAT an intervention to improve the conduct of trials is tested in an ongoing ‘host’ trial.</p>
+              <p> The current host trial was Stopping Slips among Healthcare Workers (SSHeW), a trial testing slip-resistant footwear with NHS Staff to reduce slips at work. The SWAT intervention was to include a pen with the follow-up questionnaire to test whether participants who received a pen were more likely to return their questionnaire than those participants who did not receive a pen. The authors also looked at whether inclusion of a pen with the questionnaire affected the time taken to send back the questionnaire; how complete they questionnaire was answered and; whether a reminder had to be sent for return of the questionnaire. The SWAT was run on the 14 week post randomisation follow-up questionnaire. All SSHEW participants were randomised into the SWAT (n=1466). There were no significant difference in return rates between the two groups but weak evidence that including a pen might make participants return the questionnaire sooner and less will need a reminder.</p>
+              <p> This study reports findings contributing to the evidence base for how trial teams can increase questionnaire response rates in their trials, using the gold standard randomised comparison. This is a hugely important area as low response rates affect the conclusions that can be drawn from trial findings. Unfortunately, low questionnaire response rates are something which continues to affect a lot of trials.</p>
+              <p> We have a few comments which should be addressed:</p>
+              <p> ABSTRACT</p>
+              <p> No comments.</p>
+              <p> INTRODUCTION</p>
+              <p> It would be interesting to know if the authors expected there to be an issue with the questionnaire return rate in the host trial and what was the basis of this expectation (e.g. low response rate to previous questionnaires)? Please consider adding what the expected response rate for the host trial was. This could be added in the introduction or methods according to the authors preference. Commonly, SWATs are reactive so some background information to the approach in this SWAT would provide a helpful context.  </p>
+              <p> The authors mention that the pen would act as facilitator and incentive, it would be helpful to have any reference to this use as a behavioural motivator or barrier. </p>
+              <p> METHODS</p>
+              <p> It would be interesting to know if the investigators found any issues with posting a pack including a pen, eg additional bulk causing any issues with standard franking machines. Did any changes have to be made to the process of posting out to include the pen?</p>
+              <p> RESULTS</p>
+              <p> No comments.</p>
+              <p> DISCUSSION</p>
+              <p> Please include some consideration as to whether the timing of the incentive to return questionnaires might have affected the findings. In many trials participants are followed-up for two years or longer and that is the point when it gets really tough to keep the response rate high (reviewers’ personal experiences). It would be really valuable to have the authors thoughts on this for trial teams looking for help.</p>
+              <p> Paragraph 3 -The authors list a lack of power as a limitation. We’d suggest highlighting that many SWATs will be underpowered because they are generally unable to change the size of the host trial; they are made for meta-analysis really.</p>
+              <p>   </p>
+              <p> CONCLUSION</p>
+              <p> This is a very well conducted and clearly written article on a SWAT that investigated including a pen  to improve response rates to a questionnaire, and importantly addressed the cost effectiveness of the intervention as one of the outcomes.</p>
+              <p> The results of the SWAT did not provide strong evidence in itself of the effectiveness of including a pen to improve response rates but the results add to the body of evidence and  will be important to include in meta-analysis to examine the effectiveness of a pen as an incentive/facilitator in retention rates.</p>
+              <p> While the pen itself is inexpensive, when it is multiplied up over the issue of thousands of questionnaires is an additional cost any trials unit would have to justify to funder. The cost for a 3% gain is £10 per retained participant according to statement in Results (Costings) so not an insubstantial amount for weak evidence of an effect. Replication of this SWAT is needed to include other settings, different timepoints etc before concluding that including a pen may be effective and cost-effective way of improving response rates. The authors should expand on this in the concluding paragraph and consider revising sentence 2 of the concluding paragraph.</p>
+              <p>Is the work clearly and accurately presented and does it cite the current literature?</p>
+              <p>Yes</p>
+              <p>If applicable, is the statistical analysis and its interpretation appropriate?</p>
+              <p>I cannot comment. A qualified statistician is required.</p>
+              <p>Are all the source data underlying the results available to ensure full reproducibility?</p>
+              <p>Yes</p>
+              <p>Is the study design appropriate and is the work technically sound?</p>
+              <p>Yes</p>
+              <p>Are the conclusions drawn adequately supported by the results?</p>
+              <p>Partly</p>
+              <p>Are sufficient details of methods and analysis provided to allow replication by others?</p>
+              <p>Yes</p>
+              <p>Reviewer Expertise:</p>
+              <p>Hanne Bruhn: Health Services Research and Trial Methodology. Anne Duncan: Trial Management and conduct and Trial Methodology. Magaly Aceves Martins: Nutrition and systematic reviewing.</p>
+              <p>We confirm that we have read this submission and believe that we have an appropriate level of expertise to confirm that it is of an acceptable scientific standard.</p>
+            </body>
+          </sub-article>
+        </article>
+      </metadata>
+    </record>
+  </GetRecord>
+</OAI-PMH>

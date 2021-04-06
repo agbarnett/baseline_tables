@@ -1,0 +1,1394 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OAI-PMH xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/ http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd">
+  <responseDate>2021-04-06T05:40:32Z</responseDate>
+  <request verb="GetRecord" identifier="oai:pubmedcentral.nih.gov:7952375" metadataPrefix="pmc">https:/www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi</request>
+  <GetRecord>
+    <record>
+      <header>
+        <identifier>oai:pubmedcentral.nih.gov:7952375</identifier>
+        <datestamp>2021-03-28</datestamp>
+        <setSpec>ncomms</setSpec>
+        <setSpec>pmc-open</setSpec>
+      </header>
+      <metadata>
+        <article xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML" xsi:schemaLocation="https://jats.nlm.nih.gov/ns/archiving/1.2/ https://jats.nlm.nih.gov/archiving/1.2/xsd/JATS-archivearticle1.xsd" article-type="research-article">
+          <front>
+            <journal-meta>
+              <journal-id journal-id-type="nlm-ta">Nat Commun</journal-id>
+              <journal-id journal-id-type="iso-abbrev">Nat Commun</journal-id>
+              <journal-title-group>
+                <journal-title>Nature Communications</journal-title>
+              </journal-title-group>
+              <issn pub-type="epub">2041-1723</issn>
+              <publisher>
+                <publisher-name>Nature Publishing Group UK</publisher-name>
+                <publisher-loc>London</publisher-loc>
+              </publisher>
+            </journal-meta>
+            <article-meta>
+              <article-id pub-id-type="accession">PMC7952375</article-id>
+              <article-id pub-id-type="pmcid">PMC7952375</article-id>
+              <article-id pub-id-type="pmc-uid">7952375</article-id>
+              <article-id pub-id-type="pmid">33707426</article-id>
+              <article-id pub-id-type="publisher-id">21864</article-id>
+              <article-id pub-id-type="doi">10.1038/s41467-021-21864-3</article-id>
+              <article-categories>
+                <subj-group subj-group-type="heading">
+                  <subject>Article</subject>
+                </subj-group>
+              </article-categories>
+              <title-group>
+                <article-title>A randomised controlled trial to reduce highest priority critically important antimicrobial prescription in companion animals</article-title>
+              </title-group>
+              <contrib-group>
+                <contrib contrib-type="author" corresp="yes">
+                  <contrib-id contrib-id-type="orcid">http://orcid.org/0000-0002-1980-5410</contrib-id>
+                  <name>
+                    <surname>Singleton</surname>
+                    <given-names>David A.</given-names>
+                  </name>
+                  <address>
+                    <email>D.A.Singleton@liverpool.ac.uk</email>
+                  </address>
+                  <xref ref-type="aff" rid="Aff1">1</xref>
+                </contrib>
+                <contrib contrib-type="author">
+                  <name>
+                    <surname>Rayner</surname>
+                    <given-names>Angela</given-names>
+                  </name>
+                  <xref ref-type="aff" rid="Aff2">2</xref>
+                </contrib>
+                <contrib contrib-type="author">
+                  <name>
+                    <surname>Brant</surname>
+                    <given-names>Bethaney</given-names>
+                  </name>
+                  <xref ref-type="aff" rid="Aff1">1</xref>
+                </contrib>
+                <contrib contrib-type="author">
+                  <name>
+                    <surname>Smyth</surname>
+                    <given-names>Steven</given-names>
+                  </name>
+                  <xref ref-type="aff" rid="Aff1">1</xref>
+                </contrib>
+                <contrib contrib-type="author">
+                  <name>
+                    <surname>Noble</surname>
+                    <given-names>Peter-John M.</given-names>
+                  </name>
+                  <xref ref-type="aff" rid="Aff1">1</xref>
+                </contrib>
+                <contrib contrib-type="author">
+                  <name>
+                    <surname>Radford</surname>
+                    <given-names>Alan D.</given-names>
+                  </name>
+                  <xref ref-type="aff" rid="Aff1">1</xref>
+                </contrib>
+                <contrib contrib-type="author">
+                  <name>
+                    <surname>Pinchbeck</surname>
+                    <given-names>Gina L.</given-names>
+                  </name>
+                  <xref ref-type="aff" rid="Aff1">1</xref>
+                </contrib>
+                <aff id="Aff1"><label>1</label><institution-wrap><institution-id institution-id-type="GRID">grid.10025.36</institution-id><institution-id institution-id-type="ISNI">0000 0004 1936 8470</institution-id><institution>Institute of Infection, Veterinary and Ecological Sciences, </institution><institution>University of Liverpool, Leahurst Campus, Chester High Road, </institution></institution-wrap>Neston, UK </aff>
+                <aff id="Aff2"><label>2</label>CVS (UK) Limited, 1 Owen Road, Diss, UK </aff>
+              </contrib-group>
+              <pub-date pub-type="epub">
+                <day>11</day>
+                <month>3</month>
+                <year>2021</year>
+              </pub-date>
+              <pub-date pub-type="pmc-release">
+                <day>11</day>
+                <month>3</month>
+                <year>2021</year>
+              </pub-date>
+              <pub-date pub-type="collection">
+                <year>2021</year>
+              </pub-date>
+              <volume>12</volume>
+              <elocation-id>1593</elocation-id>
+              <history>
+                <date date-type="received">
+                  <day>24</day>
+                  <month>7</month>
+                  <year>2020</year>
+                </date>
+                <date date-type="accepted">
+                  <day>12</day>
+                  <month>2</month>
+                  <year>2021</year>
+                </date>
+              </history>
+              <permissions>
+                <copyright-statement>© The Author(s) 2021</copyright-statement>
+                <license license-type="OpenAccess">
+                  <license-p><bold>Open Access</bold> This article is licensed under a Creative Commons Attribution 4.0 International License, which permits use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons license, and indicate if changes were made. The images or other third party material in this article are included in the article’s Creative Commons license, unless indicated otherwise in a credit line to the material. If material is not included in the article’s Creative Commons license and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder. To view a copy of this license, visit <ext-link ext-link-type="uri" xlink:href="http://creativecommons.org/licenses/by/4.0/">http://creativecommons.org/licenses/by/4.0/</ext-link>.</license-p>
+                </license>
+              </permissions>
+              <abstract id="Abs1">
+                <p id="Par1">Robust evidence supporting strategies for companion animal antimicrobial stewardship is limited, despite frequent prescription of highest priority critically important antimicrobials (HPCIA). Here we describe a randomised controlled trial where electronic prescription data were utilised (August 2018–January 2019) to identify above average HPCIA-prescribing practices (<italic>n</italic> = 60), which were randomly assigned into a control group (CG) and two intervention groups. In March 2019, the light intervention group (LIG) and heavy intervention group (HIG) were notified of their above average status, and were provided with educational material (LIG, HIG), in-depth benchmarking (HIG), and follow-up meetings (HIG). Following notification, follow-up monitoring lasted for eight months (April–November 2019; post-intervention period) for all intervention groups, though HIG practices were able to access further support (i.e., follow-up meetings) for the first six of these months if requested. Post-intervention, in the HIG a 23.5% and 39.0% reduction in canine (0.5% of total consultations, 95% confidence interval, 0.4-0.6, <italic>P</italic> = 0.04) and feline (4.4%, 3.4-5.3, <italic>P</italic> &lt; 0.001) HPCIA-prescribing consultations was observed, compared to the CG (dogs: 0.6%, 0.5-0.8; cats: 7.4%, 6.0-8.7). The LIG was associated with a 16.7% reduction in feline HPCIA prescription (6.1% of total consultations, 5.3-7.0, <italic>P</italic> = 0.03). Therefore, in this trial we have demonstrated effective strategies for reducing veterinary HPCIA prescription.</p>
+              </abstract>
+              <abstract id="Abs2" abstract-type="web-summary">
+                <p id="Par2">Effective use of antimicrobials in both humans and animals is essential to help slow the emergence of antimicrobial resistance. Here, Singleton et al. present a randomised controlled trial demonstrating the efficacy of social norm messaging to reduce antibiotic prescription frequency in veterinary surgeries.</p>
+              </abstract>
+              <kwd-group kwd-group-type="npg-subject">
+                <title>Subject terms</title>
+                <kwd>Antibiotics</kwd>
+                <kwd>Antimicrobial therapy</kwd>
+                <kwd>Decision making</kwd>
+                <kwd>Human behaviour</kwd>
+              </kwd-group>
+              <custom-meta-group>
+                <custom-meta>
+                  <meta-name>issue-copyright-statement</meta-name>
+                  <meta-value>© The Author(s) 2021</meta-value>
+                </custom-meta>
+              </custom-meta-group>
+            </article-meta>
+          </front>
+          <body>
+            <sec id="Sec1" sec-type="introduction">
+              <title>Introduction</title>
+              <p id="Par3">Companion animals are increasingly being recognised as an important contributor to the development<sup><xref ref-type="bibr" rid="CR1">1</xref>,<xref ref-type="bibr" rid="CR2">2</xref></sup>, carriage<sup><xref ref-type="bibr" rid="CR3">3</xref></sup> and transmission of antimicrobial resistant (AMR) bacteria both between animals and to/from humans, primarily due to frequent antimicrobial prescription driving selection for resistance in both species groups<sup><xref ref-type="bibr" rid="CR1">1</xref>,<xref ref-type="bibr" rid="CR4">4</xref>–<xref ref-type="bibr" rid="CR8">8</xref></sup>, and the close proximity in which companion animals reside with humans<sup><xref ref-type="bibr" rid="CR8">8</xref>,<xref ref-type="bibr" rid="CR9">9</xref></sup>. Recent population studies facilitated by the expanding availability of companion animal electronic health records (EHRs)<sup><xref ref-type="bibr" rid="CR10">10</xref>,<xref ref-type="bibr" rid="CR11">11</xref></sup> have identified encouraging trends in antimicrobial prescription, including reducing antimicrobial frequency, both in general<sup><xref ref-type="bibr" rid="CR10">10</xref></sup> and for some clinical presentations<sup><xref ref-type="bibr" rid="CR12">12</xref>–<xref ref-type="bibr" rid="CR14">14</xref></sup>. However, antimicrobials still remain amongst the most commonly prescribed pharmaceutical agents in companion animals<sup><xref ref-type="bibr" rid="CR15">15</xref></sup>.</p>
+              <p id="Par4">Of particular concern, cefovecin, a 3rd generation cephalosporin considered a “highest priority critically important antimicrobial” (HPCIA) by the World Health Organisation<sup><xref ref-type="bibr" rid="CR16">16</xref></sup>, remains the most commonly prescribed antimicrobial in cats<sup><xref ref-type="bibr" rid="CR10">10</xref>,<xref ref-type="bibr" rid="CR11">11</xref></sup>; such prescriptions frequently lacking clearly recorded clinical reasoning to justify their prescription<sup><xref ref-type="bibr" rid="CR17">17</xref></sup>. HPCIAs, also including fluoroquinolones which are also relatively frequently prescribed to companion animals<sup><xref ref-type="bibr" rid="CR10">10</xref></sup>, are recommended to ideally be reserved for human use alone<sup><xref ref-type="bibr" rid="CR16">16</xref></sup>, with current companion animal prescribing guidance suggesting HPCIAs should only be prescribed when there is clear evidence of resistance to first-line antimicrobials<sup><xref ref-type="bibr" rid="CR18">18</xref></sup>. As cefovecin is frequently prescribed in the absence of such evidence<sup><xref ref-type="bibr" rid="CR17">17</xref></sup>, this raises significant questions as to how appropriate such frequent prescription is in cats.</p>
+              <p id="Par5">Along with more qualitative studies<sup><xref ref-type="bibr" rid="CR19">19</xref>–<xref ref-type="bibr" rid="CR23">23</xref></sup>, EHRs<sup><xref ref-type="bibr" rid="CR17">17</xref>,<xref ref-type="bibr" rid="CR24">24</xref>,<xref ref-type="bibr" rid="CR25">25</xref></sup> have also identified key motivators for antimicrobial prescription, revealing a complex interplay between animal, owner, clinical presentation, individual veterinary surgeon, and the overarching culture of the veterinary practice in which they are employed. On a population-level, considerable inter-practice variation in antimicrobial prescription frequency, including the HPCIAs, has been identified<sup><xref ref-type="bibr" rid="CR10">10</xref></sup>, with those practices with higher levels of professional accreditation being relatively less frequent prescribers of systemically-administered antimicrobials to dogs, compared to their non-accredited peers<sup><xref ref-type="bibr" rid="CR25">25</xref></sup>.</p>
+              <p id="Par6">Much of the work to mitigate the companion animal contribution to AMR has focused on improving antimicrobial prescription, under the banner of antimicrobial stewardship, largely through the production of evidence-based antimicrobial prescribing guidance<sup><xref ref-type="bibr" rid="CR18">18</xref>,<xref ref-type="bibr" rid="CR26">26</xref>–<xref ref-type="bibr" rid="CR29">29</xref></sup> and practice benchmarking<sup><xref ref-type="bibr" rid="CR30">30</xref>,<xref ref-type="bibr" rid="CR31">31</xref></sup>. Although these are to be welcomed, robust evidence supporting their impact on companion animal antimicrobial prescribing practices is absent. In this regard, there is much to learn from medical practice, where robustly evidenced antimicrobial stewardship schemes have been established for some time<sup><xref ref-type="bibr" rid="CR32">32</xref>–<xref ref-type="bibr" rid="CR38">38</xref></sup>. In the absence of evidence, individuals tend to over-estimate perceived negative traits in their peers, thus serving as justification for their own behaviour (e.g., alcohol consumption frequency)<sup><xref ref-type="bibr" rid="CR39">39</xref></sup>. A similar tendency regarding antimicrobial prescription amongst veterinary surgeons has been previously observed<sup><xref ref-type="bibr" rid="CR19">19</xref></sup>, leading us to hypothesise that lack of knowledge of relative frequencies of antimicrobial prescription might in itself serve as a driver for more frequent prescription. As such, use of benchmarking, thus drawing attention to an individual’s departure from a “social norm”, might have some utility in counteracting such tendencies. Indeed, use of prescribing benchmarks within a social norms framework has already shown some potential in prompting medical general practitioner-reflection and behavioural change<sup><xref ref-type="bibr" rid="CR34">34</xref></sup>.</p>
+              <p id="Par7">Hence, in this work we present a randomised controlled trial demonstrating the efficacy of social norm messaging, via integrated EHR-driven antimicrobial prescription benchmarking and in-practice educational support, to significantly reduce HPCIA prescription frequency, and antimicrobial prescription frequency in general. Participants were recruited from a cohort of above average HPCIA-prescribing practices within a single veterinary practice group (CVS Group Ltd.), with the hypothesis that such interventions would effectively reduce HPCIA prescription frequency post-intervention.</p>
+            </sec>
+            <sec id="Sec2" sec-type="results">
+              <title>Results</title>
+              <sec id="Sec3">
+                <title>Heavy intervention group trial engagement</title>
+                <p id="Par8">Following above average total HPCIA prescription frequency notification (28-29 March 2019), HIG practices were given the option to voluntarily participate in a further reflection and education programme; two HIG practices opted out (Fig. <xref rid="Fig1" ref-type="fig">1</xref>). As all practices had previously consented to routinely provide data, data continued to be collected from all practices both before and following intervention, irrespective of their active participation in this trial. All 18 consenting HIG practices participated in an initial review with a hub clinical lead (15 held in April, two in May and one in June 2019), and 16 held a separate practice meeting (held April–June 2019). Of these, 15 requested a hub clinical lead follow-up review (held April–July 2019), seven requested a further hub clinical lead follow-up review (held May–July 2019), and 16 held a final hub clinical lead review (held August–October 2019). No significant variations in baseline characteristics between groups were observed (Table <xref rid="Tab1" ref-type="table">1</xref>).<fig id="Fig1"><label>Fig. 1</label><caption><title>Trial practice group allocation.</title><p>Schematic diagram of the process used to select above average highest priority critically important antimicrobial (HPCIA) prescribing veterinary practices owned by CVS Group Limited, followed by drop-off rate following the initial benchmarking intervention.</p></caption><graphic xlink:href="41467_2021_21864_Fig1_HTML" id="d32e451"/></fig><table-wrap id="Tab1"><label>Table 1</label><caption><p>Practice, canine and feline pre-intervention (August 2018–March 2019 inclusive) baseline characteristics.</p></caption><table frame="hsides" rules="groups"><thead><tr><th>Variable</th><th>Control group</th><th>Light intervention group</th><th>Heavy intervention group</th><th><italic>P</italic></th></tr></thead><tbody><tr><td colspan="5">Practice characteristics</td></tr><tr><td>Median vet FTE<sup>a</sup>/practice [range]</td><td>3.8 [1.1–17.4]</td><td>4.1 [1.0–13.4]</td><td>5.0 [1.1–11.5]</td><td>0.59</td></tr><tr><td>% of total FTE locum cover</td><td>6.5</td><td>5.0</td><td>6.8</td><td>0.24</td></tr><tr><td colspan="5">CANINE</td></tr><tr><td> Median <italic>n</italic> consultations/practice [range]</td><td>2,657.5 [460.0–23,889.0]</td><td>3,814.5 [1,004.0–13,476.0]</td><td>3,127.0 [443.0–9,145.0]</td><td>0.17</td></tr><tr><td> Median <italic>n</italic> unique animals/practice [range]</td><td>1,442.5 [335.0–14,436.0]</td><td>2,104.0 [626.0–6,613.0]</td><td>1,745.5 [310.0–4,785.0]</td><td>0.21</td></tr><tr><td colspan="5">Main presenting complaint—% of total consultations (95% confidence interval, CI)</td></tr><tr><td> Vaccination</td><td>32.5 (29.5–35.4)</td><td>29.4 (26.9–31.9)</td><td>33.5 (29.9–37.0)</td><td>0.61</td></tr><tr><td> Other healthy</td><td>21.8 (17.7–26.0)</td><td>27.7 (23.6–31.7)</td><td>21.7 (18.7–24.7)</td><td>0.66</td></tr><tr><td> Post-operative check</td><td>9.8 (6.8–12.8)</td><td>8.4 (7.0–9.8)</td><td>7.1 (6.1–8.2)</td><td>0.46</td></tr><tr><td> Gastroenteric</td><td>3.0 (2.4–3.7)</td><td>3.2 (2.7–3.7)</td><td>3.1 (2.5–3.7)</td><td>0.31</td></tr><tr><td> Respiratory</td><td>1.0 (0.7–1.2)</td><td>0.9 (0.8–1.0)</td><td>1.0 (0.7–1.2)</td><td>0.29</td></tr><tr><td> Pruritus</td><td>4.8 (3.8–5.9)</td><td>4.7 (3.7–5.6)</td><td>4.7 (3.9–5.6)</td><td>0.33</td></tr><tr><td> Trauma</td><td>4.2 (3.3–5.0)</td><td>4.4 (3.7–5.0)</td><td>4.4 (3.5–5.3)</td><td>0.31</td></tr><tr><td> Tumour</td><td>1.4 (1.1–1.7)</td><td>1.5 (1.2–1.7)</td><td>1.7 (1.3–2.0)</td><td>0.12</td></tr><tr><td> Kidney disease</td><td>0.3 (0.2–0.3)</td><td>0.3 (0.2–0.4)</td><td>0.3 (0.2–0.4)</td><td>0.15</td></tr><tr><td> Other unwell</td><td>21.3 (18.1–24.5)</td><td>19.6 (16.6–22.7)</td><td>22.4 (20.0–24.7)</td><td>0.94</td></tr><tr><td colspan="5">Animal characteristics—% of total consultations (95% CI)</td></tr><tr><td> Sex: Male</td><td>51.2 (50.4–51.9)</td><td>51.0 (49.9–52.1)</td><td>52.5 (51.3–53.8)</td><td>0.17</td></tr><tr><td> Neutered</td><td>67.4 (65.4–69.4)</td><td>66.4 (62.2–70.6)</td><td>67.9 (65.1–70.8)</td><td>0.81</td></tr><tr><td> Insured</td><td>34.9 (21.9–48.0)</td><td>31.6 (22.2–41.0)</td><td>25.2 (15.7–34.8)</td><td>0.88</td></tr><tr><td> Vaccinated</td><td>79.8 (78.1–81.6)</td><td>79.7 (77.6–81.8)</td><td>81.9 (79.4–84.3)</td><td>0.29</td></tr><tr><td> Median age [range]</td><td>5.8 [0.0–20.7]</td><td>5.9 [0.0–24.7]</td><td>6.2 [0.0–24.0]</td><td>0.62</td></tr><tr><td colspan="5">FELINE</td></tr><tr><td> Median <italic>n</italic> consultations/practice [range]</td><td>868.0 [231.0–8,608.0]</td><td>1,609.0 [424.0–6,365.0]</td><td>1,062.0 [457.0–2,626.0]</td><td>0.34</td></tr><tr><td> Median <italic>n</italic> unique animals/practice [range]</td><td>577.0 [161.0–5,996.0]</td><td>1,031.0 [340.0–3,922.0]</td><td>740.0 [373.0–1,895.0]</td><td>0.32</td></tr><tr><td colspan="5">Main presenting complaint—% of total consultations (95% CI)</td></tr><tr><td> Vaccination</td><td>36.7 (33.0–40.5)</td><td>33.9 (31.7–36.2)</td><td>37.7 (33.9–41.4)</td><td>0.76</td></tr><tr><td> Other healthy</td><td>20.4 (16.6–24.2)</td><td>27.8 (23.7–31.9)</td><td>21.7 (18.3–25.1)</td><td>0.62</td></tr><tr><td> Post-operative check</td><td>7.9 (5.1–10.7)</td><td>6.6 (5.4–7.9)</td><td>5.8 (5.0–6.6)</td><td>0.50</td></tr><tr><td> Gastroenteric</td><td>2.3 (1.6–3.0)</td><td>2.2 (1.8–2.5)</td><td>2.2 (1.7–2.7)</td><td>0.44</td></tr><tr><td> Respiratory</td><td>1.4 (1.0–1.9)</td><td>1.2 (0.8–1.6)</td><td>1.4 (1.1–1.8)</td><td>0.36</td></tr><tr><td> Pruritus</td><td>2.5 (1.8–3.2)</td><td>2.0 (1.6–2.5)</td><td>2.3 (1.9–2.7)</td><td>0.43</td></tr><tr><td> Trauma</td><td>4.6 (3.5–5.7)</td><td>4.6 (3.7–5.5)</td><td>4.2 (3.6–4.8)</td><td>0.33</td></tr><tr><td> Tumour</td><td>0.7 (0.5–0.9)</td><td>0.9 (0.6–1.2)</td><td>0.9 (0.7–1.2)</td><td>0.43</td></tr><tr><td> Kidney disease</td><td>0.8 (0.5–1.0)</td><td>0.7 (0.6–0.9)</td><td>1.1 (0.7–1.4)</td><td>0.10</td></tr><tr><td> Other unwell</td><td>22.6 (19.3–25.9)</td><td>20.1 (17.6–22.6)</td><td>22.7 (20.4–25.1)</td><td>0.94</td></tr><tr><td colspan="5">Animal characteristics—% of total consultations (95% CI)</td></tr><tr><td> Sex: Male</td><td>48.5 (47.5–49.5)</td><td>49.0 (47.8–50.1)</td><td>49.6 (48.5–50.7)</td><td>0.38</td></tr><tr><td> Neutered</td><td>81.6 (79.0-84.3)</td><td>83.0 (80.9–85.0)</td><td>80.0 (77.1–82.9)</td><td>0.35</td></tr><tr><td> Insured</td><td>24.9 (11.1–38.6)</td><td>21.7 (14.2–29.2)</td><td>17.3 (12.1–22.5)</td><td>0.76</td></tr><tr><td> Vaccinated</td><td>68.9 (65.6–72.2)</td><td>71.5 (68.1–74.9)</td><td>72.0 (69.2–74.7)</td><td>0.39</td></tr><tr><td> Median age [range]</td><td>6.7 [0.0–26.7]</td><td>7.3 [0.0–27.0]</td><td>7.3 [0.0–26.8]</td><td>0.57</td></tr></tbody></table><table-wrap-foot><p>Practice characteristics summarised as of March 2019; statistical comparisons between groups performed via Kruskal-Wallis tests. Data is derived from 88,298 canine and 33,613 feline pre-intervention CG consultations, 107,223 canine and 39,803 feline pre-intervention LIG consultations, and 63,366 canine and 25,661 pre-intervention HIG consultations.</p><p><sup>a</sup>Full-time equivalent (40 h), inclusive of locum veterinary surgeon FTE.</p></table-wrap-foot></table-wrap></p>
+              </sec>
+              <sec id="Sec4">
+                <title>Antimicrobial prescription frequency</title>
+                <p id="Par9">Pre-intervention, 0.71% (95% confidence interval, CI, 0.57–0.86, <italic>n</italic> consultations = 88,298), 0.72% (CI 0.60–0.83, <italic>n</italic> consultations = 107,223), and 0.68% (CI 0.47–0.90, <italic>n</italic> consultations = 63,366) of canine consultations were associated with total HPCIA prescription in the CG, LIG and HIG, respectively (Table <xref rid="Tab2" ref-type="table">2</xref>). No significant variations between intervention groups were observed (<italic>P</italic> = 0.95). In cats, 7.44% CG (CI 6.27-8.61, <italic>n</italic> consultations = 33,613), 7.03% LIG (CI 6.32–7.74, <italic>n</italic> consultations = 39,803), and 8.03% HIG (CI 7.16–8.90, <italic>n</italic> consultations = 25,661) consultations were associated with total HPCIA prescription (Table <xref rid="Tab3" ref-type="table">3</xref>). No significant variations between intervention groups were observed (<italic>P</italic> = 0.48). The “respiratory”, “kidney disease” and “pruritus” MPCs in dogs, and “respiratory” and “trauma” MPCs in cats were associated with increased total HPCIA prescription frequency, relative to other MPCs.<table-wrap id="Tab2"><label>Table 2</label><caption><p>Canine antimicrobial and anti-inflammatory prescription, and euthanasia as a percentage of total canine consultations by intervention group, split into pre-intervention (August 2018–March 2019) and post-intervention (April–November 2019) phases.</p></caption><table frame="hsides" rules="groups"><thead><tr><th rowspan="2">CANINE Variable</th><th colspan="2">Control group</th><th colspan="3">Light intervention group</th><th colspan="3">Heavy intervention group</th></tr><tr><th>Pre-intervention</th><th>Post-intervention</th><th>Pre-intervention</th><th>Post-intervention</th><th><italic>P</italic></th><th>Pre-intervention</th><th>Post-intervention</th><th><italic>P</italic></th></tr></thead><tbody><tr><td colspan="9">Primary outcome</td></tr><tr><td> HPCIA<sup>a</sup></td><td>0.71 (0.57–0.86)</td><td>0.64 (0.47–0.82)</td><td>0.72 (0.60–0.83)</td><td>0.79 (0.61–0.97)</td><td>0.777</td><td>0.68 (0.47–0.90)</td><td><bold>0.49</bold> (<bold>0.37–0.61</bold>)<sup>b</sup></td><td><bold>0.044</bold></td></tr><tr><td colspan="9">Antimicrobial prescription—% of total consultations (95% confidence interval, CI)</td></tr><tr><td> Total</td><td>17.44 (16.23–18.65)</td><td>17.48 (16.02–18.95)</td><td>17.44 (16.40–18.48)</td><td>17.40 (16.33–18.46)</td><td>0.143</td><td>17.28 (16.20–18.36)</td><td><bold>15.43</bold> (<bold>13.91–16.95</bold>)</td><td><bold>0.0002</bold></td></tr><tr><td> Systemic</td><td>10.49 (9.56–11.42)</td><td>10.51 (9.45–11.58)</td><td>10.32 (9.43–11.22)</td><td>10.00 (9.05–10.95)</td><td>0.110</td><td>10.25 (9.33–11.16)</td><td><bold>8.42</bold> (<bold>7.41–9.43</bold>)</td><td><bold>0.0001</bold></td></tr><tr><td> Topical</td><td>7.58 (6.95–8.22)</td><td>7.57 (6.83–8.31)</td><td>7.79 (7.39–8.18)</td><td>7.98 (7.61–8.36)</td><td>0.912</td><td>7.61 (7.11–8.11)</td><td>7.44 (6.61–8.27)</td><td>0.173</td></tr><tr><td> Systemic HPCIA</td><td>0.40 (0.29–0.52)</td><td>0.32 (0.21–0.43)</td><td>0.39 (0.34–0.44)</td><td>0.36 (0.31–0.42)</td><td>0.575</td><td>0.51 (0.35–0.67)</td><td>0.22 (0.15–0.30)</td><td>0.099</td></tr><tr><td colspan="9">HPCIA prescription by main presenting complaint—% of relevant consultations (95% CI)</td></tr><tr><td> Vaccination</td><td>0.10 (0.06–0.14)</td><td>0.13 (0.06–0.19)</td><td>0.15 (0.10–0.19)</td><td><bold>0.21</bold> (<bold>0.11–0.31</bold>)</td><td><bold>0.012</bold></td><td>0.12 (0.04–0.20)</td><td>0.04 (0.02–0.06)</td><td>0.088</td></tr><tr><td> Other healthy</td><td>0.70 (0.45–0.95)</td><td>0.72 (0.37–1.07)</td><td>0.47 (0.30–0.63)</td><td>0.71 (0.49–0.94)</td><td>0.285</td><td>0.43 (0.27–0.59)</td><td><bold>0.31</bold> (<bold>0.19–0.43</bold>)</td><td><bold>0.008</bold></td></tr><tr><td> Post-operative check</td><td>0.75 (0.15–1.36)</td><td>0.65 (0.21–1.10)</td><td>0.62 (0.38–0.87)</td><td>0.66 (0.42–0.89)</td><td>0.305</td><td>0.53 (0.26–0.81)</td><td>0.33 (0.17–0.49)</td><td>0.869</td></tr><tr><td> Gastroenteric</td><td>0.60 (0.25–0.95)</td><td>0.09 (0.00–0.21)</td><td>0.59 (0.30–0.88)</td><td>0.40 (0.14–0.66)</td><td>0.304</td><td>1.52 (0.37–2.67)</td><td>0.39 (0.00–0.77)</td><td>0.616</td></tr><tr><td> Respiratory</td><td>2.05 (0.67–3.43)</td><td>1.56 (0.17–2.96)</td><td>1.88 (0.99–2.78)</td><td>0.73 (0.23–1.22)</td><td>0.491</td><td>2.34 (0.87–3.80)</td><td>0.34 (0.00–0.97)</td><td>0.295</td></tr><tr><td> Pruritus</td><td>1.69 (0.87–2.51)</td><td>1.23 (0.60–1.86)</td><td>2.39 (1.57–3.22)</td><td>2.23 (1.56–2.90)</td><td>0.645</td><td>1.30 (0.57–2.04)</td><td>1.20 (0.87–1.53)</td><td>0.764</td></tr><tr><td> Trauma</td><td>0.55 (0.25–0.86)</td><td>0.25 (0.06–0.45)</td><td>0.49 (0.24–0.74)</td><td>0.62 (0.32–0.93)</td><td>0.232</td><td>0.61 (0.36–0.87)</td><td>0.60 (0.30–0.90)</td><td>0.260</td></tr><tr><td> Tumour</td><td>0.71 (0.38–1.04)</td><td>0.68 (0.19–1.16)</td><td>0.62 (0.11–1.14)</td><td>0.30 (0.00–0.60)</td><td>0.130</td><td>0.87 (0.25–1.48)</td><td>0.15 (0.00–0.33)</td><td>0.109</td></tr><tr><td> Kidney disease</td><td>2.06 (0.16–3.97)</td><td>1.03 (0.00–2.52)</td><td>1.22 (0.00–2.59)</td><td>2.11 (0.56–3.65)</td><td>0.997</td><td>4.65 (1.46–7.83)</td><td>1.60 (0.37–2.83)</td><td>0.989</td></tr><tr><td> Other unwell</td><td>1.39 (1.11–1.68)</td><td>1.32 (1.05–1.58)</td><td>1.58 (1.08–2.08)</td><td>1.60 (1.02–2.17)</td><td>0.981</td><td>1.44 (0.88–2.00)</td><td>1.20 (0.89–1.50)</td><td>0.354</td></tr><tr><td colspan="9">Other prescriptions—% of total consultations (95% CI)</td></tr><tr><td> Anti-inflammatory</td><td>20.26 (18.99–21.54)</td><td>20.62 (19.46–21.79)</td><td>19.91 (18.86–20.95)</td><td>19.89 (18.16–21.02)</td><td>0.977</td><td>21.41 (19.90–22.92)</td><td>21.05 (19.53–22.57)</td><td>0.668</td></tr><tr><td> Euthanasia</td><td>0.99 (0.80–1.18)</td><td>1.04 (0.81–1.26)</td><td>1.09 (0.90–1.29)</td><td>1.16 (0.94–1.38)</td><td>0.541</td><td>1.07 (0.95–1.19)</td><td>1.15 (1.01–1.29)</td><td>0.553</td></tr></tbody></table><table-wrap-foot><p>Antimicrobial prescription considered in total, by authorised administration route, and by priority classification; the latter also being summarised by main presenting complaint. Also included are <italic>P</italic> value outputs of a series of mixed effects panel regression models, modelling prescription category against intervention group, pre- and post-intervention. Full regression model outputs are available in Supplementary Tables <xref rid="MOESM1" ref-type="media">2</xref> (Antimicrobial prescription), 7 (HPCIA prescription by main presenting complaint) and 9 (other prescriptions). Multiple authorised administration route antimicrobials can be prescribed in a single consultation. Data is derived from 88,298 pre-intervention and 81,582 post-intervention CG consultations; 107,223 pre-intervention and 105,518 post-intervention LIG consultations, and 63,366 pre-intervention and 63,301 post-intervention HIG consultations.</p><p><sup>a</sup>Highest priority critically important antimicrobial.</p><p><sup>b</sup>Emboldened text refers to findings which were found to be significantly different on comparison to the control group.</p></table-wrap-foot></table-wrap><table-wrap id="Tab3"><label>Table 3</label><caption><p>Feline antimicrobial and anti-inflammatory prescription, and euthanasia as a percentage of total feline consultations by intervention group, split into pre-intervention (August 2018–March 2019) and post-intervention (April–November 2019) phases.</p></caption><table frame="hsides" rules="groups"><thead><tr><th rowspan="2">FELINE Variable</th><th colspan="2">Control group</th><th colspan="3">Light intervention group</th><th colspan="3">Heavy intervention group</th></tr><tr><th>Pre-intervention</th><th>Post-intervention</th><th>Pre-intervention</th><th>Post-intervention</th><th><italic>P</italic></th><th>Pre-intervention</th><th>Post-intervention</th><th><italic>P</italic></th></tr></thead><tbody><tr><td colspan="9">Primary outcome</td></tr><tr><td> HPCIA<sup>a</sup></td><td>7.44 (6.27–8.61)</td><td>7.37 (6.02–8.72)</td><td>7.03 (6.32–7.74)</td><td><bold>6.14</bold> (<bold>5.29–6.99</bold>)<sup>b</sup></td><td><bold>0.030</bold></td><td>8.03 (7.16–8.90)</td><td><bold>4.35</bold> (<bold>3.41</bold>–<bold>5.29</bold>)</td><td><bold>&lt;0.0001</bold><sup>c</sup></td></tr><tr><td colspan="9">Antimicrobial prescription—% of total consultations (95% confidence interval, CI)</td></tr><tr><td> Total</td><td>16.68 (15.19–18.17)</td><td>16.62 (15.35–17.88)</td><td>14.97 (13.46–16.49)</td><td>14.78 (13.35–16.20)</td><td>0.103</td><td>15.26 (14.34–16.18)</td><td><bold>14.06</bold> (<bold>12.59–15.52</bold>)</td><td><bold>0.002</bold></td></tr><tr><td> Systemic</td><td>14.08 (12.60–15.55)</td><td>13.84 (12.61–15.08)</td><td>12.43 (11.13–13.74)</td><td>12.00 (10.64–13.36)</td><td>0.098</td><td>12.75 (11.91–13.58)</td><td><bold>11.31 (9.93–12.68)</bold></td><td><bold>0.002</bold></td></tr><tr><td> Topical</td><td>3.03 (2.70–3.35)</td><td>3.27 (2.94–3.60)</td><td>2.98 (2.64–3.33)</td><td>3.18 (2.90–3.45)</td><td>0.297</td><td>2.95 (2.62–3.28)</td><td>3.12 (2.84–3.40)</td><td>0.073</td></tr><tr><td> Systemic HPCIA</td><td>7.35 (6.12–8.58)</td><td>7.29 (5.98–8.59)</td><td>6.93 (6.23–7.63)</td><td><bold>6.05</bold> (<bold>5.19–6.91</bold>)</td><td><bold>0.026</bold></td><td>7.95 (7.08–8.82)</td><td><bold>4.25</bold> (<bold>3.31–5.20</bold>)</td><td><bold>&lt;0.0001</bold><sup>d</sup></td></tr><tr><td colspan="9">HPCIA prescription by main presenting complaint—% of relevant consultations (95% CI)</td></tr><tr><td> Vaccination</td><td>0.76 (0.34–1.19)</td><td>1.04 (0.54–1.55)</td><td>1.02 (0.51–1.52)</td><td>1.14 (0.54–1.74)</td><td>0.933</td><td>1.35 (0.35–2.36)</td><td>0.59 (0.39–0.78)</td><td>0.090</td></tr><tr><td> Other healthy</td><td>5.17 (3.42–6.93)</td><td>6.29 (4.34–8.25)</td><td>5.65 (4.49–6.82)</td><td>5.06 (3.89–6.23)</td><td>0.179</td><td>5.92 (4.29–7.55)</td><td><bold>3.60</bold> (<bold>2.16–5.04</bold>)</td><td><bold>0.001</bold></td></tr><tr><td> Post-operative check</td><td>5.81 (1.88–9.75)</td><td>5.65 (0.96–10.35)</td><td>3.50 (2.06–4.94)</td><td>3.42 (2.45–4.38)</td><td>0.742</td><td>4.54 (3.05–6.03)</td><td>3.11 (1.83–4.39)</td><td>0.833</td></tr><tr><td> Gastroenteric</td><td>4.86 (3.19–6.53)</td><td>4.26 (1.78–6.74)</td><td>4.45 (2.34–6.56)</td><td>3.18 (1.29–5.08)</td><td>0.672</td><td>6.44 (4.00–8.88)</td><td>2.27 (0.94–3.61)</td><td>0.306</td></tr><tr><td> Respiratory</td><td>27.35 (20.07–34.63)</td><td>25.05 (14.19–35.90)</td><td>24.99 (19.21–30.77)</td><td>17.93 (12.92–22.95)</td><td>0.691</td><td>32.19 (24.15–40.23)</td><td>13.46 (7.54–19.38)</td><td>0.062</td></tr><tr><td> Pruritus</td><td>15.71 (11.25–20.17)</td><td>14.93 (9.64–20.22)</td><td>17.76 (13.63–21.90)</td><td>13.73 (10.77–16.69)</td><td>0.311</td><td>19.70 (14.05–25.35)</td><td>9.57 (5.73–13.41)</td><td>0.066</td></tr><tr><td> Trauma</td><td>28.86 (22.65–35.08)</td><td>26.96 (21.66–32.26)</td><td>27.39 (24.18–30.60)</td><td>23.08 (17.89–28.27)</td><td>0.202</td><td>29.19 (24.71–33.66)</td><td><bold>13.96</bold> (<bold>9.63–18.28</bold>)</td><td><bold>0.001</bold></td></tr><tr><td> Tumour</td><td>13.20 (10.09–16.32)</td><td>13.77 (9.30–18.23)</td><td>12.03 (9.25<bold>–</bold>14.82)</td><td>8.62 (5.86–11.38)</td><td>0.059</td><td>13.24 (8.80–17.68)</td><td>7.25 (4.10–10.39)</td><td>0.095</td></tr><tr><td> Kidney disease</td><td>15.28 (7.27–23.28)</td><td>15.10 (6.75–23.45)</td><td>13.02 (8.34–17.69)</td><td>10.08 (7.05–13.12)</td><td>0.420</td><td>15.69 (11.67–19.71)</td><td>9.83 (4.87–13.79)</td><td>0.412</td></tr><tr><td> Other unwell</td><td>14.13 (11.79–16.47)</td><td>12.98 (10.98–14.91)</td><td>13.25 (11.49–15.01)</td><td>11.58 (9.94–13.21)</td><td>0.382</td><td>14.99 (13.01–16.97)</td><td><bold>8.13</bold> (<bold>6.14</bold>–<bold>10.12</bold>)</td><td><bold>0.001</bold></td></tr><tr><td colspan="9">Other prescriptions—% of total consultations (95% CI)</td></tr><tr><td> Anti-inflammatory</td><td>19.03 (17.12–20.93)</td><td>19.46 (18.17–20.76)</td><td>17.50 (16.23–18.76)</td><td>17.81 (16.68–18.93)</td><td>0.321</td><td>18.67 (17.06–20.28)</td><td>18.71 (17.16–20.25)</td><td>0.578</td></tr><tr><td> Euthanasia</td><td>2.14 (1.64–2.65)</td><td>2.15 (1.64–2.65)</td><td>2.29 (1.99–2.58)</td><td>2.33 (1.97–2.68)</td><td>0.684</td><td>2.13 (1.89–2.38)</td><td>2.29 (1.89–2.70)</td><td>0.645</td></tr></tbody></table><table-wrap-foot><p>Antimicrobial prescription considered in total, by authorised administration route, and by priority classification; the latter also being summarised by main presenting complaint. Also included are <italic>P</italic> value outputs of a series of mixed effects panel regression models, modelling prescription category against intervention group, pre- and post-intervention. Full regression model outputs are available in Supplementary Tables <xref rid="MOESM1" ref-type="media">3</xref> (Antimicrobial prescription), 8 (HPCIA prescription by main presenting complaint) and 9 (other prescriptions). Multiple authorised administration route antimicrobials can be prescribed in a single consultation. Data is derived from 33,613 pre-intervention and 30,632 post-intervention CG consultations; 39,803 pre-intervention and 37,339 post-intervention LIG consultations, and 25,661 pre-intervention and 25,808 post-intervention HIG consultations.</p><p><sup>a</sup>Highest priority critically important antimicrobial.</p><p><sup>b</sup>Emboldened text refers to findings which were found to be significantly different on comparison to the control group.</p><p><sup>c</sup>0.0000006.</p><p><sup>d</sup>0.0000005.</p></table-wrap-foot></table-wrap></p>
+                <p id="Par10">Post-intervention, HIG canine total HPCIA prescription frequency significantly reduced by 23.5% (0.49% of canine HIG consultations, CI 0.37–0.61, <italic>P</italic> = 0.04, <italic>n</italic> consultations = 63,301), but no significant change was observed in the LIG (0.79% of canine LIG consultations, CI 0.61-0.97, <italic>P</italic> = 0.78, <italic>n</italic> consultations = 105,518), compared to the CG (0.64% of canine CG consultations, CI 0.47–0.82, <italic>n</italic> consultations = 81,582) (Table <xref rid="Tab2" ref-type="table">2</xref>; full model results Supplementary Table <xref rid="MOESM1" ref-type="media">2</xref>). For cats, a significant 39.0% and 16.7% decrease in HPCIA prescription frequency was observed in both the HIG (4.35% of feline HIG consultations, CI 3.41–5.29, <italic>P</italic> &lt; 0.01, <italic>n</italic> consultations = 25,808), and LIG (6.14% of feline LIG consultations, CI 5.29-7.00, <italic>P</italic> = 0.03, <italic>n</italic> consultations = 37,339), respectively, compared to the CG (7.37% of feline CG consultations, CI 6.02–8.72, <italic>n</italic> consultations = 30,362) (Table <xref rid="Tab3" ref-type="table">3</xref>; full model results Supplementary Table <xref rid="MOESM1" ref-type="media">3</xref>). Both models provided a good fit to underlying data, with the fixed terms explaining 10% of canine and 40% of feline variance (Supplementary Table <xref rid="MOESM1" ref-type="media">2</xref> and <xref rid="MOESM1" ref-type="media">3</xref>). Fourteen and twenty HIG practices recorded post-intervention total HPCIA prescription frequency decreases in dogs (Fig. <xref rid="Fig2" ref-type="fig">2A</xref>) and cats (Fig. <xref rid="Fig3" ref-type="fig">3A</xref>), respectively. In the LIG, nine and sixteen practices were associated with post-intervention HPCIA prescription frequency reductions in dogs and cats respectively, whereas in the CG, ten practices were associated with post-intervention HPCIA prescription frequency reductions in both species.<fig id="Fig2"><label>Fig. 2</label><caption><title>Canine highest priority critically important antimicrobial prescription frequency.</title><p>Canine highest priority critically important antimicrobial (HPCIA) prescription frequency as a percentage of total consultations, measured by (<bold>a</bold>) practice pre-intervention (August 2018–March 2019 inclusive) and post-intervention (April–November 2019 inclusive), and (<bold>b</bold>) month. Lines in plot a refer to linear regression fits, modelling intervention status by practice, with lines referring to regression fit estimates around a 95% confidence interval (shaded region). An asterisk refers to the two practices in the HIG which declined to participate in the post-benchmarking intervention reflection and education programme. Lines in plot b refer to HPCIA prescription frequency as a percentage of total consultations; the red solid line in both plots a and b refers to findings from the control group (CG); the blue hashed line refers to the light intervention group (LIG), and the green dotted line refers to the heavy intervention group (HIG). The orange dashed line in plot b shows the month at which the initial notification took place, and the orange solid box outlines the months in which the HIG could access further support if requested. Shaded regions refer to 95% confidence intervals. Data is derived from 88,298 pre-intervention and 81,582 post-intervention CG consultations; 107,223 pre-intervention and 105,518 post-intervention LIG consultations, and 63,366 pre-intervention and 63,301 post-intervention HIG consultations.</p></caption><graphic xlink:href="41467_2021_21864_Fig2_HTML" id="d32e2472"/></fig><fig id="Fig3"><label>Fig. 3</label><caption><title>Feline highest priority critically important antimicrobial prescription frequency.</title><p>Feline highest priority critically important antimicrobial (HPCIA) prescription frequency as a percentage of total consultations, measured by (<bold>a</bold>) practice pre-intervention (August 2018–March 2019 inclusive) and post-intervention (April–November 2019 inclusive), and (<bold>b</bold>) month. Lines in plot a refer to linear regression fits, modelling intervention status by practice, with lines referring to regression fit estimates around a 95% confidence interval (shaded region). An asterisk refers to practices in the HIG which declined to participate in the post-benchmarking intervention reflection and education programme. Lines in plot b refer to HPCIA prescription frequency as a percentage of total consultations; the red solid line in both plots a and b refers to findings from the control group; the blue hashed line refers to the light intervention group, and the green dotted line refers to the heavy intervention group (HIG). The orange dashed line in panel b shows the month at which the initial notification took place, and the orange solid box outlines the months in which the HIG could access further support if requested. Shaded regions refer to 95% confidence intervals. Data is derived from 33,613 pre-intervention and 30,632 post-intervention CG consultations; 39,803 pre-intervention and 37,339 post-intervention LIG consultations, and 25,661 pre-intervention and 25,808 post-intervention HIG consultations.</p></caption><graphic xlink:href="41467_2021_21864_Fig3_HTML" id="d32e2489"/></fig></p>
+                <p id="Par11">Regarding HIG month-by-month variation, significant reductions in total HPCIA prescription frequency were observed for three and eight post-intervention months in dogs (Table <xref rid="Tab4" ref-type="table">4</xref>; Fig. <xref rid="Fig2" ref-type="fig">2B</xref>; full model results Supplementary Table <xref rid="MOESM1" ref-type="media">4</xref>) and cats (Table <xref rid="Tab4" ref-type="table">4</xref>; Fig. <xref rid="Fig3" ref-type="fig">3B</xref>; full model results Supplementary Table <xref rid="MOESM1" ref-type="media">5</xref>), respectively, with a particularly steep decline being observed between March and April 2019 in cats. The LIG was associated with a significant HPCIA prescription frequency reduction in cats in June and November 2019, compared to the CG. Addition of temporal fixed terms was found to improve model fit (Supplementary Table <xref rid="MOESM1" ref-type="media">4</xref> and <xref rid="MOESM1" ref-type="media">5</xref>). Overall, no significant temporal variation in HPCIA prescription frequency was observed in the CG in either species, whereas a significant linear reduction was observed in both dogs (<italic>P</italic> = 0.005) and cats (<italic>P</italic> &lt; 0.001) in the HIG. Whereas in the LIG a significant HPCIA prescription frequency linear reduction was observed for cats (<italic>P</italic> = 0.01), no significant trend was observed for dogs (full model results Supplementary Table <xref rid="MOESM1" ref-type="media">6</xref>).<table-wrap id="Tab4"><label>Table 4</label><caption><p>Canine and feline HPCIA prescription as a percentage of total consultations, summarised by month between August 2018 and November 2019.</p></caption><table frame="hsides" rules="groups"><thead><tr><th rowspan="2">Month</th><th>Control group</th><th colspan="2">Light intervention group</th><th colspan="2">Heavy intervention group</th></tr><tr><th>HPCIA<sup>a</sup> % (CI)<sup>b</sup></th><th>HPCIA % (CI)</th><th><italic>P</italic></th><th>HPCIA % (CI)</th><th><italic>P</italic></th></tr></thead><tbody><tr><td colspan="6">CANINE</td></tr><tr><td> August, 2018 (pre-intervention)</td><td>0.73 (0.48–0.98)</td><td>0.79 (0.62–0.95)</td><td>0.369</td><td>0.62 (0.37–0.88)</td><td>0.623</td></tr><tr><td> September, 2018</td><td>0.71 (0.48–0.94)</td><td>0.77 (0.62–0.92)</td><td>0.452</td><td>0.65 (0.41–0.90)</td><td>0.741</td></tr><tr><td> October, 2018</td><td>0.78 (0.53–1.02)</td><td>0.64 (0.51–0.76)</td><td>0.174</td><td>0.56 (0.34–0.78)</td><td>0.122</td></tr><tr><td> November, 2018</td><td>0.67 (0.54–0.81)</td><td>0.66 (0.49–0.83)</td><td>1.000</td><td>0.79 (0.53–1.05)</td><td>0.780</td></tr><tr><td> December, 2018</td><td>1.00 (0.70–1.30)</td><td>0.93 (0.69–1.16)</td><td>0.639</td><td>0.83 (0.51–1.15)</td><td>0.513</td></tr><tr><td> January, 2019</td><td>0.62 (0.41–0.84)</td><td>0.84 (0.64–1.05)</td><td>0.501</td><td>0.68 (0.32–1.03)</td><td>0.129</td></tr><tr><td> February, 2019</td><td>0.75 (0.52–0.99)</td><td>0.55 (0.38–0.72)</td><td>0.164</td><td><bold>0.82</bold> (<bold>0.45</bold>–<bold>1.18</bold>)<sup>c</sup></td><td><bold>0.043</bold></td></tr><tr><td> March, 2019</td><td>0.49 (0.29–0.70)</td><td>0.56 (0.42–0.70)</td><td>0.986</td><td>0.59 (0.39–0.80)</td><td>0.418</td></tr><tr><td> April, 2019 (post-intervention)</td><td>0.60 (0.36–0.85)</td><td>0.76 (0.52–1.00)</td><td>0.909</td><td>0.49 (0.33–0.64)</td><td>0.222</td></tr><tr><td> May, 2019</td><td>0.88 (0.62–1.14)</td><td>0.78 (0.54–1.03)</td><td>0.338</td><td><bold>0.46 (0.26</bold>–<bold>0.66)</bold></td><td><bold>0.022</bold></td></tr><tr><td> June, 2019</td><td>0.63 (0.37–0.89)</td><td>0.71 (0.52–0.90)</td><td>0.437</td><td>0.49 (0.27–0.72)</td><td>0.220</td></tr><tr><td> July, 2019</td><td>0.43 (0.26–0.60)</td><td>0.69 (0.48–0.89)</td><td>0.536</td><td>0.56 (0.36–0.77)</td><td>0.399</td></tr><tr><td> August, 2019</td><td>0.79 (0.54–1.04)</td><td>0.95 (0.74–1.16)</td><td>0.568</td><td><bold>0.37</bold> (<bold>0.18</bold>–<bold>0.56</bold>)</td><td><bold>0.005</bold></td></tr><tr><td> September, 2019</td><td>0.66 (0.42–0.90)</td><td>0.77 (0.52–1.01)</td><td>0.382</td><td><bold>0.38</bold> (<bold>0.23</bold>–<bold>0.53</bold>)</td><td><bold>0.042</bold></td></tr><tr><td> October, 2019</td><td>0.61 (0.43–0.78)</td><td>0.90 (0.68–1.11)</td><td>0.335</td><td>0.65 (0.41–0.89)</td><td>0.910</td></tr><tr><td> November, 2019</td><td>0.53 (0.25–0.81)</td><td>0.78 (0.52–1.04)</td><td>0.912</td><td>0.50 (0.24–0.76)</td><td>0.322</td></tr><tr><td colspan="6">FELINE</td></tr><tr><td> August, 2018 (pre-intervention)</td><td>8.49 (7.42–9.57)</td><td>7.90 (7.16–8.63)</td><td>0.337</td><td>8.47 (7.41–9.53)</td><td>0.878</td></tr><tr><td> September, 2018</td><td>7.60 (5.95–9.25)</td><td>7.40 (6.45–8.35)</td><td>0.799</td><td>8.70 (7.31–10.09)</td><td>0.308</td></tr><tr><td> October, 2018</td><td>6.81 (5.55–8.07)</td><td>7.54 (6.24–8.83)</td><td>0.857</td><td>8.03 (6.73–9.33)</td><td>0.770</td></tr><tr><td> November, 2018</td><td>7.01 (5.93–8.08)</td><td>6.78 (5.66–7.90)</td><td>0.574</td><td>7.14 (5.95–8.32)</td><td>0.394</td></tr><tr><td> December, 2018</td><td>7.77 (5.65–9.89)</td><td>7.63 (6.21–9.06)</td><td>0.626</td><td>8.31 (6.88–9.73)</td><td>0.397</td></tr><tr><td> January, 2019</td><td>6.83 (5.22–8.44)</td><td>5.44 (4.51–6.37)</td><td>0.312</td><td>7.74 (6.73–8.76)</td><td>0.874</td></tr><tr><td> February, 2019</td><td>7.86 (6.10–9.62)</td><td>7.03 (6.09–7.98)</td><td>0.060</td><td>7.65 (6.47–8.82)</td><td>0.166</td></tr><tr><td> March, 2019</td><td>7.42 (6.10–8.75)</td><td>6.37 (5.58–7.15)</td><td>0.557</td><td>8.29 (6.93–9.64)</td><td>0.572</td></tr><tr><td> April, 2019 (post-intervention)</td><td>8.10 (6.50–9.69)</td><td>6.71 (5.53–7.89)</td><td>0.325</td><td><bold>4.88</bold> (<bold>3.84</bold>–<bold>5.92</bold>)</td><td><bold>0.001</bold></td></tr><tr><td> May, 2019</td><td>7.68 (6.36–9.00)</td><td>5.98 (4.76–7.20)</td><td>0.195</td><td><bold>4.77</bold> (<bold>3.32</bold>–<bold>6.22</bold>)</td><td><bold>0.001</bold></td></tr><tr><td> June, 2019</td><td>8.35 (6.00–10.70)</td><td><bold>6.69 (5.43</bold>–<bold>7.94)</bold></td><td><bold>0.033</bold></td><td><bold>3.97</bold> (<bold>2.82</bold>–<bold>5.13</bold>)</td><td><bold>&lt;0.0001</bold><sup>d</sup></td></tr><tr><td> July, 2019</td><td>6.86 (5.29–8.43)</td><td>6.34 (5.43–7.25)</td><td>0.788</td><td><bold>4.05</bold> (<bold>2.99</bold>–<bold>5.11</bold>)</td><td><bold>0.005</bold></td></tr><tr><td> August, 2019</td><td>7.49 (6.03–8.95)</td><td>6.47 (5.52–7.42)</td><td>0.110</td><td><bold>4.28</bold> (<bold>2.72</bold>–<bold>5.83</bold>)</td><td><bold>&lt;0.0001</bold><sup>e</sup></td></tr><tr><td> September, 2019</td><td>6.95 (5.61–8.30)</td><td>6.19 (4.79–7.60)</td><td>0.740</td><td><bold>4.84</bold> (<bold>3.15</bold>–<bold>6.52</bold>)</td><td><bold>0.006</bold></td></tr><tr><td> October, 2019</td><td>6.44 (5.48–7.40)</td><td>5.51 (4.70–6.33)</td><td>0.265</td><td><bold>4.27</bold> (3<bold>.41</bold>–<bold>5.12</bold>)</td><td><bold>0.020</bold></td></tr><tr><td> November, 2019</td><td>7.07 (5.30–8.83)</td><td><bold>5.16</bold> (<bold>4.26</bold>–<bold>6.07</bold>)</td><td><bold>0.019</bold></td><td><bold>3.86</bold> (<bold>2.80</bold>–<bold>4.92</bold>)</td><td><bold>0.0006</bold></td></tr></tbody></table><table-wrap-foot><p><italic>P</italic> value outputs of mixed effects panel regression, modelling intervention group against month are also included. Full regression model outputs are available in Supplementary Tables <xref rid="MOESM1" ref-type="media">4</xref> (dogs) and <xref rid="MOESM1" ref-type="media">5</xref> (cats). Data is derived from 169,880 canine and 64,245 feline CG consultations; 212,741 canine and 67,142 feline LIG consultations, and 126,667 canine and 51,469 feline HIG consultations.</p><p><sup>a</sup>Highest priority critically important antimicrobial.</p><p><sup>b</sup>95% Confidence interval.</p><p><sup>c</sup>Emboldened text refers to findings which were found to be significantly different on comparison to the control group.</p><p><sup>d</sup>0.000002.</p><p><sup>e</sup>0.00004.</p></table-wrap-foot></table-wrap></p>
+                <p id="Par12">In HIG dogs, HPCIA prescription frequency was found to significantly reduce in one MPC post-intervention (Table <xref rid="Tab2" ref-type="table">2</xref>; full model results Supplementary Table <xref rid="MOESM1" ref-type="media">7</xref>), whereas three MPCS were associated with reductions in cats (Table <xref rid="Tab3" ref-type="table">3</xref>; full model results Supplementary Table <xref rid="MOESM1" ref-type="media">8</xref>). In the LIG for dogs, no MPCS showed significant reductions in HPCIA prescription frequency, although the “vaccination” MPC was associated with a significant increase. In cats in the LIG no MPCs showed a significant reduction in HPCIA prescription frequency. Only the “other healthy” and “gastroenteric” MPCs in dogs were associated with improved fit compared to a null model in dogs, whereas six MPCs were associated with improved fits in cats.</p>
+                <p id="Par13">Considering antimicrobial prescription more broadly, the HIG was also associated with a 18.9% and 17.3% significant decrease in the percentage of dog (Table <xref rid="Tab2" ref-type="table">2</xref>; full model results Supplementary Table <xref rid="MOESM1" ref-type="media">2</xref>) and cat (Table <xref rid="Tab3" ref-type="table">3</xref>; full model results Supplementary Table <xref rid="MOESM1" ref-type="media">3</xref>) consultations prescribed a systemic antimicrobial, compared to the CG, respectively. Significant reductions in total antimicrobial prescription frequency were also observed in both species in the HIG. In terms of other pharmaceutical agents, we found no significant post-intervention group differences in anti-inflammatory prescription frequency, nor frequency of euthanasia in either species (dogs, Table <xref rid="Tab2" ref-type="table">2</xref>, Supplementary Table <xref rid="MOESM1" ref-type="media">9</xref>; cats, Table <xref rid="Tab3" ref-type="table">3</xref>, Supplementary Table <xref rid="MOESM1" ref-type="media">9</xref>).</p>
+              </sec>
+              <sec id="Sec5">
+                <title>Antimicrobial prescription choice</title>
+                <p id="Par14">A summary of antimicrobial prescription choice variation as a percentage of total antimicrobial prescriptions by class, and for beta-lactams by sub-class, is available in Table <xref rid="Tab5" ref-type="table">5</xref> (dogs; full model results Supplementary Table <xref rid="MOESM1" ref-type="media">10</xref>) and Table <xref rid="Tab6" ref-type="table">6</xref> (cats; full model results Supplementary Table <xref rid="MOESM1" ref-type="media">11</xref>), and as a percentage of total consultations in Supplementary Table <xref rid="MOESM1" ref-type="media">12</xref> (dogs) and 13 (cats). Though no comparisons were significant, there was some evidence of post-intervention increases in clavulanic acid potentiated amoxicillin prescription in cats in the HIG, overtaking 3<sup>rd</sup> generation cephalosporins as the most prescribed antimicrobial. <table-wrap id="Tab5"><label>Table 5</label><caption><p>Canine antimicrobial prescription choice as a percentage of total antimicrobial prescriptions, presented by class and for beta-lactams, by sub-class, and by intervention group split into pre- and post-intervention time periods.</p></caption><table frame="hsides" rules="groups"><thead><tr><th rowspan="2">CANINE Antimicrobial class</th><th colspan="2">Control group % (95% CI)<sup>a</sup></th><th colspan="3">Light intervention group % (95% CI)</th><th colspan="3">Heavy intervention group % (95% CI)</th></tr><tr><th>Pre-intervention</th><th>Post-intervention</th><th>Pre-intervention</th><th>Post-intervention</th><th><italic>P</italic></th><th>Pre-intervention</th><th>Post-intervention</th><th><italic>P</italic></th></tr></thead><tbody><tr><td>Aminoglycoside</td><td>10.94 (9.00–12.88)</td><td>5.50 (4.16–6.84)</td><td>10.60 (8.08–13.13)</td><td>6.17 (4.34–7.99)</td><td>0.444</td><td>9.81 (7.71–11.90)</td><td>6.04 (3.11–8.97)</td><td>0.699</td></tr><tr><td>Amphenicol</td><td>7.14 (4.88–9.39)</td><td>8.28 (6.22–10.33)</td><td>5.38 (3.44–7.31)</td><td>7.37 (5.23–9.51)</td><td>0.618</td><td>6.60 (4.21–8.99)</td><td>8.03 (4.85–11.21)</td><td>0.281</td></tr><tr><td>Beta-lactam<sup>b</sup></td><td>41.71 (37.35–46.07)</td><td>44.84 (41.34–48.34)</td><td>43.48 (40.85–46.11)</td><td>45.15 (41.97–48.32)</td><td>0.259</td><td>41.87 (39.20–44.53)</td><td>41.83 (38.81–44.86)</td><td>0.204</td></tr><tr><td><italic>Amoxicillin</italic></td><td><italic>5.27 (0.58–9.97)</italic></td><td><italic>4.00 (0.11–7.89)</italic></td><td><italic>4.58 (2.21–6.94)</italic></td><td><italic>4.09 (1.84–6.33)</italic></td><td><italic>0.684</italic></td><td><italic>6.83 (1.49–12.18)</italic></td><td><italic>5.36 (1.54–9.18)</italic></td><td><italic>0.849</italic></td></tr><tr><td><italic>Clavulanic acid potentiated amoxicillin</italic></td><td><italic>73.80 (69.84–77.76)</italic></td><td><italic>73.93 (69.43–78.43)</italic></td><td><italic>73.31 (68.49–78.14)</italic></td><td><italic>76.84 (71.08–82.60)</italic></td><td><italic>0.178</italic></td><td><italic>74.46 (69.46–79.46)</italic></td><td><italic>78.44 (72.21–84.68)</italic></td><td><italic>0.242</italic></td></tr><tr><td><italic>1st</italic><italic>generation cephalosporin</italic></td><td><italic>18.85 (14.87–22.83)</italic></td><td><italic>20.73 (16.50–24.95)</italic></td><td><italic>20.43 (15.65–25.22)</italic></td><td><italic>17.55 (12.70–22.40)</italic></td><td><italic>0.711</italic></td><td><italic>16.13 (13.14–19.11)</italic></td><td><italic>15.17 (11.23–19.11)</italic></td><td><italic>0.125</italic></td></tr><tr><td><italic>2nd</italic><italic>generation cephalosporin</italic></td><td><italic>0.10 (0.00–0.19)</italic></td><td><italic>0.07 (0.01–0.13)</italic></td><td><italic>0.06 (0.00–0.13)</italic></td><td><italic>0.05 (0.00–0.12)</italic></td><td><italic>1.000</italic></td><td><italic>0.29 (0.03–0.54)</italic></td><td><italic>0.02 (0.00–0.06)</italic></td><td><italic>0.482</italic></td></tr><tr><td><italic>3rd</italic><italic>generation cephalosporin</italic><sup>c</sup></td><td><italic>1.71 (1.13–2.30)</italic></td><td><italic>1.10 (0.65–1.54)</italic></td><td><italic>1.31 (0.83–1.80)</italic></td><td><italic>1.35 (0.85–1.84)</italic></td><td><italic>0.165</italic></td><td><italic>2.24 (1.61–2.86)</italic></td><td><italic>0.97 (0.50–1.45)</italic></td><td><italic>0.355</italic></td></tr><tr><td><italic>Penicillin</italic></td><td><italic>–</italic></td><td><italic>–</italic></td><td><italic>–</italic></td><td><italic>0.01 (0.00–0.03)</italic></td><td><italic>0.296</italic></td><td><italic>0.02 (0.00–0.05)</italic></td><td><italic>–</italic></td><td><italic>0.117</italic></td></tr><tr><td><italic>Other beta-lactams</italic></td><td><italic>0.38 (0.00–0.92)</italic></td><td><italic>0.09 (0.00–0.24)</italic></td><td><italic>0.30 (0.00–0.62)</italic></td><td><italic>0.15 (0.00–0.36)</italic></td><td><italic>0.644</italic></td><td><italic>0.09 (0.00–0.26)</italic></td><td><italic>–</italic></td><td><italic>0.729</italic></td></tr><tr><td>Fluoroquinolone<sup>c</sup></td><td>2.75 (2.17–3.33)</td><td>2.92 (2.18–3.66)</td><td>2.97 (2.32–3.62)</td><td>3.53 (2.57–4.49)</td><td>0.086</td><td>2.50 (1.51–3.49)</td><td>2.54 (1.88–3.21)</td><td>0.253</td></tr><tr><td>Fusidic acid</td><td>18.03 (16.35–19.71)</td><td>13.39 (11.78–15.00)</td><td>19.40 (18.24–20.56)</td><td>15.03 (13.06–17.01)</td><td>0.209</td><td>19.97 (18.74–21.19)</td><td>18.02 (15.82–20.21)</td><td>0.862</td></tr><tr><td>Lincosamide</td><td>3.96 (2.76–5.17)</td><td>3.89 (2.69–5.09)</td><td>2.73 (2.06–3.40)</td><td>2.20 (1.61–2.79)</td><td>0.397</td><td>3.55 (2.32–4.78)</td><td>3.20 (2.35–4.04)</td><td>0.182</td></tr><tr><td>Macrolide<sup>c</sup></td><td>0.03 (0.01–0.06)</td><td>0.03 (0.00–0.05)</td><td>0.04 (0.01–0.08)</td><td>0.03 (0.01–0.06)</td><td>0.423</td><td>0.03 (0.00–0.06)</td><td>0.02 (0.00–0.04)</td><td>0.593</td></tr><tr><td>Nitroimidazole</td><td>6.83 (4.96–8.70)</td><td>7.46 (5.83–9.09)</td><td>5.52 (3.73–7.31)</td><td>6.13 (4.53–7.72)</td><td>0.824</td><td>6.21 (4.27–8.15)</td><td>5.65 (4.28–8.83)</td><td>0.209</td></tr><tr><td>Nitroimidazole-macrolide</td><td>0.20 (0.05–0.34)</td><td>0.19 (0.07–0.32)</td><td>0.29 (0.06–0.51)</td><td>0.34 (0.08–0.60)</td><td>0.280</td><td>0.44 (0.00–1.10)</td><td>0.21 (0.00–0.46)</td><td>0.813</td></tr><tr><td>Other antimicrobials</td><td>7.12 (5.29–8.95)</td><td>12.56 (10.68–14.44)</td><td>8.86 (6.71–11.00)</td><td>13.45 (11.28–15.61)</td><td>0.137</td><td>8.25 (7.12–9.38)</td><td>12.76 (10.88–14.65)</td><td>0.253</td></tr><tr><td>Sulphonamide</td><td>0.05 (0.00–0.11)</td><td>–</td><td>0.02 (0.00–0.05)</td><td>–</td><td>1.000</td><td>0.06 (0.00–0.13)</td><td>0.05 (0.00–0.12)</td><td>0.232</td></tr><tr><td>Tetracycline</td><td>1.25 (0.81–1.70)</td><td>0.99 (0.41–1.56)</td><td>0.71 (0.46–0.95)</td><td>0.61 (0.38–0.84)</td><td>0.612</td><td>0.69 (0.38–1.00)</td><td>0.81 (0.45–1.17)</td><td>0.317</td></tr></tbody></table><table-wrap-foot><p>Also included are <italic>P</italic> value outputs of a series of mixed effects panel regression models, modelling antimicrobial class or sub-class against intervention group, pre- and post-intervention. Full regression model outputs are available in Supplementary Table <xref rid="MOESM1" ref-type="media">10</xref>. Data is derived from 18,599 pre-intervention and 15,966 post-intervention CG antimicrobial prescriptions; 22,678 pre-intervention and 20,827 post-intervention LIG antimicrobial prescriptions, and 13,199 pre-intervention and 11,024 post-intervention HIG antimicrobial prescriptions.</p><p><sup>a</sup>95% Confidence interval.</p><p><sup>b</sup>Findings presented in italics are expressed as a percentage of total beta-lactam prescription within intervention groups i.e., in the control group pre-intervention, amoxicillin comprised 5.3% of beta-lactam prescriptions.</p><p><sup>c</sup>Highest Priority Critically Important Antimicrobial.</p></table-wrap-foot></table-wrap><table-wrap id="Tab6"><label>Table 6</label><caption><p>Feline antimicrobial prescription choice as a percentage of total antimicrobial prescriptions, presented by class and for beta-lactams, by sub-class, and by intervention group split into pre- and post-intervention time periods.</p></caption><table frame="hsides" rules="groups"><thead><tr><th rowspan="2">FELINE Antimicrobial class</th><th colspan="2">Control group % (95% CI)<sup>a</sup></th><th colspan="3">Light intervention group % (95% CI)</th><th colspan="3">Heavy intervention group % (95% CI)</th></tr><tr><th>Pre-intervention</th><th>Post-intervention</th><th>Pre-intervention</th><th>Post-intervention</th><th><italic>P</italic></th><th>Pre-intervention</th><th>Post-intervention</th><th><italic>P</italic></th></tr></thead><tbody><tr><td>Aminoglycoside</td><td>3.36 (2.54–4.18)</td><td>1.89 (0.97–2.81)</td><td>3.95 (2.77–5.13)</td><td>2.31 (1.38–3.23)</td><td>0.515</td><td>3.62 (2.74–4.49)</td><td>2.25 (1.55–2.95)</td><td>0.837</td></tr><tr><td>Amphenicol</td><td>2.50 (0.80–4.20)</td><td>3.42 (1.76–5.08)</td><td>1.91 (1.48–2.35)</td><td>1.91 (1.44–2.40)</td><td>0.318</td><td>1.92 (1.07–2.77)</td><td>3.05 (1.87–4.22)</td><td>0.363</td></tr><tr><td>Beta-lactam<sup>b</sup></td><td>74.53 (69.92–79.14)</td><td>74.82 (71.43–78.20)</td><td>73.08 (71.04–75.12)</td><td>73.49 (70.69–76.29)</td><td>0.742</td><td>70.63 (67.22–74.05)</td><td>71.29 (68.72–73.86)</td><td>0.277</td></tr><tr><td><italic>Amoxicillin</italic></td><td><italic>9.11 (1.96–16.25)</italic></td><td><italic>6.76 (1.20–12.32)</italic></td><td><italic>6.95 (2.49–11.41)</italic></td><td><italic>6.73 (2.31–11.16)</italic></td><td><italic>0.931</italic></td><td><italic>6.84 (3.70–9.99)</italic></td><td><italic>9.33 (4.86–13.80)</italic></td><td><italic>0.957</italic></td></tr><tr><td><italic>Clavulanic acid potentiated amoxicillin</italic></td><td><italic>37.80 (28.44–47.16)</italic></td><td><italic>40.12 (31.32–48.93)</italic></td><td><italic>37.07 (30.73–43.40)</italic></td><td><italic>43.17 (36.18–50.15)</italic></td><td><italic>0.636</italic></td><td><italic>29.14 (23.72–34.57)</italic></td><td><italic>52.59 (43.32–61.87)</italic></td><td><italic>0.776</italic></td></tr><tr><td><italic>1</italic><sup><italic>st</italic></sup><italic>generation cephalosporin</italic></td><td><italic>0.72 (0.43–1.00)</italic></td><td><italic>0.84 (0.47–1.21)</italic></td><td><italic>1.31 (0.33–2.29)</italic></td><td><italic>1.47 (0.54–2.40)</italic></td><td><italic>0.257</italic></td><td><italic>0.96 (0.19–1.72)</italic></td><td><italic>1.59 (0.42–2.75)</italic></td><td><italic>0.715</italic></td></tr><tr><td><italic>2</italic><sup><italic>nd</italic></sup><italic>generation cephalosporin</italic></td><td><italic>0.02 (0.00–0.06)</italic></td><td><italic>0.05 (0.00–0.14)</italic></td><td><italic>0.04 (0.00–0.13)</italic></td><td><italic>0.02 (0.00–0.07)</italic></td><td><italic>0.612</italic></td><td><italic>–</italic></td><td><italic>0.07 (0.00–0.16)</italic></td><td><italic>1.000</italic></td></tr><tr><td><italic>3</italic><sup><italic>rd</italic></sup><italic>generation cephalosporin</italic><sup><italic>c</italic></sup></td><td><italic>52.45 (42.80–62.09)</italic></td><td><italic>52.09 (42.00–62.17)</italic></td><td><italic>54.57 (45.64–63.51)</italic></td><td><italic>48.72 (41.97–55.48)</italic></td><td><italic>0.908</italic></td><td><italic>63.11 (57.45–68.77)</italic></td><td><italic>36.43 (29.10–43.75)</italic></td><td><italic>0.057</italic></td></tr><tr><td><italic>Penicillin</italic></td><td><italic>0.06 (0.00–0.15)</italic></td><td><italic>0.10 (0.00–0.32)</italic></td><td><italic>0.02 (0.00–0.05)</italic></td><td><italic>–</italic></td><td><italic>0.182</italic></td><td><italic>0.03 (0.00–0.09)</italic></td><td><italic>–</italic></td><td><italic>0.182</italic></td></tr><tr><td><italic>Other beta-lactams</italic></td><td><italic>–</italic></td><td><italic>–</italic></td><td><italic>–</italic></td><td><italic>–</italic></td><td><italic>–</italic></td><td><italic>–</italic></td><td><italic>–</italic></td><td><italic>–</italic></td></tr><tr><td>Fluoroquinolone<sup>c</sup></td><td>0.96 (0.56–1.36)</td><td>1.16 (0.88–1.44)</td><td>1.55 (1.10–2.01)</td><td>1.29 (0.92–1.66)</td><td>0.708</td><td>3.14 (1.00–5.29)</td><td>1.47 (0.87–2.07)</td><td>0.894</td></tr><tr><td>Fusidic acid</td><td>10.50 (9.00–12.01)</td><td>9.19 (7.65–10.73)</td><td>11.53 (10.36–12.70)</td><td>11.58 (9.92–13.24)</td><td>0.217</td><td>11.79 (10.68–12.91)</td><td>11.82 (10.03–13.61)</td><td>0.880</td></tr><tr><td>Lincosamide</td><td>3.06 (1.61–4.51)</td><td>2.91 (1.67–4.16)</td><td>3.04 (1.14–4.93)</td><td>2.93 (1.02–4.83)</td><td>0.808</td><td>2.81 (1.88–3.75)</td><td>3.37 (2.23–4.52)</td><td>0.808</td></tr><tr><td>Macrolide<sup>c</sup></td><td>–</td><td>0.02 (0.00–0.06)</td><td>–</td><td>–</td><td>0.317</td><td>0.02 (0.00–0.07)</td><td>0.03 (0.00–0.08)</td><td>1.000</td></tr><tr><td>Nitroimidazole</td><td>1.11 (0.57–1.66)</td><td>1.08 (0.60–1.56)</td><td>0.59 (0.31–0.87)</td><td>0.75 (0.50–1.00)</td><td>0.509</td><td>1.44 (0.91–1.97)</td><td>1.21 (0.75–1.68)</td><td>0.637</td></tr><tr><td>Nitroimidazole-macrolide</td><td>0.32 (0.01–0.63)</td><td>0.30 (0.10–0.50)</td><td>0.12 (0.02–0.21)</td><td>0.11 (0.02–0.20)</td><td>0.347</td><td>0.31 (0.00–0.66)</td><td>0.18 (0.00–0.40)</td><td>0.347</td></tr><tr><td>Other antimicrobials</td><td>2.37 (1.60–3.13)</td><td>4.11 (3.09–5.13)</td><td>2.99 (2.45–3.53)</td><td>4.62 (3.82–5.42)</td><td>0.300</td><td>2.99 (2.39–3.59)</td><td>3.80 (2.98–4.62)</td><td>0.198</td></tr><tr><td>Sulphonamide</td><td>–</td><td>–</td><td>0.01 (0.00–0.04)</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td></tr><tr><td>Tetracycline</td><td>1.35 (0.41–2.28)</td><td>1.10 (0.38–1.83)</td><td>1.22 (0.81–1.63)</td><td>1.02 (0.61–1.42)</td><td>0.961</td><td>1.31 (0.29–2.33)</td><td>1.52 (0.64–2.40)</td><td>0.942</td></tr></tbody></table><table-wrap-foot><p>Also included are <italic>P</italic> value outputs of a series of mixed effects panel regression models, modelling antimicrobial class or sub-class against intervention group, pre- and post-intervention. Full regression model outputs are available in Supplementary Table <xref rid="MOESM1" ref-type="media">11</xref>. Data is derived from 6296 pre-intervention and 5575 post-intervention CG antimicrobial prescriptions; 6762 pre-intervention and 6183 post-intervention LIG antimicrobial prescriptions, and 4351 pre-intervention and 4107 post-intervention HIG antimicrobial prescriptions.</p><p>Also included are <italic>P</italic> value outputs of a series of mixed effects panel regression models, modelling antimicrobial class or sub-class against intervention group, pre- and post-intervention. Full regression model outputs are available in Supplementary Table <xref rid="MOESM1" ref-type="media">11</xref>. Data is derived from 6296 pre-intervention and 5575 post-intervention CG antimicrobial prescriptions; 6762 pre-intervention and 6183 post-intervention LIG antimicrobial prescriptions, and 4351 pre-intervention and 4107 post-intervention HIG antimicrobial prescriptions.</p><p><sup>a</sup>95% Confidence interval.</p><p><sup>b</sup>Highest Priority Critically Important Antimicrobial.</p><p><sup>c</sup>Findings presented in italics are expressed as a percentage of total beta-lactam prescription within intervention groups i.e., in the control group pre-intervention, amoxicillin comprised 9.1% of beta-lactam prescriptions.</p></table-wrap-foot></table-wrap></p>
+              </sec>
+              <sec id="Sec6">
+                <title>Bacterial diagnostic test frequency</title>
+                <p id="Par15">Pre-intervention there were 3,932 cytological test orders, representing 1.09% of CG (CI 0.67–1.51), 1.03% LIG (CI 0.47–1.58) and 1.18% HIG (CI 0.54–1.83) consultations. Of 4,783 post-intervention cytological test orders, 1.29% of CG (CI 0.77–1.81), 1.31% LIG (CI 0.51–2.11) and 1.60% HIG (CI 1.03–2.17) post-intervention consultations were associated with an order. However, no significant increase was observed, compared to the CG (LIG <italic>P</italic> = 0.53; HIG <italic>P</italic> = 0.89).</p>
+                <p id="Par16">Pre-intervention, there were 4517 bacterial culture and susceptibility test orders, representing 1.16% of CG (CI 0.77–1.55), 1.01% LIG (CI 0.64–1.39) and 1.76% HIG (CI 1.05–2.47) consultations. Of 4623 post-intervention bacterial culture and susceptibility test orders, 1.19% of CG (CI 0.83–1.55), 1.12% LIG (CI 0.68–1.55) and 1.81% HIG (CI 1.20–2.42) post-intervention consultations were associated with an order. However, no significant increase was observed, compared to the CG (LIG <italic>P</italic> = 0.94; HIG <italic>P</italic> = 0.20). Full regression model results for both comparisons are available in Supplementary Table <xref rid="MOESM1" ref-type="media">9</xref>; neither model provided improved fit compared to a null model.</p>
+              </sec>
+              <sec id="Sec7">
+                <title>Use of antimicrobial prescription benchmarking portal</title>
+                <p id="Par17">Prior to the intervention (1st February–27th March 2019 inclusive), there was no significant variation between practices logging into their antimicrobial benchmarking portal: CG (<italic>n</italic> = 0), LIG (<italic>n</italic> = 3) and HIG (<italic>n</italic> = 3) (Fisher’s Exact Test, <italic>P</italic> = 0.23). Post-intervention (1st April – 30th November 2019 inclusive) however, significant variation was observed between practices logging into the portal within the CG (<italic>n</italic> = 3), LIG (<italic>n</italic> = 8) and HIG (<italic>n</italic> = 16), respectively (Fisher’s Exact Test, <italic>P</italic> &lt; 0.001), with significant variation being observed between both the CG and HIG (<italic>P</italic> &lt; 0.001), and LIG and HIG (<italic>P</italic> = 0.03), but not between the CG and LIG (<italic>P</italic> = 0.16). The two HIG practices that declined further participation did not interact with their portal pre- or post-intervention. A pronounced increase in LIG and HIG practice portal engagement was observed in April 2019, declining towards the end of the trial (Fig. <xref rid="Fig4" ref-type="fig">4</xref>).<fig id="Fig4"><label>Fig. 4</label><caption><title>SAVSNET antimicrobial prescription benchmarking portal engagement.</title><p>Number of practices logging into the SAVSNET antimicrobial prescription benchmarking portal by month (February–November 2019 inclusive) and intervention group. The purple boxes refer to findings from the control group (<italic>n</italic> = 20 practices); the blue boxes refer to the light intervention group (<italic>n</italic> = 20 practices), and the green orange boxes refer to the heavy intervention group (HIG, <italic>n</italic> = 20 practices). The pink shaded region shows the month at which the initial notification took place.</p></caption><graphic xlink:href="41467_2021_21864_Fig4_HTML" id="d32e4914"/></fig></p>
+              </sec>
+            </sec>
+            <sec id="Sec8" sec-type="discussion">
+              <title>Discussion</title>
+              <p id="Par18">Here we describe use of EHR data from veterinary practices to initiate voluntary antimicrobial prescribing behavioural change in veterinary prescribing. In so doing, we have outlined a data-led and educational support framework by which HPCIA prescription frequency can be significantly reduced, while preserving clinical autonomy. These insights are now being used to inform a national antimicrobial stewardship scheme, led by RCVS Knowledge (<ext-link ext-link-type="uri" xlink:href="https://knowledge.rcvs.org.uk/home/">https://knowledge.rcvs.org.uk/home/</ext-link>), firmly demonstrating a profession-wide commitment to responsible usage of antimicrobials.</p>
+              <p id="Par19">In the LIG and HIG, use of the SAVSNET antimicrobial benchmarking portal significantly increased post-notification, with increases being most apparent in the 2 months following notification, suggesting that notifications informing practitioners of their relatively “unusual” status in relation to HPCIA prescription frequency prompted enhanced portal engagement. However, while post-intervention 80% of HIG practices interacted with the portal, only 40% of LIG practices did so. Furthermore, while engagement waned to at or below pre-intervention levels within two months of notification in the LIG, interest exceeded pre-intervention levels for 6 months post-notification in the HIG. It is probable that either the additional in-depth benchmarking report provided to practices in the HIG, or post-notification offer of assistance from the hub clinical leads might have enhanced initial interest compared to the LIG. Though the relative contributions of each was not able to be elucidated here, individuals are more likely to re-evaluate existing behaviours if modifying behaviour might bring reward, or not doing so might bring punishment<sup><xref ref-type="bibr" rid="CR40">40</xref></sup>. Although the supportive, optional nature of the trial was emphasised throughout, requested hub clinical lead intercession might have nevertheless introduced a perception of potential reward or punishment linked with engagement with the trial. It is also possible that the letter and email sent to LIG practices was not disseminated beyond clinical directors in some cases, whereas the opportunity for practice-wide meetings held in HIG practices encouraged the engagement of more staff. It was not possible to distinguish between individual practice staff members interacting with the benchmarking portal; hence, engagement might have been limited to a single or few member(s) of each practice.</p>
+              <p id="Par20">There was concern that notification of relatively high HPCIA prescription alone could prompt practice policy changes not reflective of latest clinical evidence, such changes being potentially detrimental to animal welfare or employee wellbeing. Structured reflection and education programmes have been shown to be effective at achieving sustained improvements in anti-infective prescription habits in the medical field<sup><xref ref-type="bibr" rid="CR33">33</xref></sup>, and in this trial we compared both a light (LIG) and heavy (HIG) reflection and educational intervention. While significant reductions in HPCIA prescription frequency were seen in both species in the HIG, significant decreases were only observed in the LIG for cats. Across the veterinary sector impressive reductions have been achieved over the past five years, especially in pigs and poultry<sup><xref ref-type="bibr" rid="CR41">41</xref>,<xref ref-type="bibr" rid="CR42">42</xref></sup>, utilising a variety of statutory<sup><xref ref-type="bibr" rid="CR43">43</xref></sup> and voluntary<sup><xref ref-type="bibr" rid="CR44">44</xref></sup> improvement measures. Though over this time reductions in antimicrobial prescription frequency in companion animals have been noted<sup><xref ref-type="bibr" rid="CR10">10</xref>,<xref ref-type="bibr" rid="CR12">12</xref>,<xref ref-type="bibr" rid="CR14">14</xref></sup>, HPCIA use has remained an issue, particularly in cats<sup><xref ref-type="bibr" rid="CR10">10</xref>,<xref ref-type="bibr" rid="CR11">11</xref>,<xref ref-type="bibr" rid="CR17">17</xref></sup>. Unlike other veterinary sectors, no statutory policies have been introduced to prompt improvements in antimicrobial prescription in companion animals. It is unknown what impact such enforced measures might have on animal welfare, and thus we consider findings presented here to be an encouraging sign that practitioners might be willing to voluntarily engage with improvement efforts, potentially negating need for firmer regulatory approaches.</p>
+              <p id="Par21">This study further demonstrated the relative ease by which EHRs can be utilised to both identify participants and monitor key outcomes in near real-time. Such efficiency advantages have been previously outlined in medical research, enabling rapid scaling of interventions to instigate national quality improvement<sup><xref ref-type="bibr" rid="CR34">34</xref></sup>. Only comparatively recently have EHRs become available for research and surveillance in the veterinary sector<sup><xref ref-type="bibr" rid="CR45">45</xref></sup>, and we believe this work serves as a promising demonstration of what could be achieved using EHR data-led approaches, expanding beyond practitioner-focused interventions to those encompassing owners, or pragmatic efficacy assessment of surgical and pharmaceutical interventions in routine practice, for example.</p>
+              <p id="Par22">Though the intervention package provided in this trial represented a comprehensive approach to encouraging evidence-based behaviour change, it did limit our ability to determine which individual components might have been of greatest impact. Interestingly, though both LIG and HIG practices received a high feline HPCIA prescription frequency notification at the beginning of the trial, reductions in the LIG were more modest compared to the HIG, where all HIG practices, including both HIG practices that refused engagement with the reflection and education programme, reported decreases post-notification. Though variation in scale of reduction was evident, circumstantially, these findings might suggest that hub clinical lead involvement was a motivational factor in prompting behavioural change. In either case, the aforementioned refusals do indicate a limiting factor in intervention scalability to a wider audience. Furthermore, this trial benefited from utilising existing quality improvement management structures within a single large practice group for the HIG. Thus, there remains a question as to whether this intervention would be feasible amongst other practices, including those that are relatively infrequent HPCIA prescribers, over a longer period of time than the eight months observed here.</p>
+              <p id="Par23">Though the scale of feline HPCIA prescription frequency reduction in the LIG was approximately half that of the HIG, LIG interventions would arguably be more amenable to national deployment. Ensuring widespread efficient dissemination, even if such efforts produce a smaller overall effect, might therefore prove preferable compared to high intensity, smaller scale action. However, there are many unique practice management systems utilised in the UK, and securing SAVSNET software compliance with all systems presents somewhat of a barrier to wider participation in either intervention approach at the current time. While it was encouraging to see no immediate reversion to pre-intervention prescribing rates in the two un-supported months where hub clinical leads did not interact with HIG practices, we regard this as insufficient evidence to demonstrate “sustained” improvements at this time, and would recommend longer follow-up periods in the future.</p>
+              <p id="Par24">Some MPCs in cats and dogs in the HIG were associated with significant HPCIA prescription frequency reductions, some of which (e.g., trauma) were previously associated with frequent HPCIA prescription<sup><xref ref-type="bibr" rid="CR10">10</xref>,<xref ref-type="bibr" rid="CR24">24</xref></sup>, despite often lacking clear clinical justification for their prescription<sup><xref ref-type="bibr" rid="CR24">24</xref></sup>. These findings suggest a generalised culture change not necessarily being restricted to reflection on individual disease presentations. This result is supported by significant reductions in systemic and overall antimicrobial prescription frequency in both species. In HIG dogs, these wider reductions were greater than that contributed by HPCIA reductions alone, suggesting that the trial had a wider impact on discouraging antimicrobial prescription more generally. However, in HIG cats the opposite was seen; HPCIA reductions were greater than overall decreases, suggesting a tendency of some practitioners to move from prescribing a HPCIA to prescribing another non-HPCIA antimicrobial, instead of avoiding prescription altogether.</p>
+              <p id="Par25">Whilst no prescription choice comparisons were significantly different, 3rd generation cephalosporin feline prescription does appear to have decreased to a degree in the HIG, while clavulanic acid potentiated amoxicillin prescription increased, suggesting a preferred alternative to 3rd generation cephalosporins. Clavulanic acid potentiated amoxicillin is an authorised, widely used antimicrobial in veterinary practice<sup><xref ref-type="bibr" rid="CR10">10</xref></sup>. However, like 3rd generation cephalosporins, use of clavulanic acid potentiated amoxicillin has also been associated with resistance development<sup><xref ref-type="bibr" rid="CR4">4</xref></sup>, is considered of ‘high’ importance by the WHO<sup><xref ref-type="bibr" rid="CR16">16</xref></sup>, and accordingly is only infrequently prescribed to humans in the UK<sup><xref ref-type="bibr" rid="CR46">46</xref></sup>. It is therefore possible that in seeking to reduce risk for development of resistance in response to HPCIA prescription that this trial has inadvertently enhanced or at least sustained resistance development risk for broader beta-lactam resistance. Thus, future stewardship efforts will need to expand scope beyond HPCIAs to also consider how to promote responsible use of all antimicrobials, and indeed other medicines too.</p>
+              <p id="Par26">For instance, we have previously reported a tendency for antimicrobials and anti-inflammatories to be prescribed at the same time, despite perhaps limited clinical evidence to suggest necessity for both pharmaceutical agents<sup><xref ref-type="bibr" rid="CR15">15</xref></sup>. However, we have also noted a recent reversing trend for respiratory disease whereby antimicrobial prescription frequency has decreased whilst anti-inflammatory prescription frequency has increased<sup><xref ref-type="bibr" rid="CR12">12</xref></sup>. These findings perhaps reflect increasing recognition of non-bacterial mediators for respiratory disease<sup><xref ref-type="bibr" rid="CR47">47</xref></sup>, or increased attention to prescribing guidance<sup><xref ref-type="bibr" rid="CR18">18</xref></sup>. It was interesting to note that no significant variation in anti-inflammatory prescription was observed here, perhaps demonstrating more generalised “de-coupling” of anti-inflammatory and antimicrobial prescription. Though measuring frequency of use represents a relatively simple method for demonstrating change, reduced use is not necessarily representative of more responsible use. Hence, it is probable that more nuanced methods for ascertaining whether a pharmaceutical agent has been prescribed appropriately will be needed, such as consideration of specific clinical signs and/or diagnostic test findings at point of prescription. As part of these developments, we would advocate increased attention on use of other pharmaceutical agents that might form effective alternatives to antimicrobial prescription, whilst also satisfying the recognised need of a practitioner to provide a clear demonstration of action via provision of a therapeutic product to the client<sup><xref ref-type="bibr" rid="CR19">19</xref></sup>.</p>
+              <p id="Par27">Though prescribers retained full autonomy to prescribe what they considered best for the animal under their care, we incorporated euthanasia frequency as a relatively crude measure of any increase in adverse health effects associated with change in prescription decision-making prompted by this trial. While no significant increases were observed in either intervention group, compared to the CG, we recognise that this method lacks sensitivity, not taking into account a range of potential sub-optimal outcomes that might compromise animal welfare. Though effectively and efficiently quantifying such adverse effects from EHRs at the scale required for this trial presents a significant challenge<sup><xref ref-type="bibr" rid="CR48">48</xref></sup>, we recommend further development of text-mining and statistical methodologies to explore such nuances for subsequent trials.</p>
+              <p id="Par28">Use of bacterial infection-associated diagnostic tests was not significantly altered in this trial. Low frequency of use of such tests has been identified as a barrier to effective stewardship<sup><xref ref-type="bibr" rid="CR49">49</xref></sup>, likely reflecting low confidence in their ability to provide timely, useful clinical insights<sup><xref ref-type="bibr" rid="CR50">50</xref></sup>. Indeed, across all groups test orders were low, indicating a preference for empirical antimicrobial prescription throughout the trial. Used correctly, these tests do play an important role in correctly managing a patient<sup><xref ref-type="bibr" rid="CR51">51</xref></sup>; however, there is clearly more work needed to convince practitioners—and owners—of the benefits of regularly pursuing these diagnostic routes. That said, during this trial a lack of equipment and training for cytological examinations within practices was identified, which resulted in wide-scale equipment and training provision (unpublished observations). Thus, there is hope that significant impact will be generated beyond the confines of this trial.</p>
+              <p id="Par29">To conclude, in this trial we outlined a data-led benchmarking, reflection and education antimicrobial stewardship framework that successfully reduced HPCIA, systemic and overall antimicrobial prescription frequency in dogs and cats in practices belonging to a single large practice group. However, whilst initially encouraging, further work is required to understand the relative impact of different antimicrobials on conferring clinically meaningful resistance, and how to incentivise increased use of diagnostic testing in preference to empirical antimicrobial prescription. This work provides a robust evidence base for future antimicrobial stewardship interventions in companion animal practice, and findings are now being used to inform development of a national stewardship scheme, in collaboration with RCVS Knowledge and CVS Group (UK) Limited.</p>
+            </sec>
+            <sec id="Sec9">
+              <title>Methods</title>
+              <sec id="Sec10">
+                <title>Data collection</title>
+                <p id="Par30">This trial used data collected by the Small Animal Veterinary Surveillance Network (SAVSNET) project, which harnesses voluntarily provided EHR from booked consultations in a sentinel network of UK veterinary practices, held in a SQL database and queried via Microsoft SQL Server Management Studio 18. Each EHR includes anonymised information pertaining to the animal and owner, the clinical narrative, and products dispensed during such consultations. Antimicrobial prescription was identified via reference to products dispensed, and classified into systemic (oral or injectable) or topical (topical, aural, ocular) authorised administration routes using a semi-automated rule-based text-mining method, using the Veterinary Medicine Directorate’s Product Information Database and the electronic Medicines Compendium (Datapharm Communications) as a guide for veterinary and human-authorised products, respectively<sup><xref ref-type="bibr" rid="CR10">10</xref></sup>. Fluoroquinolones, macrolides and 3rd generation cephalosporins were considered HPCIAs<sup><xref ref-type="bibr" rid="CR16">16</xref></sup>. Every consultation was further classified by the attending veterinary professional into one of ten main presenting complaints (MPCs), indicating the main reason the animal was presented to the veterinary practice<sup><xref ref-type="bibr" rid="CR10">10</xref></sup>.</p>
+                <p id="Par31">In addition, CVS Group Ltd. provided data relating to staff numbers per practice (in full-time equivalents, FTE), and the number of cytological or bacterial culture and susceptibility tests ordered by practices included in this trial. SAVSNET holds ethical approval to collect EHR data from the University of Liverpool (ethical approval reference: RETH000964); additional approval was granted to encompass interventions and data collection specific to this trial from the Universities’ Veterinary Research Ethics Committee (ethical approval reference: VREC745).</p>
+              </sec>
+              <sec id="Sec11">
+                <title>Study practice selection</title>
+                <p id="Par32">This three-armed randomised controlled trial (RCT) initially utilised EHRs voluntarily supplied by 157 UK veterinary practices (385 sites/branches) belonging to CVS Group Ltd., that had been participating in SAVSNET between 1 August 2018 and 15 January 2019. Pre-intervention, practice-level median HPCIA prescription as a percentage of total canine (<italic>n</italic> = 409,279) and feline (<italic>n</italic> = 164,827) consultations were 0.5% [range 0.0–2.3] and 5.3% [range 0.0–13.9], respectively. Practices were eligible for trial inclusion if they were within the 40% most frequent total HPCIA (including systemic and topical formulations) prescribing bracket as a percentage of total consultations in both dogs (in excess of 0.5% of canine consultations) and cats (in excess of 5.4% of feline consultations) (<italic>n</italic> practices = 43). Practices where either cats (<italic>n</italic> practices = 17) or dogs (<italic>n</italic> practices = 8) were placed in the 40% most frequent total HPCIA prescribing bracket, with the opposing species being placed in the 40-60% most frequent total HPCIA prescribing bracket [dogs, range 0.4-0.5%; cats, 4.5-5.3%], were also considered eligible.</p>
+                <p id="Par33">The primary outcome was HPCIA prescription frequency post-intervention, compared to the CG. A sample size estimation indicated that to detect a 10% relative decrease in the primary outcome (standard deviation = 10%, power = 80% and <italic>α</italic> = 0.05), 17 practices would be required in each group. Hence, of the 68 initially eligible practices, 60 practices were randomly and evenly allocated into three intervention groups: the control group (CG, <italic>n</italic> practices=20, sites=40), low group (LIG, <italic>n</italic> practices=20, sites=57) or high group (HIG, <italic>n</italic> practices=20, sites=51) by block random allocation, utilising the ‘complete random allocation’ function available through the ‘randomizr’ R package version 0.20.0 (Fig. <xref rid="Fig1" ref-type="fig">1</xref>)<sup><xref ref-type="bibr" rid="CR52">52</xref></sup>. Practice allocation was completed by DS.</p>
+              </sec>
+              <sec id="Sec12">
+                <title>Intervention</title>
+                <p id="Par34">For the LIG and HIG, the trial consisted of two phases: (1) an initial notification of above median HPCIA prescription frequency status, followed by (2) a voluntary reflection and education programme, with intensity varying by intervention group.</p>
+                <p id="Par35">On 28 March 2019, LIG practices received a posted letter and email (both addressed to the clinical director of that practice) stating their above average HPCIA-prescribing status (Supplementary Note <xref rid="MOESM1" ref-type="media">1</xref>). They also received a copy of the practice group’s antimicrobial prescribing policy (based on current prescribing guidance)<sup><xref ref-type="bibr" rid="CR18">18</xref></sup>, a reminder and interpretive guidance for an online anonymised antimicrobial prescription benchmarking portal already freely available to all SAVSNET-participating practices (Supplementary Note <xref rid="MOESM1" ref-type="media">2</xref>)<sup><xref ref-type="bibr" rid="CR30">30</xref></sup>, and access to AMR educational videos (can be viewed here: <ext-link ext-link-type="uri" xlink:href="https://savsnetvet.liverpool.ac.uk/savsnetamr/iv?id=61">https://savsnetvet.liverpool.ac.uk/savsnetamr/iv?id=61</ext-link>). Practices could opt-out of or access these as many times as they wished, and clinical directors were able to distribute these materials amongst staff members as they saw fit; they were not prompted to do so.</p>
+                <p id="Par36">On 28 and 29 March 2019, HIG practices also received a posted letter and email (both addressed to the clinical director of that practice) stating their above average HPCIA-prescribing frequency status. This letter included all LIG materials, and further included an in-depth benchmarking report (Supplementary Note <xref rid="MOESM1" ref-type="media">3</xref>) and explanatory video, in addition to the videos available to LIG practices (can be viewed here: <ext-link ext-link-type="uri" xlink:href="https://savsnetvet.liverpool.ac.uk/savsnetamr/iv?id=62">https://savsnetvet.liverpool.ac.uk/savsnetamr/iv?id=62</ext-link>). Practices were further invited, via their clinical director, to participate in a reflection and education programme delivered by a “hub clinical lead” (a member of the senior clinical team recruited internally by CVS Group Ltd. based on clinical experience). This programme consisted of an initial in-person review between a hub clinical lead and the clinical director and/or head veterinary surgeon of the practice; presence of additional members of staff were left to the discretion of each practice. Reviews were structured around a series of questions aimed at identifying factors (e.g., staffing, equipment, attitudes) that might have contributed to their relatively high HPCIA prescription frequency status (full question list available: Supplementary Note <xref rid="MOESM1" ref-type="media">4</xref>). Staff were able to suggest their own action points, and were encouraged to hold a separate practice-wide meeting to discuss findings.</p>
+                <p id="Par37">Hub clinical leads checked in by email with HIG practices on a monthly basis following initial intervention, reminding practices to arrange the aforementioned practice-wide meeting if not already done so. Practices could also hold additional follow-up reviews with the hub clinical lead if they wished. A final hub clinical lead review near conclusion of the study was also requested, each utilising a development of the initial contributory factors question sheet (Supplementary Note <xref rid="MOESM1" ref-type="media">4</xref>).</p>
+                <p id="Par38">Though individual LIG and HIG practices were aware of their involvement in a trial, they were not informed of which other practices were involved, nor interventions being performed in opposing intervention groups. The CG received no intervention beyond sustained access to the antimicrobial prescription benchmarking portal through SAVSNET, and remained unaware of their involvement in this trial. Presence and frequency of SAVSNET prescription benchmarking portal access was monitored throughout the trial for all practices included in this trial. It was not practical to blind study team members to group allocation.</p>
+              </sec>
+              <sec id="Sec13">
+                <title>Outcomes</title>
+                <p id="Par39">Post-intervention monitoring was carried out between 1 April 2019 and 30 November 2019 (inclusive). The primary outcome measure was post-intervention canine or feline total HPCIA (including systemic and topical formulations) prescription frequency as a percentage of total consultations. Secondary outcome measures included post-intervention total, systemic and topical antimicrobials; systemic HPCIA prescription frequency; total HPCIA prescription frequency by month; total HPCIA prescription frequency by MPC; relative antimicrobial class prescription frequency; anti-inflammatory prescription, and euthanasia frequency. Post-intervention cytological or bacterial culture and susceptibility test order numbers, and interactions with the online antimicrobial prescription benchmarking portal were also summarised.</p>
+              </sec>
+              <sec id="Sec14">
+                <title>Statistical analyses</title>
+                <p id="Par40">The statistical programme “R” was used for all analyses (version 4.0.3). Descriptive proportions and 95% confidence intervals were adjusted for clustering within practices (bootstrap method, <italic>n</italic> = 5,000 samples)<sup><xref ref-type="bibr" rid="CR53">53</xref></sup>. Baseline characteristic variation between practices within each intervention group were explored via Kruskal-Wallis tests.</p>
+                <p id="Par41">Mixed effects panel regression models, modelling practice as the random effect, were used for making intervention group comparisons, utilising the R package ‘plm’ (version 3.2-5)<sup><xref ref-type="bibr" rid="CR54">54</xref></sup>. For each of the outcome measures described, practice-level pre-intervention (August 2018 – March 2019) and post-intervention (April – November 2019) values were compared with intervention group (modelled as interacting variables). For total HPCIA prescription frequency, intervention group was also compared across all pre- and post-intervention months. The CG was used as the reference category for all analyses. Intervention groups were also individually modelled via an orthogonal polynomial method to analyse temporal trend, considering up to quartic fits (Supplementary Table <xref rid="MOESM1" ref-type="media">1</xref>)<sup><xref ref-type="bibr" rid="CR55">55</xref></sup>. Model assumptions were met for all models; goodness of fit was assessed via comparison against a null model. The R package “ggplot2” (version 3.3.2)<sup><xref ref-type="bibr" rid="CR56">56</xref></sup> was used for all visualisations, with the ‘lm’ function being used to produce linear regression lines in Figs. <xref rid="Fig2" ref-type="fig">2</xref> and <xref rid="Fig3" ref-type="fig">3</xref>.</p>
+                <p id="Par42">Analyses were performed on an intention-to-treat basis, as EHR data were available for all practices regardless of participation opt-out status. Number of practices within each group interacting with SAVSNET’s antimicrobial prescription benchmarking portal were compared pre- and post-intervention via a two-sided Fisher’s Exact Test; post-hoc pairwise Fisher’s test comparisons were also completed utilising the ‘pairwiseNominalIndependence’ function available via the R package “rcompanion” (version 2.3.26)<sup><xref ref-type="bibr" rid="CR57">57</xref></sup>. The trial was completed according to CONSORT guidelines<sup><xref ref-type="bibr" rid="CR58">58</xref></sup>, and statistical significance was defined as <italic>P</italic> &lt; 0.05 throughout.</p>
+              </sec>
+              <sec id="Sec15">
+                <title>Reporting summary</title>
+                <p id="Par43">Further information on research design is available in the Nature Research Reporting Summary linked to this article.</p>
+              </sec>
+            </sec>
+            <sec sec-type="supplementary-material">
+              <title>Supplementary information</title>
+              <sec id="Sec16">
+                <supplementary-material content-type="local-data" id="MOESM1">
+                  <media xlink:href="41467_2021_21864_MOESM1_ESM.pdf">
+                    <caption>
+                      <p>Supplementary Information</p>
+                    </caption>
+                  </media>
+                </supplementary-material>
+                <supplementary-material content-type="local-data" id="MOESM2">
+                  <media xlink:href="41467_2021_21864_MOESM2_ESM.pdf">
+                    <caption>
+                      <p>Peer Review File</p>
+                    </caption>
+                  </media>
+                </supplementary-material>
+                <supplementary-material content-type="local-data" id="MOESM3">
+                  <media xlink:href="41467_2021_21864_MOESM3_ESM.pdf">
+                    <caption>
+                      <p>Reporting Summary</p>
+                    </caption>
+                  </media>
+                </supplementary-material>
+              </sec>
+            </sec>
+          </body>
+          <back>
+            <app-group>
+              <app id="App1">
+                <sec id="Sec17">
+                  <title>Source data</title>
+                  <p id="Par46">
+                    <media position="anchor" xlink:href="41467_2021_21864_MOESM4_ESM.xlsx" id="MOESM4">
+                      <caption>
+                        <p>Source Data</p>
+                      </caption>
+                    </media>
+                  </p>
+                </sec>
+              </app>
+            </app-group>
+            <fn-group>
+              <fn>
+                <p><bold>Peer review information</bold><italic>Nature Communications</italic> thanks David Brodbelt and the other, anonymous, reviewer for their contribution to the peer review of this work. Peer reviewer reports are available.</p>
+              </fn>
+              <fn>
+                <p><bold>Publisher’s note</bold> Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.</p>
+              </fn>
+            </fn-group>
+            <sec>
+              <title>Supplementary information</title>
+              <p>The online version contains supplementary material available at 10.1038/s41467-021-21864-3.</p>
+            </sec>
+            <ack>
+              <title>Acknowledgements</title>
+              <p>SAVSNET is grateful for the support and major funding of BBSRC, the Dogs Trust, and BSAVA. CVS Group (UK) Limited provided support in-kind for this research via creation and postage of physical materials, and through secondment of existing staff onto this project. We particularly thank Marcus Evans, Richard Killen and Joe Williams. We also acknowledge the significant time investment of the hub clinical leads (Kate Allgood, Lisa Baker, Sinead Bennett, Rachel Clay, Ryan Davis, Elizabeth McLennan-Green, Mark Moreton and Nicola Rolph) involved in implementing many of the HIG interventions. More broadly, we thank data providers in veterinary practice (VetSolutions, Teleos, CVS and independent practitioners) and participating veterinary diagnostic laboratories (Axiom Veterinary Laboratories, Batt Laboratories, BioBest, Idexx, NationWide Laboratories Microbiology Diagnostics Laboratory at the University of Liverpool, the Department of Pathology and Infectious Diseases at the University of Surrey, and the Veterinary Pathology Group). Finally, we are grateful for the help and support provided by SAVSNET team administrator Susan Bolan.</p>
+            </ack>
+            <notes notes-type="author-contribution">
+              <title>Author contributions</title>
+              <p>D.A.S. and G.L.P. conceived of and devised the trial design and prepared trial materials, including intervention letters, educational videos and benchmarking reports. D.A.S. collated and prepared data, conducted analysis and wrote the manuscript, with supervision from G.L.P.. P.J.M.N. and A.D.R. supported trial design, and provided oversight of manuscript drafts. B.B. initially recruited all trial practices onto the SAVSNET project, and provided communications support between SAVSNET and trial practices throughout. S.S. provided database support, created online platforms for educational videos to be viewed, and devised the practice antimicrobial benchmarking portal monitoring capability. A.R. assisted trial design, acted as a liaison between SAVSNET and CVS Group Ltd., and trained HCLs in how to correctly implement devised interventions.</p>
+            </notes>
+            <notes notes-type="data-availability">
+              <title>Data availability</title>
+              <p>Source data are provided with this paper. Other data that support the findings of this study are available from the corresponding author (D.A.S.) on reasonable request. Some of the data are not publicly available due to them containing information that could compromise research participant privacy. Source data are provided with this paper.</p>
+            </notes>
+            <notes id="FPar1" notes-type="COI-statement">
+              <title>Competing interests</title>
+              <p id="Par44">The authors declare no competing interests.</p>
+            </notes>
+            <ref-list id="Bib1">
+              <title>References</title>
+              <ref id="CR1">
+                <label>1.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Rantala</surname>
+                      <given-names>M</given-names>
+                    </name>
+                    <etal/>
+                  </person-group>
+                  <article-title>Antimicrobial resistance in Staphylococcus spp., Escherichia coli and Enterococcus spp. in dogs given antibiotics for chronic dermatological disorders, compared with non-treated control dogs</article-title>
+                  <source>Acta Vet. Scand.</source>
+                  <year>2004</year>
+                  <volume>45</volume>
+                  <fpage>37</fpage>
+                  <lpage>45</lpage>
+                  <pub-id pub-id-type="doi">10.1186/1751-0147-45-37</pub-id>
+                  <?supplied-pmid 15535085?>
+                  <pub-id pub-id-type="pmid">15535085</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="CR2">
+                <label>2.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Trott</surname>
+                      <given-names>DJ</given-names>
+                    </name>
+                    <etal/>
+                  </person-group>
+                  <article-title>Canine model for investigating the impact of oral enrofloxacin on commensal coliforms and colonization with multidrug-resistant Escherichia coli</article-title>
+                  <source>J. Med Microbiol</source>
+                  <year>2004</year>
+                  <volume>53</volume>
+                  <fpage>439</fpage>
+                  <lpage>443</lpage>
+                  <pub-id pub-id-type="doi">10.1099/jmm.0.05473-0</pub-id>
+                  <?supplied-pmid 15096555?>
+                  <pub-id pub-id-type="pmid">15096555</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="CR3">
+                <label>3.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Guardabassi</surname>
+                      <given-names>L</given-names>
+                    </name>
+                    <name>
+                      <surname>Schwarz</surname>
+                      <given-names>S</given-names>
+                    </name>
+                    <name>
+                      <surname>Lloyd</surname>
+                      <given-names>DH</given-names>
+                    </name>
+                  </person-group>
+                  <article-title>Pet animals as reservoirs of antimicrobial-resistant bacteria</article-title>
+                  <source>J. Antimicrob. Chemother.</source>
+                  <year>2004</year>
+                  <volume>54</volume>
+                  <fpage>321</fpage>
+                  <lpage>332</lpage>
+                  <pub-id pub-id-type="doi">10.1093/jac/dkh332</pub-id>
+                  <?supplied-pmid 15254022?>
+                  <pub-id pub-id-type="pmid">15254022</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="CR4">
+                <label>4.</label>
+                <mixed-citation publication-type="other">Schmidt, V. M. <italic>et al</italic>. Routine antibiotic therapy in dogs increases the detection of antimicrobial-resistant faecal Escherichia coli. <italic>J. Antimicrob. Chemother.</italic> (2018), 10.1093/jac/dky352.</mixed-citation>
+              </ref>
+              <ref id="CR5">
+                <label>5.</label>
+                <mixed-citation publication-type="other">O’Neill, J. Tackling drug-resistant infections globally: final report and recommendations. <ext-link ext-link-type="uri" xlink:href="http://amr-review.org/home">http://amr-review.org/home</ext-link> (2016).</mixed-citation>
+              </ref>
+              <ref id="CR6">
+                <label>6.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Cuny</surname>
+                      <given-names>C</given-names>
+                    </name>
+                    <name>
+                      <surname>Wieler</surname>
+                      <given-names>LH</given-names>
+                    </name>
+                    <name>
+                      <surname>Witte</surname>
+                      <given-names>W</given-names>
+                    </name>
+                  </person-group>
+                  <article-title>Livestock-associated MRSA: the Impact on Humans</article-title>
+                  <source>Antibiot</source>
+                  <year>2015</year>
+                  <volume>4</volume>
+                  <fpage>521</fpage>
+                  <lpage>543</lpage>
+                  <pub-id pub-id-type="doi">10.3390/antibiotics4040521</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="CR7">
+                <label>7.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Cantón</surname>
+                      <given-names>R</given-names>
+                    </name>
+                    <name>
+                      <surname>Bryan</surname>
+                      <given-names>J</given-names>
+                    </name>
+                  </person-group>
+                  <article-title>Global antimicrobial resistance: from surveillance to stewardship. Part 1: surveillance and risk factors for resistance</article-title>
+                  <source>Expert Rev. Anti. Infect. Ther.</source>
+                  <year>2012</year>
+                  <volume>10</volume>
+                  <fpage>1269</fpage>
+                  <lpage>1271 3p</lpage>
+                  <pub-id pub-id-type="doi">10.1586/eri.12.120</pub-id>
+                  <?supplied-pmid 23241182?>
+                  <pub-id pub-id-type="pmid">23241182</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="CR8">
+                <label>8.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Lei</surname>
+                      <given-names>L</given-names>
+                    </name>
+                    <etal/>
+                  </person-group>
+                  <article-title>mcr-1 in enterobacteriaceae from companion animals, Beijing, China, 2012–2016</article-title>
+                  <source>Emerg. Infect. Dis.</source>
+                  <year>2017</year>
+                  <volume>23</volume>
+                  <fpage>710</fpage>
+                  <lpage>711</lpage>
+                  <pub-id pub-id-type="doi">10.3201/eid2304.161732</pub-id>
+                  <?supplied-pmid 28322714?>
+                  <pub-id pub-id-type="pmid">28322714</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="CR9">
+                <label>9.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Guardabassi</surname>
+                      <given-names>L</given-names>
+                    </name>
+                    <name>
+                      <surname>Loeber</surname>
+                      <given-names>ME</given-names>
+                    </name>
+                    <name>
+                      <surname>Jacobson</surname>
+                      <given-names>A</given-names>
+                    </name>
+                  </person-group>
+                  <article-title>Transmission of multiple antimicrobial-resistant Staphylococcus intermedius between dogs affected by deep pyoderma and their owners</article-title>
+                  <source>Vet. Microbiol</source>
+                  <year>2004</year>
+                  <volume>98</volume>
+                  <fpage>23</fpage>
+                  <lpage>27</lpage>
+                  <pub-id pub-id-type="doi">10.1016/j.vetmic.2003.09.021</pub-id>
+                  <?supplied-pmid 14738778?>
+                  <pub-id pub-id-type="pmid">14738778</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="CR10">
+                <label>10.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Singleton</surname>
+                      <given-names>DA</given-names>
+                    </name>
+                    <etal/>
+                  </person-group>
+                  <article-title>Patterns of antimicrobial agent prescription in a sentinel population of canine and feline veterinary practices in the United Kingdom</article-title>
+                  <source>Vet. J.</source>
+                  <year>2017</year>
+                  <volume>224</volume>
+                  <fpage>18</fpage>
+                  <lpage>24</lpage>
+                  <pub-id pub-id-type="doi">10.1016/j.tvjl.2017.03.010</pub-id>
+                  <?supplied-pmid 28697871?>
+                  <pub-id pub-id-type="pmid">28697871</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="CR11">
+                <label>11.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Buckland</surname>
+                      <given-names>EL</given-names>
+                    </name>
+                    <etal/>
+                  </person-group>
+                  <article-title>Characterisation of antimicrobial usage in cats and dogs attending UK primary care companion animal veterinary practices</article-title>
+                  <source>Vet. Rec.</source>
+                  <year>2016</year>
+                  <volume>179</volume>
+                  <fpage>489</fpage>
+                  <pub-id pub-id-type="doi">10.1136/vr.103830</pub-id>
+                  <?supplied-pmid 27543064?>
+                  <pub-id pub-id-type="pmid">27543064</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="CR12">
+                <label>12.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Singleton</surname>
+                      <given-names>DA</given-names>
+                    </name>
+                    <etal/>
+                  </person-group>
+                  <article-title>Small animal disease surveillance 2019: respiratory disease, antibiotic prescription and canine infectious respiratory disease complex</article-title>
+                  <source>Vet. Rec.</source>
+                  <year>2019</year>
+                  <volume>184</volume>
+                  <fpage>640</fpage>
+                  <lpage>645</lpage>
+                  <pub-id pub-id-type="doi">10.1136/vr.l3128</pub-id>
+                  <?supplied-pmid 31123207?>
+                  <pub-id pub-id-type="pmid">31123207</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="CR13">
+                <label>13.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Singleton</surname>
+                      <given-names>DA</given-names>
+                    </name>
+                    <etal/>
+                  </person-group>
+                  <article-title>Small animal disease surveillance 2019: pruritus, pharmacosurveillance, skin tumours and flea infestations</article-title>
+                  <source>Vet. Rec.</source>
+                  <year>2019</year>
+                  <volume>185</volume>
+                  <fpage>470</fpage>
+                  <lpage>475</lpage>
+                  <pub-id pub-id-type="doi">10.1136/vr.l6074</pub-id>
+                  <?supplied-pmid 31628231?>
+                  <pub-id pub-id-type="pmid">31628231</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="CR14">
+                <label>14.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Singleton</surname>
+                      <given-names>DA</given-names>
+                    </name>
+                    <etal/>
+                  </person-group>
+                  <article-title>Small animal disease surveillance: gastrointestinal disease, antibacterial prescription and <italic>Tritrichomonas foetus</italic></article-title>
+                  <source>Vet. Rec.</source>
+                  <year>2019</year>
+                  <volume>184</volume>
+                  <fpage>211</fpage>
+                  <lpage>216</lpage>
+                  <pub-id pub-id-type="doi">10.1136/vr.l722</pub-id>
+                  <?supplied-pmid 30765583?>
+                  <pub-id pub-id-type="pmid">30765583</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="CR15">
+                <label>15.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Singleton</surname>
+                      <given-names>D</given-names>
+                    </name>
+                    <etal/>
+                  </person-group>
+                  <article-title>New approaches to pharmacosurveillance for monitoring prescription frequency, diversity, and co-prescription in a large sentinel network of companion animal veterinary practices in the United Kingdom, 2014–2016</article-title>
+                  <source>Prev. Vet. Med.</source>
+                  <year>2018</year>
+                  <volume>159</volume>
+                  <fpage>153</fpage>
+                  <lpage>161</lpage>
+                  <pub-id pub-id-type="doi">10.1016/j.prevetmed.2018.09.004</pub-id>
+                  <?supplied-pmid 30314778?>
+                  <pub-id pub-id-type="pmid">30314778</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="CR16">
+                <label>16.</label>
+                <mixed-citation publication-type="other">WHO. Critically important antimicrobials for human medicine. <ext-link ext-link-type="uri" xlink:href="https://www.who.int/foodsafety/areas_work/antimicrobial-resistance/cia/en/">https://www.who.int/foodsafety/areas_work/antimicrobial-resistance/cia/en/</ext-link> (2019).</mixed-citation>
+              </ref>
+              <ref id="CR17">
+                <label>17.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Burke</surname>
+                      <given-names>S</given-names>
+                    </name>
+                    <etal/>
+                  </person-group>
+                  <article-title>Use of cefovecin in a UK population of cats attending first-opinion practices as recorded in electronic health records</article-title>
+                  <source>J. Feline Med Surg.</source>
+                  <year>2017</year>
+                  <volume>19</volume>
+                  <fpage>687</fpage>
+                  <lpage>692</lpage>
+                  <pub-id pub-id-type="doi">10.1177/1098612X16656706</pub-id>
+                  <?supplied-pmid 27507842?>
+                  <pub-id pub-id-type="pmid">27507842</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="CR18">
+                <label>18.</label>
+                <mixed-citation publication-type="other">BSAVA. BSAVA/SAMSoc guide to responsible use of antibacterials: PROTECT ME. <ext-link ext-link-type="uri" xlink:href="https://www.bsavalibrary.com/content/book/10.22233/9781910443644">https://www.bsavalibrary.com/content/book/10.22233/9781910443644</ext-link> (2018).</mixed-citation>
+              </ref>
+              <ref id="CR19">
+                <label>19.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Mateus</surname>
+                      <given-names>AL</given-names>
+                    </name>
+                    <name>
+                      <surname>Brodbelt</surname>
+                      <given-names>DC</given-names>
+                    </name>
+                    <name>
+                      <surname>Barber</surname>
+                      <given-names>N</given-names>
+                    </name>
+                    <name>
+                      <surname>Stark</surname>
+                      <given-names>KD</given-names>
+                    </name>
+                  </person-group>
+                  <article-title>Qualitative study of factors associated with antimicrobial usage in seven small animal veterinary practices in the UK</article-title>
+                  <source>Prev. Vet. Med</source>
+                  <year>2014</year>
+                  <volume>117</volume>
+                  <fpage>68</fpage>
+                  <lpage>78</lpage>
+                  <pub-id pub-id-type="doi">10.1016/j.prevetmed.2014.05.007</pub-id>
+                  <?supplied-pmid 25091861?>
+                  <pub-id pub-id-type="pmid">25091861</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="CR20">
+                <label>20.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Dickson</surname>
+                      <given-names>A</given-names>
+                    </name>
+                    <etal/>
+                  </person-group>
+                  <article-title>Understanding the relationship between pet owners and their companion animals as a key context for antimicrobial resistance-related behaviours: an interpretative phenomenological analysis</article-title>
+                  <source>Heal. Psychol. Behav. Med.</source>
+                  <year>2019</year>
+                  <volume>7</volume>
+                  <fpage>45</fpage>
+                  <lpage>61</lpage>
+                  <pub-id pub-id-type="doi">10.1080/21642850.2019.1577738</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="CR21">
+                <label>21.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>King</surname>
+                      <given-names>C</given-names>
+                    </name>
+                    <etal/>
+                  </person-group>
+                  <article-title>Exploring the behavioural drivers of veterinary surgeon antibiotic prescribing: a qualitative study of companion animal veterinary surgeons in the UK</article-title>
+                  <source>BMC Vet. Res.</source>
+                  <year>2018</year>
+                  <volume>14</volume>
+                  <fpage>332</fpage>
+                  <pub-id pub-id-type="doi">10.1186/s12917-018-1646-2</pub-id>
+                  <?supplied-pmid 30404649?>
+                  <pub-id pub-id-type="pmid">30404649</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="CR22">
+                <label>22.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Smith</surname>
+                      <given-names>M</given-names>
+                    </name>
+                    <etal/>
+                  </person-group>
+                  <article-title>Pet owner and vet interactions: exploring the drivers of AMR</article-title>
+                  <source>Antimicrob. Resist. Infect. Control</source>
+                  <year>2018</year>
+                  <volume>7</volume>
+                  <fpage>46</fpage>
+                  <pub-id pub-id-type="doi">10.1186/s13756-018-0341-1</pub-id>
+                  <?supplied-pmid 29619213?>
+                  <pub-id pub-id-type="pmid">29619213</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="CR23">
+                <label>23.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Tompson</surname>
+                      <given-names>AC</given-names>
+                    </name>
+                    <etal/>
+                  </person-group>
+                  <article-title>What drives antimicrobial prescribing for companion animals? A mixed-methods study of UK veterinary clinics</article-title>
+                  <source>Prev. Vet. Med.</source>
+                  <year>2020</year>
+                  <volume>183</volume>
+                  <fpage>105117</fpage>
+                  <pub-id pub-id-type="doi">10.1016/j.prevetmed.2020.105117</pub-id>
+                  <?supplied-pmid 32890918?>
+                  <pub-id pub-id-type="pmid">32890918</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="CR24">
+                <label>24.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Singleton</surname>
+                      <given-names>DA</given-names>
+                    </name>
+                    <etal/>
+                  </person-group>
+                  <article-title>Pharmaceutical prescription in canine acute diarrhoea: a longitudinal electronic health record analysis of first opinion veterinary practices</article-title>
+                  <source>Front. Vet. Sci</source>
+                  <year>2019</year>
+                  <volume>6</volume>
+                  <fpage>218</fpage>
+                  <lpage>232</lpage>
+                  <pub-id pub-id-type="doi">10.3389/fvets.2019.00218</pub-id>
+                  <?supplied-pmid 31334254?>
+                  <pub-id pub-id-type="pmid">31334254</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="CR25">
+                <label>25.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Singleton</surname>
+                      <given-names>DA</given-names>
+                    </name>
+                    <etal/>
+                  </person-group>
+                  <article-title>A large multi-centre study utilising electronic health records to identify antimicrobial prescription risk factors for dogs and cats</article-title>
+                  <source>Emerg. Infect. Dis</source>
+                  <year>2020</year>
+                  <volume>26</volume>
+                  <fpage>1778</fpage>
+                  <lpage>1791</lpage>
+                  <pub-id pub-id-type="doi">10.3201/eid2608.191786</pub-id>
+                  <?supplied-pmid 32687030?>
+                  <pub-id pub-id-type="pmid">32687030</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="CR26">
+                <label>26.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Beco</surname>
+                      <given-names>L</given-names>
+                    </name>
+                    <etal/>
+                  </person-group>
+                  <article-title>Suggested guidelines for using systemic antimicrobials in bacterial skin infections: part 2— antimicrobial choice, treatment regimens and compliance</article-title>
+                  <source>Vet. Rec.</source>
+                  <year>2013</year>
+                  <volume>172</volume>
+                  <fpage>156</fpage>
+                  <lpage>160</lpage>
+                  <pub-id pub-id-type="doi">10.1136/vr.101070</pub-id>
+                  <?supplied-pmid 23292948?>
+                  <pub-id pub-id-type="pmid">23292948</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="CR27">
+                <label>27.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Lappin</surname>
+                      <given-names>MR</given-names>
+                    </name>
+                    <etal/>
+                  </person-group>
+                  <article-title>Antimicrobial use Guidelines for Treatment of Respiratory Tract Disease in Dogs and Cats: Antimicrobial Guidelines Working Group of the International Society for Companion Animal Infectious Diseases</article-title>
+                  <source>J. Vet. Intern. Med.</source>
+                  <year>2017</year>
+                  <volume>31</volume>
+                  <fpage>279</fpage>
+                  <lpage>294</lpage>
+                  <pub-id pub-id-type="doi">10.1111/jvim.14627</pub-id>
+                  <?supplied-pmid 28185306?>
+                  <pub-id pub-id-type="pmid">28185306</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="CR28">
+                <label>28.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Hubbuch</surname>
+                      <given-names>A</given-names>
+                    </name>
+                    <etal/>
+                  </person-group>
+                  <article-title>Antimicrobial prescriptions in cats in Switzerland before and after the introduction of an online antimicrobial stewardship tool</article-title>
+                  <source>BMC Vet. Res.</source>
+                  <year>2020</year>
+                  <volume>16</volume>
+                  <fpage>229</fpage>
+                  <pub-id pub-id-type="doi">10.1186/s12917-020-02447-8</pub-id>
+                  <?supplied-pmid 32620170?>
+                  <pub-id pub-id-type="pmid">32620170</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="CR29">
+                <label>29.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Lutz</surname>
+                      <given-names>B</given-names>
+                    </name>
+                    <etal/>
+                  </person-group>
+                  <article-title>Antimicrobial prescriptions and adherence to prudent use guidelines for selected canine diseases in Switzerland in 2016</article-title>
+                  <source>Vet. Rec. Open</source>
+                  <year>2020</year>
+                  <volume>7</volume>
+                  <fpage>e000370</fpage>
+                  <pub-id pub-id-type="doi">10.1136/vetreco-2019-000370</pub-id>
+                  <?supplied-pmid 32201578?>
+                  <pub-id pub-id-type="pmid">32201578</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="CR30">
+                <label>30.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Radford</surname>
+                      <given-names>A</given-names>
+                    </name>
+                    <etal/>
+                  </person-group>
+                  <article-title>Prescribing antibiotics in small animals practices [2]</article-title>
+                  <source>Vet. Rec</source>
+                  <year>2017</year>
+                  <volume>181</volume>
+                  <fpage>71</fpage>
+                  <pub-id pub-id-type="doi">10.1136/vr.j4974</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="CR31">
+                <label>31.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Hopman</surname>
+                      <given-names>NEM</given-names>
+                    </name>
+                    <etal/>
+                  </person-group>
+                  <article-title>Implementation and evaluation of an antimicrobial stewardship programme in companion animal clinics: A stepped-wedge design intervention study</article-title>
+                  <source>PLoS One</source>
+                  <year>2019</year>
+                  <volume>14</volume>
+                  <fpage>e0225124</fpage>
+                  <pub-id pub-id-type="doi">10.1371/journal.pone.0225124</pub-id>
+                  <?supplied-pmid 31738811?>
+                  <pub-id pub-id-type="pmid">31738811</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="CR32">
+                <label>32.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Martinez-Gonzalez</surname>
+                      <given-names>NA</given-names>
+                    </name>
+                    <etal/>
+                  </person-group>
+                  <article-title>The impact of interventions to improve the quality of prescribing and use of antibiotics in primary care patients with respiratory tract infections: a systematic review protocol</article-title>
+                  <source>BMJ Open</source>
+                  <year>2017</year>
+                  <volume>7</volume>
+                  <fpage>e016253</fpage>
+                  <pub-id pub-id-type="doi">10.1136/bmjopen-2017-016253</pub-id>
+                  <?supplied-pmid 28611111?>
+                  <pub-id pub-id-type="pmid">28611111</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="CR33">
+                <label>33.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Thakkar</surname>
+                      <given-names>K</given-names>
+                    </name>
+                    <etal/>
+                  </person-group>
+                  <article-title>A quality improvement programme to increase compliance with an anti-infective prescribing policy</article-title>
+                  <source>J. Antimicrob. Chemother.</source>
+                  <year>2011</year>
+                  <volume>66</volume>
+                  <fpage>1916</fpage>
+                  <lpage>1920</lpage>
+                  <pub-id pub-id-type="doi">10.1093/jac/dkr207</pub-id>
+                  <?supplied-pmid 21642650?>
+                  <pub-id pub-id-type="pmid">21642650</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="CR34">
+                <label>34.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Hallsworth</surname>
+                      <given-names>M</given-names>
+                    </name>
+                    <etal/>
+                  </person-group>
+                  <article-title>Provision of social norm feedback to high prescribers of antibiotics in general practice: a pragmatic national randomised controlled trial</article-title>
+                  <source>Lancet</source>
+                  <year>2016</year>
+                  <volume>387</volume>
+                  <fpage>1743</fpage>
+                  <lpage>1752</lpage>
+                  <pub-id pub-id-type="doi">10.1016/S0140-6736(16)00215-4</pub-id>
+                  <?supplied-pmid 26898856?>
+                  <pub-id pub-id-type="pmid">26898856</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="CR35">
+                <label>35.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Gjelstad</surname>
+                      <given-names>S</given-names>
+                    </name>
+                    <etal/>
+                  </person-group>
+                  <article-title>Improving antibiotic prescribing in acute respiratory tract infections: cluster randomised trial from Norwegian general practice (prescription peer academic detailing (Rx-PAD) study</article-title>
+                  <source>BMJ</source>
+                  <year>2013</year>
+                  <volume>347</volume>
+                  <fpage>f4403</fpage>
+                  <pub-id pub-id-type="doi">10.1136/bmj.f4403</pub-id>
+                  <?supplied-pmid 23894178?>
+                  <pub-id pub-id-type="pmid">23894178</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="CR36">
+                <label>36.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Le Corvoisier</surname>
+                      <given-names>P</given-names>
+                    </name>
+                    <etal/>
+                  </person-group>
+                  <article-title>Long-term effects of an educational seminar on antibiotic prescribing by GPs: a randomised controlled trial</article-title>
+                  <source>Br. J. Gen. Pract.</source>
+                  <year>2013</year>
+                  <volume>63</volume>
+                  <fpage>e455</fpage>
+                  <lpage>e464</lpage>
+                  <pub-id pub-id-type="doi">10.3399/bjgp13X669176</pub-id>
+                  <?supplied-pmid 23834882?>
+                  <pub-id pub-id-type="pmid">23834882</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="CR37">
+                <label>37.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Gerber</surname>
+                      <given-names>JS</given-names>
+                    </name>
+                    <etal/>
+                  </person-group>
+                  <article-title>Effect of an outpatient antimicrobial stewardship intervention on broad-spectrum antibiotic prescribing by primary care pediatricians: a randomized trial</article-title>
+                  <source>JAMA</source>
+                  <year>2013</year>
+                  <volume>309</volume>
+                  <fpage>2345</fpage>
+                  <lpage>2352</lpage>
+                  <pub-id pub-id-type="doi">10.1001/jama.2013.6287</pub-id>
+                  <?supplied-pmid 23757082?>
+                  <pub-id pub-id-type="pmid">23757082</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="CR38">
+                <label>38.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Rognstad</surname>
+                      <given-names>S</given-names>
+                    </name>
+                    <etal/>
+                  </person-group>
+                  <article-title>Characteristics of GPs responding to an educational intervention to minimise inappropriate prescriptions: subgroup analyses of the Rx-PAD study</article-title>
+                  <source>BJGP Open</source>
+                  <year>2018</year>
+                  <volume>2</volume>
+                  <fpage>bjgpopen18X101373</fpage>
+                  <pub-id pub-id-type="doi">10.3399/bjgpopen18X101373</pub-id>
+                  <?supplied-pmid 30564704?>
+                  <pub-id pub-id-type="pmid">30564704</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="CR39">
+                <label>39.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Hagman</surname>
+                      <given-names>BT</given-names>
+                    </name>
+                    <name>
+                      <surname>Noel</surname>
+                      <given-names>NE</given-names>
+                    </name>
+                    <name>
+                      <surname>Clifford</surname>
+                      <given-names>PR</given-names>
+                    </name>
+                  </person-group>
+                  <article-title>Social Norms Theory-Based Interventions: Testing the Feasibility of a Purported Mechanism of Action</article-title>
+                  <source>J. Am. Coll. Heal.</source>
+                  <year>2007</year>
+                  <volume>56</volume>
+                  <fpage>293</fpage>
+                  <lpage>298</lpage>
+                  <pub-id pub-id-type="doi">10.3200/JACH.56.3.293-298</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="CR40">
+                <label>40.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Aunger</surname>
+                      <given-names>R</given-names>
+                    </name>
+                    <name>
+                      <surname>Curtis</surname>
+                      <given-names>V</given-names>
+                    </name>
+                  </person-group>
+                  <article-title>Behaviour centred design: towards an applied science of behaviour change</article-title>
+                  <source>Health Psychol. Rev.</source>
+                  <year>2016</year>
+                  <volume>10</volume>
+                  <fpage>425</fpage>
+                  <lpage>446</lpage>
+                  <pub-id pub-id-type="doi">10.1080/17437199.2016.1219673</pub-id>
+                  <?supplied-pmid 27535821?>
+                  <pub-id pub-id-type="pmid">27535821</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="CR41">
+                <label>41.</label>
+                <mixed-citation publication-type="other">VMD. Joint report on antibiotic use and antibiotic resistance, 2013–2017. <ext-link ext-link-type="uri" xlink:href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/775075/One_Health_Report_2019_v45.pdf">https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/775075/One_Health_Report_2019_v45.pdf</ext-link> (2019).</mixed-citation>
+              </ref>
+              <ref id="CR42">
+                <label>42.</label>
+                <mixed-citation publication-type="other">VMD. Veterinary Antimicrobial Resistance and Sales Surveillance 2018. <ext-link ext-link-type="uri" xlink:href="https://www.gov.uk/government/publications/veterinary-antimicrobial-resistance-and-sales-surveillance-2018">https://www.gov.uk/government/publications/veterinary-antimicrobial-resistance-and-sales-surveillance-2018</ext-link> (2019).</mixed-citation>
+              </ref>
+              <ref id="CR43">
+                <label>43.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Randall</surname>
+                      <given-names>LP</given-names>
+                    </name>
+                    <etal/>
+                  </person-group>
+                  <article-title>Longitudinal study on the occurrence in pigs of colistin-resistant Escherichia coli carrying mcr-1 following the cessation of use of colistin</article-title>
+                  <source>J. Appl Microbiol</source>
+                  <year>2018</year>
+                  <volume>125</volume>
+                  <fpage>596</fpage>
+                  <lpage>608</lpage>
+                  <pub-id pub-id-type="doi">10.1111/jam.13907</pub-id>
+                  <?supplied-pmid 29741287?>
+                  <pub-id pub-id-type="pmid">29741287</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="CR44">
+                <label>44.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Raasch</surname>
+                      <given-names>S</given-names>
+                    </name>
+                    <etal/>
+                  </person-group>
+                  <article-title>Effectiveness of alternative measures to reduce antimicrobial usage in pig production in four European countries</article-title>
+                  <source>Porc. Heal. Manag</source>
+                  <year>2020</year>
+                  <volume>6</volume>
+                  <fpage>6</fpage>
+                  <pub-id pub-id-type="doi">10.1186/s40813-020-0145-6</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="CR45">
+                <label>45.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>O’Neill</surname>
+                      <given-names>DG</given-names>
+                    </name>
+                    <name>
+                      <surname>Church</surname>
+                      <given-names>DB</given-names>
+                    </name>
+                    <name>
+                      <surname>McGreevy</surname>
+                      <given-names>PD</given-names>
+                    </name>
+                    <name>
+                      <surname>Thomson</surname>
+                      <given-names>PC</given-names>
+                    </name>
+                    <name>
+                      <surname>Brodbelt</surname>
+                      <given-names>DC</given-names>
+                    </name>
+                  </person-group>
+                  <article-title>Approaches to canine health surveillance</article-title>
+                  <source>Canine Genet Epidemiol.</source>
+                  <year>2014</year>
+                  <volume>1</volume>
+                  <fpage>2</fpage>
+                  <pub-id pub-id-type="doi">10.1186/2052-6687-1-2</pub-id>
+                  <?supplied-pmid 26401319?>
+                  <pub-id pub-id-type="pmid">26401319</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="CR46">
+                <label>46.</label>
+                <mixed-citation publication-type="other">PHE. English surveillance programme for antimicrobial utilisation and resistance (ESPAUR) report 2017. <ext-link ext-link-type="uri" xlink:href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/656611/ESPAUR_report_2017.pdf">https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/656611/ESPAUR_report_2017.pdf</ext-link> (2017).</mixed-citation>
+              </ref>
+              <ref id="CR47">
+                <label>47.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Altiner</surname>
+                      <given-names>A</given-names>
+                    </name>
+                    <etal/>
+                  </person-group>
+                  <article-title>Fluoroquinolones to treat uncomplicated acute cough in primary care: predictors for unjustified prescribing of antibiotics</article-title>
+                  <source>J. Antimicrob. Chemother.</source>
+                  <year>2010</year>
+                  <volume>65</volume>
+                  <fpage>1521</fpage>
+                  <lpage>1525</lpage>
+                  <pub-id pub-id-type="doi">10.1093/jac/dkq151</pub-id>
+                  <?supplied-pmid 20494927?>
+                  <pub-id pub-id-type="pmid">20494927</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="CR48">
+                <label>48.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Anholt</surname>
+                      <given-names>RM</given-names>
+                    </name>
+                    <name>
+                      <surname>Berezowski</surname>
+                      <given-names>J</given-names>
+                    </name>
+                    <name>
+                      <surname>Jamal</surname>
+                      <given-names>I</given-names>
+                    </name>
+                    <name>
+                      <surname>Ribble</surname>
+                      <given-names>C</given-names>
+                    </name>
+                    <name>
+                      <surname>Stephen</surname>
+                      <given-names>C</given-names>
+                    </name>
+                  </person-group>
+                  <article-title>Mining free-text medical records for companion animal enteric syndrome surveillance</article-title>
+                  <source>Prev. Vet. Med</source>
+                  <year>2014</year>
+                  <volume>113</volume>
+                  <fpage>417</fpage>
+                  <lpage>422</lpage>
+                  <pub-id pub-id-type="doi">10.1016/j.prevetmed.2014.01.017</pub-id>
+                  <?supplied-pmid 24485708?>
+                  <pub-id pub-id-type="pmid">24485708</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="CR49">
+                <label>49.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Currie</surname>
+                      <given-names>K</given-names>
+                    </name>
+                    <name>
+                      <surname>King</surname>
+                      <given-names>C</given-names>
+                    </name>
+                    <name>
+                      <surname>Nuttall</surname>
+                      <given-names>T</given-names>
+                    </name>
+                    <name>
+                      <surname>Smith</surname>
+                      <given-names>M</given-names>
+                    </name>
+                    <name>
+                      <surname>Flowers</surname>
+                      <given-names>P</given-names>
+                    </name>
+                  </person-group>
+                  <article-title>Expert consensus regarding drivers of antimicrobial stewardship in companion animal veterinary practice: a Delphi study</article-title>
+                  <source>Vet. Rec.</source>
+                  <year>2018</year>
+                  <volume>182</volume>
+                  <fpage>691</fpage>
+                  <pub-id pub-id-type="doi">10.1136/vr.104639</pub-id>
+                  <?supplied-pmid 29572334?>
+                  <pub-id pub-id-type="pmid">29572334</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="CR50">
+                <label>50.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>De Briyne</surname>
+                      <given-names>N</given-names>
+                    </name>
+                    <name>
+                      <surname>Atkinson</surname>
+                      <given-names>J</given-names>
+                    </name>
+                    <name>
+                      <surname>Pokludova</surname>
+                      <given-names>L</given-names>
+                    </name>
+                    <name>
+                      <surname>Borriello</surname>
+                      <given-names>SP</given-names>
+                    </name>
+                    <name>
+                      <surname>Price</surname>
+                      <given-names>S</given-names>
+                    </name>
+                  </person-group>
+                  <article-title>Factors influencing antibiotic prescribing habits and use of sensitivity testing amongst veterinarians in Europe</article-title>
+                  <source>Vet. Rec.</source>
+                  <year>2013</year>
+                  <volume>173</volume>
+                  <fpage>475</fpage>
+                  <pub-id pub-id-type="doi">10.1136/vr.101454</pub-id>
+                  <?supplied-pmid 24068699?>
+                  <pub-id pub-id-type="pmid">24068699</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="CR51">
+                <label>51.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Nuttall</surname>
+                      <given-names>T</given-names>
+                    </name>
+                  </person-group>
+                  <article-title>Bacterial isolation and antimicrobial susceptibility trends: why these are important and how they can be used</article-title>
+                  <source>Vet. Rec.</source>
+                  <year>2018</year>
+                  <volume>183</volume>
+                  <fpage>19</fpage>
+                  <lpage>20</lpage>
+                  <pub-id pub-id-type="doi">10.1136/vr.k2754</pub-id>
+                  <?supplied-pmid 29976712?>
+                  <pub-id pub-id-type="pmid">29976712</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="CR52">
+                <label>52.</label>
+                <mixed-citation publication-type="other">Coppock, A. Randomizr. (2019).</mixed-citation>
+              </ref>
+              <ref id="CR53">
+                <label>53.</label>
+                <mixed-citation publication-type="other">AOD. AOD R Packages. (2016).</mixed-citation>
+              </ref>
+              <ref id="CR54">
+                <label>54.</label>
+                <mixed-citation publication-type="other">Croissant, Y. &amp; Millo, G. Panel data econometrics in R: The plm package. (2020).</mixed-citation>
+              </ref>
+              <ref id="CR55">
+                <label>55.</label>
+                <mixed-citation publication-type="other">UCLA. R library contrast coding systems for categorical variables. <ext-link ext-link-type="uri" xlink:href="https://stats.idre.ucla.edu/r/library/r-library-contrast-coding-systems-for-categorical-variables/">https://stats.idre.ucla.edu/r/library/r-library-contrast-coding-systems-for-categorical-variables/</ext-link> (2020).</mixed-citation>
+              </ref>
+              <ref id="CR56">
+                <label>56.</label>
+                <mixed-citation publication-type="other">H., W. ggplot2: elegant graphics for data analysis. <ext-link ext-link-type="uri" xlink:href="https://ggplot2.tidyverse.org">https://ggplot2.tidyverse.org</ext-link> (2020).</mixed-citation>
+              </ref>
+              <ref id="CR57">
+                <label>57.</label>
+                <mixed-citation publication-type="other">Mangiafico, S. S. Summary and analysis of extension program evaluation in R, version 1.18.1. <ext-link ext-link-type="uri" xlink:href="https://rcompanion.org/handbook/">https://rcompanion.org/handbook/</ext-link> (2016).</mixed-citation>
+              </ref>
+              <ref id="CR58">
+                <label>58.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Moher</surname>
+                      <given-names>D</given-names>
+                    </name>
+                    <etal/>
+                  </person-group>
+                  <article-title>CONSORT 2010 explanation and elaboration: updated guidelines for reporting parallel group randomised trials</article-title>
+                  <source>BMJ</source>
+                  <year>2010</year>
+                  <volume>340</volume>
+                  <fpage>c869</fpage>
+                  <pub-id pub-id-type="doi">10.1136/bmj.c869</pub-id>
+                  <?supplied-pmid 20332511?>
+                  <pub-id pub-id-type="pmid">20332511</pub-id>
+                </element-citation>
+              </ref>
+            </ref-list>
+          </back>
+        </article>
+      </metadata>
+    </record>
+  </GetRecord>
+</OAI-PMH>
