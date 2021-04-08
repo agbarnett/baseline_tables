@@ -1,7 +1,8 @@
 # 0_publication_types.R
 # publication types available on pubmed
 # from https://pubmed.ncbi.nlm.nih.gov/help/#publication-types
-# March 2021
+# experienced showed that the type "clinical trial" was often not randomised so there were no groups to compare
+# April 2021
 
 pub_types = read.table(header=TRUE, sep='!', stringsAsFactors = FALSE, text='
 type!include
@@ -14,7 +15,7 @@ Case Reports!0
 Classical Article!0
 Clinical Conference!0
 Clinical Study!0
-Clinical Trial!1
+Clinical Trial!0
 Clinical Trial, Phase I!1
 Clinical Trial, Phase II!1
 Clinical Trial, Phase III!1
