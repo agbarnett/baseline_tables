@@ -42,7 +42,7 @@ baseline_table = function(webpage, table_number = 1){
       return(to.return) # bail out here, will be impossible to unpick
     }
     #
-    names(table1) =  paste(LETTERS[1:ncol(table1)], janitor::make_clean_names(names(table1)), sep = '') # avoid repeat names by adding letters to start
+    names(table1) =  paste(LETTERS[1:ncol(table1)], names(table1), sep = '') # avoid repeat names by adding letters to start
   }
   # clean up table text and column headers:
   colnames(table1) = tolower(removeunicode(colnames(table1))) # remove unicode from headers too
@@ -51,9 +51,11 @@ baseline_table = function(webpage, table_number = 1){
     mutate_all(removeunicode) %>%
     mutate_all(string_remove_function)
 
+  # could transpose badly formatted tables here (where results are in rows instead of columns)
+  
   # combine first two columns if they are both mostly text (double label column)
-  textc = sum(str_count(tolower(table1[,2]), pattern='[a-z]')) # amount of text in 2nd column
-  numbersc = sum(str_count(tolower(table1[,2]), pattern='[0-9]')) # amount of numbers in 2nd column
+  textc = sum(str_count(tolower(table1[,2]), pattern='[a-z]'), na.rm=TRUE) # amount of text in 2nd column
+  numbersc = sum(str_count(tolower(table1[,2]), pattern='[0-9]'), na.rm=TRUE) # amount of numbers in 2nd column
   if( (textc/(numbersc+textc)) > 0.8 ){ # if over 80% text then must be a label column
     names(table1)[1:2] = c('label1','label2')
     table1 = mutate(table1, 
@@ -126,7 +128,9 @@ baseline_table = function(webpage, table_number = 1){
     pvalues_in_table = TRUE
   }
   stats_detect = stats_detect$table # ... then change list to table of cells
-  
+  # update `p-values in table` if p-values are in rows
+  if(any(stats_detect$statistic == 'pvals', na.rm = TRUE)){pvalues_in_table = TRUE}
+
   ## remove rows in the table that are just text (so just keep rows with some numbers)
   nums = matrix(data = rep(1:nrow(no_header), ncol(no_header)), ncol = ncol(no_header), nrow = nrow(no_header)) # make matrix of numbers
   vector_nums = as.vector(as.matrix(nums))
@@ -154,7 +158,7 @@ baseline_table = function(webpage, table_number = 1){
                  text = str_replace_all(text, pattern = '[^0-9|.| ]', replacement = ' '), # just keep numbers, decimals and spaces
                  text = str_squish(string = text)) %>% # remove any double spaces added, and spaces at start/end
     filter(!is.na(statistic)) %>% # only proceed if we know the statistic
-    separate(text, c('stat1','stat2','stat3','stat4'), sep = ' ', fill = 'right') %>% # extract two statistics
+    separate(text, c('stat1','stat2','stat3','stat4'), sep = ' ', fill = 'right') %>% # extract four statistics
     mutate(stat1 = suppressWarnings(as.numeric(stat1)), # sum numbers not converted because of things like ".16"
            stat2 = suppressWarnings(as.numeric(stat2)),
            stat3 = suppressWarnings(as.numeric(stat3)),
@@ -162,13 +166,20 @@ baseline_table = function(webpage, table_number = 1){
     filter(!is.na(stat1)) # knock out missing cells
   
   ## get sample size from top row(s) or cells, then add to table
-  sample_sizes = sample_sizes_est(table_header = table_header[,-1], processed_table = table) # header without first column 
+  sample_sizes = sample_sizes_est(table_header = table_header[,-1], processed_table = table, first_row = table1[1,]) # header without first column 
   if(is.null(sample_sizes)==TRUE){
     to.return = list()
     to.return$reason = 'No sample size'
     to.return$table = NULL
     return(to.return) # stop here
   }
+  if(nrow(sample_sizes)==1){
+    to.return = list()
+    to.return$reason = 'Just one column in table'
+    to.return$table = NULL
+    return(to.return) # stop here
+  }
+  
   # add sample sizes to table
   table = full_join(table, sample_sizes, by = 'column') %>% # add sample sizes from above
     filter(!is.na(sample_size)) # knock out missing sample size
@@ -184,13 +195,14 @@ baseline_table = function(webpage, table_number = 1){
   }
   
   ## drop any columns that are the total (to do: could expand to cells in header)
-  total_words = c('total','overall','all')
+  total_words = c('total','overall','all ')
+  total_words = total_words[order(-nchar(total_words))] # from longest to shortest
   total_words = paste(paste('^', total_words, sep=''), collapse='|') # at start
   text_to_check = tolower(names(table_header))
   text_to_check = str_squish(str_remove_all(text_to_check, 'n=|n =|[0-9]')) # remove sample size
   to_drop = str_detect(text_to_check, total_words) # looking for just the word 'total', 'all' or 'overall', plus one character because of numbers added above
-  if(any(to_drop)){
-    totals = which(to_drop)
+  if(any(to_drop) == TRUE){
+    totals = which(to_drop) - 1 # minus one because of first column with names
     table = filter(table, !column %in% totals)
   }
   
@@ -205,6 +217,15 @@ baseline_table = function(webpage, table_number = 1){
                  column = as.numeric(as.factor(column)))
   table = arrange(table, row, column)
   
+  # check for repeat columns
+  duplicates = select(table, -column) %>%
+    duplicated()
+  if(sum(duplicates) > 3){ # number of duplicate rows, may need trial and error with this threshold
+    dcolumns = unique(table[duplicates,] %>% pull(column))
+    table = filter(table, !column %in% dcolumns) %>%
+      mutate(column = as.numeric(as.factor(column))) # re-number columns
+  }
+ 
   # return final results
   to.return = list()
   to.return$reason = NULL # no reason to exclude
@@ -224,7 +245,7 @@ statistics_detect = function(intable,
   columns_to_remove = NULL # store columns to remove
   
  ## a) look for stats in header
- header = header[,-1] # do not use first column (usually labels)
+ #header = header[,-1] # do not use first column (usually labels) - turned off again because header can have useful info
  header = rbind(header, names(header)) # add header as text and remove names
  names(header) = NULL
  header = t(header) # transpose
@@ -235,12 +256,14 @@ statistics_detect = function(intable,
   percent = str_detect(value, pattern = percent_pattern), # see 0_pattern.R for all patterns
   continuous = grepl(x = value, pattern = continuous_pattern),
   numbers = str_detect(value, pattern = number_pattern),
+  min_max = str_detect(value, pattern = min_max_pattern),
   pval = str_detect(value, pattern = pval_pattern),
   median = str_detect(value, pattern = median_pattern)) %>% 
   group_by(X1) %>%
   summarise(col_percent = sum(percent, na.rm = TRUE),
        col_continuous = sum(continuous, na.rm = TRUE),
        col_numbers = sum(numbers, na.rm = TRUE),
+       col_min_max = sum(min_max, na.rm = TRUE),
        col_pvals = sum(pval, na.rm = TRUE),
        col_median = sum(median, na.rm = TRUE)) %>%
    rename('column' = 'X1')
@@ -252,6 +275,7 @@ statistics_detect = function(intable,
    mutate(col_percent = col_percent/(ncol(stats_header) - 1), # spread score over rows for later summing
           col_continuous = col_continuous/(ncol(stats_header) - 1),
           col_numbers = col_numbers/(ncol(stats_header) - 1),
+          col_min_max = col_min_max/(ncol(stats_header) - 1),
           col_pvals = col_pvals/(ncol(stats_header) - 1),
           col_median = col_median/(ncol(stats_header) - 1))
  
@@ -283,12 +307,14 @@ statistics_detect = function(intable,
  percents = str_detect(intable[,1], pattern = percent_pattern) # see 0_pattern.R for all patterns
 continuous = grepl(pattern = continuous_pattern, intable[,1]) # had to use grep because of symbols
 numbers = str_detect(intable[,1], pattern = number_pattern)
+min_max = str_detect(intable[,1], pattern = min_max_pattern)
 pvals = str_detect(intable[,1], pattern = pval_pattern)
 medians = str_detect(intable[,1], pattern = median_words) # just look for median words, not number patterns
 stats_label_column = data.frame(row = 1:nrow(intable), 
              percents = as.numeric(percents) , # using weights, but not for percent because of things like Left ventricular ejection fraction and HbA1c
              continuous = continuous * weight,
              numbers = numbers * weight,
+             min_max = min_max * weight,
              pvals = pvals * weight,
              medians = medians * weight*1.1) # tiny increase in median to avoid ties
 
@@ -298,6 +324,7 @@ stats_cells = full_join(table_cells, stats_header_row, by=c('row','column')) %>%
  summarise(cell_percents = sum(percents, na.rm = TRUE) + sum(col_percent), # total counts per row
       cell_continuous = sum(continuous, na.rm = TRUE) + sum(col_continuous),
       cell_numbers = sum(numbers, na.rm = TRUE) + sum(col_numbers),
+      cell_min_max = sum(min_max, na.rm = TRUE) + sum(col_min_max),
       cell_pvals = sum(pvals, na.rm = TRUE) + sum(col_pvals),
       cell_median = sum(median, na.rm = TRUE) + sum(col_median)) 
 
@@ -306,6 +333,7 @@ combine = full_join(stats_cells, stats_label_column, by = 'row') %>%
  mutate(percent_score = as.numeric(cell_percents + percents), # scores that combine cell and column information
      continuous_score = as.numeric(cell_continuous + continuous),
      numbers_score = as.numeric(cell_numbers + numbers),
+     min_max_score = as.numeric(cell_min_max + min_max),
      pvals_score = as.numeric(cell_pvals + pvals),
      median_score = as.numeric(cell_median + medians)) %>%
  select(row, ends_with('score')) %>%
@@ -381,7 +409,8 @@ extract_n = function(intext){
 
 ## function to estimate sample sizes per group
 sample_sizes_est = function(table_header, # table header with column headings
-            processed_table) # statistics per row
+            processed_table, # statistics per row
+            first_row) # first row of table, can have totals
 {
 
 # which row of the header has the n's
@@ -434,7 +463,23 @@ if(nrow(sample_sizes) > 0){
    percents = mutate(percents, sample_size = round(sample_size) )
    return(percents)
   }
-}
+ }
+  
+  # if still nothing try first row
+  first_row = select(first_row, -header)
+  if(str_squish(first_row[1])%in% c('n','total')){
+    numbers = first_row[-1] # remove header column
+    tran = data.frame(t(numbers)) # transpose
+    names(tran) = paste('C', 1:ncol(tran), sep='')
+    tran$labels = rownames(tran)
+    tran = filter(tran, labels!='%') %>% # remove cells that are just percents
+      mutate(C1=str_squish(C1)) %>% # remove spaces
+      separate(C1, c('stat1','stat2'), sep = ' ', fill = 'right') %>% # extract two statistics
+      mutate(stat1 = suppressWarnings(as.numeric(stat1)), # sum numbers not converted because of things like ".16"
+             stat2 = suppressWarnings(as.numeric(stat2)))
+    nums = data.frame(column=1:nrow(tran), sample_size=tran$stat1) # assume n is first statistic
+    return(nums)
+  }
 
 } # end of function
 
@@ -447,6 +492,7 @@ make_cells = function(indata){
            percents = str_detect(string = value, pattern = '%'), # see 0_pattern.R 
            continuous = grepl(x = value, pattern = paste(plus_minus, collapse = '|')),
            numbers = str_detect(string = value, pattern = '/'),
+           min_max = str_detect(string = value, pattern = 'min|max'),
            pvals = str_detect(string = value, pattern = 'p.value|p =|p='),
            median = str_detect(string = value, pattern = paste(median_numbers, collapse = '|')))
   return(table_cells)

@@ -1,0 +1,842 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OAI-PMH xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/ http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd">
+  <responseDate>2021-05-02T05:05:15Z</responseDate>
+  <request verb="GetRecord" identifier="oai:pubmedcentral.nih.gov:7140751" metadataPrefix="pmc">https:/www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi</request>
+  <GetRecord>
+    <record>
+      <header>
+        <identifier>oai:pubmedcentral.nih.gov:7140751</identifier>
+        <datestamp>2020-04-14</datestamp>
+        <setSpec>springeropen</setSpec>
+        <setSpec>pmc-open</setSpec>
+      </header>
+      <metadata>
+        <article xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:mml="http://www.w3.org/1998/Math/MathML" xsi:schemaLocation="https://jats.nlm.nih.gov/ns/archiving/1.2/ https://jats.nlm.nih.gov/archiving/1.2/xsd/JATS-archivearticle1.xsd" article-type="research-article">
+          <front>
+            <journal-meta>
+              <journal-id journal-id-type="nlm-ta">Adv Ther</journal-id>
+              <journal-id journal-id-type="iso-abbrev">Adv Ther</journal-id>
+              <journal-title-group>
+                <journal-title>Advances in Therapy</journal-title>
+              </journal-title-group>
+              <issn pub-type="ppub">0741-238X</issn>
+              <issn pub-type="epub">1865-8652</issn>
+              <publisher>
+                <publisher-name>Springer Healthcare</publisher-name>
+                <publisher-loc>Cheshire</publisher-loc>
+              </publisher>
+            </journal-meta>
+            <article-meta>
+              <article-id pub-id-type="accession">PMC7140751</article-id>
+              <article-id pub-id-type="pmcid">PMC7140751</article-id>
+              <article-id pub-id-type="pmc-uid">7140751</article-id>
+              <article-id pub-id-type="pmid">32166538</article-id>
+              <article-id pub-id-type="pmid">32166538</article-id>
+              <article-id pub-id-type="publisher-id">1277</article-id>
+              <article-id pub-id-type="doi">10.1007/s12325-020-01277-2</article-id>
+              <article-categories>
+                <subj-group subj-group-type="heading">
+                  <subject>Original Research</subject>
+                </subj-group>
+              </article-categories>
+              <title-group>
+                <article-title>Fixed-Dose Combination of Netarsudil and Latanoprost in Ocular Hypertension and Open-Angle Glaucoma: Pooled Efficacy/Safety Analysis of Phase 3 MERCURY-1 and -2</article-title>
+              </title-group>
+              <contrib-group>
+                <contrib contrib-type="author" corresp="yes">
+                  <name>
+                    <surname>Asrani</surname>
+                    <given-names>Sanjay</given-names>
+                  </name>
+                  <address>
+                    <email>sanjay.asrani@duke.edu</email>
+                  </address>
+                  <xref ref-type="aff" rid="Aff1">1</xref>
+                </contrib>
+                <contrib contrib-type="author">
+                  <name>
+                    <surname>Bacharach</surname>
+                    <given-names>Jason</given-names>
+                  </name>
+                  <xref ref-type="aff" rid="Aff2">2</xref>
+                </contrib>
+                <contrib contrib-type="author">
+                  <name>
+                    <surname>Holland</surname>
+                    <given-names>Edward</given-names>
+                  </name>
+                  <xref ref-type="aff" rid="Aff3">3</xref>
+                </contrib>
+                <contrib contrib-type="author">
+                  <name>
+                    <surname>McKee</surname>
+                    <given-names>Hayley</given-names>
+                  </name>
+                  <xref ref-type="aff" rid="Aff4">4</xref>
+                </contrib>
+                <contrib contrib-type="author">
+                  <name>
+                    <surname>Sheng</surname>
+                    <given-names>Huan</given-names>
+                  </name>
+                  <xref ref-type="aff" rid="Aff4">4</xref>
+                </contrib>
+                <contrib contrib-type="author">
+                  <name>
+                    <surname>Lewis</surname>
+                    <given-names>Richard A.</given-names>
+                  </name>
+                  <xref ref-type="aff" rid="Aff4">4</xref>
+                  <xref ref-type="aff" rid="Aff5">5</xref>
+                </contrib>
+                <contrib contrib-type="author">
+                  <name>
+                    <surname>Kopczynski</surname>
+                    <given-names>Casey C.</given-names>
+                  </name>
+                  <xref ref-type="aff" rid="Aff4">4</xref>
+                </contrib>
+                <contrib contrib-type="author">
+                  <name>
+                    <surname>Heah</surname>
+                    <given-names>Theresa</given-names>
+                  </name>
+                  <xref ref-type="aff" rid="Aff4">4</xref>
+                </contrib>
+                <aff id="Aff1"><label>1</label><institution-wrap><institution-id institution-id-type="GRID">grid.26009.3d</institution-id><institution-id institution-id-type="ISNI">0000 0004 1936 7961</institution-id><institution>Duke University School of Medicine, </institution></institution-wrap>Durham, NC USA </aff>
+                <aff id="Aff2"><label>2</label>North Bay Eye Associates, Petaluma, CA USA </aff>
+                <aff id="Aff3"><label>3</label><institution-wrap><institution-id institution-id-type="GRID">grid.418609.2</institution-id><institution>Cincinnati Eye Institute, </institution></institution-wrap>Cincinnati, OH USA </aff>
+                <aff id="Aff4"><label>4</label>Aerie Pharmaceuticals, Inc, Durham, NC USA </aff>
+                <aff id="Aff5"><label>5</label>Sacramento Eye Consultants, Sacramento, CA USA </aff>
+              </contrib-group>
+              <pub-date pub-type="epub">
+                <day>12</day>
+                <month>3</month>
+                <year>2020</year>
+              </pub-date>
+              <pub-date pub-type="pmc-release">
+                <day>12</day>
+                <month>3</month>
+                <year>2020</year>
+              </pub-date>
+              <pub-date pub-type="ppub">
+                <year>2020</year>
+              </pub-date>
+              <volume>37</volume>
+              <issue>4</issue>
+              <fpage>1620</fpage>
+              <lpage>1631</lpage>
+              <history>
+                <date date-type="received">
+                  <day>20</day>
+                  <month>12</month>
+                  <year>2019</year>
+                </date>
+              </history>
+              <permissions>
+                <copyright-statement>© The Author(s) 2020</copyright-statement>
+                <license license-type="OpenAccess">
+                  <license-p><bold>Open Access</bold>This article is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License, which permits any non-commercial use, sharing, adaptation, distribution and reproduction in any medium or format, as long as you give appropriate credit to the original author(s) and the source, provide a link to the Creative Commons licence, and indicate if changes were made. The images or other third party material in this article are included in the article's Creative Commons licence, unless indicated otherwise in a credit line to the material. If material is not included in the article's Creative Commons licence and your intended use is not permitted by statutory regulation or exceeds the permitted use, you will need to obtain permission directly from the copyright holder.To view a copy of this licence, visit <ext-link ext-link-type="uri" xlink:href="http://creativecommons.org/licenses/by-nc/4.0/">http://creativecommons.org/licenses/by-nc/4.0/</ext-link>.</license-p>
+                </license>
+              </permissions>
+              <abstract id="Abs1">
+                <sec>
+                  <title>Introduction</title>
+                  <p id="Par1">New open-angle glaucoma (OAG) and ocular hypertension (OHT) therapies that reduce treatment burden and improve outcomes relative to currently available agents are needed. Netarsudil, a novel Rho kinase inhibitor approved by the US Food and Drug Administration, reduces intraocular pressure (IOP) by increasing trabecular outflow. Two phase 3 superiority studies compared a fixed-dose combination (FDC) of netarsudil and the prostaglandin latanoprost with each active component for IOP-lowering efficacy.</p>
+                </sec>
+                <sec>
+                  <title>Methods</title>
+                  <p id="Par2">Pooled efficacy and safety data were analyzed from MERCURY-1 and -2 studies in patients with OAG or OHT. Patients instilled one drop of netarsudil (0.02%)/latanoprost (0.005%) FDC (<italic>n</italic> = 483), netarsudil (0.02%, <italic>n</italic> = 499), or latanoprost (0.005%, <italic>n</italic> = 486) into each eye once-daily between 20:00 and 22:00. IOP was measured at 08:00, 10:00, and 16:00 at weeks 2, 6, and the primary endpoint at month 3.</p>
+                </sec>
+                <sec>
+                  <title>Results</title>
+                  <p id="Par3">Baseline mean diurnal IOP was 23.6, 23.6, and 23.5 mmHg in netarsudil/latanoprost FDC, netarsudil, and latanoprost groups, respectively. Mean diurnal IOP in each group was 15.3, 18.1, and 17.5 mmHg at week 2, 15.7, 18.4, and 17.4 mmHg at week 6, and 15.8, 18.4, and 17.3 mmHg at week 12. The netarsudil/latanoprost FDC met criteria for superiority compared with each active component (<italic>p</italic> &lt; 0.0001 for all nine time points). At month 3, among patients randomized to netarsudil/latanoprost FDC or latanoprost, 58.4% vs 37.3% (<italic>p</italic> &lt; 0.0001) achieved IOP ≤ 16 mmHg. Among patients randomized to netarsudil/latanoprost FDC or netarsudil or latanoprost, 30.9% vs 5.9% (<italic>p</italic> &lt; 0.0001) vs 8.5% (<italic>p</italic> &lt; 0.0001) achieved at least a 40% reduction from baseline in mean diurnal IOP. Pooled safety results were consistent with individual MERCURY studies.</p>
+                </sec>
+                <sec>
+                  <title>Conclusion</title>
+                  <p id="Par4">Once-daily netarsudil/latanoprost FDC produced statistically significant and clinically relevant reductions in mean IOP that were statistically superior to IOP reductions achieved by netarsudil and latanoprost monotherapy. Results of the pooled efficacy and safety analyses were consistent with the individual studies.</p>
+                </sec>
+                <sec>
+                  <title>Trial registration</title>
+                  <p id="Par5">ClinicalTrials.gov identifiers, NCT02558400 and NCT02674854.</p>
+                </sec>
+                <sec>
+                  <title>Electronic supplementary material</title>
+                  <p>The online version of this article (10.1007/s12325-020-01277-2) contains supplementary material, which is available to authorized users.</p>
+                </sec>
+              </abstract>
+              <abstract id="Abs2" abstract-type="summary">
+                <title>Plain Language Summary</title>
+                <p id="Par6">In patients with open-angle glaucoma (OAG) or ocular hypertension (OHT), treatment to lower intraocular pressure (IOP) is needed to prevent optic nerve damage and vision loss. Many patients do not achieve sufficient IOP lowering with a single drug. The use of multiple IOP-lowering agents, which may have different dose regimens, can be complex and reduce patient adherence. Combination treatments that incorporate multiple agents are available, but until recently none included a prostaglandin analogue, the most widely prescribed first-line therapy. A once-daily, fixed-dose combination (FDC) therapy (ROCKLATAN<sup>®</sup>) has been approved in the USA that contains the prostaglandin analogue latanoprost and netarsudil, a novel Rho kinase inhibitor. The netarsudil/latanoprost FDC demonstrated efficacy and safety in lowering IOP among patients with OAG and OHT in the 12-month MERCURY-1 and the 3-month MERCURY-2 clinical trials. To better characterize efficacy and safety, we pooled and analyzed the data from each trial. The pooled data support the findings of the individual studies:</p>
+                <p><bold><italic>Efficacy</italic></bold>: 1. Netarsudil/latanoprost FDC demonstrated statistical superiority to the individual components netarsudil and latanoprost in decreasing IOP at all time points assessed over 3 months. </p>
+                <p id="Par8">2. Nearly twice as many patients receiving FDC achieved at least a 30% reduction from baseline in IOP, as recommended by the American Academy of Ophthalmology for a first-line treatment, compared to the IOP reduction achieved by netarsudil and latanoprost monotherapy.</p>
+                <p><bold><italic>Safety</italic></bold>: No new safety signals were identified. Netarsudil/latanoprost FDC was associated with no treatment-related serious adverse events, minimal systemic adverse events, and manageable ocular adverse events.</p>
+                <sec>
+                  <title>Electronic supplementary material</title>
+                  <p>The online version of this article (10.1007/s12325-020-01277-2) contains supplementary material, which is available to authorized users.</p>
+                </sec>
+              </abstract>
+              <kwd-group xml:lang="en">
+                <title>Keywords</title>
+                <kwd>Clinical trial</kwd>
+                <kwd>Fixed-dose combination</kwd>
+                <kwd>Glaucoma</kwd>
+                <kwd>Intraocular pressure</kwd>
+                <kwd>Latanoprost</kwd>
+                <kwd>Netarsudil</kwd>
+                <kwd>Ocular hypertension</kwd>
+                <kwd>Prostaglandin analogue</kwd>
+                <kwd>Rho kinase inhibitor</kwd>
+              </kwd-group>
+              <funding-group>
+                <award-group>
+                  <funding-source>
+                    <institution>Aerie Pharmaceuticals, Inc.</institution>
+                  </funding-source>
+                  <award-id>Study funding</award-id>
+                </award-group>
+              </funding-group>
+              <custom-meta-group>
+                <custom-meta>
+                  <meta-name>issue-copyright-statement</meta-name>
+                  <meta-value>© Springer Healthcare Ltd., part of Springer Nature 2020</meta-value>
+                </custom-meta>
+              </custom-meta-group>
+            </article-meta>
+          </front>
+          <body>
+            <sec id="FPar1">
+              <title>Key Summary Points</title>
+              <p id="Par10">
+                <table-wrap id="Taba">
+                  <table frame="hsides" rules="groups">
+                    <tbody>
+                      <tr>
+                        <td align="left">
+                          <bold>Why carry out this study?</bold>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td align="left">A fixed-dose combination (FDC) therapy to lower intraocular pressure (IOP), consisting of latanoprost and the novel Rho kinase inhibitor netarsudil, has been approved in the USA for the treatment of open-angle glaucoma and ocular hypertension.</td>
+                      </tr>
+                      <tr>
+                        <td align="left">The 12-month MERCURY-1 and 3-month MERCURY-2 clinical trials demonstrated that the netarsudil/latanoprost FDC lowered IOP significantly more than the individual components, with an acceptable safety profile.</td>
+                      </tr>
+                      <tr>
+                        <td align="left">The purpose of this analysis was to pool and analyze data from MERCURY-1 and -2 in order to further characterize netarsudil/latanoprost FDC in a large, combined population.</td>
+                      </tr>
+                      <tr>
+                        <td align="left">
+                          <bold>What was learned from the study?</bold>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td align="left">Efficacy data confirmed the results of the individual studies, indicating significantly superior IOP lowering with the FDC, compared to netarsudil alone and latanoprost alone, at every time point assessed over 3 months.</td>
+                      </tr>
+                      <tr>
+                        <td align="left">No new safety signal emerged, with common adverse events of conjunctival hyperemia, cornea verticillata, and conjunctival hemorrhage. No treatment-related serious adverse events were reported.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </table-wrap>
+              </p>
+            </sec>
+            <sec id="Sec122" sec-type="introduction">
+              <title>Introduction</title>
+              <p id="Par11">Two phase 3 studies, MERCURY-1 and MERCURY-2, were conducted to investigate efficacy and safety of a once-daily, fixed-dose combination formulation (FDC) of netarsudil and latanoprost (ROCKLATAN<sup>®</sup>) for treatment of patients with open-angle glaucoma (OAG) or ocular hypertension (OHT) [<xref ref-type="bibr" rid="CR1">1</xref>–<xref ref-type="bibr" rid="CR3">3</xref>]. These studies demonstrated that the netarsudil/latanoprost FDC produced statistically and clinically relevant reductions from baseline in intraocular pressure (IOP) that exceeded the reductions provided by either agent alone.</p>
+              <p id="Par12">Patients with OAG or OHT treated with a single therapeutic agent often do not achieve their target IOP, placing them at increased risk for disease progression, optic nerve damage, and vison loss [<xref ref-type="bibr" rid="CR4">4</xref>, <xref ref-type="bibr" rid="CR5">5</xref>]. The use of several IOP-lowering agents requiring multiple daily doses can complicate dosing regimens and reduce patient adherence to therapy, which also compromises outcomes [<xref ref-type="bibr" rid="CR6">6</xref>–<xref ref-type="bibr" rid="CR8">8</xref>]. FDC products can simplify treatment. Before the approval of netarsudil/latanoprost FDC, however, FDC agents available in the USA required multiple-daily dosing and did not contain a prostaglandin analogue, the most widely prescribed first-line therapy for elevated IOP [<xref ref-type="bibr" rid="CR9">9</xref>]. There is a clinical need for a safe, once-daily FDC treatment with two different IOP-lowering agents with complementary mechanisms of action, ideally including a prostaglandin analogue.</p>
+              <p id="Par13">Netarsudil, a Rho kinase (ROCK) inhibitor, was approved by the US Food and Drug Administration in December 2017 for reducing IOP in patients with OAG or OHT [<xref ref-type="bibr" rid="CR10">10</xref>]. Netarsudil targets the underlying pathophysiology of elevated IOP, increased trabecular outflow resistance, and thereby increases trabecular outflow and reduces IOP [<xref ref-type="bibr" rid="CR11">11</xref>–<xref ref-type="bibr" rid="CR16">16</xref>]. Latanoprost, the most commonly prescribed prostaglandin analogue, has a complementary mechanism of action, lowering IOP by increasing uveoscleral outflow [<xref ref-type="bibr" rid="CR9">9</xref>, <xref ref-type="bibr" rid="CR17">17</xref>]. The netarsudil/latanoprost FDC was developed to meet the need for a once-daily, highly efficacious, and safe treatment for OAG and OHT.</p>
+              <p id="Par14">We hypothesized that a pooled dataset from MERCURY-1 and -2 would yield efficacy and safety data consistent with the results of the individual studies. Here we present the results of a pooled efficacy analysis of the MERCURY-1 and -2 studies at 3 months, the time point that matches the primary efficacy analyses, and a pooled safety analysis up to 12 months.</p>
+            </sec>
+            <sec id="Sec2" sec-type="materials|methods">
+              <title>Methods</title>
+              <p id="Par15">The investigators for MERCURY-1 and MERCURY-2 (<ext-link ext-link-type="uri" xlink:href="http://www.clinicaltrials.gov">www.clinicaltrials.gov</ext-link> identifiers NCT02558400 and NCT02674854) obtained institutional review board (IRB) approval prior to initiating the studies (MERCURY-1: Schulman Institutional Review Board, Cincinnati, OH, USA; Duke University School of Medicine Institutional Review Board, Durham, NC, USA; Western Institutional Review Board, Puyallup, WA, USA; MERCURY-2: Schulman Institutional Review Board, Cincinnati, OH, USA; Nova Scotia Health Authority Research Ethics Board, Halifax, NS, Canada; Comité d’éthique de la recherche du Centre Intégré Universitaire de Santé et de Services Sociaux de l’Estrie, Sherbrooke, QC, Canada). The studies were conducted in accordance with IRB regulations and Good Clinical Practice Guidelines and adhered to the tenets included in the Declaration of Helsinki. The MERCURY-1 study was conducted in the USA for 12 months [<xref ref-type="bibr" rid="CR1">1</xref>]. The MERCURY-2 study was conducted in the USA and Canada for 3 months [<xref ref-type="bibr" rid="CR3">3</xref>]. Both MERCURY-1 and -2 studies were phase 3, randomized, double-masked, multicenter, active controlled, parallel-group, safety and efficacy studies evaluating treatment to reduce elevated IOP in patients with a diagnosis of OAG or OHT.</p>
+              <sec id="Sec3">
+                <title>Study Populations</title>
+                <p id="Par16">Patients included in the studies were at least 18 years of age in the USA or at least 19 in Canada (see Table S1 in the supplementary material for key inclusion and exclusion criteria). A diagnosis of OAG or OHT in both eyes was required; however, both eyes did not need to have the same condition. Both eyes had to qualify at all qualification visit time points. Unmedicated (post-washout) IOP in both eyes had to be more than 20 to less than 36 mmHg at 08:00 during two qualification visits (2–7 days apart) and more than 17 to less than 36 mmHg at 10:00 and 16:00 at the second qualification visit. The minimum washout period was 4 weeks for patients using prostaglandin analogues or beta-adrenoreceptor antagonists prior to study entry, 2 weeks for those using alpha-adrenergic agonists, and 5 days for those using muscarinic agonists or carbonic anhydrase inhibitors. An additional inclusion criterion was best corrected visual acuity (BCVA) of + 1.0 logMAR or better (equivalent to 20/200 or better Snellen visual acuity in each eye).</p>
+                <p id="Par17">Patients were excluded from the studies if they had clinically significant ocular or systemic disease that might interfere with interpretation of the study results. Excluded conditions included, but were not limited to, pseudoexfoliation or pigment dispersion component glaucoma and a history of angle-closure glaucoma or narrow angles (Shaffer grade 2 or less; extreme narrow angle with complete or partial closure). Patients who had used any ocular hypotensive medications within 30 days of screening were also excluded. Patients with known contraindications or hypersensitivity to latanoprost were ineligible to participate. Pregnant women were excluded, as were women of child-bearing potential if they were nursing, planning a pregnancy, or were not using a medically acceptable form of birth control.</p>
+              </sec>
+              <sec id="Sec4">
+                <title>Procedures</title>
+                <p id="Par18">The screening visit (visit 1) occurred up to 28 days prior to the first of two qualification visits (visits 2 and 3) [the second qualifying, or visit 3 is also day 1 of treatment]). Patients were randomized (1:1:1) to receive an FDC of netarsudil (0.02%)/latanoprost (0.005%) ophthalmic solution, single agent netarsudil ophthalmic solution 0.02%, or single agent latanoprost ophthalmic solution 0.005%. Randomization was managed using an interactive internet-based response system and the randomization code was prepared by an independent biostatistician. Treatment assignments were masked to investigators, the clinical study team, and patients. Patients were also stratified by investigative site and maximum baseline IOP (&lt; 25 vs. ≥ 25 mmHg). Patients were instructed to instill one drop of study drug into each eye once per day beginning at day 1 in the evening between 20:00 and 22:00 at approximately 24-h intervals.</p>
+              </sec>
+              <sec id="Sec5">
+                <title>Endpoints</title>
+                <p id="Par19">The primary efficacy endpoint was comparison of netarsudil/latanoprost FDC ophthalmic solution relative to each of its active components (netarsudil and latanoprost) for mean IOP within a treatment group at 08:00, 10:00, and 16:00 at the week 2, week 6, and month 3 study visits. Secondary endpoints included mean diurnal IOP at each post-treatment visit and proportion of patients achieving prespecified levels for mean diurnal IOP, mean change in diurnal IOP, and percentage mean change in mean diurnal IOP at each post-treatment visit.</p>
+                <p id="Par20">Safety data up to 12 months from patients who received at least one dose of study medication were pooled by treatment arm; MERCURY-1 included patients who completed up to 12 months of treatment, and MERCURY-2 included patients who completed up to 3 months of treatment [<xref ref-type="bibr" rid="CR2">2</xref>, <xref ref-type="bibr" rid="CR3">3</xref>].</p>
+              </sec>
+              <sec id="Sec6">
+                <title>Efficacy Assessment</title>
+                <p id="Par21">Qualified individuals measured IOP using a calibrated Goldmann applanation tonometer. Two consecutive IOP measurements were obtained for each eye. If the two measurements differed by more than 2 mmHg, a third measurement was obtained. IOP was analyzed as the mean of two measurements or as the median of three measurements. For enrolled patients, the study eye was the eye with the higher IOP at 08:00 on visit 3 (day 1). If both eyes had the same IOP at 08:00 on visit 3, then the right eye was the study eye. Efficacy data from the intent-to-treat population (ITT) of each study were pooled by treatment arm. The ITT population included all randomized patients who received at least one dose of study medication and was the primary population for all efficacy analyses.</p>
+              </sec>
+              <sec id="Sec7">
+                <title>Statistical Analysis</title>
+                <p id="Par22">The primary outcome was evaluated using an analysis of covariance (ANCOVA) model with mean IOP at the given visit (week 2, week 6, and month 3) and time point (08:00, 10:00, and 16:00) as the response, baseline IOP as a covariate, and treatment as a main effect factor, using the ITT population with multiple imputation techniques (e.g., Monte Carlo Markov chain [MCMC]) for missing data. Each time point within each visit was modeled separately.</p>
+                <p id="Par23">The least-squares mean differences (netarsudil/latanoprost FDC minus comparator) were tested between netarsudil/latanoprost FDC ophthalmic solution and each of the individual ophthalmic solutions (latanoprost 0.005% and netarsudil 0.02%). The two-sided <italic>p</italic> values and associated 95% confidence intervals were calculated. For a given comparator (latanoprost and netarsudil), statistical superiority was concluded if the <italic>p</italic> value was less than 0.05 and the point estimate was less than 0 for all time points at the week 2, week 6, and month 3 visits.</p>
+              </sec>
+              <sec id="Sec8">
+                <title>Safety Assessment</title>
+                <p id="Par24">All safety analyses were carried out using the safety population, defined as all randomized patients who received at least one dose of investigational product, and included the study eye and fellow eye separately where applicable.</p>
+                <p id="Par25">Safety variables evaluated in this study for all enrolled patients included symptoms/adverse events (AEs); comfort testing (ocular tolerability); heart rate; blood pressure; biomicroscopy of the anterior segment including evaluation of the cornea (by fluorescein staining), conjunctiva, and anterior chamber; dilated ophthalmoscopy; best corrected visual acuity; pupil size; visual fields; pachymetry; IOP; and clinical chemistry and hematology laboratory findings. Specular microscopy was performed in MERCURY-2 patients.</p>
+              </sec>
+            </sec>
+            <sec id="Sec9" sec-type="results">
+              <title>Results</title>
+              <sec id="Sec10">
+                <title>Efficacy</title>
+                <p id="Par26">The pooled MERCURY-1 and -2 ITT population consisted of 1468 patients at baseline. At month 3, 1310 of those patients (89%) remained in the studies (Fig. S1 in the supplementary material). Baseline demographic characteristics in the pooled efficacy population were similar across all treatment groups (Table <xref rid="Tab1" ref-type="table">1</xref>). More than half of the patients in any treatment group were older than 65 years and most patients (73%) were diagnosed with OAG.<table-wrap id="Tab1"><label>Table 1</label><caption><p>Baseline demographics and patient characteristics</p></caption><table frame="hsides" rules="groups"><thead><tr><th align="left">Characteristic</th><th align="left">Netarsudil/latanoprost FDC<italic>n</italic> = 483</th><th align="left">Netarsudil<italic>n</italic> = 499</th><th align="left">Latanoprost<italic>n</italic> = 486</th><th align="left">Total<italic>N</italic> = 1468</th></tr></thead><tbody><tr><td align="left" colspan="5">Age, year</td></tr><tr><td align="left"> Mean (SD)</td><td char="(" align="char">64.3 (11.57)</td><td char="(" align="char">64.6 (10.76)</td><td char="(" align="char">64.9 (11.21)</td><td char="(" align="char">64.6 (11.17)</td></tr><tr><td align="left"> Median, range</td><td char="(" align="char">65.0 (18, 88)</td><td char="(" align="char">66.0 (22, 93)</td><td char="(" align="char">67.0 (22, 99)</td><td char="(" align="char">66.0 (18, 99)</td></tr><tr><td align="left"> ≥ 65, <italic>n</italic> (%)</td><td char="(" align="char">256 (53.0)</td><td char="(" align="char">283 (56.7)</td><td char="(" align="char">279 (57.4)</td><td char="(" align="char">818 (55.7)</td></tr><tr><td align="left">Gender (male), <italic>n</italic> (%)</td><td char="(" align="char">197 (40.8)</td><td char="(" align="char">210 (42.1)</td><td char="(" align="char">206 (42.4)</td><td char="(" align="char">613 (41.8)</td></tr><tr><td align="left" colspan="5">Race, <italic>n</italic> (%)</td></tr><tr><td align="left"> White</td><td char="(" align="char">323 (66.9)</td><td char="(" align="char">332 (66.5)</td><td char="(" align="char">320 (65.8)</td><td char="(" align="char">975 (66.4)</td></tr><tr><td align="left"> Black or African American</td><td char="(" align="char">143 (29.6)</td><td char="(" align="char">146 (29.3)</td><td char="(" align="char">146 (30.0)</td><td char="(" align="char">435 (29.6)</td></tr><tr><td align="left"> Asian</td><td char="(" align="char">14 (2.9)</td><td char="(" align="char">17 (3.4)</td><td char="(" align="char">16 (3.3)</td><td char="(" align="char">47 (3.2)</td></tr><tr><td align="left"> Other<sup>a</sup></td><td char="(" align="char">3 (0.6)</td><td char="(" align="char">4 (0.8)</td><td char="(" align="char">4 (0.8)</td><td char="(" align="char">11 (0.7)</td></tr><tr><td align="left" colspan="5">Iris eye color of study eye, <italic>n</italic> (%)</td></tr><tr><td align="left"> Blue/grey/green</td><td char="(" align="char">117 (24.2)</td><td char="(" align="char">121 (24.2)</td><td char="(" align="char">114 (23.5)</td><td char="(" align="char">352 (24.0)</td></tr><tr><td align="left"> Brown/black</td><td char="(" align="char">313 (64.8)</td><td char="(" align="char">322 (64.5)</td><td char="(" align="char">328 (67.5)</td><td char="(" align="char">963 (65.6)</td></tr><tr><td align="left"> Hazel</td><td char="(" align="char">53 (11.0)</td><td char="(" align="char">56 (11.2)</td><td char="(" align="char">44 (9.1)</td><td char="(" align="char">153 (10.4)</td></tr><tr><td align="left" colspan="5">Prior ocular hypertensive therapy</td></tr><tr><td align="left"> Prior prostaglandin therapy, <italic>n</italic> (%)</td><td char="(" align="char">296 (61.3)</td><td char="(" align="char">311 (62.3)</td><td char="(" align="char">276 (56.8)</td><td char="(" align="char">883 (60.1)</td></tr><tr><td align="left">IOP mmHg at screening (08:00) in study eye, mean (SD)</td><td char="(" align="char">19.597 (4.2)</td><td char="(" align="char">19.966 (4.3)</td><td char="(" align="char">19.484 (4.3)</td><td char="(" align="char">19.685 (4.3)</td></tr><tr><td align="left" colspan="5">Study eye diagnosis, <italic>n</italic> (%)</td></tr><tr><td align="left"> Ocular hypertension</td><td char="(" align="char">137 (28.4)</td><td char="(" align="char">125 (25.1)</td><td char="(" align="char">134 (27.6)</td><td char="(" align="char">396 (27.0)</td></tr><tr><td align="left"> Open-angle glaucoma</td><td char="(" align="char">345 (71.4)</td><td char="(" align="char">374 (74.9)</td><td char="(" align="char">352 (72.4)</td><td char="(" align="char">1071 (73.0)</td></tr></tbody></table><table-wrap-foot><p>Percentages are based on the number of patients (<italic>n</italic>) in a given treatment group for the analysis population</p><p><italic>IOP</italic> intraocular pressure, <italic>SD</italic> standard deviation</p><p><sup>a</sup>Other includes Native American, American Indian or Alaskan native, and multiple races</p></table-wrap-foot></table-wrap></p>
+                <p id="Par27">Baseline (day 1) mean diurnal IOP was 23.6, 23.6, and 23.5 mmHg in the netarsudil/latanoprost FDC, netarsudil, and latanoprost groups, respectively. Post-treatment mean diurnal IOP in each group was 15.3, 18.1, and 17.5 mmHg at week 2 (<italic>p</italic> &lt; 0.0001 vs. netarsudil and latanoprost), 15.7, 18.4, and 17.4 mmHg at week 6 (<italic>p</italic> &lt; 0.0001 vs. netarsudil and latanoprost), and 15.8, 18.4, and 17.3 mmHg at month 3 (week 12) (<italic>p</italic> &lt; 0.0001 vs. netarsudil and latanoprost). The netarsudil/latanoprost FDC met the criteria for superiority compared with single agents netarsudil or latanoprost at all nine time points (<italic>p</italic> &lt; 0.0001 vs. netarsudil and latanoprost at each time point) (Fig. <xref rid="Fig1" ref-type="fig">1</xref>).<fig id="Fig1"><label>Fig. 1</label><caption><p>Mean intraocular pressure over 3 months. (ITT population) Post-baseline IOP is least-squares mean (± SE). Markov chain Monte Carlo methods were used to impute missing data. ***<italic>p</italic> &lt; 0.0001 versus netarsudil and latanoprost. Mean IOP in the ITT pooled efficacy population is listed in the table below.<italic> CI</italic> confidence interval,<italic> FDC</italic> fixed-dose combination,<italic> IOP</italic> intraocular pressure,<italic> ITT</italic> intent to treat,<italic> SE</italic> standard error</p></caption><graphic xlink:href="12325_2020_1277_Fig1_HTML" id="MO1"/></fig></p>
+                <p id="Par28">Between week 2 and month 3, the netarsudil/latanoprost FDC lowered IOP by up to 3.2 mmHg more than netarsudil and lowered IOP by up to 2.5 mmHg more than latanoprost. By month 3, an almost threefold higher proportion (32.3%) of patients in the netarsudil/latanoprost FDC group achieved a mean diurnal IOP of at most 14 mmHg compared with the netarsudil (10.8%, <italic>p</italic> &lt; 0.0001) and the latanoprost (11.8%, <italic>p</italic> &lt; 0.0001) groups (Fig. <xref rid="Fig2" ref-type="fig">2</xref>a). Nearly 60% (58.4%) of patients randomized to netarsudil/latanoprost FDC treatment achieved IOP of at most 16 mmHg compared with 37.3% of patients treated with latanoprost (<italic>p</italic> &lt; 0.0001) at month 3 (Fig. <xref rid="Fig2" ref-type="fig">2</xref>a).<fig id="Fig2"><label>Fig. 2</label><caption><p>Percentages of patients reaching prespecified categorical treatment targets at month 3. <bold>a</bold> Mean diurnal IOP (mmHg). <bold>b</bold> Percentage reduction from baseline in mean diurnal IOP.<italic> FDC</italic> fixed-dose combination,<italic> IOP</italic> intraocular pressure. ***<italic>p</italic> &lt; 0.0001 vs. netarsudil and latanoprost from Fisher’s exact tests. Baseline refers to the visit 3 (day 1) data</p></caption><graphic xlink:href="12325_2020_1277_Fig2_HTML" id="MO2"/></fig></p>
+                <p id="Par29">The proportion of patients who achieved at least a 40% reduction from baseline in mean diurnal IOP was 30.9% with netarsudil/latanoprost FDC compared with 5.9% with netarsudil (<italic>p</italic> &lt; 0.0001) and 8.5% with latanoprost (<italic>p</italic> &lt; 0.0001) (Fig. <xref rid="Fig2" ref-type="fig">2</xref>b). Nearly twice as many patients in the FDC group (61.5%) achieved at least a 30% reduction from baseline in mean diurnal IOP compared with latanoprost (33.2%, <italic>p</italic> &lt; 0.0001) (Fig. <xref rid="Fig2" ref-type="fig">2</xref>b). The proportion of patients who achieved at least a 20% reduction from baseline in mean diurnal IOP was approximately 86.5% in the netarsudil/latanoprost FDC arm compared with 52.8% in the netarsudil arm (<italic>p</italic> &lt; 0.0001) and 75.1% in the latanoprost arm (<italic>p</italic> &lt; 0.0001) (Fig. <xref rid="Fig2" ref-type="fig">2</xref>b).</p>
+              </sec>
+              <sec id="Sec11">
+                <title>Safety</title>
+                <p id="Par30">At baseline there were 1468 patients in the pooled safety population (Fig. S2 in the supplementary material). Among these, 1195 patients (81.4%) completed treatment. MERCURY-1 patients received treatment for 12 months and MERCURY-2 patients received treatment for 3 months. The most frequent reason for discontinuations were AEs for the FDC and netarsudil groups. In the latanoprost group patient withdrawal of consent was the most frequent reason for discontinuation from the studies. Approximately the same percentage (≤ 2.9%) of patients withdrew consent across treatment groups.</p>
+                <p id="Par31">No treatment-related serious AEs were reported in any treatment arm (Table <xref rid="Tab2" ref-type="table">2</xref>). Treatment-related systemic AEs were minimal, including those reported as “possibly” treatment-related. The most frequent ocular AE was conjunctival hyperemia in the netarsudil/latanoprost FDC [283/482 (58.7%)], netarsudil, [234/498 (47.0%)], and latanoprost groups [108/488 [(22.1%)] (Table <xref rid="Tab3" ref-type="table">3</xref>). Among conjunctival hyperemia AEs, the condition was graded as mild in 86.9% (246/283) of netarsudil/latanoprost FDC-, 88.9% (208/234) of netarsudil-, and 96.3% (104/108) of latanoprost-treated patients. Among patients who completed the studies and experienced conjunctival hyperemia, most conjunctival hyperemia events were intermittent [netarsudil/latanoprost FDC 76.6% (164/214), netarsudil 76.5% (124/162), latanoprost 77.7% (80/103)], rather than continuous. In total, 5.0% of patients receiving netarsudil/latanoprost FDC (24/482) or netarsudil (25/498) and 0.2% (1/488) of those receiving latanoprost discontinued as a result of conjunctival hyperemia.<table-wrap id="Tab2"><label>Table 2</label><caption><p>Summary of adverse events</p></caption><table frame="hsides" rules="groups"><thead><tr><th align="left"/><th align="left">Netarsudil/latanoprost FDC<italic>n</italic> = 482</th><th align="left">Netarsudil<italic>n</italic> = 498</th><th align="left">Latanoprost<italic>n</italic> = 488</th></tr></thead><tbody><tr><td align="left">AEs, <italic>n</italic></td><td align="left">1266</td><td align="left">1190</td><td align="left">540</td></tr><tr><td align="left">Ocular AEs, <italic>n</italic></td><td align="left">1121</td><td align="left">1033</td><td align="left">336</td></tr><tr><td align="left">Non-ocular AEs, <italic>n</italic></td><td align="left">145</td><td align="left">157</td><td align="left">204</td></tr><tr><td align="left">Serious AEs, <italic>n</italic></td><td align="left">9</td><td align="left">19</td><td align="left">19</td></tr><tr><td align="left">Treatment-related AEs, <italic>n</italic></td><td align="left">931</td><td align="left">836</td><td align="left">243</td></tr><tr><td align="left">Treatment-related serious AEs, <italic>n</italic></td><td align="left">0</td><td align="left">0</td><td align="left">0</td></tr><tr><td align="left" colspan="4">AEs by maximum severity, <italic>n</italic> (%)</td></tr><tr><td align="left"> Mild</td><td align="left">280 (58.1)</td><td align="left">267 (53.6)</td><td align="left">187 (38.3)</td></tr><tr><td align="left"> Moderate</td><td align="left">75 (15.6)</td><td align="left">68 (13.7)</td><td align="left">42 (8.6)</td></tr><tr><td align="left"> Severe</td><td align="left">13 (2.7)</td><td align="left">16 (3.2)</td><td align="left">8 (1.6)</td></tr></tbody></table><table-wrap-foot><p>Percentages are based on the number of patients (<italic>n</italic>) in a given treatment group for the safety population</p><p><italic>AE</italic> treatment emergent adverse event</p></table-wrap-foot></table-wrap><table-wrap id="Tab3"><label>Table 3</label><caption><p>Summary of ocular adverse events reported in at least 5% of patients</p></caption><table frame="hsides" rules="groups"><thead><tr><th align="left"/><th align="left">Netarsudil/latanoprost FDC<italic>n</italic> = 482</th><th align="left">Netarsudil<italic>n</italic> = 498</th><th align="left">Latanoprost<italic>n</italic> = 488</th></tr></thead><tbody><tr><td align="left" colspan="4">Eye disorders, <italic>n</italic> (%)</td></tr><tr><td align="left"> Conjunctival hyperemia</td><td align="left">283 (58.7)</td><td align="left">234 (47.0)</td><td align="left">108 (22.1)</td></tr><tr><td align="left"> Cornea verticillate</td><td align="left">74 (15.4)</td><td align="left">58 (11.6)</td><td char="." align="char">0</td></tr><tr><td align="left"> Conjunctival hemorrhage</td><td align="left">52 (10.8)</td><td align="left">72 (14.5)</td><td align="left">5 (1.0)</td></tr><tr><td align="left"> Eye pruritus</td><td align="left">37 (7.7)</td><td align="left">23 (4.6)</td><td align="left">5 (1.0)</td></tr><tr><td align="left"> Punctate keratitis</td><td align="left">17 (3.5)</td><td align="left">27 (5.4)</td><td align="left">14 (2.9)</td></tr><tr><td align="left"> Visual acuity reduced</td><td align="left">25 (5.2)</td><td align="left">21 (4.2)</td><td align="left">9 (1.8)</td></tr><tr><td align="left"> Lacrimation increased</td><td align="left">25 (5.2)</td><td align="left">28 (5.6)</td><td align="left">1 (0.2)</td></tr><tr><td align="left" colspan="4">Administration site conditions, <italic>n</italic> (%)</td></tr><tr><td align="left"> Instillation site pain</td><td align="left">97 (20.1)</td><td align="left">83 (16.7)</td><td align="left">33 (6.8)</td></tr><tr><td align="left"> Instillation site discomfort</td><td align="left">25 (5.2)</td><td align="left">23 (4.6)</td><td align="left">5 (1.0)</td></tr></tbody></table><table-wrap-foot><p>In the system organ class or preferred term, <italic>n</italic> is the number of patients with at least one adverse event;  % is based on the number of patients (<italic>n</italic>) in a given treatment group for the safety population</p><p>When reporting incidence, a patient was only counted once if they ever experienced an event within the system organ class or individual preferred term. System organ class and preferred term are based on Version 19.0 of the MedDRA coding dictionary</p></table-wrap-foot></table-wrap></p>
+                <p id="Par32">Cornea verticillata was reported in 15.4% (74/482) of patients receiving netarsudil/latanoprost FDC, 11.6% (58/498) of those receiving netarsudil, and no patients (0/488) receiving latanoprost. This frequency was as observed in previous studies with netarsudil [<xref ref-type="bibr" rid="CR15">15</xref>]. Most cases of cornea verticillata were mild: 98.6% (73/74) of affected patients treated with netarsudil/latanoprost FDC and 96.6% (56/58) of affected patients treated with netarsudil. No severe cases were reported with any treatment. Discontinuations were attributed to cornea verticillata in less than 1% of patients in any treatment group: netarsudil/latanoprost FDC 1% (5/482), netarsudil 0.8% (4/498), and latanoprost 0% (0/488).</p>
+                <p id="Par33">The third most frequent ocular AE was conjunctival hemorrhage, which occurred in 10.8% of netarsudil/latanoprost FDC- (52/482), 14.5% of netarsudil- (72/498), and 1.0% of latanoprost-treated (5/488) patients. The vast majority of cases of conjunctival hemorrhage were graded as mild in any treatment group and no severe cases were reported. Among all patients, two treated with netarsudil and no patients treated with either the netarsudil/latanoprost FDC or latanoprost discontinued as a result of conjunctival hemorrhage.</p>
+                <p id="Par34">Non-ocular AEs were manageable and low in frequency (Table S2 in the supplementary material). Headache was the most common non-ocular AE, occurring in 1.8% (9/498) of patients treated with netarsudil. The next most common non-ocular AE was nasopharyngitis with a frequency of 1.7% (8/482) in the netarsudil/latanoprost FDC treatment group.</p>
+              </sec>
+            </sec>
+            <sec id="Sec12" sec-type="discussion">
+              <title>Discussion</title>
+              <p id="Par35">Netarsudil, a ROCK inhibitor, reduces IOP by novel mechanisms of action that lead to increased trabecular outflow [<xref ref-type="bibr" rid="CR12">12</xref>–<xref ref-type="bibr" rid="CR16">16</xref>, <xref ref-type="bibr" rid="CR18">18</xref>]. In preclinical and human studies, the distinct mechanism of action of netarsudil has been demonstrated to involve increasing trabecular outflow by decreasing actomyocin-driven cellular contraction and reducing production of extracellular matrix proteins [<xref ref-type="bibr" rid="CR12">12</xref>, <xref ref-type="bibr" rid="CR19">19</xref>]. Netarsudil was also shown to decrease episcleral venous pressure [<xref ref-type="bibr" rid="CR12">12</xref>, <xref ref-type="bibr" rid="CR18">18</xref>, <xref ref-type="bibr" rid="CR19">19</xref>]. Latanoprost has a complementary mechanism of action, lowering IOP by increasing uveoscleral outflow, and is the most commonly prescribed prostaglandin analogue to treat elevated IOP [<xref ref-type="bibr" rid="CR9">9</xref>]. This pooled analysis of efficacy data from both phase 3 MERCURY studies demonstrated results consistent with the individual studies, showing that the FDC of netarsudil/latanoprost was superior in reducing IOP compared with either netarsudil or latanoprost single agents. Importantly, nearly twice as many patients treated with netarsudil/latanoprost FDC, compared with latanoprost, achieved IOP reductions of 30% or greater. In addition to the individual MERCURY-1 and -2 study results, this pooled analysis further supports the hypothesis that combining two IOP-lowering agents with distinct mechanisms of action can reduce IOP with greater efficacy than either agent alone.</p>
+              <p id="Par36">Analysis of pooled safety data indicated that these results were also consistent with those of the individual MERCURY studies up to 12 months [<xref ref-type="bibr" rid="CR1">1</xref>–<xref ref-type="bibr" rid="CR3">3</xref>]. Netarsudil/latanoprost FDC was associated with no treatment-related serious AEs, minimal systemic AEs, and tolerable ocular AEs. The netarsudil/latanoprost FDC did not result in the emergence of any AE not previously documented with either single agent netarsudil or latanoprost.</p>
+              <p id="Par37">Elevated IOP is a risk factor for glaucoma that can be modified by therapeutic intervention [<xref ref-type="bibr" rid="CR5">5</xref>, <xref ref-type="bibr" rid="CR20">20</xref>, <xref ref-type="bibr" rid="CR21">21</xref>]. Single agent therapy often does not achieve the target IOP [<xref ref-type="bibr" rid="CR4">4</xref>, <xref ref-type="bibr" rid="CR6">6</xref>–<xref ref-type="bibr" rid="CR8">8</xref>]. Adjunctive therapies or polypharmacy involves complex dosing regimens that compromise patient adherence to therapy and hinder treatment efficacy [<xref ref-type="bibr" rid="CR6">6</xref>–<xref ref-type="bibr" rid="CR8">8</xref>]. Although FDC products may alleviate some burden of administration associated with multiple products, the earlier FDC agents available in the USA (brinzolamide/brimonidine FDC, timolol/dorzolamide FDC, and timolol/brimonidine FDC) require multiple daily doses and most contain timolol (β-adrenoceptor antagonist), which is contraindicated in patients with certain respiratory and cardiac conditions [<xref ref-type="bibr" rid="CR22">22</xref>, <xref ref-type="bibr" rid="CR23">23</xref>]. Furthermore, the earlier FDC products do not contain prostaglandin analogues, which are the most effective treatments for elevated IOP [<xref ref-type="bibr" rid="CR9">9</xref>].</p>
+              <p id="Par38">As with any post hoc analysis, the conclusions of this study must be interpreted with caution. Further, OAG and OHT are chronic conditions, necessitating long-term treatment likely to extend beyond the 12-month window for safety data analyzed here.</p>
+              <p id="Par39">This pooled analysis of phase 3 MERCURY-1 and MERCURY-2 pivotal studies was limited by the design differences between the two studies [<xref ref-type="bibr" rid="CR1">1</xref>, <xref ref-type="bibr" rid="CR3">3</xref>]. MERCURY-1 was a 3-month study for efficacy endpoints and a 12-month study for safety endpoints whereas MERCURY-2 was a 3-month study for efficacy and safety endpoints. Thus, the pooled efficacy analysis included up to 3-month data from both trials. The pooled safety analysis included data from the MERCURY-1 study up to 12 months and data from the MERCURY-2 study up to 3 months. While this pooled analysis confirmed and strengthened findings from the individual MERCURY-1 and -2 studies that the netarsudil/latanoprost FDC lowers IOP significantly more than monotherapy with either component, it does not inform how this FDC compares with other FDC products for reducing IOP. The ongoing MERCURY-3 study (NCT03284853) “Safety and Efficacy Study of PG324 (Netarsudil/Latanoprost 0.02%/0.005%) Ophthalmic Solution Compared to GANFORT<sup>®</sup> Ophthalmic Solution in Open Angle Glaucoma or Ocular Hypertension” is designed to address comparative efficacy with another FDC product.</p>
+            </sec>
+            <sec id="Sec13" sec-type="conclusion">
+              <title>Conclusions</title>
+              <p id="Par40">With once-daily dosing and superior efficacy to prostaglandin monotherapy, the netarsudil/latanoprost FDC offers the potential to reduce the burden of treatment and may improve both adherence and clinical outcomes for patients with OAG or OHT.</p>
+            </sec>
+            <sec sec-type="supplementary-material">
+              <title>Electronic supplementary material</title>
+              <sec id="Sec14">
+                <p>Below is the link to the electronic supplementary material.<supplementary-material content-type="local-data" id="MOESM1"><media xlink:href="12325_2020_1277_MOESM1_ESM.pdf"><caption><p>Supplementary material 1 (PDF 426 kb)</p></caption></media></supplementary-material></p>
+              </sec>
+            </sec>
+          </body>
+          <back>
+            <fn-group>
+              <fn>
+                <p>
+                  <bold>Enhanced Digital Features</bold>
+                </p>
+                <p>To view enhanced digital features for this article go to 10.6084/m9.figshare.11871867.</p>
+              </fn>
+            </fn-group>
+            <ack>
+              <title>Acknowledgements</title>
+              <p>The authors thank the participants of the study.</p>
+              <sec id="FPar2">
+                <title>Funding</title>
+                <p id="Par41">Aerie Pharmaceuticals, Inc. Durham, NC, USA, funded, designed, and conducted the study, including data collection, management, and interpretation, as well as reviewed and approved the manuscript. Rapid Service and Open Access fees were funded by Aerie Pharmaceuticals. All authors had full access to all of the data in this study and take complete responsibility for the integrity of the data and accuracy of the data analysis.</p>
+              </sec>
+              <sec id="FPar3">
+                <title>Medical Writing, Editorial, and Other Assistance</title>
+                <p id="Par42">Editorial assistance in the preparation of this article was provided by Kathryn Miles of BioScience Communications, New York, NY, USA. Support for this assistance was funded by Aerie Pharmaceuticals, Inc.</p>
+              </sec>
+              <sec id="FPar4">
+                <title>Authorship</title>
+                <p id="Par43">All named authors meet the International Committee of Medical Journal Editors (ICMJE) criteria for authorship for this article, take responsibility for the integrity of the work as a whole, and have given their approval for this version to be published.</p>
+              </sec>
+              <sec id="FPar5">
+                <title>Disclosures</title>
+                <p id="Par44">Sanjay Asrani is a consultant for Aerie Pharmaceuticals, Inc. Sanjay Asrani is also a member of the journal’s Editorial Board. Jason Bacharach is a member of the speakers bureau and has received research funds and consultant fees from Aerie Pharmaceuticals, Inc. Edward Holland is a consultant for Aerie Pharmaceuticals, Inc. Hayley McKee, Huan Sheng, Richard A. Lewis, and Casey C. Kopczynski are salaried employees of and own stock in Aerie Pharmaceuticals. Theresa Heah was a salaried employee of Aerie Pharmaceuticals from 2015 to July 2019 and is a current employee of Asclepix Therapeutics, Inc., Baltimore, MD.</p>
+              </sec>
+              <sec id="FPar6">
+                <title>Compliance with Ethics Guidelines</title>
+                <p id="Par45">The studies were conducted in accordance with Institutional Review Board regulations and Good Clinical Practice Guidelines and adhered to the Declaration of Helsinki. The investigators obtained central institutional review board approval of the protocol prior to initiating the studies (MERCURY-1: Schulman Institutional Review Board, Cincinnati, OH, USA; Duke University School of Medicine Institutional Review Board, Durham, NC, USA; Western Institutional Review Board, Puyallup, WA, USA; MERCURY-2: Schulman Institutional Review Board, Cincinnati, OH, USA; Nova Scotia Health Authority Research Ethics Board, Halifax, NS, Canada; Comité d’éthique de la recherche du Centre Intégré Universitaire de Santé et de Services Sociaux de l’Estrie, Sherbrooke, QC, Canada). The MERCURY-1 study was conducted in the USA for 12 months. The MERCURY-2 study was conducted in the USA and Canada for 3 months.</p>
+              </sec>
+              <sec id="FPar7" sec-type="data-availability">
+                <title>Data Availability</title>
+                <p id="Par46">The datasets generated during and/or analyzed during the current study are not publicly available, but are available from the corresponding author on reasonable request.</p>
+              </sec>
+            </ack>
+            <ref-list id="Bib1">
+              <title>References</title>
+              <ref id="CR1">
+                <label>1.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Asrani</surname>
+                      <given-names>S</given-names>
+                    </name>
+                    <name>
+                      <surname>Robin</surname>
+                      <given-names>A</given-names>
+                    </name>
+                    <name>
+                      <surname>Serle</surname>
+                      <given-names>J</given-names>
+                    </name>
+                    <etal/>
+                  </person-group>
+                  <article-title>Netarsudil/latanoprost fixed-dose combination for elevated intraocular pressure: three-month data from a randomized phase 3 trial</article-title>
+                  <source>Am J Ophthalmol</source>
+                  <year>2019</year>
+                  <volume>207</volume>
+                  <fpage>248</fpage>
+                  <lpage>257</lpage>
+                  <pub-id pub-id-type="doi">10.1016/j.ajo.2019.06.016</pub-id>
+                  <pub-id pub-id-type="pmid">31229466</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="CR2">
+                <label>2.</label>
+                <mixed-citation publication-type="other">Brubaker J, Teymoorian S, Lewis R, et al. Once-daily fixed-dose combination of netarsudil 0.02% and latanoprost 0.005% in ocular hypertension/open-angle glaucoma: 12-month data from MERCURY-1. Abstract PO074. Presented at the 28th Annual Meeting of the American Glaucoma Society; March 1–4, 2018; New York, NY.</mixed-citation>
+              </ref>
+              <ref id="CR3">
+                <label>3.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Walters</surname>
+                      <given-names>TR</given-names>
+                    </name>
+                    <name>
+                      <surname>Ahmed</surname>
+                      <given-names>IIK</given-names>
+                    </name>
+                    <name>
+                      <surname>Lewis</surname>
+                      <given-names>RA</given-names>
+                    </name>
+                    <etal/>
+                  </person-group>
+                  <article-title>Once-daily netarsudil/latanoprost fixed-dose combination for elevated intraocular pressure in the randomized phase 3 MERCURY-2 study</article-title>
+                  <source>Ophthalmol Glaucoma</source>
+                  <year>2019</year>
+                  <volume>2</volume>
+                  <fpage>280</fpage>
+                  <lpage>289</lpage>
+                  <pub-id pub-id-type="doi">10.1016/j.ogla.2019.03.007</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="CR4">
+                <label>4.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Higginbotham</surname>
+                      <given-names>EJ</given-names>
+                    </name>
+                  </person-group>
+                  <article-title>Considerations in glaucoma therapy: fixed combinations versus their component medications</article-title>
+                  <source>Clin Ophthalmol</source>
+                  <year>2010</year>
+                  <volume>4</volume>
+                  <fpage>1</fpage>
+                  <lpage>9</lpage>
+                  <?supplied-pmid 20169043?>
+                  <pub-id pub-id-type="pmid">20169043</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="CR5">
+                <label>5.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Kass</surname>
+                      <given-names>MA</given-names>
+                    </name>
+                    <name>
+                      <surname>Heuer</surname>
+                      <given-names>DK</given-names>
+                    </name>
+                    <name>
+                      <surname>Higginbotham</surname>
+                      <given-names>EJ</given-names>
+                    </name>
+                    <etal/>
+                  </person-group>
+                  <article-title>The Ocular Hypertension Treatment Study: a randomized trial determines that topical ocular hypotensive medication delays or prevents the onset of primary open-angle glaucoma</article-title>
+                  <source>Arch Ophthalmol</source>
+                  <year>2002</year>
+                  <volume>120</volume>
+                  <fpage>701</fpage>
+                  <lpage>713</lpage>
+                  <pub-id pub-id-type="doi">10.1001/archopht.120.6.701</pub-id>
+                  <pub-id pub-id-type="pmid">12049574</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="CR6">
+                <label>6.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Patel</surname>
+                      <given-names>SC</given-names>
+                    </name>
+                    <name>
+                      <surname>Spaeth</surname>
+                      <given-names>GL</given-names>
+                    </name>
+                  </person-group>
+                  <article-title>Compliance in patients prescribed eyedrops for glaucoma</article-title>
+                  <source>Ophthalmic Surg</source>
+                  <year>1995</year>
+                  <volume>26</volume>
+                  <fpage>233</fpage>
+                  <lpage>236</lpage>
+                  <?supplied-pmid 7651690?>
+                  <pub-id pub-id-type="pmid">7651690</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="CR7">
+                <label>7.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Robin</surname>
+                      <given-names>AL</given-names>
+                    </name>
+                    <name>
+                      <surname>Novack</surname>
+                      <given-names>GD</given-names>
+                    </name>
+                    <name>
+                      <surname>Covert</surname>
+                      <given-names>DW</given-names>
+                    </name>
+                    <name>
+                      <surname>Crockett</surname>
+                      <given-names>RS</given-names>
+                    </name>
+                    <name>
+                      <surname>Marcic</surname>
+                      <given-names>TS</given-names>
+                    </name>
+                  </person-group>
+                  <article-title>Adherence in glaucoma: objective measurements of once-daily and adjunctive medication use</article-title>
+                  <source>Am J Ophthalmol</source>
+                  <year>2007</year>
+                  <volume>144</volume>
+                  <fpage>533</fpage>
+                  <lpage>540</lpage>
+                  <pub-id pub-id-type="doi">10.1016/j.ajo.2007.06.012</pub-id>
+                  <pub-id pub-id-type="pmid">17686450</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="CR8">
+                <label>8.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Robin</surname>
+                      <given-names>AL</given-names>
+                    </name>
+                    <name>
+                      <surname>Covert</surname>
+                      <given-names>D</given-names>
+                    </name>
+                  </person-group>
+                  <article-title>Does adjunctive glaucoma therapy affect adherence to the initial primary therapy?</article-title>
+                  <source>Ophthalmology</source>
+                  <year>2005</year>
+                  <volume>112</volume>
+                  <fpage>863</fpage>
+                  <lpage>868</lpage>
+                  <pub-id pub-id-type="doi">10.1016/j.ophtha.2004.12.026</pub-id>
+                  <pub-id pub-id-type="pmid">15878067</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="CR9">
+                <label>9.</label>
+                <mixed-citation publication-type="other">Prum BE Jr, Rosenberg LF, Gedde SJ, et al. Primary Open-Angle Glaucoma Preferred Practice Pattern<sup>®</sup> guidelines. Ophthalmology. 2016;123:P41–P111. (Erratum in Ophthalmology. 2018;125:949).</mixed-citation>
+              </ref>
+              <ref id="CR10">
+                <label>10.</label>
+                <mixed-citation publication-type="other">RHOPRESSA<sup>®</sup> [prescribing information]. Irvine, CA: Aerie Pharmaceuticals; 2019.</mixed-citation>
+              </ref>
+              <ref id="CR11">
+                <label>11.</label>
+                <mixed-citation publication-type="other">Bacharach J, Holland E, Sheng H, et al. Pooled safety analysis of a once-daily fixed-dose combination of netarsudil 0.02% and latanoprost 0.005% in ocular hypertension and open-angle glaucoma. Poster #2211. Presented at the 13th European Glaucoma Society Congress; May 19–22, 2018; Florence, Italy.</mixed-citation>
+              </ref>
+              <ref id="CR12">
+                <label>12.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Kazemi</surname>
+                      <given-names>A</given-names>
+                    </name>
+                    <name>
+                      <surname>McLaren</surname>
+                      <given-names>JW</given-names>
+                    </name>
+                    <name>
+                      <surname>Kopczynski</surname>
+                      <given-names>CC</given-names>
+                    </name>
+                    <etal/>
+                  </person-group>
+                  <article-title>The effects of netarsudil ophthalmic solution on aqueous humor dynamics in a randomized study in humans</article-title>
+                  <source>J Ocul Pharmacol Ther</source>
+                  <year>2018</year>
+                  <volume>34</volume>
+                  <fpage>380</fpage>
+                  <lpage>386</lpage>
+                  <pub-id pub-id-type="doi">10.1089/jop.2017.0138</pub-id>
+                  <pub-id pub-id-type="pmid">29469601</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="CR13">
+                <label>13.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Li</surname>
+                      <given-names>G</given-names>
+                    </name>
+                    <name>
+                      <surname>Mukherjee</surname>
+                      <given-names>D</given-names>
+                    </name>
+                    <name>
+                      <surname>Navarro</surname>
+                      <given-names>I</given-names>
+                    </name>
+                    <etal/>
+                  </person-group>
+                  <article-title>Visualization of conventional outflow tissue responses to netarsudil in living mouse eyes</article-title>
+                  <source>Eur J Pharmacol</source>
+                  <year>2016</year>
+                  <volume>787</volume>
+                  <fpage>20</fpage>
+                  <lpage>31</lpage>
+                  <pub-id pub-id-type="doi">10.1016/j.ejphar.2016.04.002</pub-id>
+                  <pub-id pub-id-type="pmid">27085895</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="CR14">
+                <label>14.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Ren</surname>
+                      <given-names>R</given-names>
+                    </name>
+                    <name>
+                      <surname>Li</surname>
+                      <given-names>G</given-names>
+                    </name>
+                    <name>
+                      <surname>Le</surname>
+                      <given-names>TD</given-names>
+                    </name>
+                    <name>
+                      <surname>Kopczynski</surname>
+                      <given-names>C</given-names>
+                    </name>
+                    <name>
+                      <surname>Stamer</surname>
+                      <given-names>WD</given-names>
+                    </name>
+                    <name>
+                      <surname>Gong</surname>
+                      <given-names>H</given-names>
+                    </name>
+                  </person-group>
+                  <article-title>Netarsudil increases outflow facility in human eyes through multiple mechanisms</article-title>
+                  <source>Invest Ophthalmol Vis Sci</source>
+                  <year>2016</year>
+                  <volume>57</volume>
+                  <fpage>6197</fpage>
+                  <lpage>6209</lpage>
+                  <pub-id pub-id-type="doi">10.1167/iovs.16-20189</pub-id>
+                  <pub-id pub-id-type="pmid">27842161</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="CR15">
+                <label>15.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Serle</surname>
+                      <given-names>JB</given-names>
+                    </name>
+                    <name>
+                      <surname>Katz</surname>
+                      <given-names>J</given-names>
+                    </name>
+                    <name>
+                      <surname>McLaurin</surname>
+                      <given-names>E</given-names>
+                    </name>
+                    <etal/>
+                  </person-group>
+                  <article-title>Two phase 3 clinical trials comparing the safety and efficacy of netarsudil to timolol in patients with elevated intraocular pressure: Rho Kinase Elevated IOP Treatment Trial 1 and 2 (ROCKET-1 and ROCKET-2)</article-title>
+                  <source>Am J Ophthalmol</source>
+                  <year>2018</year>
+                  <volume>186</volume>
+                  <fpage>116</fpage>
+                  <lpage>127</lpage>
+                  <pub-id pub-id-type="doi">10.1016/j.ajo.2017.11.019</pub-id>
+                  <pub-id pub-id-type="pmid">29199013</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="CR16">
+                <label>16.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Wang</surname>
+                      <given-names>SK</given-names>
+                    </name>
+                    <name>
+                      <surname>Chang</surname>
+                      <given-names>RT</given-names>
+                    </name>
+                  </person-group>
+                  <article-title>An emerging treatment option for glaucoma: Rho kinase inhibitors</article-title>
+                  <source>Clin Ophthalmol</source>
+                  <year>2014</year>
+                  <volume>8</volume>
+                  <fpage>883</fpage>
+                  <lpage>890</lpage>
+                  <?supplied-pmid 24872673?>
+                  <pub-id pub-id-type="pmid">24872673</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="CR17">
+                <label>17.</label>
+                <mixed-citation publication-type="other">XALATAN<sup>®</sup> [prescribing information]. Puurs, Belgium: Pfizer; 2017.</mixed-citation>
+              </ref>
+              <ref id="CR18">
+                <label>18.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Kiel</surname>
+                      <given-names>JW</given-names>
+                    </name>
+                    <name>
+                      <surname>Kopczynski</surname>
+                      <given-names>CC</given-names>
+                    </name>
+                  </person-group>
+                  <article-title>Effect of AR-13324 on episcleral venous pressure in Dutch belted rabbits</article-title>
+                  <source>J Ocul Pharmacol Ther</source>
+                  <year>2015</year>
+                  <volume>31</volume>
+                  <fpage>146</fpage>
+                  <lpage>151</lpage>
+                  <pub-id pub-id-type="doi">10.1089/jop.2014.0146</pub-id>
+                  <pub-id pub-id-type="pmid">25756366</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="CR19">
+                <label>19.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Lin</surname>
+                      <given-names>CW</given-names>
+                    </name>
+                    <name>
+                      <surname>Sherman</surname>
+                      <given-names>B</given-names>
+                    </name>
+                    <name>
+                      <surname>Moore</surname>
+                      <given-names>LA</given-names>
+                    </name>
+                    <etal/>
+                  </person-group>
+                  <article-title>Discovery and preclinical development of netarsudil, a novel ocular hypotensive agent for the treatment of glaucoma</article-title>
+                  <source>J Ocul Pharmacol Ther</source>
+                  <year>2018</year>
+                  <volume>34</volume>
+                  <fpage>40</fpage>
+                  <lpage>51</lpage>
+                  <pub-id pub-id-type="doi">10.1089/jop.2017.0023</pub-id>
+                  <pub-id pub-id-type="pmid">28609185</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="CR20">
+                <label>20.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Bahrami</surname>
+                      <given-names>H</given-names>
+                    </name>
+                  </person-group>
+                  <article-title>Causal inference in primary open angle glaucoma: specific discussion on intraocular pressure</article-title>
+                  <source>Ophthalmic Epidemiol</source>
+                  <year>2006</year>
+                  <volume>13</volume>
+                  <fpage>283</fpage>
+                  <lpage>289</lpage>
+                  <pub-id pub-id-type="doi">10.1080/09286580600681339</pub-id>
+                  <pub-id pub-id-type="pmid">16877288</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="CR21">
+                <label>21.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Heijl</surname>
+                      <given-names>A</given-names>
+                    </name>
+                    <name>
+                      <surname>Leske</surname>
+                      <given-names>MC</given-names>
+                    </name>
+                    <name>
+                      <surname>Bengtsson</surname>
+                      <given-names>B</given-names>
+                    </name>
+                    <etal/>
+                  </person-group>
+                  <article-title>Reduction of intraocular pressure and glaucoma progression: results from the Early Manifest Glaucoma Trial</article-title>
+                  <source>Arch Ophthalmol</source>
+                  <year>2002</year>
+                  <volume>120</volume>
+                  <fpage>1268</fpage>
+                  <lpage>1279</lpage>
+                  <pub-id pub-id-type="doi">10.1001/archopht.120.10.1268</pub-id>
+                  <pub-id pub-id-type="pmid">12365904</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="CR22">
+                <label>22.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Holló</surname>
+                      <given-names>G</given-names>
+                    </name>
+                    <name>
+                      <surname>Topouzis</surname>
+                      <given-names>F</given-names>
+                    </name>
+                    <name>
+                      <surname>Fechtner</surname>
+                      <given-names>RD</given-names>
+                    </name>
+                  </person-group>
+                  <article-title>Fixed-combination intraocular pressure-lowering therapy for glaucoma and ocular hypertension: advantages in clinical practice</article-title>
+                  <source>Expert Opin Pharmacother</source>
+                  <year>2014</year>
+                  <volume>12</volume>
+                  <fpage>1737</fpage>
+                  <lpage>1747</lpage>
+                  <pub-id pub-id-type="doi">10.1517/14656566.2014.936850</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="CR23">
+                <label>23.</label>
+                <mixed-citation publication-type="other">TIMOPTIC<sup>®</sup> [prescribing information]. Bridgewater, NJ: Bausch &amp; Lomb; 2017.</mixed-citation>
+              </ref>
+            </ref-list>
+          </back>
+        </article>
+      </metadata>
+    </record>
+  </GetRecord>
+</OAI-PMH>

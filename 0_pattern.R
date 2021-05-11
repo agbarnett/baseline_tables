@@ -5,10 +5,11 @@
 ### a) continuous (mean and sd)
 
 # common units in lower case
-units = c('mmhg', 'ng/ml', 'kg/m2', 'mmol/l', 'per year', 'per month', 'per day', 'minutes', 'minute', 'min', 'mins', 'year', 'years', 'yr', 'yrs', 'hours', 'hour', 'hr', 'hrs')
+# removed 'min' for minutes because it gets confused with minimum
+units = c('mmhg', 'ng/ml', 'kg/m2', 'mmol/l', 'per year', 'per month', 'per day', 'minutes', 'minute', 'mins', 'year', 'years', 'yr', 'yrs', 'hours', 'hour', 'hr', 'hrs')
 units = paste('\\b', paste(units, collapse='\\b|\\b'), '\\b', sep='') # must be whole words
 # common stats and variables in lower case, removed 'total' because it get confused with total columns
-stats = c('mean', 'sd', 'score', 'index', 'age', 'bmi', 'height', 'weight', 'waist', 'hb1ac')
+stats = c('mean', 'sd', 'score', 'index', 'age', 'bmi', 'height', 'weight', 'waist','Hba1c')
 stats = paste('\\b', paste(stats, collapse='\\b|\\b'), '\\b', sep='') # must be whole words
 # symbols/patterns for plus/minus
 plus_minus_utf = c(intToUtf8(0x00B1), intToUtf8(0x2213)) # add latex \pm? 
@@ -55,7 +56,35 @@ words = c('^p$','p.value','pvalue','p=','p =') # first is 'P' as a single value;
 words = words[order(-nchar(words))] # from longest to shortest
 pval_pattern = paste(words, collapse='|') # 
 
-### f) dates - not yet used
-words = c('date','dates')
+### f) minimum / maximum
+words = c('min', 'max', 'minimum','maximum', 'range', 'min.max', 'min..max')
+words = words[order(-nchar(words))] # from longest to shortest
 words = paste('\\b', paste(words, collapse='\\b|\\b'), '\\b', sep='') # words must be whole words
-date_pattern = paste(words, collapse='|') # 
+min_max_pattern = paste(words, collapse='|') # 
+
+### g) dates , used for converting dates to numbers
+date_separators = c('/','-')
+year = c('[0-9][0-9][0-9][0-9]','[0-9][0-9]') # 2 or 4 year
+month = c('01','02','03','04','05','06','07','08','09',as.character(1:12)) #
+days = c('01','02','03','04','05','06','07','08','09',as.character(1:31)) #
+dates_patterns = NULL
+for (sep in date_separators){
+  for (y in year){
+    for (m in month){
+      for (d in days){
+        # year first
+        this_pattern = paste(y, sep, m, sep, d, sep='')
+        dates_patterns = c(dates_patterns, this_pattern)
+        # year laste
+        this_pattern = paste(d, sep, m, sep, y, sep='')
+        dates_patterns = c(dates_patterns, this_pattern)
+      }
+    }
+  }
+}
+dates_patterns = dates_patterns[order(-nchar(dates_patterns))] # from longest to shortest
+dates_patterns = paste(dates_patterns, collapse = '|')
+# to convert statistics: no longer used
+#words = c('date','dates')
+#words = paste('\\b', paste(words, collapse='\\b|\\b'), '\\b', sep='') # words must be whole words
+#date_pattern = paste(words, collapse='|') # 
