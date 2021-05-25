@@ -2,14 +2,23 @@
 # functions for p-value testing
 # April 2021
 
+# get full text XML from European PMC. See metareadr::mt_read_pmcoa 
+mt_read_pmcoa_europe = function(pmcid = pmcid, file_name="web/full.xml"){
+  # get page
+  url = paste('https://www.ebi.ac.uk/europepmc/webservices/rest/PMC', pmcid, '/fullTextXML', sep='')
+  pmc_record <- xml2::read_xml(url)
+  # Save
+  invisible(xml2::write_xml(pmc_record, file_name))
+}
+
 ## extract baseline tables
-baseline_table = function(webpage, table_number = 1){
+baseline_table = function(webpage, table_number = 1, footnote){
   
   # binary variable tested later; were there p-values in table?
   pvalues_in_table = FALSE
   
   # maximum number of tables
-  max_table = length(webpage %>% xml_nodes("table"))
+  max_table = length(webpage %>% xml_nodes("table-wrap"))
   if(table_number > max_table){ # table likely in appendix or graphic
     to.return = list()
     to.return$reason = 'Table in appendix or table is graphic'
@@ -19,8 +28,9 @@ baseline_table = function(webpage, table_number = 1){
   
   # extract baseline table 
   table1 <- webpage %>%
-    xml_nodes("table") %>%
+    xml_nodes("table-wrap") %>%
     .[table_number] %>% # table number for baseline table
+    xml_nodes("table") %>% # get first table in wrap
     html_table(header = TRUE, fill = TRUE) # include table headers
   table1 = table1[[1]] # to data frame
   
@@ -51,6 +61,9 @@ baseline_table = function(webpage, table_number = 1){
     mutate_all(removeunicode) %>%
     mutate_all(string_remove_function)
 
+  # if single stats in side-by-side columns then combine
+  table1 = merge_single_stats(table1)
+  
   # could transpose badly formatted tables here (where results are in rows instead of columns)
   
   # combine first two columns if they are both mostly text (double label column)
@@ -107,7 +120,7 @@ baseline_table = function(webpage, table_number = 1){
   ## Additional check for labels that are "N"
   if(any(table1[,1]=='n')){
     index = which(table1[,1]=='n')
-    numbers_start = index + 1
+    #numbers_start = index + 1 # turned off did not work for PMC7005671
     table1[index,] = paste('n=', table1[index,], sep='') # add `n=` for later detection
   }
   # now add header
@@ -119,19 +132,7 @@ baseline_table = function(webpage, table_number = 1){
   table_header = filter(table1, header == TRUE) %>%
     select(-header)
   
-  ## detect use of statistics for each row
-  stats_detect = statistics_detect(intable=no_header, header = table_header)
-  # remove columns and record p-values in table ...
-  if(!is.null(stats_detect$columns_to_remove)){
-    no_header = no_header[, -stats_detect$columns_to_remove]
-    table_header = table_header[, -stats_detect$columns_to_remove]
-    pvalues_in_table = TRUE
-  }
-  stats_detect = stats_detect$table # ... then change list to table of cells
-  # update `p-values in table` if p-values are in rows
-  if(any(stats_detect$statistic == 'pvals', na.rm = TRUE)){pvalues_in_table = TRUE}
-
-  ## remove rows in the table that are just text (so just keep rows with some numbers)
+  ## find rows in the table that are just text as these are likely header rows (so just keep rows with some numbers)
   nums = matrix(data = rep(1:nrow(no_header), ncol(no_header)), ncol = ncol(no_header), nrow = nrow(no_header)) # make matrix of numbers
   vector_nums = as.vector(as.matrix(nums))
   table_text = as.vector(as.matrix(no_header))
@@ -139,10 +140,68 @@ baseline_table = function(webpage, table_number = 1){
   any_numbers = str_detect(table_text, pattern = '[0-9]')
   rows_with_numbers = unique(vector_nums[any_numbers])
   rows_with_numbers = rows_with_numbers[order(rows_with_numbers)] # preserve ordering
+
+  ##### detect use of statistics for each row ####
+  ## split table if there are multiple header rows (usually a second row mid-way down table)
+  diffs = diff(rows_with_numbers)
+  n_splits = sum(diffs>1)
+  if(n_splits == 0){ # if no header rows
+    stats_detect = statistics_detect(intable=no_header, header = table_header)
+  }
+  if(n_splits > 0){ # if some header rows
+    # first split
+    stats_detect_multiple = list()
+    index = which(diffs>1)[1] # first split location
+    this_split = no_header[1:index,]
+    stats_detect_multiple[[1]] = statistics_detect(intable=this_split, header = table_header)
+    
+    # then further splits
+    for (row_split in 1:n_splits){
+      index = which(diffs>1)[row_split] # split location
+      if(row_split == n_splits){ 
+        rstop = nrow(no_header)
+      }
+      if(row_split < n_splits){ 
+        index_next = which(diffs>1)[row_split+1] # next split location
+        rstop = index_next + row_split 
+      }
+      rstart = index+row_split+1
+      this_split = no_header[rstart:rstop, ] # select rows of table
+      new_header = table_header # replace header starting with old header
+      new_header[1,] = no_header[index+1,]
+      stats_detect_multiple[[row_split+1]] = statistics_detect(intable=this_split, header = new_header)
+      stats_detect_multiple[[row_split+1]]$table$row = stats_detect_multiple[[row_split+1]]$table$row + max(stats_detect_multiple[[row_split]]$table$row) # adjust row numbers
+    }
+    # now create overall list
+    stats_detect = list()
+    any_remove = unique(unlist(lapply(stats_detect_multiple, '[[', 1)))
+    stats_detect$columns_to_remove = any_remove
+    stats_detect$table = bind_rows(lapply(stats_detect_multiple, '[[', 2))
+    # carry forward stats from previous row if there's no other type
+    stats_detect$table = tidyr::fill(stats_detect$table, statistic, .direction = 'down')
+  }
+
+  # now remove header rows from table
   no_header = no_header[rows_with_numbers,] # just keep rows with numbers
-  stats_detect = stats_detect[rows_with_numbers,] %>% # apply rows to stats detect too
-    mutate(row = 1:n()) # and renumber rows
   
+  # remove columns and record p-values in table ...
+  if(any(!is.na(stats_detect$columns_to_remove))){ # at least one not missing
+    to_remove = stats_detect$columns_to_remove
+    to_remove = to_remove[!is.na(to_remove)]
+    no_header = no_header[, -to_remove]
+    table_header = table_header[, -to_remove]
+    pvalues_in_table = TRUE
+  }
+  stats_detect = stats_detect$table # ... then change list to table of cells
+  # update `p-values in table` if p-values are in rows
+  if(any(stats_detect$statistic == 'pvals', na.rm = TRUE)){pvalues_in_table = TRUE}
+  
+  # check footnote for p-values
+  if(pvalues_in_table == FALSE & !is.na(footnote)){
+    footp = str_detect(string=footnote, pattern=pval_pattern)
+    if(footp == TRUE ){pvalues_in_table = TRUE}
+  }
+
   # convert table to vector
   no_header = no_header[, -1] # remove first column which is normally always not statistics
   row_nums = matrix(data = rep(1:nrow(no_header), ncol(no_header)), ncol = ncol(no_header), nrow = nrow(no_header)) # make matrix of numbers
@@ -154,7 +213,6 @@ baseline_table = function(webpage, table_number = 1){
   names(table) = c('row','column','text')
   table = full_join(table, stats_detect, by = 'row') # add stats detected variables 
   table = mutate(table, 
-                 text = str_replace_all(string = text, pattern = '·', replace = '.'), # remove odd decimal place used by Lancet
                  text = str_replace_all(text, pattern = '[^0-9|.| ]', replacement = ' '), # just keep numbers, decimals and spaces
                  text = str_squish(string = text)) %>% # remove any double spaces added, and spaces at start/end
     filter(!is.na(statistic)) %>% # only proceed if we know the statistic
@@ -169,6 +227,7 @@ baseline_table = function(webpage, table_number = 1){
   sample_sizes = sample_sizes_est(table_header = table_header[,-1], processed_table = table, first_row = table1[1,]) # header without first column 
   if(is.null(sample_sizes)==TRUE){
     to.return = list()
+    to.return$pvalues_in_table = pvalues_in_table # can still record this
     to.return$reason = 'No sample size'
     to.return$table = NULL
     return(to.return) # stop here
@@ -184,32 +243,49 @@ baseline_table = function(webpage, table_number = 1){
   table = full_join(table, sample_sizes, by = 'column') %>% # add sample sizes from above
     filter(!is.na(sample_size)) # knock out missing sample size
   
-  # fill in numerator if only percent given? e.g, pmcid
-  to_fill = filter(table, is.na(stat2), statistic == 'percent')
-  if(nrow(to_fill)>0){
-    okay = filter(table, !is.na(stat2) | statistic != 'percent') # rows that are okay
-    to_fill = mutate(to_fill,
-                     stat2 = stat1, # move percent to second cell
-                     stat1 = round((stat2/100)*sample_size)) # estimate numerator 
-    table = bind_rows(okay, to_fill)
-  }
+  # fill in numerator if only percent given. Turned off because not always working
+  #to_fill = filter(table, is.na(stat2), statistic == 'percent')
+  #if(nrow(to_fill)>0){
+  #  okay = filter(table, !is.na(stat2) | statistic != 'percent') # rows that are okay
+  #  to_fill = mutate(to_fill,
+  #                   stat2 = stat1, # move percent to second cell
+  #                   stat1 = round((stat2/100)*sample_size)) # estimate numerator 
+  #  table = bind_rows(okay, to_fill)
+  #}
   
-  ## drop any columns that are the total (to do: could expand to cells in header)
-  total_words = c('total','overall','all ')
-  total_words = total_words[order(-nchar(total_words))] # from longest to shortest
-  total_words = paste(paste('^', total_words, sep=''), collapse='|') # at start
+  ## drop any columns that are the total
+  # also drop any columns that are labelled 'men' or 'women' as these are subgroups not randomised groups
   text_to_check = tolower(names(table_header))
   text_to_check = str_squish(str_remove_all(text_to_check, 'n=|n =|[0-9]')) # remove sample size
-  to_drop = str_detect(text_to_check, total_words) # looking for just the word 'total', 'all' or 'overall', plus one character because of numbers added above
+  to_drop_header = str_detect(text_to_check, total_words) # see 0_patterns.R for words
+  # also check first row
+  if(nrow(table_header)>0){
+    text_to_check = tolower(table_header[1,])
+    text_to_check = str_squish(str_remove_all(text_to_check, 'n=|n =|[0-9]')) # remove sample size
+    to_drop_first = str_detect(text_to_check, total_words) # see 0_patterns.R for words
+    to_drop = to_drop_header | to_drop_first # or
+  }
+  if(nrow(table_header) == 0){
+    to_drop = to_drop_header
+  }
   if(any(to_drop) == TRUE){
     totals = which(to_drop) - 1 # minus one because of first column with names
     table = filter(table, !column %in% totals)
+    # exclude if not enough columns
+    n_remain = length(unique(table$column))
+    if(n_remain <=1){
+      to.return = list()
+      to.return$reason = 'One or fewer column in table'
+      to.return$table = NULL
+      return(to.return) # stop here
+    }
   }
   
   ## If single integer in first cell then assume it is a count
-  table = mutate(table,
-              statistic = ifelse(is.na(stat2) & (round(stat1) - stat1)==0, 'percent', statistic), # change type
-              stat2 = ifelse(is.na(stat2) & (round(stat1) - stat1)==0, 100*(stat1/sample_size), stat2)) # calculate percent
+  # commented out as this does not work enough of the time
+  #table = mutate(table,
+  #            statistic = ifelse(is.na(stat2) & (round(stat1) - stat1)==0, 'percent', statistic), # change type
+  #            stat2 = ifelse(is.na(stat2) & (round(stat1) - stat1)==0, 100*(stat1/sample_size), stat2)) # calculate percent
   
   # arrange table
   table = mutate(table, 
@@ -220,7 +296,7 @@ baseline_table = function(webpage, table_number = 1){
   # check for repeat columns
   duplicates = select(table, -column) %>%
     duplicated()
-  if(sum(duplicates) > 3){ # number of duplicate rows, may need trial and error with this threshold
+  if(sum(duplicates)/max(table$row) > 0.5){ # if over 50% duplicates
     dcolumns = unique(table[duplicates,] %>% pull(column))
     table = filter(table, !column %in% dcolumns) %>%
       mutate(column = as.numeric(as.factor(column))) # re-number columns
@@ -242,16 +318,18 @@ statistics_detect = function(intable,
                              weight = 2) # mentions in column label count for more
 {
   
-  columns_to_remove = NULL # store columns to remove
+  columns_to_remove = NA # store columns to remove
   
  ## a) look for stats in header
  #header = header[,-1] # do not use first column (usually labels) - turned off again because header can have useful info
  header = rbind(header, names(header)) # add header as text and remove names
+ row.names(header) = NULL
  names(header) = NULL
  header = t(header) # transpose
  header = data.frame(cbind(1:nrow(header), header))
  header = reshape::melt(id.vars = 'X1', header)
  stats_header = mutate(header,
+                       value = str_replace_all(value, '  ', ' '),
                        X1 = as.numeric(X1),
   percent = str_detect(value, pattern = percent_pattern), # see 0_pattern.R for all patterns
   continuous = grepl(x = value, pattern = continuous_pattern),
@@ -280,10 +358,11 @@ statistics_detect = function(intable,
           col_median = col_median/(ncol(stats_header) - 1))
  
  ## remove columns that are p-values
- pval_cols = as.numeric(filter(stats_header, col_pvals>0) %>% pull(column))
+ pval_cols = as.numeric(filter(stats_header, col_pvals > 0) %>% pull(column))
+ plus_one = 0 # should be one because of label columns? Can't work this out!
  if(length(pval_cols)>0){
-   intable = intable[, -(pval_cols+1)] # remove columns
-   columns_to_remove = c(columns_to_remove, pval_cols+1) # add to information to return (plus one because of label columns)
+   intable = intable[, -(pval_cols+plus_one)] # remove columns
+   columns_to_remove = c(columns_to_remove, pval_cols+plus_one) # add to information to return (plus one because of label columns)
  }
  stats_header_row = filter(stats_header_row, !column %in% pval_cols)
 
@@ -304,12 +383,15 @@ statistics_detect = function(intable,
  stats_header_row = filter(stats_header_row, !column %in% column_pvals)
  
  ## b) look for stats in first column of non-header (label column)
- percents = str_detect(intable[,1], pattern = percent_pattern) # see 0_pattern.R for all patterns
-continuous = grepl(pattern = continuous_pattern, intable[,1]) # had to use grep because of symbols
-numbers = str_detect(intable[,1], pattern = number_pattern)
-min_max = str_detect(intable[,1], pattern = min_max_pattern)
-pvals = str_detect(intable[,1], pattern = pval_pattern)
-medians = str_detect(intable[,1], pattern = median_words) # just look for median words, not number patterns
+ # first remove 'min/' as it gets confused with minimum
+ to_test = intable[,1]
+ to_test = str_remove_all(to_test, pattern='min/')
+ percents = str_detect(to_test, pattern = percent_pattern) # see 0_pattern.R for all patterns
+continuous = grepl(pattern = continuous_pattern, to_test) # had to use grep because of symbols
+numbers = str_detect(to_test, pattern = number_pattern)
+min_max = str_detect(to_test, pattern = min_max_pattern)
+pvals = str_detect(to_test, pattern = pval_pattern)
+medians = str_detect(to_test, pattern = median_words) # just look for median words, not number patterns
 stats_label_column = data.frame(row = 1:nrow(intable), 
              percents = as.numeric(percents) , # using weights, but not for percent because of things like Left ventricular ejection fraction and HbA1c
              continuous = continuous * weight,
@@ -321,12 +403,12 @@ stats_label_column = data.frame(row = 1:nrow(intable),
 ## c) melt to long to look at stats units in cells
 stats_cells = full_join(table_cells, stats_header_row, by=c('row','column')) %>% # add header estimates, using `table_cells` from above
  group_by(row) %>%
- summarise(cell_percents = sum(percents, na.rm = TRUE) + sum(col_percent), # total counts per row
-      cell_continuous = sum(continuous, na.rm = TRUE) + sum(col_continuous),
-      cell_numbers = sum(numbers, na.rm = TRUE) + sum(col_numbers),
-      cell_min_max = sum(min_max, na.rm = TRUE) + sum(col_min_max),
-      cell_pvals = sum(pvals, na.rm = TRUE) + sum(col_pvals),
-      cell_median = sum(median, na.rm = TRUE) + sum(col_median)) 
+ summarise(cell_percents = sum(percents, na.rm = TRUE) + sum(col_percent, na.rm = TRUE), # total counts per row
+      cell_continuous = sum(continuous, na.rm = TRUE) + sum(col_continuous, na.rm = TRUE),
+      cell_numbers = sum(numbers, na.rm = TRUE) + sum(col_numbers, na.rm = TRUE),
+      cell_min_max = sum(min_max, na.rm = TRUE) + sum(col_min_max, na.rm = TRUE),
+      cell_pvals = sum(pvals, na.rm = TRUE) + sum(col_pvals, na.rm = TRUE),
+      cell_median = sum(median, na.rm = TRUE) + sum(col_median, na.rm = TRUE)) 
 
 # now combine cells and column labels and make best guess about statistics per row    
 combine = full_join(stats_cells, stats_label_column, by = 'row') %>%
@@ -419,10 +501,10 @@ sample_sizes_est = function(table_header, # table header with column headings
     n_row = rep(0, nrow(table_header))
     for (r in 1:nrow(table_header)){
       this_row = as.character(table_header[r, ])
-      n_row[r] = sum(str_detect(string = this_row, pattern = 'n=|n =| n$'), na.rm = TRUE)
+      n_row[r] = sum(str_detect(string = this_row, pattern = 'sample size|n=|n =| n$'), na.rm = TRUE)
     }
     if(sum(n_row) > 0){ # if there's at least one row with 
-      select_row = table_header[n_row == max(n_row),]
+      select_row = table_header[n_row == max(n_row),][1,] # select first row if there are multiple n rows
       sample_sizes = extract_n(select_row)
     }
   }
@@ -467,7 +549,7 @@ if(nrow(sample_sizes) > 0){
   
   # if still nothing try first row
   first_row = select(first_row, -header)
-  if(str_squish(first_row[1])%in% c('n','total')){
+  if(str_squish(first_row[1])%in% c('n','total','sample size','sample sizes')){
     numbers = first_row[-1] # remove header column
     tran = data.frame(t(numbers)) # transpose
     names(tran) = paste('C', 1:ncol(tran), sep='')
@@ -497,3 +579,143 @@ make_cells = function(indata){
            median = str_detect(string = value, pattern = paste(median_numbers, collapse = '|')))
   return(table_cells)
 }
+
+
+## t-test from summary stats, from https://stats.stackexchange.com/questions/30394/how-to-perform-two-sample-t-tests-in-r-by-inputting-sample-statistics-rather-tha
+# m1, m2: the sample means
+# s1, s2: the sample standard deviations
+# n1, n2: the same sizes
+# equal.variance: whether or not to assume equal variance. Default is FALSE. 
+t.test2 <- function(mean, sd, n, equal.variance=TRUE, return_what = 'difference')
+{
+  m1 = mean[1]
+  m2 = mean[2]
+  s1 = sd[1]
+  s2 = sd[2]
+  n1 = n[1]
+  n2 = n[2]
+  if( equal.variance==FALSE ) 
+  {
+    se <- sqrt( (s1^2/n1) + (s2^2/n2) )
+    # welch-satterthwaite df
+    df <- ( (s1^2/n1 + s2^2/n2)^2 )/( (s1^2/n1)^2/(n1-1) + (s2^2/n2)^2/(n2-1) )
+  } else
+  {
+    # pooled standard deviation, scaled by the sample sizes
+    se <- sqrt( (1/n1 + 1/n2) * ((n1-1)*s1^2 + (n2-1)*s2^2)/(n1+n2-2) ) 
+    df <- n1+n2-2
+  }      
+  mdiff = m1 - m2
+  t <- mdiff/se 
+  if(return_what=='difference'){return(mdiff)}
+  if(return_what=='se'){return(se)}
+  if(return_what=='t'){return(t)}
+}
+
+# approximation of two-sample t-test for binomial data (see D'Agostino 1998)
+t.test2.binomial <- function(a, b, c, d, return_what = 't')
+{
+  m = a + c
+  n = b + d
+  p1 = a/m
+  p2 = b/n
+  var1 = p1*(1-p1) # variance
+  var2 = p2*(1-p2)
+  pooled_var = ((m-1)*var1 + (n-1)*var2) / (m+n-2) # pooled variance
+  denom = sqrt((1/m) + (1/n))
+  mdiff = p1 - p2 # mean difference
+  se = sqrt(pooled_var) * denom
+  t = mdiff / se
+  if(return_what=='difference'){return(mdiff)}
+  if(return_what=='se'){return(se)}
+  if(return_what=='t'){return(t)}
+}
+
+### get the table data ready for the Bayesian model
+make_stats_for_bayes_model = function(indata){
+# a) continuous
+  # could add below?
+  #  sd = ifelse(is.na(sd), 0.1, sd),
+  #  sd = ifelse(sd==0, 0.1, sd)) # avoid zero sd
+  cstats = filter(indata,
+                   statistic == 'continuous',
+                   column <= 2) %>%
+  group_by(pmcid, row, statistic) %>%
+  summarise(
+    size = sum(sample_size), # total sample size
+    mdiff = t.test2(mean=stat1, sd=stat2, n=sample_size, return_what = 'difference'),
+    sem = t.test2(mean=stat1, sd=stat2, n=sample_size, return_what = 'se'),
+    t = t.test2(mean=stat1, sd=stat2, n=sample_size, return_what = 't'),
+    sem2 = sem^2) %>% # squared
+  filter(!is.na(mdiff),
+         !is.na(sem2),
+         sem2 > 0) %>%
+  ungroup() 
+
+  #
+  pstats = filter(indata,
+                  statistic == 'percent',
+                  column <= 2) %>%
+    group_by(pmcid, row, statistic) %>%
+    pivot_wider(id_cols=c(pmcid,statistic,row), names_from='column', values_from=c('stat1','sample_size')) %>%
+    mutate(a = stat1_1, # successes
+           b = stat1_2,
+           c = sample_size_1 - stat1_1, # failures
+           d = sample_size_2 - stat1_2) %>%
+    filter(a>=0, b>=0, c>=0, d>=0) %>%
+    summarise(
+      size = sample_size_1 + sample_size_2, # total sample size
+      mdiff = t.test2.binomial(a=a, b=b, c=c, d=d, return_what = 'difference'),
+      sem = t.test2.binomial(a=a, b=b, c=c, d=d, return_what = 'se'),
+      t = t.test2.binomial(a=a, b=b, c=c, d=d,  return_what = 't'),
+      sem2 = sem^2) %>% # squared
+    filter(!is.na(mdiff),
+           !is.na(sem2),
+           sem2 > 0) %>%
+    ungroup() 
+  
+  # combine
+  stats = bind_rows(cstats, pstats) %>%
+    arrange(pmcid, row) %>%
+    mutate(study = as.numeric(as.factor(pmcid))) # turn into a number
+  
+return(stats)
+
+} # end of function
+
+## function to merge side-by-side columns
+merge_single_stats = function(in_table){
+  # find where n and percent are next to each other
+  percents = which(in_table[1,] == '%')
+  ns = which(tolower(in_table[1,]) == 'n')
+  matches_p = (ns+1) == percents
+  # find where mean and sd are next to each other
+  mean = which(tolower(in_table[1,]) == 'mean')
+  sd = which(tolower(in_table[1,]) == 'sd')
+  matches_mean = (mean+1) == percents
+  matches = c(matches_p, matches_mean)
+  # merge columns
+  if(any(matches) == TRUE){
+    cols_to_merge = rev(c(ns[matches_p], mean[matches_mean])) # reversed to knock off columns at the end
+    new_columns = NULL
+    for (c in cols_to_merge){  # could not get unite to work
+      two_cols = select(in_table, c:(c+1)) # find two columns
+      col_names = names(two_cols)
+      col_names = str_sub(col_names, 2, nchar(col_names)) # remove first letter which I added and is different
+      if(col_names[1] == col_names[2]){
+        new_name = col_names[1] # if column names are the same then just use one name
+      }
+      if(col_names[1] != col_names[2]){
+        new_name = paste(col_names, collapse = ' ') # paste together column names
+      }
+      new = unite(two_cols, col='c1', everything(), sep=' ') # bind two columns
+      names(new) = new_name
+      new_columns = bind_cols(new_columns, new)
+    }
+    in_table = select(in_table, -cols_to_merge, -(cols_to_merge+1)) # remove columns
+    in_table = bind_cols(in_table, new_columns) # and add bound columns
+  }
+  #
+  return(in_table)
+}
+

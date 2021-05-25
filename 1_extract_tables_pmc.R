@@ -25,10 +25,16 @@ N = 100 # temporary
 table_data = pvalues = excluded = design = NULL # set up data
 for (k in 1:N){
 pmcid = str_remove(pattern='PMC', string=data$pmc[k]) # have to remove numbers
-# get full text as web page, need try catch because some are embargoed
-out = tryCatch(mt_read_pmcoa(pmcid = pmcid, file_format = "pmc", file_name="web/full.xml"), # save to external XML file 
-         error = function(e) print('did not work')) # flag for error
-if(length(out) > 0){
+# get full text as web page, need try catch because some are embargoed or otherwise not available
+out_nlm = out_europe = NULL
+out_nlm = tryCatch(mt_read_pmcoa(pmcid = pmcid, file_format = "pmc", file_name="web/full.xml"), # save to external XML file
+                   error = function(e) print(paste('NLM did not work', pmcid))) # flag for error
+# try Europe if no luck with NLM - not worth it, gives same result
+#if(length(out_nlm) > 0){ 
+#  out_europe = tryCatch(mt_read_pmcoa_europe(pmcid = pmcid, file_name="web/full.xml"), # function in 99_functions.R
+#                        error = function(e) print(paste('Europe did not work', pmcid)))
+#}
+if(length(out_nlm) > 0){ # if neither NLM or Europe work
   this = data.frame(pmc = pmcid, reason = 'Full text page not available')
   excluded = bind_rows(excluded, this)
   next # skip to next
@@ -37,22 +43,26 @@ if(length(out) > 0){
 ## get study title
 webpage = read_xml("web/full.xml", encoding='UTF-8') 
 title = xml_find_all(webpage, ".//article-title") %>% .[1] %>%xml_text() # tables and figures
-# exclude cross-sectional studies (could exclude others here)
-cross_sec = any(str_detect(title, pattern='cross.sectional.study'))
+# exclude cross-sectional studies, exploratory studies, etc (could exclude others here)
+non_rct_pattern = paste( c('exploratory.study','exploratory.analysis','cross.sectional.study','cross.sectional.analysis'), collapse='|')
+cross_sec = any(str_detect(tolower(title), pattern = non_rct_pattern))
 if(cross_sec==TRUE){
-  this = data.frame(pmc = pmcid, reason = 'Cross-sectional study')
+  this = data.frame(pmc = pmcid, reason = 'Not an RCT')
   excluded = bind_rows(excluded, this)
   next # skip to next
 }
 
 ## next read as a text file and ...
-in_text = scan(file = "web/full.xml", what='character', sep='\n', quiet=TRUE) # no separators, one big text
+in_text = scan(file = "web/full.xml", what='character', sep='\n', quiet=TRUE, encoding='UTF-8') # no separators, one big text
 in_text = in_text[!is.na(in_text)] # remove missing
 # a) replace any breaks
 in_text = str_remove_all(string=in_text, pattern='<break/>') # remove breaks
 # b) remove commas from large numbers, see https://stackoverflow.com/questions/67329618/replacing-commas-in-thousands-millions-but-not-smaller-numbers
 in_text = gsub(",(?=\\d{3,})", "", in_text, perl = TRUE) 
-# c) convert dates to numbers
+# c) remove `high` decimal places used by Lancet
+in_text = gsub("·", ".", in_text, perl = FALSE) 
+in_text = gsub("·", ".", in_text, perl = FALSE) 
+# d) convert dates to numbers
 dates_index = str_detect(in_text, pattern=dates_patterns) # find places of dates
 if(any(dates_index) == TRUE){
   for (location in which(dates_index)){
@@ -63,16 +73,19 @@ if(any(dates_index) == TRUE){
       dates = c(dates, date)
     }
     # now replace (can't do together because locations get mucked up)
-    for (date in dates){
+    for (date in unique(dates)){
       daten = as.character(as.numeric(as.Date(parse_date_time(date, orders = c('mdy', 'dmy', 'ymd'), quiet = TRUE)))) # do not flag errors
-      #cat(date,', ', daten, '\n', sep='')
-      in_text[location] = str_replace(in_text[location], date, daten) # replace date with number
+      if(is.na(daten)==FALSE){ # only replace if there's a valid date
+        #cat(date,', ', daten, '\n', sep='')
+        in_text[location] = str_replace_all(in_text[location], date, daten) # replace date with number
+      }
     }
   }
 }
 
-# write
-write(in_text, file='web/full.xml', sep='') # write altered text to external file
+# write altered text to external file with encoding 
+as_xml = as_xml_document(paste(in_text, collapse = '\n'))
+xml2::write_xml(as_xml, file='web/full.xml', encoding = "UTF-8")
 # now read into R if page is available 
 webpage = read_xml("web/full.xml", encoding='UTF-8') 
 # remove <header> (can get confused with labels)
@@ -87,13 +100,18 @@ if(single_arm==TRUE){
   excluded = bind_rows(excluded, this)
   next # skip to next
 }
-# search for RCT in title or abstract - to do
-
+# search for randomised trial in title or abstract
+title_abstract = paste(title, abstract, collapse=' ')
+rct = str_detect(title_abstract, pattern=rct_patterns) # pattern from 0_pattern.R
+# search for cluster in title or abstract
+cluster = str_detect(title_abstract, pattern='cluster|Cluster') # 
 
 # now remove <front> (can also get confused with labels, like <header>)
 xml_find_all(webpage, ".//front") %>% xml_remove()
-# remove boxed text, gets confused with tables
+# remove boxed text, gets confused with tables, e.g. "Research in context"
 xml_find_all(webpage, ".//boxed-text") %>% xml_remove()
+# remove supplementary material as tables in here are not accessible
+xml_find_all(webpage, ".//supplementary-material") %>% xml_remove()
 
 # find table/figure labels
 labels = xml_find_all(webpage, ".//label") %>% xml_text() # tables and figures
@@ -114,9 +132,9 @@ figures = str_detect(string = tolower(labels), pattern='^fig')
 captions = captions[!figures]
 # remove captions for supplement, appendix, additional, etc
 captions = captions[!str_detect(tolower(captions), pattern='^additional|^appendix|^supplement|additional data file|response to reviewer')]
-# footnotes = xml_find_all(webpage, ".//table-wrap-foot") %>% xml_text() # ... could be useful?
+footnotes = xml_find_all(webpage, ".//table-wrap-foot") %>% xml_text() # ... could be useful?
 # are there any baseline tables?
-words_defined_baseline = c('baseline','characteristic','demographic','basic information')
+words_defined_baseline = c('baseline','characteristic','demographic','basic information','before starting the study')
 words_or = paste(words_defined_baseline, collapse='|')
 negative_words = c('change from baseline', 'baseline adjusted') # words that rule out a baseline table
 negative_words = paste(negative_words, collapse='|')
@@ -134,8 +152,33 @@ if(any_baseline_tables == FALSE){
 ## find table number
 table_number = min(which(captions_baseline)) # first table
 
+## check table is not mostly text (usually a 'what this paper adds study')
+table1 <- webpage %>%
+  xml_nodes("table-wrap") %>% # need have -wrap because of multiple tables in one
+  .[table_number] %>%
+  xml_text() # 
+if(length(table1)>0){
+    if(nchar(table1)>0){ # needed two if statements because of graphical tables
+    text_count = str_count(table1, '[a-z]')
+    number_count = str_count(table1, '[0-9]')
+    if((number_count / text_count) < 0.1){table_number = table_number +1} # if less than 10% numbers
+  }
+}
+footnote = footnotes[table_number] # get the table footnote for checking p-values
+
+## exclude if follow-up data in table
+caption = captions[table_number]
+fu_words = c('follow.up','post.trial')
+fu_pattern = paste(fu_words, collapse='|')
+follow_up = str_detect(string=tolower(caption), pattern = fu_pattern)
+if(follow_up == TRUE){
+  this = data.frame(pmc = pmcid, reason = 'Follow-up results in baseline table')
+  excluded = bind_rows(excluded, this)
+  next # skip to next
+}
+
 # function that does heavy lifting:
-results = baseline_table(webpage, table_number)
+results = baseline_table(webpage, table_number, footnote)
 table = results$table
 
 # exclude if data could not be extracted
@@ -166,9 +209,12 @@ table_data = bind_rows(table_data, table)
 # p-values
 pvalues_in_table = data.frame(pmcid=pmcid, in_table = results$pvalues_in_table) # record p-values in table
 pvalues = bind_rows(pvalues, pvalues_in_table)
-# study design (uses details from pubmed)
+# study design (starts with details from pubmed)
 this_design = data[k,] %>%
-  mutate(block_randomisation = block_randomisation) # record p-values in table
+  mutate(
+    rct = rct,
+    cluster = cluster,
+    block_randomisation = block_randomisation) # record p-values in table
 design = bind_rows(design, this_design)
 
 # update progress

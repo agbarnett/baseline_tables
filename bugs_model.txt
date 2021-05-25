@@ -1,0 +1,21 @@
+model
+{
+  for(i in 1:N){
+      mdiff[i] ~ dt(mu[study[i]], tau[i], df[i])
+      log(tau[i]) <- log(sem2[i]) + var[study[i]] 
+  }
+  for(j in 1:N_studies){
+  # spike-slab for mean
+      mu[j] <- mu.beta[j, pick[j]]
+      pick[j] <- I[j] + 1
+      I[j]  ~ dbern(p_issue) # 
+      mu.beta[j,1] <- 0 # spike at zero
+      mu.beta[j,2] ~ dnorm(0, eps)I(0,) # "slab": precision eps is small; one-sided
+  # spike-slab for inverse-variable
+      var[j] <- mu.var[j, pick.var[j]]
+      pick.var[j] <- I.var[j] + 1
+      I.var[j] ~ dbern(p_issue) # 
+      mu.var[j,1] <- 0 # spike at zero
+      mu.var[j,2] ~ dnorm(0, eps) # "slab": precision eps is small
+  }
+}
