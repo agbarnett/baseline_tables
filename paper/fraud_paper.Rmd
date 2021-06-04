@@ -1,0 +1,139 @@
+---
+title: "**Automatically detecting issues with randomised controlled trials**"
+author:
+  - Adrian Barnett ^[Australian Centre for Health Services Innovation & Centre for Healthcare Transformation, Queensland University of Technology, Queensland, Australia, a.barnett@qut.edu.au]
+
+output:
+  bookdown::word_document2:
+    number_sections: false
+    reference_docx: bmj-open-style.docx
+    citation_package: natbib
+bibliography: references.bib
+csl: bmj-open.csl
+---
+
+Word count: ?
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning=FALSE, message=FALSE, error=FALSE, comment='', dpi=400)
+library(ggplot2)
+library(dplyr)
+library(tidyr)
+library(purrr)
+library(gridExtra)
+library(officer) # for border
+library(flextable)
+std_border  = fp_border(color="black") # for flextable
+```
+
+
+\newpage
+
+# Abstract
+
+*Objectives*: 
+
+*Design*: Observational study. 
+
+*Setting*: Published RCTs.
+
+*Participants*: 
+
+*Main outcome measures*: 
+
+*Results*: 
+
+*Conclusion*: 
+
+*Key words*: randomised controlled trials; 
+
+
+\newpage
+
+# Introduction
+
+# Methods
+
+The observed differences ($d$) in groups were modelled using a t-distribution.
+$$d_{i,j} \sim t(\Delta_{i,j}, \sigma^2_{i,j}, \textrm{df}_{i}), \qquad i=1,\ldots,M,\, j=1,\ldots, n_i,$$
+where $i$ is the study index and $j$ is the row index. The degrees of freedom (df) for study $i$ is the total sample size minus ($N_i-2$), which allows for greater variance in $d$ for smaller studies.
+
+The pooled inverse-variance was modelled as 
+$$\sigma^{-2}_{i,j} = s_{i,j}^{-2} + \gamma_i,$$
+where $s$ is the observed pooled variance. The study-level random variable $\gamma_i$ was used to model an additional precision for study $i$ using a spike-and-slab approach
+$$\gamma_i = (1-I_i^\gamma)\times 0 + I_i^\gamma \times \epsilon_i,$$
+$$I_i^\gamma \sim \textrm{Bernoulli}(p_1),$$
+$$\epsilon_i \sim \textrm{N}(0,10^3) I(0,).$$
+So the additional precision is zero with probability ($1-I_i^\gamma$) which is the "spike" that models studies where the differences between randomised groups are as expected. The switch for each study is modelled using a Bernoulli distribution. The probability $p_1$ is the expected proportion of papers with an issue. This can be specified as a constant or given its own hyper-parameter. The additional precision ("slab") was modelled using a truncated normal distribution where the estimate must be positive. This is because we were interested in studies with a higher than expected precision.
+
+The mean was also modelled using a spike-and-slab approach.
+$$\Delta_{i,j} = (1-I_i^\Delta)\times 0 + I_i^\Delta \times \nu_i,$$
+$$I_i^\Delta \sim \textrm{Bernoulli}(p_2),$$
+$$\nu_i \sim \textrm{N}(0,10^3).$$
+So here the spike is at zero for studies where the mean difference is as expected for randomised controlled trials. The slab here includes a wide range of positive and negative values. 
+
+We model a difference in the mean to capture those studies where the difference is likely not between randomised groups. For example, studies that used a randomised controlled trial to compare differences between particular subgroups.
+
+What should the value of $p_1$ be? A study of randomised trials submitted to the journal _Anaesthesia_, estimated that around one quarter of studies had false data that was problematic enough to invalidate the trial [@Carlisle2020].  
+
+## Graphical description of the model
+
+Here we give a simple graphical description of the model. We show hypothetical results for two studies each with 40 comparisons in their baseline table. 
+
+```{r}
+# plot random data plus normal curve, see https://stackoverflow.com/questions/6967664/ggplot2-histogram-with-normal-curve
+s_size = 40
+study1 = data.frame(value=rnorm(n=s_size, mean = 0, sd=1), group=1)
+study2 = data.frame(value=rnorm(n=s_size, mean = 0, sd=0.2), group=2)
+bw = 0.2; # bin width
+to_plot = bind_rows(study1, study2) %>%
+  mutate(facet = factor(group, levels=1:2, labels=c("Precision as expected","Narrow precision")))
+curves = group_by(to_plot, group) %>% 
+  nest(data = c(value)) %>% 
+  mutate(y = map(data, ~ dnorm(
+    .$value, mean = mean(.$value), sd = sd(.$value)
+    ) * bw * sum(!is.na(.$value)))) %>% 
+  unnest(c(data, y)) 
+  
+gplot = ggplot(curves, aes(x = value)) +
+  geom_histogram(data = to_plot, binwidth = bw, fill = "sky blue") +
+  geom_line(aes(y = y), col='indianred1') + 
+  theme_bw()+
+  facet_wrap(~ facet)+
+  ylab('Frequency')+
+  xlab('Observed standaridised difference')
+
+gplot
+```
+
+In the example, both studies have a mean difference of zero, but the observed differences from one study are much narrower and closer to zero. Our approach models the precision (inverse-variance) and aims to detect when studies have an unexpectedly narrow precision.
+
+Same graphical description given in [@Carlisle2015].
+
+# Discussion
+
+Better to prevent the publication of false data in the first place [@Carlisle2020].
+
+Easier to detect problems in individual patient data rather than summary statistics [@Carlisle2020]. The methods could be extended to study individual patient data, and journals could request the data at submission. "Individual patient data increased the detection of false trial data about 20-fold compared with trials without spreadsheets." [@Carlisle2020]
+
+Decimal places ... An estimate of inappropriate rounding down is x% from abstracts [barnett, f1000].
+
+# Conclusion
+
+
+## Acknowledgements
+
+## Competing interests
+
+The authors have declared that no competing interests exist.
+
+## Funding
+
+This work was supported by National Health and Medical Research Council (https://www.nhmrc.gov.au/) grant number APP1117784. The funders had no role in study design, data collection and analysis, decision to publish, or preparation of the manuscript.
+
+## Authors' contributions
+
+
+## Data sharing
+
+# References {#references}

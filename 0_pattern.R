@@ -1,19 +1,18 @@
 # 0_patterns.R
 # patterns for detecting statistics in the tables; all in lower case
-# May 2021
+# June 2021
 
 ### a) continuous (mean and sd)
-
 # common units in lower case
-# removed 'min' for minutes because it gets confused with minimum
-units = c('mmhg', 'ng/ml', 'kg/m2', 'mmol/l', 'per year', 'per month', 'per day', 'minutes', 'minute', 'mins', 'year', 'years', 'yr', 'yrs', 'hours', 'hour', 'hr', 'hrs')
+# removed 'min' for minutes because it gets confused with minimum, but added 'per min'
+units = c('g/dl','ml','mmhg', 'mm hg','ng/ml', 'cm','kg/m2', 'kg/m<sup>2</sup>','mmol/l', 'per year', 'per month', 'per day', 'minutes', 'minute', 'per min','mins', 'year', 'years', 'yr', 'yrs', 'hours', 'hour', 'hr', 'hrs', 'score')
 units = paste('\\b', paste(units, collapse='\\b|\\b'), '\\b', sep='') # must be whole words
 # common stats and variables in lower case, removed 'total' because it get confused with total columns
 stats = c('mean', 'sd', 's.d','score', 'index', 'age', 'bmi', 'height', 'weight', 'waist','Hba1c')
 stats = paste('\\b', paste(stats, collapse='\\b|\\b'), '\\b', sep='') # must be whole words
-# symbols/patterns for plus/minus
+# symbols/patterns for plus/minus; some symbols look the same but are different
 plus_minus_utf = c(intToUtf8(0x00B1), intToUtf8(0x2213)) # add latex \pm? 
-plus_minus = c('±','\\+[^:alnum:]–', '–[^:alnum:]\\+', '\\+[^:alnum:]-', '-[^:alnum:]\\+', 'plus[^:alnum:]minus', 'minus[^:alnum:]plus') # using any non alpha numeric character between plus and minus; minus signs are different
+plus_minus = c('±','±','\\+[^:alnum:]–', '–[^:alnum:]\\+', '\\+[^:alnum:]-', '-[^:alnum:]\\+', 'plus[^:alnum:]minus', 'minus[^:alnum:]plus') # using any non alpha numeric character between plus and minus; minus signs are different
 # combine
 together = c(units, stats, plus_minus_utf, plus_minus)
 together = together[order(-nchar(together))] # from longest to shortest
@@ -52,7 +51,7 @@ number_pattern = paste('[0-9]', space_patterns, '[0-9]', sep='') # sandwiched by
 number_pattern = paste(number_pattern, collapse='|') # 
 
 ### e) p-values, some added based on experience
-words = c('^p$','p.value','pvalue','p<','p <','p=','p =','statistical significance','main effect of group') # first is 'P' as a single value; any character for hyphen in `p-value`
+words = c('^p$','p.value','pvalue','p.level','p<','p <','p=','p =','statistical significance','main effect of group','no significant difference','nsd') # first is 'P' as a single value; any character for hyphen in `p-value`; nsd is acronym
 words = words[order(-nchar(words))] # from longest to shortest
 pval_pattern = paste(words, collapse='|') # 
 
@@ -96,6 +95,20 @@ rct_patterns = rct_patterns[order(-nchar(rct_patterns))] # from longest to short
 rct_patterns = paste(rct_patterns, collapse = '|')
 
 ### i) totals and other columns to exclude
-total_words = c('total','overall','all ','men','women','male','female')
+total_words = c('whole population','total','overall','all ','men','women','male','female') # need space after 'all'
 total_words = total_words[order(-nchar(total_words))] # from longest to shortest
 total_words = paste(paste('^', total_words, sep=''), collapse='|') # at start
+
+### j) words that are used to describe a baseline table and words that rule it out
+words_defined_baseline = c('baseline','characteristic','demographic','basic information','before starting the study','patients background','patient background')
+words_or = paste(words_defined_baseline, collapse='|')
+negative_words = c('network characteristic',
+                   'change between baseline', 'changes between baseline',
+                   'change from baseline', 'changes from baseline', 
+                   'difference from baseline', 'differences from baseline',
+                   'baseline adjusted', 'baseline adjustment') # words that rule out a baseline table
+negative_words = paste(negative_words, collapse='|')
+
+### k) sample size
+sample_words = c('sample size','n=','n =',' n$','^number of |^no of |^no. of ')
+sample_patterns = paste(sample_words, collapse = '|')

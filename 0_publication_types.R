@@ -2,7 +2,7 @@
 # publication types available on pubmed
 # from https://pubmed.ncbi.nlm.nih.gov/help/#publication-types
 # experienced showed that the type "clinical trial" was often not randomised so there were no groups to compare
-# April 2021
+# May 2021
 
 pub_types = read.table(header=TRUE, sep='!', stringsAsFactors = FALSE, text='
 type!include
@@ -27,7 +27,7 @@ Comparative Study!0
 Congress!0
 Consensus Development Conference!0
 Consensus Development Conference, NIH!0
-Controlled Clinical Trial!1
+Controlled Clinical Trial!0
 Dataset!0
 Dictionary!0
 Directory!0
