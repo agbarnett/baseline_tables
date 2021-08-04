@@ -1,6 +1,6 @@
 # 4_model.R
 # model the table data from pubmed central
-# May 2021
+# August 2021
 library(dplyr)
 library(tidyr)
 library(TeachingDemos)

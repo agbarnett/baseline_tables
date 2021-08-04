@@ -2,7 +2,7 @@
 # find randomised trials with full text on PMC
 # the best way to find trials is by publication type
 # takes a while
-# May 2021
+# June 2021
 library(dplyr)
 library(rentrez)
 library(tidyverse)
@@ -18,7 +18,7 @@ types_to_include = filter(pub_types, include==1) %>%
 
 ## using rentrez to get find trials on pubmed (publication type is not available on PMC)
 # this just gives PMIDs
-years = 2020:2021
+years = 2017 # years to search (run in batches)
 years_search = paste(years, '[PDAT]', collapse=' OR ', sep='')
 # loop through publication types
 search_results = NULL
@@ -28,6 +28,19 @@ for (type in types_to_include){
   this_search = data.frame(id = trial.search$ids, type=type)
   search_results = bind_rows(search_results, this_search)
 }
+
+## now find those that have paper available as Open Access (exclude others)
+# file is huge, so download, then delete
+infile = "https://ftp.ncbi.nlm.nih.gov/pub/pmc/oa_file_list.csv"
+dest = 'data/oa_file_list.csv'
+download.file(url=infile, destfile=dest)
+oa_list = read.csv('data/oa_file_list.csv') %>%
+  select(PMID, Accession.ID) %>%
+  rename('pmid' = 'PMID',
+         'pmcid' = 'Accession.ID') %>%
+  mutate(pmid = as.character(pmid)) # to match search result
+file.remove(dest)
+search_results = inner_join(search_results, oa_list, by=c('id'='pmid')) # must be in both
 
 ## now specifically search for protocols and exclude
 search_term_protocol = paste('(', years_search ,') AND Clinical Trial Protocol[PTYP]', sep='')
@@ -45,7 +58,7 @@ search_results_wide = mutate(search_results, dummy=1) %>%
 data = excluded = NULL
 N = nrow(search_results_wide)
 to_keep = c("title", "source", "articleids", 'history') # variables to keep
-for (k in 610:N){ # big loop
+for (k in 1:N){ # big loop
   details = 'Did not work'
   count_try = 0
   while(class(details)[1] !='esummary'){ # keep trying until there's no error
@@ -78,4 +91,5 @@ for (k in 610:N){ # big loop
 data = filter(data, !str_detect(string=tolower(title), pattern='protocol'))
   
 # save
-save(excluded, data, file='data/pmid_trials.RData')
+outfile = paste('data/pmid_trials.', years[1], '.RData', sep='')
+save(excluded, data, file=outfile)

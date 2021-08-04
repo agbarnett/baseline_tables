@@ -5,7 +5,7 @@ library(ggplot2)
 library(stringr)
 
 load('results/bugs_real.RData') # from 4_model.R
-load('results/bugs_simulated.RData') # from 4_model_simulated.R
+#load('results/bugs_simulated.RData') # from 4_model_simulated.R
 
 # highlight papers with a high probability
 # Get stats on probabilities variance and mean flags
@@ -44,3 +44,7 @@ gplot = ggplot(data=to_plot, aes(x=t, fill=factor(type)))+
   facet_wrap(~pmcid)+
   theme_bw()
 gplot
+jpeg('figures/flagged_papers.jpg', width=5, height=4, units='in', res=400)
+print(gplot)
+dev.off()
+
