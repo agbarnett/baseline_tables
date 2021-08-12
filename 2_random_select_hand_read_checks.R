@@ -30,7 +30,7 @@ for (k in 1:length(to_load)){
 tables = mutate_at(tables, vars('row','column','stat1','stat2','stat3','stat4'), as.numeric) %>% # can ignore warnings, does create some odd behaviour with decimal places
   rename('comments' = '...10') %>% # comments from Amarzaya
   mutate(
-    statistic = ifelse(statistics == 'number', 'numbers', statistic), # to match algorithm data
+    statistic = ifelse(statistic == 'number', 'numbers', statistic), # to match algorithm data
     pmcid = str_replace_all(tolower(pmcid), 'pmc', 'PMC')) %>% # PMC needs to be consistent in upper case
   select('source','pmcid','row','column','stat1','stat2','stat3','stat4','statistic','comments') # drop variables not needed
 
