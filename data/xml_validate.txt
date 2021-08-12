@@ -1,0 +1,63 @@
+<pmcids status="ok">
+<request idtype="pmcid" pmcids="" versions="yes" showaiid="no">
+<echo>tool=R;email=a.barnett%40qut.edu.au;ids=PMC7992932%2CPMC7660174%2CPMC7908111%2CPMC6995118%2CPMC7467627%2CPMC7504204%2CPMC7593033%2CPMC7246902%2CPMC7146919%2CPMC7459995%2CPMC7574843%2CPMC7079119%2CPMC7173791%2CPMC6933089%2CPMC7662180%2CPMC7246605%2CPMC6966838%2CPMC7204593%2CPMC7059713%2CPMC6964911%2CPMC7019638%2CPMC7528007%2CPMC7282001%2CPMC7469043%2CPMC7828286%2CPMC7335541%2CPMC7003891%2CPMC7037455%2CPMC7359262%2CPMC7421713%2CPMC7386579%2CPMC7518562%2CPMC7310966%2CPMC7403921%2CPMC7217821%2CPMC7301738%2CPMC7579086%2CPMC7171319%2CPMC7317376%2CPMC7719397%2CPMC7433859%2CPMC7045378%2CPMC7773256%2CPMC7049901%2CPMC7038258%2CPMC6865772%2CPMC7271663%2CPMC7568358%2CPMC7468014%2CPMC7698004%2CPMC7216842%2CPMC7549301%2CPMC7424488%2CPMC7551834%2CPMC7666845%2CPMC7407093%2CPMC7254602%2CPMC7078275</echo>
+</request>
+<record requested-id="PMC7992932" pmcid="PMC7992932" pmid="33765912" doi="10.1186/s10194-021-01230-w"><versions><version pmcid="PMC7992932.1" current="true"/></versions></record>
+<record requested-id="PMC7660174" pmcid="PMC7660174" pmid="33105889" doi="10.3390/ijerph17217736"><versions><version pmcid="PMC7660174.1" current="true"/></versions></record>
+<record requested-id="PMC7908111" pmcid="PMC7908111" pmid="33572955" doi="10.3390/ijerph18031214"><versions><version pmcid="PMC7908111.1" current="true"/></versions></record>
+<record requested-id="PMC6995118" pmcid="PMC6995118" pmid="32005206" doi="10.1186/s12889-020-8192-0"><versions><version pmcid="PMC6995118.1" current="true"/></versions></record>
+<record requested-id="PMC7467627" pmcid="PMC7467627" pmid="32952830" doi="10.11604/pamj.2020.36.186.22538"><versions><version pmcid="PMC7467627.1" current="true"/></versions></record>
+<record requested-id="PMC7504204" pmcid="PMC7504204" pmid="32825555" doi="10.3390/ijerph17176079"><versions><version pmcid="PMC7504204.1" current="true"/></versions></record>
+<record requested-id="PMC7593033" pmcid="PMC7593033" pmid="32769884" doi="10.1097/MD.0000000000021493"><versions><version pmcid="PMC7593033.1" current="true"/></versions></record>
+<record requested-id="PMC7246902" pmcid="PMC7246902" pmid="32344891" doi="10.3390/ijerph17092990"><versions><version pmcid="PMC7246902.1" current="true"/></versions></record>
+<record requested-id="PMC7146919" pmcid="PMC7146919" pmid="31471527" doi="10.1136/neurintsurg-2019-015215"><versions><version pmcid="PMC7146919.1" current="true"/></versions></record>
+<record requested-id="PMC7459995" pmcid="PMC7459995" pmid="32824190" doi="10.3390/ijerph17165932"><versions><version pmcid="PMC7459995.1" current="true"/></versions></record>
+<record requested-id="PMC7574843" pmcid="PMC7574843" pmid="33129099" doi="10.1016/j.intimp.2020.107088"><versions><version pmcid="PMC7574843.1" current="true"/></versions></record>
+<record requested-id="PMC7079119" pmcid="PMC7079119" pmid="31325212" doi="10.1111/1744-9987.13422"><versions><version pmcid="PMC7079119.1" current="true"/></versions></record>
+<record requested-id="PMC7173791" pmcid="PMC7173791" pmid="32315362" doi="10.1371/journal.pone.0231743"><versions><version pmcid="PMC7173791.1" current="true"/></versions></record>
+<record requested-id="PMC6933089" pmcid="PMC6933089" pmid="31400240" doi="10.1111/add.14781"><versions><version pmcid="PMC6933089.1" mid="NIHMS1045970" current="true"/></versions></record>
+<record requested-id="PMC7662180" pmcid="PMC7662180" pmid="32270185" doi="10.1093/gerona/glaa086"><versions><version pmcid="PMC7662180.1" current="true"/></versions></record>
+<record requested-id="PMC7246605" pmcid="PMC7246605" pmid="32384727" doi="10.3390/ijerph17093238"><versions><version pmcid="PMC7246605.1" current="true"/></versions></record>
+<record requested-id="PMC6966838" pmcid="PMC6966838" pmid="31948454" doi="10.1186/s12966-020-0910-6"><versions><version pmcid="PMC6966838.1" current="true"/></versions></record>
+<record requested-id="PMC7204593" pmcid="PMC7204593" pmid="32124728" doi="10.4269/ajtmh.19-0461"><versions><version pmcid="PMC7204593.1" current="true"/></versions></record>
+<record requested-id="PMC7059713" pmcid="PMC7059713" pmid="32138782" doi="10.1186/s12890-020-1100-7"><versions><version pmcid="PMC7059713.1" current="true"/><version pmcid="PMC7059713.2"/></versions></record>
+<record requested-id="PMC6964911" pmcid="PMC6964911" pmid="31905228" doi="10.1371/journal.pntd.0007912"><versions><version pmcid="PMC6964911.1" current="true"/></versions></record>
+<record requested-id="PMC7019638" pmcid="PMC7019638" pmid="31952131" doi="10.3390/nu12010217"><versions><version pmcid="PMC7019638.1" current="true"/></versions></record>
+<record requested-id="PMC7528007" pmcid="PMC7528007" pmid="32999269" doi="10.1038/s41387-020-00138-9"><versions><version pmcid="PMC7528007.1" current="true"/></versions></record>
+<record requested-id="PMC7282001" pmcid="PMC7282001" pmid="32365981" doi="10.3390/nu12051279"><versions><version pmcid="PMC7282001.1" current="true"/></versions></record>
+<record requested-id="PMC7469043" pmcid="PMC7469043" pmid="32823886" doi="10.3390/nu12082445"><versions><version pmcid="PMC7469043.1" current="true"/></versions></record>
+<record requested-id="PMC7828286" pmcid="PMC7828286" pmid="33450831" doi="10.3390/ijerph18020617"><versions><version pmcid="PMC7828286.1" current="true"/></versions></record>
+<record requested-id="PMC7335541" pmcid="PMC7335541" pmid="32122219" doi="10.1161/JAHA.119.014941"><versions><version pmcid="PMC7335541.1" current="true"/></versions></record>
+<record requested-id="PMC7003891" pmcid="PMC7003891" pmid="31721277" doi="10.1002/ana.25644"><versions><version pmcid="PMC7003891.1" current="true"/></versions></record>
+<record requested-id="PMC7037455" pmcid="PMC7037455" pmid="32023995" doi="10.3390/ijerph17030896"><versions><version pmcid="PMC7037455.1" current="true"/></versions></record>
+<record requested-id="PMC7359262" pmcid="PMC7359262" pmid="32654663" doi="10.1186/s12916-020-01643-5"><versions><version pmcid="PMC7359262.1" current="true"/></versions></record>
+<record requested-id="PMC7421713" pmcid="PMC7421713" pmid="32831984" doi="10.1155/2020/8039671"><versions><version pmcid="PMC7421713.1" current="true"/></versions></record>
+<record requested-id="PMC7386579" pmcid="PMC7386579" pmid="32722707" doi="10.1371/journal.pone.0236733"><versions><version pmcid="PMC7386579.1" current="true"/></versions></record>
+<record requested-id="PMC7518562" pmcid="PMC7518562" pmid="31559418" doi="10.1093/gerona/glz197"><versions><version pmcid="PMC7518562.1" current="true"/></versions></record>
+<record requested-id="PMC7310966" pmcid="PMC7310966" pmid="32569239" doi="10.1097/MD.0000000000020928"><versions><version pmcid="PMC7310966.1" current="true"/></versions></record>
+<record requested-id="PMC7403921" pmcid="PMC7403921" pmid="32749491" doi="10.1001/jama.2020.10224"><versions><version pmcid="PMC7403921.1" current="true"/></versions></record>
+<record requested-id="PMC7217821" pmcid="PMC7217821" pmid="32398710" doi="10.1038/s41598-020-64577-1"><versions><version pmcid="PMC7217821.1" current="true"/></versions></record>
+<record requested-id="PMC7301738" pmcid="PMC7301738" pmid="32162970" doi="10.1164/rccm.201911-2207OC"><versions><version pmcid="PMC7301738.1" current="true"/></versions></record>
+<record requested-id="PMC7579086" pmcid="PMC7579086" pmid="32993142" doi="10.3390/ijerph17197048"><versions><version pmcid="PMC7579086.1" current="true"/></versions></record>
+<record requested-id="PMC7171319" pmcid="PMC7171319" pmid="31733006" doi="10.1002/jcla.23115"><versions><version pmcid="PMC7171319.1" current="true"/></versions></record>
+<record requested-id="PMC7317376" pmcid="PMC7317376" pmid="31353458" doi="10.1111/bjep.12301"><versions><version pmcid="PMC7317376.1" current="true"/></versions></record>
+<record requested-id="PMC7719397" pmcid="PMC7719397" pmid="32881359" doi="10.1111/cts.12881"><versions><version pmcid="PMC7719397.1" current="true"/></versions></record>
+<record requested-id="PMC7433859" pmcid="PMC7433859" pmid="32810146" doi="10.1371/journal.pmed.1003274"><versions><version pmcid="PMC7433859.1" current="true"/></versions></record>
+<record requested-id="PMC7045378" pmcid="PMC7045378" pmid="32106837" doi="10.1186/s12889-020-8371-z"><versions><version pmcid="PMC7045378.1" current="true"/></versions></record>
+<record requested-id="PMC7773256" pmcid="PMC7773256" pmid="33378403" doi="10.1371/journal.pone.0244500"><versions><version pmcid="PMC7773256.1" current="true"/></versions></record>
+<record requested-id="PMC7049901" pmcid="PMC7049901" pmid="31809876" doi="10.1016/j.ijrobp.2019.11.397"><versions><version pmcid="PMC7049901.1" current="true"/></versions></record>
+<record requested-id="PMC7038258" pmcid="PMC7038258" pmid="31843995" doi="10.1128/AAC.01506-19"><versions><version pmcid="PMC7038258.1" current="true"/></versions></record>
+<record requested-id="PMC6865772" pmcid="PMC6865772" pmid="31710345" doi="10.1001/jamainternmed.2019.5349"><versions><version pmcid="PMC6865772.1" current="true"/></versions></record>
+<record requested-id="PMC7271663" pmcid="PMC7271663" pmid="32245569" doi="10.1016/j.bja.2020.01.030"><versions><version pmcid="PMC7271663.1" current="true"/></versions></record>
+<record requested-id="PMC7568358" pmcid="PMC7568358" pmid="33066773" doi="10.1186/s12903-020-01265-6"><versions><version pmcid="PMC7568358.1" current="true"/></versions></record>
+<record requested-id="PMC7468014" pmcid="PMC7468014" pmid="32876791" doi="10.1186/s10195-020-00556-6"><versions><version pmcid="PMC7468014.1" current="true"/></versions></record>
+<record requested-id="PMC7698004" pmcid="PMC7698004" pmid="33198147" doi="10.3390/ijerph17228366"><versions><version pmcid="PMC7698004.1" current="true"/></versions></record>
+<record requested-id="PMC7216842" pmcid="PMC7216842" pmid="31736279" doi="10.1111/aos.14260"><versions><version pmcid="PMC7216842.1" current="true"/></versions></record>
+<record requested-id="PMC7549301" pmcid="PMC7549301" pmid="32652012" doi="10.1093/jn/nxaa181"><versions><version pmcid="PMC7549301.1" current="true"/></versions></record>
+<record requested-id="PMC7424488" pmcid="PMC7424488" pmid="32723728" doi="10.2196/16234"><versions><version pmcid="PMC7424488.1" current="true"/></versions></record>
+<record requested-id="PMC7551834" pmcid="PMC7551834" pmid="32867199" doi="10.3390/nu12092614"><versions><version pmcid="PMC7551834.1" current="true"/></versions></record>
+<record requested-id="PMC7666845" pmcid="PMC7666845" pmid="32114612" doi="10.4037/ajcc2020175"><versions><version pmcid="PMC7666845.1" mid="NIHMS1639540" current="true"/></versions></record>
+<record requested-id="PMC7407093" pmcid="PMC7407093" pmid="32756930" doi="10.1001/jamanetworkopen.2020.12589"><versions><version pmcid="PMC7407093.1" current="true"/></versions></record>
+<record requested-id="PMC7254602" pmcid="PMC7254602" pmid="31939321" doi="10.1177/0300060519887630"><versions><version pmcid="PMC7254602.1" current="true"/></versions></record>
+<record requested-id="PMC7078275" pmcid="PMC7078275" pmid="32001832" doi="10.1038/s41416-020-0733-x"><versions><version pmcid="PMC7078275.1" current="true"/></versions></record>
+</pmcids>

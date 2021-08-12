@@ -1,0 +1,6 @@
+<pmcids status="ok">
+<request idtype="pmcid" pmcids="" versions="yes" showaiid="no">
+<echo>tool=R;email=a.barnett%40qut.edu.au;ids=PMC7992932</echo>
+</request>
+<record requested-id="PMC7992932" pmcid="PMC7992932" pmid="33765912" doi="10.1186/s10194-021-01230-w"><versions><version pmcid="PMC7992932.1" current="true"/></versions></record>
+</pmcids>

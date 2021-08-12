@@ -1,6 +1,6 @@
 # 4_model.R
-# model the table data from pubmed central
-# May 2021
+# model the baseline table data extracted from RCTs published on pubmed central
+# August 2021
 library(dplyr)
 library(tidyr)
 library(TeachingDemos)
@@ -12,15 +12,19 @@ source('99_functions.R')
 
 # get the data: 1) data from automated extraction, 2) retracted data with known issues
 load('data/analysis_ready.RData') # from 2_check_extracted.R
-load('data/retracted_data.RData') # from 0_read_retracted_data.R
+#load('data/retracted_data.RData') # from 0_read_retracted_data.R
 # combine two data sets
-table_data = bind_rows(table_data, retracted_data)
+#table_data = bind_rows(table_data, retracted_data)
+
+# temporary
+sample = sample(unique(table_data$pmcid), replace=FALSE, size=40)
+table_data = filter(table_data, pmcid %in% sample)
 
 # prepare the data for the Bayesian model
 for_model = make_stats_for_bayes_model(indata = table_data) # see 99_functions.R
-# quick visual check
-with(for_model, plot(size, t))
-with(for_model, plot(pmcid, t))
+# quick visual checks
+with(for_model, plot(log2(size), t))
+with(for_model, plot(as.numeric(as.factor(pmcid)), t))
 
 # prepare the data for Winbugs
 N = nrow(for_model) # number of statistics

@@ -1,0 +1,104 @@
+---
+title: "Compare the statistics extracted from tables by the algorithm with those entered by hand"
+output: word_document
+---
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning=FALSE, message=FALSE, error=FALSE, comment='', dpi=400)
+options(width=1000) # Wide pages
+options(scipen=999) # avoid scientific presentation
+library(ggplot2)
+library(dplyr)
+library(flextable)
+library(stringr)
+source('99_functions.R')
+
+# 1) get the algorithm data
+load('data/analysis_ready_validation.RData')  # from 2_process_extracted_data.R
+table_data = select(table_data, pmcid, row, column, starts_with('stat')) # reduce variables
+excluded_algorithm = excluded
+m_algorithm = table_data
+
+# 2) get the hand entered data from Amarzaya
+load('data/hand_entered_data.RData') # from 2_random_select_hand_read_checks.R
+tables = mutate(tables, pmcid = str_remove('^PMC', string=pmcid)) %>% # for merging
+  select(-comments) %>%
+  filter(str_detect(str_sub(pmcid, 1, 1), pattern='[0-9]')) # exclude notes
+# exclude tables that the algorithm could not extract
+m_hand = filter(tables, 
+                !pmcid %in% excluded_algorithm$pmc)
+
+### to do, look at where sample size could not be extracted
+
+# one at a time
+# to here, need to think about merging?
+```
+
+
+# Differences by paper
+
+```{r}
+# matching statistics
+stats = full_join(m_hand, m_algorithm, by=c('pmcid','row','column')) %>%
+  mutate(match_statistic = statistic.x == statistic.y,
+         match_stat1 = (stat1.x - stat1.y) < 0.01,
+         match_stat2 = (stat2.x - stat2.y) < 0.01) %>% # match within tolerance
+  group_by(pmcid) %>% # by paper
+  summarise(n = n(), 
+            match_statistic = sum(match_statistic, na.rm = TRUE),
+            match_stat1 = sum(match_stat1, na.rm = TRUE), # missing count as non-matches
+            match_stat2 = sum(match_stat2, na.rm = TRUE)) %>%
+  ungroup()
+
+# proportion per paper
+per_paper = mutate(stats,
+                   p_match = 100*match_statistic / n)
+hplot = ggplot(per_paper, aes(x=p_match))+
+  geom_histogram(fill='dodgerblue')+
+  theme_bw()+
+  xlab('Match per paper')+
+  ylab('Count')
+hplot
+
+# checks
+check = filter(per_paper, p_match==0)
+
+```
+
+# Overall differences
+
+```{r}
+# stats on overall differences
+overall = summarise(stats,
+                    n = sum(n),
+                    match_statistic = sum(match_statistic),
+                    p_match_statistic = roundz(100*match_statistic / n , 1), # to 1 decimal place
+                    match_stat1 = sum(match_stat1),
+                    p_match_stat1 = roundz(100*match_stat1 / n , 1),
+                    match_stat2 = sum(match_stat2),
+                    p_match_stat2 = roundz(100*match_stat2 / n, 1))
+# arrange table
+r1 = select(overall, match_statistic, p_match_statistic) %>%
+  mutate(Test = 'Statistic type') %>%
+  rename('Match' = 'match_statistic',
+         'Percent' = 'p_match_statistic')
+r2 = select(overall, match_stat1, p_match_stat1) %>%
+  mutate(Test = 'Number 1') %>%
+  rename('Match' = 'match_stat1',
+         'Percent' = 'p_match_stat1')
+r3 = select(overall, match_stat2, p_match_stat2) %>%
+  mutate(Test = 'Number 2') %>%
+  rename('Match' = 'match_stat2',
+         'Percent' = 'p_match_stat2')
+to_table = bind_rows(r1, r2, r3) %>%
+  select('Test','Match','Percent')
+
+#
+tab = flextable(to_table) %>%
+  theme_box() %>%
+  autofit()
+tab
+```
+
+
+## Statistics by statistic

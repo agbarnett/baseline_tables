@@ -2,18 +2,23 @@
 # automatically extract the data from the baseline tables in the trials
 # see http://bradleyboehmke.github.io/2015/12/scraping-html-tables.html
 # use PMC ftp service https://www.ncbi.nlm.nih.gov/pmc/tools/ftp/
-# June 2021
+# July 2021
 library(rvest)
 library(stringr)
+library(stringi)
 library(lubridate) # for dealing with multiple date formats
 library(dplyr)
 library(tidyverse)
+library(magrittr)
 library(metareadr) # to read papers from PMC
-source('0_pattern.R') 
+source('1_pattern.R') 
 source('99_functions.R')
 
-# get the trial IDs 
-load('data/pmid_trials.RData') # from 0_find_trials_pmc.R
+# select which source of data to use
+sources = c('my_search', 'trialstreamer', 'validation')
+source = sources[3]
+source('1_which_data_source.R')
+
 # Collect data in random order
 data = mutate(data, runif=runif(n())) %>%
   arrange(runif) %>%
@@ -21,7 +26,7 @@ data = mutate(data, runif=runif(n())) %>%
 
 ## big loop ##
 N = nrow(data)
-#N = 100 # temporary
+#N = 1000 # temporary
 table_data = pvalues = excluded = design = NULL # set up data
 for (k in 1:N){
 pmcid = str_remove(pattern='PMC', string=data$pmc[k]) # have to remove numbers
@@ -29,11 +34,6 @@ pmcid = str_remove(pattern='PMC', string=data$pmc[k]) # have to remove numbers
 out_nlm = NULL
 out_nlm = tryCatch(mt_read_pmcoa(pmcid = pmcid, file_format = "pmc", file_name="web/full.xml"), # save to external XML file
                    error = function(e) print(paste('NLM did not work', pmcid))) # flag for error
-# try Europe if no luck with NLM - not worth it, gives same result
-#if(length(out_nlm) > 0){ 
-#  out_europe = tryCatch(mt_read_pmcoa_europe(pmcid = pmcid, file_name="web/full.xml"), # function in 99_functions.R
-#                        error = function(e) print(paste('Europe did not work', pmcid)))
-#}
 if(length(out_nlm) > 0){ # if neither NLM or Europe work
   this = data.frame(pmc = pmcid, reason = 'Full text page not available')
   excluded = bind_rows(excluded, this)
@@ -43,18 +43,10 @@ if(length(out_nlm) > 0){ # if neither NLM or Europe work
 ## get study title and other meta-information from full paper
 webpage = read_xml("web/full.xml", encoding='UTF-8') 
 title = xml_find_all(webpage, ".//article-title") %>% .[1] %>%xml_text() # tables and figures
-# exclude cross-sectional studies, exploratory studies, etc (could exclude others here)
-non_rct_pattern = paste( c('exploratory.study','exploratory.analysis','cross.sectional.study','cross.sectional.analysis'), collapse='|')
-cross_sec = any(str_detect(tolower(title), pattern = non_rct_pattern))
-if(cross_sec==TRUE){
-  this = data.frame(pmc = pmcid, reason = 'Not an RCT')
-  excluded = bind_rows(excluded, this)
-  next # skip to next
-}
 # get abstract
 abstract = xml_find_all(webpage, ".//abstract") %>% xml_text() # tables and figures
 # exclude single arm studies
-single_arm = any(str_detect(abstract, pattern='single.arm'))
+single_arm = any(str_detect(abstract, pattern='single.arm|singlearm'))
 if(single_arm==TRUE){
   this = data.frame(pmc = pmcid, reason = 'Single-arm study')
   excluded = bind_rows(excluded, this)
@@ -65,6 +57,21 @@ title_abstract = paste(title, abstract, collapse=' ')
 rct = str_detect(title_abstract, pattern=rct_patterns) # pattern from 0_pattern.R
 # search for cluster in title or abstract
 cluster = str_detect(title_abstract, pattern='cluster|Cluster') # 
+# exclude cross-sectional studies, exploratory studies, pooled analysis, etc (could exclude others here)
+cross_sec = any(str_detect(tolower(title_abstract), pattern = non_rct_pattern))
+if(cross_sec==TRUE & exclude_non_rct==TRUE){ # exclude_non_rct flag from 1_which_data_source.R
+  this = data.frame(pmc = pmcid, reason = 'Not an RCT')
+  excluded = bind_rows(excluded, this)
+  next # skip to next
+}
+# exclude pre-post studies, must have pre and post
+pre = any(str_detect(tolower(title_abstract), pattern = 'pre-'))
+post = any(str_detect(tolower(title_abstract), pattern = 'post-'))
+if(pre==TRUE & post==TRUE){
+  this = data.frame(pmc = pmcid, reason = 'Not an RCT')
+  excluded = bind_rows(excluded, this)
+  next # skip to next
+}
 
 ## remove some sections from XML
 # now remove <front> (can also get confused with labels, like <header>)
@@ -77,8 +84,41 @@ xml_find_all(webpage, ".//supplementary-material") %>% xml_remove()
 xml_find_all(webpage, ".//graphic") %>% xml_remove()
 # remove copyright stuff
 xml_find_all(webpage, ".//permissions") %>% xml_remove()
-# remove cross-references (mucked up caption comparison)
-xml_find_all(webpage, ".//xref") %>% xml_remove()
+## remove cross-references (mucked up caption comparison) but keep text
+# had to change to text, see https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6660508/
+# see https://stackoverflow.com/questions/68616875/using-xml-replace-leaves-behind-some-formatting?noredirect=1#comment121326430_68616875
+page_char <- as.character(webpage)
+page_remove_xref <- gsub("<xref[^>]*>|<\\/xref>", " ", page_char)
+page_add_breaks <- gsub("<table-wrap", "\n<table-wrap", page_remove_xref) # add breaks before tables, helps with p-value in text by making sure table is separate to paragraph
+# replace breaks with spaces (sometimes used in tables)
+page_add_breaks <- gsub("<break\\/>|<break>", " ", page_add_breaks)
+# remove colspan, causes havoc in tables with labels; but removing it caused problems too, so commented out
+#page_add_breaks = str_replace_all(pattern='colspan="."', replacement = 'colspan="1"', string=page_add_breaks)
+webpage <- read_xml(page_add_breaks)
+
+## remove paragraph returns in captions (see https://stackoverflow.com/questions/67864686/xml-in-r-remove-paragraphs-but-keep-xml-class/67865367#67865367)
+# find the caption
+caption <- xml_find_all(webpage, './/caption')
+if(length(caption)>0){
+  # store existing text
+  replacement = rep('', length(caption))
+  for (q in 1:length(caption)){
+    any_p = xml_find_all(caption[[q]], './/p') # are there paragraphs
+    if(length(any_p)>0){
+      with_p = caption[[q]] %>% xml_find_all( './/p') %>% xml_text() %>% paste(collapse = " ")
+      without_p = caption[[q]] %>% xml_find_all( './/title') %>% xml_text() %>% paste(collapse = " ")
+      replacement[q] <- paste(without_p, with_p) # need both because some first headers have no <p>
+    }
+    if(length(any_p) == 0){
+      replacement[q] <- caption[[q]] %>% xml_text() %>% paste(collapse = " ")
+    }
+    replacement[q] = gsub(replacement[q], pattern='\n', replacement = ' ') # remove other style of breaks
+  }
+  # remove the desired text
+  caption %>% xml_find_all( './/p') %>% xml_remove()
+  #replace the caption
+  xml_text(caption) <- replacement
+}
 ## Over write XML with above changes
 xml2::write_xml(webpage, file='web/full.xml', encoding = "UTF-8")
 
@@ -103,22 +143,42 @@ if(any_baseline_tables == FALSE){
   excluded = bind_rows(excluded, this)
   next # skip to next
 }
-## find table number
-table_number = min(which(captions_baseline)) # first table
+## find table number for baseline table
+if(sum(captions_baseline) == 1){
+  table_number = min(which(captions_baseline)) 
+}
+if(sum(captions_baseline) > 1){
+  base_count = str_count(string=tolower(table_captions), pattern=words_or)
+  table_number = which(base_count == max(base_count))[1] # assume first table if there is a tie 
+}
 
 ## next read XML as a text file and tidy up ...
 in_text = scan(file = "web/full.xml", what='character', sep='\n', quiet=TRUE, encoding='UTF-8') # no separators, one big text
 in_text = in_text[!is.na(in_text)] # remove missing
 # a) replace any breaks
 in_text = str_remove_all(string=in_text, pattern='<break/>') # remove breaks
-# b) remove commas from large numbers, see https://stackoverflow.com/questions/67329618/replacing-commas-in-thousands-millions-but-not-smaller-numbers
-in_text = gsub(",(?=\\d{3,})", "", in_text, perl = TRUE) 
+# b) remove commas, spaces and hyphens from or between numbers, see https://stackoverflow.com/questions/67329618/replacing-commas-in-thousands-millions-but-not-smaller-numbers
+in_text = gsub("(?<=\\(\\d{1}),(?=\\d{1,}\\))", ' ', in_text, perl=TRUE) # change badly formatted numbers, e.g. "(87,105)" that is actually two numbers -- must be in brackets
+in_text = gsub("(?<=\\(\\d{2}),(?=\\d{1,}\\))", ' ', in_text, perl=TRUE) # same as above with larger number, have to increment because of `look-backwards`
+in_text = gsub("(?<=\\(\\d{3}),(?=\\d{1,}\\))", ' ', in_text, perl=TRUE) # same as above with larger number
+in_text = gsub("(?<=\\(\\d{4}),(?=\\d{1,}\\))", ' ', in_text, perl=TRUE) # same as above with larger number
+in_text = gsub("(?<=\\(\\d{5}),(?=\\d{1,}\\))", ' ', in_text, perl=TRUE) # same as above with larger number
+in_text = gsub("(?<=\\(\\d{1})-(?=\\d{1,}\\))", ' ', in_text, perl=TRUE) # as above for hyphen
+in_text = gsub("(?<=\\(\\d{2})-(?=\\d{1,}\\))", ' ', in_text, perl=TRUE)
+in_text = gsub("(?<=\\(\\d{3})-(?=\\d{1,}\\))", ' ', in_text, perl=TRUE)
+in_text = gsub("(?<=\\(\\d{4})-(?=\\d{1,}\\))", ' ', in_text, perl=TRUE)
+in_text = gsub("(?<=\\(\\d{5})-(?=\\d{1,}\\))", ' ', in_text, perl=TRUE)
+in_text = gsub(",(?=\\d{3,})", "", in_text, perl = TRUE) # strip commas in numbers
+in_text = gsub("(?<=\\d{1})\\W(?=000)", '', in_text, perl=TRUE) # strip spaces (including special spaces) in thousands (space before 000). \W is anything that isn't a letter, digit, or an underscore
 # c) replace `high` decimal places used by Lancet
 in_text = gsub("·", ".", in_text, perl = FALSE) 
 in_text = gsub("·", ".", in_text, perl = FALSE) 
 # d) replace negative signs with hyphens (else they get cut as unicode)
 in_text = gsub(pattern='\u2212', replacement='-', in_text) # see https://stackoverflow.com/questions/67830110/replacing-non-ascii-dash-with-hyphen-in-r
-# e) remove formatting that impacts on searching in captions
+# e) replace N/A as slash gets confused with number
+in_text = gsub(pattern='N/A|n/a', replacement=' ', in_text) #
+# f) remove formatting that impacts on searching in captions
+in_text = str_remove_all(string=in_text, pattern=' toggle="yes"') # appears in italic
 in_text = str_remove_all(string=in_text, pattern='<italic>') # 
 in_text = str_remove_all(string=in_text, pattern='</italic>') # 
 in_text = str_remove_all(string=in_text, pattern='<bold>') # 
@@ -127,7 +187,7 @@ in_text = str_remove_all(string=in_text, pattern='<sup>') #
 in_text = str_remove_all(string=in_text, pattern='</sup>') # 
 in_text = str_remove_all(string=in_text, pattern='<sub>') # 
 in_text = str_remove_all(string=in_text, pattern='</sub>') # 
-# e) convert dates to numbers
+# g) convert dates to numbers (so they can be processed as summary stats)
 dates_index = str_detect(in_text, pattern=dates_patterns) # find places of dates
 if(any(dates_index) == TRUE){
   for (location in which(dates_index)){
@@ -147,16 +207,20 @@ if(any(dates_index) == TRUE){
     }
   }
 }
+# h) remove hyphens that are not negative signs
+in_text = gsub("-\\W(?=\\d{1})", " ", in_text, perl = TRUE) # things like "22- 33"; hyphen, any non-numeric/letter char (\W), then number
+# could also remove "numbers-numbers" here?
 
 ## extract just the tables using the simplified table captions
 # first create simple version of in_text
 simple_in_text = tolower(in_text) %>%
   str_replace_all('&gt;', '>') %>% # must be a better way, but for now just removing special characters as they come!
   str_replace_all('&lt;', '<') %>%
+  str_replace_all('&amp;', ' ') %>%
   str_remove_all("[^0-9|a-z| ]") %>% # remove all special characters to make matching below easier
   str_squish()
 tables_in_text = list()
-for (j in 1:length(table_captions)){
+for (j in which(captions_baseline)){ # just export tables that are possible baseline tables
   end = ifelse(nchar(table_captions[j])>50, 50, nchar(table_captions[j]))
   short = str_sub(table_captions[j], 1, end)
   tables_caption_index = str_detect(simple_in_text, pattern=short) #
@@ -188,38 +252,39 @@ for (j in 1:length(table_captions)){
 to_write = paste(in_text[1], '\n<just-tables>\n', # add top row and create overall node
                  paste(tables_in_text, collapse = '\n'),
                  '\n</just-tables>', sep='')
-just_tables_xml = tryCatch(as_xml_document(to_write),
+just_tables_xml = tryCatch(as_xml_document(read_html(to_write)),
                            error = function(e) print('XML error for tables'))
 xml2::write_xml(just_tables_xml, file='web/just_tables.xml', encoding = "UTF-8")
 
 ## read in just tables into R
-just_tables = read_xml("web/just_tables.xml", encoding='UTF-8') 
-
+just_tables = read_html("web/just_tables.xml", encoding='UTF-8') 
 ## check table is not mostly text (usually a 'what this paper adds study')
-table1 <- just_tables %>%
-  xml_nodes("table") %>% # need have -wrap because of multiple tables in one
-  .[table_number] %>%
-  xml_text() # 
-if(length(table1)>0){
-    if(nchar(table1)>0){ # needed two if statements because of graphical tables
-    text_count = str_count(table1, '[a-z]')
-    number_count = str_count(table1, '[0-9]')
-    if((number_count / text_count) < 0.1){table_number = table_number +1} # if less than 10% numbers
-  }
+old_table_number = table_number # needed for text search for p-values
+table_number = exclude_text_tables(just_tables, table_number=1) # restart table number at one because non-baseline tables have been dropped
+if(table_number == 998){ # function above also checks for availability
+  this = data.frame(pmc = pmcid, reason = 'No baseline table')
+  excluded = bind_rows(excluded, this)
+  next
 }
-if(length(table1) == 0){ # no text content in table, likely graphical table (need to check) - could add check for <graphic>
+if(table_number == 999){ # function above also checks for empty tables
   this = data.frame(pmc = pmcid, reason = 'Graphical table')
   excluded = bind_rows(excluded, this)
-  next # skip to next
+  next
 }
+# update old table number used for searching text
+old_table_number = old_table_number + (table_number-1)
 # get table footnotes
-footnotes = xml_find_all(just_tables, ".//table-wrap-foot") %>% xml_text() 
+tabs = xml_find_all(just_tables, ".//table-wrap")
+footnotes = rep('', length(tabs))
+for (l in 1:length(tabs)){ # need to loop through tables because some tables have no footnotes
+  any_foot = xml_find_all(tabs[[l]], ".//table-wrap-foot") %>% xml_text() 
+  if(length(any_foot)>0){footnotes[l] = paste(any_foot, collapse=' ')}
+}
 footnote = footnotes[table_number] # get the table footnote for checking p-values
 
 ## exclude if follow-up data in table
+table_captions = table_captions[which(captions_baseline)] # just keep baseline tables
 caption = table_captions[table_number] #
-fu_words = c('follow.up','post.trial')
-fu_pattern = paste(fu_words, collapse='|')
 follow_up = str_detect(string=tolower(caption), pattern = fu_pattern)
 if(follow_up == TRUE){
   this = data.frame(pmc = pmcid, reason = 'Follow-up results in baseline table')
@@ -227,11 +292,44 @@ if(follow_up == TRUE){
   next # skip to next
 }
 
-# function that does heavy lifting:
-results = baseline_table(just_tables, table_number, footnote)
+# function that does heavy lifting, trial and error with weight:
+results = baseline_table(webpage = just_tables, table_number, footnote, weight=2)
 table = results$table
 
-# exclude if data could not be extracted
+## check for p-values in text in the results section
+# find paragraph that mentions table (using `cross` as I added this to avoid confusion with captions)
+table_text_arabic = paste(c('tab','table','tabs','tables'), old_table_number, sep='.')
+table_text_roman = paste(c('tab','table','tabs','tables'), tolower(as.roman(old_table_number)), sep='.')
+table_text = c(table_text_arabic, table_text_roman) # use both roman and arabic numbers
+table_search =  paste('\\b', paste(table_text, collapse='\\b|\\b'), '\\b', sep='') # just search for whole words
+index = grep(pattern=table_search, tolower(str_squish(in_text))) # str squish so that tables in text work after xref removal
+results_index = grep(pattern='results<\\/title>|<title>results', tolower(str_squish(in_text))) # find results heading
+to_remove = grep(pattern='table-wrap|<label>|supplementary table|supplement table|appendix table', tolower(in_text)) # remove tables, lables and supplement tables
+index = setdiff(index, to_remove) # 
+if(length(results_index)>0){index = index[index>=results_index]} # must come after results heading
+pvalues_in_text = NA
+if(length(index)>0){
+  paragraph = in_text[index]
+  pvalues_in_text = any(str_detect(paragraph, pval_pattern))
+}
+
+# record p-values in table; this can be valid even where table could not be extracted because of sample size problems
+add_pval = FALSE
+if(is.null(results$reason) == FALSE){
+  if(results$reason %in% c('No sample size')){
+    add_pval = TRUE
+  }
+}
+# if not excluded, or if results have been added then add p-value
+if(is.null(results$reason) == TRUE | is.null(results$pvalues_in_table) == FALSE){
+  add_pval = TRUE
+}
+if(add_pval == TRUE){
+  pvalues_in_table_text = data.frame(pmcid=pmcid, in_table = results$pvalues_in_table, in_text = pvalues_in_text) # record p-values in table
+  pvalues = bind_rows(pvalues, pvalues_in_table_text)
+}
+
+# exclude from table analysis if data could not be extracted
 if(is.null(table) == TRUE){
   this = data.frame(pmc = pmcid, reason = results$reason)
   excluded = bind_rows(excluded, this)
@@ -248,23 +346,28 @@ b_search4 = str_detect(all_text, regex('randomi.ation\\W+(?:\\w+ ){0,5}block', i
 b_search5 = str_detect(all_text, regex('randomi.ed\\W+(?:\\w+ ){0,5}block', ignore_case = TRUE))
 b_search6 = str_detect(all_text, regex('random\\W+(?:\\w+ ){0,5}block', ignore_case = TRUE))
 block_randomisation = any(c(b_search1, b_search2, b_search3, b_search4, b_search5, b_search6))
-# b) matched case-control study?
+# b) adaptive randomisation
+a_search1 = str_detect(all_text, regex('adaptive.randomi.ation', ignore_case = TRUE))
+adaptive_randomisation = any(a_search1)
+# c) matched case-control study?
 #cc_search1 = str_detect(all_text, regex('match\\W+(?:\\w+ ){0,2}case\\W+(?:\\w+ ){0,2}control', ignore_case = TRUE))
 #matched_case_control = any(cc_search1)
-
+# c) search for standard error
+to_search = paste(tolower(footnote), paste(table1, collapse = ' '), sep= ' ') # put all text together
+sem = str_detect(string=to_search, pattern=sem_patterns)
+  
 ## concatenate 
 # main data
-table = mutate(table, pmcid = pmcid)
+table = mutate(table, pmcid = pmcid, pmid = data$pmid[k]) # pmid for merge with trialstreamer
 table_data = bind_rows(table_data, table)
-# p-values
-pvalues_in_table = data.frame(pmcid=pmcid, in_table = results$pvalues_in_table) #, in_table = results$pvalues_in_text) # record p-values in table
-pvalues = bind_rows(pvalues, pvalues_in_table)
 # study design (starts with details from pubmed)
 this_design = data[k,] %>%
   mutate(
     rct = rct,
     cluster = cluster,
-    block_randomisation = block_randomisation) # record p-values in table
+    block_randomisation = block_randomisation,
+    adaptive_randomisation = adaptive_randomisation, 
+    sem = sem) # add meta-data
 design = bind_rows(design, this_design)
 
 # tidy up
@@ -286,9 +389,9 @@ pvalues = filter(pvalues, !pmcid %in% hand_exclude$pmc)
 design = filter(design, !pmcid %in% hand_exclude$pmc)
 
 # add study design meta-data to excluded data
-data = mutate(data, pmc = str_remove(pattern='^PMC', string=pmc)) # for merging
+data = mutate(data, pmc = str_remove(pattern='^PMC', string=pmcid)) # for merging
 excluded = mutate(excluded, pmc = str_remove(pattern='^PMC', string=pmc)) # for merging
 excluded = left_join(excluded, data, by='pmc')
 
 ## save
-save(excluded, pvalues, table_data, design, file='data/extracted.RData')
+save(excluded, pvalues, table_data, design, file=outfile) # outfile from 1_which_data_source.R

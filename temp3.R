@@ -64,3 +64,13 @@ if(graphics > 0){
   excluded = bind_rows(excluded, this)
   next # skip to next
 }
+
+
+## from 99_functions
+# if more than 12 columns then exclude, likely a transposed table
+if(ncol(table1) >= 12){
+  to.return = list()
+  to.return$reason = 'Possibly transposed table'
+  to.return$table = NULL
+  return(to.return) # bail out here
+}

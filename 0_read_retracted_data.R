@@ -1,5 +1,5 @@
 # 0_read_retracted_data.R
-# read in baseline table data from retracted papers
+# read in baseline table data from retracted papers or papers with known issues
 # May 2021
 library(dplyr)
 library(readxl)

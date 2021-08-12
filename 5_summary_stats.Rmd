@@ -1,0 +1,67 @@
+---
+title: 'Summary statistics on the tables'
+author: "Adrian Barnett"
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output:
+  word_document:
+    toc: false
+    toc_depth: 2
+---
+
+```{r setup, include=FALSE}
+# using formatting in Word document (see above)
+knitr::opts_chunk$set(echo = FALSE, warning=FALSE, message=FALSE, error=FALSE, comment='', dpi=400)
+options(width=1000) # Wide pages
+options(scipen=999) # avoid scientific presentation
+#source('99_functions.R')
+#library(broom) # for regression models
+library(janitor) # for tables with totals
+library(dplyr)
+library(tidyr)
+library(stringr)
+library(flextable)
+library(ggplot2)
+
+# get the data
+load('data/analysis_ready.RData') # from 2_process_extracted_data.R
+```
+
+# Number of summary statistics (rows) per table
+
+```{r}
+rows = group_by(table_data, pmcid) %>%
+  summarise(row = max(row),
+            col = max(column)) %>%
+  ungroup()
+gplot = ggplot(data=rows, aes(x=row))+
+  geom_bar(fill='skyblue') +
+  ylab('Count')+
+  xlab('Number of statistics')+
+  theme_bw()
+gplot
+```
+
+# Number of groups (columns) per table
+
+```{r}
+gplot = ggplot(data=rows, aes(x=col))+
+  geom_bar(fill='indianred') +
+  scale_x_continuous(breaks=2:10)+
+  ylab('Count')+
+  xlab('Number of groups')+
+  theme_bw()
+gplot
+```
+
+# Frequency table of statistics
+
+```{r}
+table = table_data %>% tabyl(statistic) %>%
+  arrange(-n) %>% # high to low
+  adorn_totals("row") %>%
+  mutate(percent = round(percent*100)) 
+ftab = flextable(table) %>%
+  theme_box() %>%
+  colformat_num(j=2, big.mark=',', digits=0)
+ftab
+```

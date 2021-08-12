@@ -1,0 +1,1262 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="google-site-verification" content="5fPGCLllnWrvFxH9QWI0l1TadV7byeEvfPcyK2VkS_s"/>
+    <meta name="google-site-verification" content="Rp5zp04IKW-s1IbpTOGB7Z6XY60oloZD5C3kTM-AiY4"/>
+
+<meta name="norton-safeweb-site-verification" content="umenay8zh4kswbi568zqp19bqb-jvngusibub1ygib0x3jne9rig0fnmtofm8abb7lkzgltqp5yhm68s5qz4iqqkm39xl2o-p5foixd-1xfq4yig07ugcd1sp5kmyvpe" />
+    <title>Trialstreamer data | Zenodo</title>
+    <link rel="shortcut icon" href="/static/favicon.ico"/>
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/static/apple-touch-icon-144-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/static/apple-touch-icon-114-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/static/apple-touch-icon-72-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/static/apple-touch-icon-57-precomposed.png"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,100,italic" rel="stylesheet">
+<link href="/static/gen/zenodo.3867f39d.css" rel="stylesheet">
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+<![endif]-->
+  
+    <meta name="description" content="Trialstreamer annotated collection of RCTs. This respository contains baseline files (large), and subsequent updates (daily for PubMed, weekly for ICTRP).  " />
+    <meta name="citation_title" content="Trialstreamer data" />
+    <meta name="citation_author" content="Marshall, Iain" />
+    <meta name="citation_author" content="Nye, Benjamin" />
+    <meta name="citation_author" content="Kuiper, Joël" />
+    <meta name="citation_author" content="Marshall, Rachel" />
+    <meta name="citation_author" content="Soboczenski, Frank" />
+    <meta name="citation_author" content="Nenkova, Ani" />
+    <meta name="citation_author" content="Noel Storr, Anna" />
+    <meta name="citation_author" content="Thomas, James" />
+    <meta name="citation_author" content="Wallace, Byron" />
+    <meta name="citation_publication_date" content="2020/04/26" />
+    <meta name="citation_doi" content="10.5281/zenodo.5153084" />
+    <meta name="citation_abstract_html_url" content="https://zenodo.org/record/5153084" />
+    <meta property="og:title" content="Trialstreamer data" />
+    <meta property="og:description" content="Trialstreamer annotated collection of RCTs. This respository contains baseline files (large), and subsequent updates (daily for PubMed, weekly for ICTRP).  " />
+    <meta property="og:url" content="https://zenodo.org/record/5153084" />
+    <meta property="og:site_name" content="Zenodo" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@zenodo_org" />
+    <meta name="twitter:title" content="Trialstreamer data" />
+    <meta name="twitter:description" content="Trialstreamer annotated collection of RCTs. This respository contains baseline files (large), and subsequent updates (daily for PubMed, weekly for ICTRP).  " />
+    <link rel="canonical" href="https://zenodo.org/record/5153084">
+    <link rel="alternate" type="application/zip" href="https://zenodo.org/record/5153084/files/trialstreamer-baseline-ictrp-2020-04-264.zip">
+    <link rel="alternate" type="application/zip" href="https://zenodo.org/record/5153084/files/trialstreamer-baseline-pubmed-2020-04-26.zip">
+    <link rel="alternate" type="text/csv" href="https://zenodo.org/record/5153084/files/trialstreamer-update-pubmed-2020-05-14.csv">
+    <link rel="alternate" type="text/csv" href="https://zenodo.org/record/5153084/files/trialstreamer-update-pubmed-2020-05-18.csv">
+    <link rel="alternate" type="text/csv" href="https://zenodo.org/record/5153084/files/trialstreamer-update-pubmed-2020-05-25.csv">
+    <link rel="alternate" type="text/csv" href="https://zenodo.org/record/5153084/files/trialstreamer-update-pubmed-2020-06-01.csv">
+    <link rel="alternate" type="text/csv" href="https://zenodo.org/record/5153084/files/trialstreamer-update-pubmed-2020-06-08.csv">
+    <link rel="alternate" type="text/csv" href="https://zenodo.org/record/5153084/files/trialstreamer-update-pubmed-2020-06-15.csv">
+    <link rel="alternate" type="text/csv" href="https://zenodo.org/record/5153084/files/trialstreamer-update-pubmed-2020-06-22.csv">
+    <link rel="alternate" type="text/csv" href="https://zenodo.org/record/5153084/files/trialstreamer-update-pubmed-2020-06-29.csv">
+    <link rel="alternate" type="text/csv" href="https://zenodo.org/record/5153084/files/trialstreamer-update-pubmed-2020-07-06.csv">
+    <link rel="alternate" type="text/csv" href="https://zenodo.org/record/5153084/files/trialstreamer-update-pubmed-2020-07-13.csv">
+    <link rel="alternate" type="text/csv" href="https://zenodo.org/record/5153084/files/trialstreamer-update-pubmed-2020-07-20.csv">
+    <link rel="alternate" type="text/csv" href="https://zenodo.org/record/5153084/files/trialstreamer-update-pubmed-2020-07-27.csv">
+    <link rel="alternate" type="text/csv" href="https://zenodo.org/record/5153084/files/trialstreamer-update-pubmed-2020-08-03.csv">
+    <link rel="alternate" type="text/csv" href="https://zenodo.org/record/5153084/files/trialstreamer-update-pubmed-2020-08-10.csv">
+    <link rel="alternate" type="text/csv" href="https://zenodo.org/record/5153084/files/trialstreamer-update-pubmed-2020-08-17.csv">
+    <link rel="alternate" type="text/csv" href="https://zenodo.org/record/5153084/files/trialstreamer-update-pubmed-2020-08-24.csv">
+    <link rel="alternate" type="text/csv" href="https://zenodo.org/record/5153084/files/trialstreamer-update-pubmed-2020-08-31.csv">
+    <link rel="alternate" type="text/csv" href="https://zenodo.org/record/5153084/files/trialstreamer-update-pubmed-2020-09-07.csv">
+    <link rel="alternate" type="text/csv" href="https://zenodo.org/record/5153084/files/trialstreamer-update-pubmed-2020-09-14.csv">
+    <link rel="alternate" type="text/csv" href="https://zenodo.org/record/5153084/files/trialstreamer-update-pubmed-2020-09-21.csv">
+    <link rel="alternate" type="text/csv" href="https://zenodo.org/record/5153084/files/trialstreamer-update-pubmed-2020-09-28.csv">
+    <link rel="alternate" type="text/csv" href="https://zenodo.org/record/5153084/files/trialstreamer-update-pubmed-2020-10-05.csv">
+    <link rel="alternate" type="text/csv" href="https://zenodo.org/record/5153084/files/trialstreamer-update-pubmed-2020-10-12.csv">
+    <link rel="alternate" type="text/csv" href="https://zenodo.org/record/5153084/files/trialstreamer-update-pubmed-2020-10-19.csv">
+    <link rel="alternate" type="text/csv" href="https://zenodo.org/record/5153084/files/trialstreamer-update-pubmed-2020-10-26.csv">
+    <link rel="alternate" type="text/csv" href="https://zenodo.org/record/5153084/files/trialstreamer-update-pubmed-2020-11-02.csv">
+    <link rel="alternate" type="text/csv" href="https://zenodo.org/record/5153084/files/trialstreamer-update-pubmed-2020-11-09.csv">
+    <link rel="alternate" type="text/csv" href="https://zenodo.org/record/5153084/files/trialstreamer-update-pubmed-2020-11-16.csv">
+    <link rel="alternate" type="text/csv" href="https://zenodo.org/record/5153084/files/trialstreamer-update-pubmed-2020-11-23.csv">
+    <link rel="alternate" type="text/csv" href="https://zenodo.org/record/5153084/files/trialstreamer-update-pubmed-2020-11-30.csv">
+    <link rel="alternate" type="text/csv" href="https://zenodo.org/record/5153084/files/trialstreamer-update-pubmed-2020-12-07.csv">
+    <link rel="alternate" type="text/csv" href="https://zenodo.org/record/5153084/files/trialstreamer-update-pubmed-2020-12-14.csv">
+    <link rel="alternate" type="text/csv" href="https://zenodo.org/record/5153084/files/trialstreamer-update-pubmed-2020-12-28.csv">
+    <link rel="alternate" type="text/csv" href="https://zenodo.org/record/5153084/files/trialstreamer-update-pubmed-2021-01-04.csv">
+    <link rel="alternate" type="text/csv" href="https://zenodo.org/record/5153084/files/trialstreamer-update-pubmed-2021-01-11.csv">
+    <link rel="alternate" type="text/csv" href="https://zenodo.org/record/5153084/files/trialstreamer-update-pubmed-2021-01-18.csv">
+    <link rel="alternate" type="text/csv" href="https://zenodo.org/record/5153084/files/trialstreamer-update-pubmed-2021-01-25.csv">
+    <link rel="alternate" type="text/csv" href="https://zenodo.org/record/5153084/files/trialstreamer-update-pubmed-2021-02-01.csv">
+    <link rel="alternate" type="text/csv" href="https://zenodo.org/record/5153084/files/trialstreamer-update-pubmed-2021-02-08.csv">
+    <link rel="alternate" type="text/csv" href="https://zenodo.org/record/5153084/files/trialstreamer-update-pubmed-2021-02-15.csv">
+    <link rel="alternate" type="text/csv" href="https://zenodo.org/record/5153084/files/trialstreamer-update-pubmed-2021-02-22.csv">
+    <link rel="alternate" type="text/csv" href="https://zenodo.org/record/5153084/files/trialstreamer-update-pubmed-2021-03-01.csv">
+    <link rel="alternate" type="text/csv" href="https://zenodo.org/record/5153084/files/trialstreamer-update-pubmed-2021-03-08.csv">
+    <link rel="alternate" type="text/csv" href="https://zenodo.org/record/5153084/files/trialstreamer-update-pubmed-2021-03-15.csv">
+    <link rel="alternate" type="text/csv" href="https://zenodo.org/record/5153084/files/trialstreamer-update-pubmed-2021-03-22.csv">
+    <link rel="alternate" type="text/csv" href="https://zenodo.org/record/5153084/files/trialstreamer-update-pubmed-2021-03-29.csv">
+    <link rel="alternate" type="text/csv" href="https://zenodo.org/record/5153084/files/trialstreamer-update-pubmed-2021-04-05.csv">
+    <link rel="alternate" type="text/csv" href="https://zenodo.org/record/5153084/files/trialstreamer-update-pubmed-2021-04-12.csv">
+    <link rel="alternate" type="text/csv" href="https://zenodo.org/record/5153084/files/trialstreamer-update-pubmed-2021-04-19.csv">
+    <link rel="alternate" type="text/csv" href="https://zenodo.org/record/5153084/files/trialstreamer-update-pubmed-2021-04-26.csv">
+    <link rel="alternate" type="text/csv" href="https://zenodo.org/record/5153084/files/trialstreamer-update-pubmed-2021-05-03.csv">
+    <link rel="alternate" type="text/csv" href="https://zenodo.org/record/5153084/files/trialstreamer-update-pubmed-2021-05-10.csv">
+    <link rel="alternate" type="text/csv" href="https://zenodo.org/record/5153084/files/trialstreamer-update-pubmed-2021-05-17.csv">
+    <link rel="alternate" type="text/csv" href="https://zenodo.org/record/5153084/files/trialstreamer-update-pubmed-2021-05-31.csv">
+    <link rel="alternate" type="text/csv" href="https://zenodo.org/record/5153084/files/trialstreamer-update-pubmed-2021-06-07.csv">
+    <link rel="alternate" type="text/csv" href="https://zenodo.org/record/5153084/files/trialstreamer-update-pubmed-2021-06-14.csv">
+    <link rel="alternate" type="text/csv" href="https://zenodo.org/record/5153084/files/trialstreamer-update-pubmed-2021-06-21.csv">
+    <link rel="alternate" type="text/csv" href="https://zenodo.org/record/5153084/files/trialstreamer-update-pubmed-2021-06-28.csv">
+    <link rel="alternate" type="text/csv" href="https://zenodo.org/record/5153084/files/trialstreamer-update-pubmed-2021-07-05.csv">
+    <link rel="alternate" type="text/csv" href="https://zenodo.org/record/5153084/files/trialstreamer-update-pubmed-2021-07-12.csv">
+    <link rel="alternate" type="text/csv" href="https://zenodo.org/record/5153084/files/trialstreamer-update-pubmed-2021-07-19.csv">
+    <link rel="alternate" type="text/csv" href="https://zenodo.org/record/5153084/files/trialstreamer-update-pubmed-2021-07-26.csv">
+    <link rel="alternate" type="text/csv" href="https://zenodo.org/record/5153084/files/trialstreamer-update-pubmed-2021-08-02.csv">
+  </head>
+  <body ng-csp  itemscope itemtype="http://schema.org/WebPage" data-spy="scroll" data-target=".scrollspy-target">
+    <!--[if lt IE 8]>
+      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+<header>
+  <nav class="navbar navbar-default navbar-static-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+          <a href="/"><img class="navbar-brand" src="/static/img/zenodo.svg" alt="Zenodo" /></a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+<form class="navbar-form navbar-left navbar-search" action="/search" role="search">
+  <div class="form-group">
+    <div class="input-group">
+      <input type="text" class="form-control search" name="q" placeholder="Search">
+      <div class="input-group-btn">
+        <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+      </div>
+    </div>
+  </div>
+</form>
+        <ul class="nav navbar-nav">
+            <li><a href="/deposit">Upload</a></li>
+            <li><a href="/communities/">Communities</a></li>
+        </ul>
+<form class="navbar-form navbar-right">
+  <a href="/login/?next=%2Frecord%2F5153084" class="btn btn-default"><i class="fa fa-sign-in"></i> Log in</a>
+  <a href="/signup/" type="submit" class="btn btn-default btn-warning"><i class="fa fa-edit"></i> Sign up</a>
+</form>
+      </div>
+    </div>
+  </nav>
+
+
+</header>
+<div class="container record-detail">
+  <div class="row">
+    <div class="col-sm-8 col-md-8 col-left">
+      <p>
+        <time datetime="April 26, 2020" data-toggle="tooltip" title="Publication date">April 26, 2020</time>
+        <span class="pull-right">
+          
+<span class="label label-default">Dataset</span>
+          
+<span class="label label-success">
+Open Access
+</span>
+        </span>
+      </p>
+      <h1>Trialstreamer data</h1>
+      <p>
+<span class="text-muted" data-toggle="tooltip" title="King&#39;s College London">Marshall, Iain</span>; 
+<span class="text-muted" data-toggle="tooltip" title="Northeastern University">Nye, Benjamin</span>; 
+<span class="text-muted" data-toggle="tooltip" title="Vortext Systems">Kuiper, Joël</span>; 
+<span class="text-muted" data-toggle="tooltip" title="Cochrane">Marshall, Rachel</span>; 
+<span class="text-muted" data-toggle="tooltip" title="King&#39;s College London">Soboczenski, Frank</span>; 
+<span class="text-muted" data-toggle="tooltip" title="University of Pennsylvania">Nenkova, Ani</span>; 
+<span class="text-muted" data-toggle="tooltip" title="University of Oxford">Noel Storr, Anna</span>; 
+<span class="text-muted" data-toggle="tooltip" title="UCL">Thomas, James</span>; 
+<span class="text-muted" data-toggle="tooltip" title="Northeastern University">Wallace, Byron</span></p>
+      <p><p>Trialstreamer annotated collection of RCTs.</p>
+
+<p>This respository contains baseline files (large), and subsequent updates (daily for PubMed, weekly for ICTRP).</p>
+
+<p>&nbsp;</p></p>
+
+
+  <div class="panel panel-default" id="preview">
+    <div class="panel-heading">
+      <a class="panel-toggle" data-toggle="collapse" href="#collapseOne">
+        Preview
+        <span class="pull-right show-on-collapsed"><i class="fa fa-chevron-right"></i></span>
+        <span class="pull-right hide-on-collapsed"><i class="fa fa-chevron-down"></i></span>
+      </a>
+    </div>
+    <div id="collapseOne" class="collapse in">
+  <iframe
+   class="preview-iframe"
+   id="preview-iframe"
+   width="100%"
+   height="400"
+   src="/record/5153084/preview/trialstreamer-baseline-ictrp-2020-04-264.zip"></iframe>
+    </div>
+  </div><div class="panel panel-default files-box" id="files">
+  <div class="panel-heading">
+    <a class="panel-toggle" data-toggle="collapse" href="#collapseTwo">
+      Files
+      <span class="pull-right show-on-collapsed"><i class="fa fa-chevron-right"></i></span>
+      <span class="pull-right hide-on-collapsed"><i class="fa fa-chevron-down"></i></span>
+    </a>
+    <small class="text-muted"> (5.9 GB)</small>
+  </div>
+  <div class="collapse in" id="collapseTwo">
+  <table class="table table-striped" >
+    <thead>
+      <tr class="">
+        <th>Name</th>
+        <th>Size</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <a class="filename" href="/record/5153084/files/trialstreamer-baseline-ictrp-2020-04-264.zip?download=1">trialstreamer-baseline-ictrp-2020-04-264.zip</a>
+          <br/><small class="text-muted nowrap">md5:7ad0e274924a074f70a324b73464fdbb <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="This is the file fingerprint (MD5 checksum), which can be used to verify the file integrity."></i></small>
+        </td>
+        <td class="nowrap">1.2 GB</td>
+        <td class="nowrap"><span class="pull-right"><button class="btn preview-link btn-xs btn-default" data-filename="trialstreamer-baseline-ictrp-2020-04-264.zip"><i class="fa fa-eye"></i> Preview</button> <a class="btn btn-xs btn-default" href="/record/5153084/files/trialstreamer-baseline-ictrp-2020-04-264.zip?download=1"><i class="fa fa-download"></i> Download</a></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="filename" href="/record/5153084/files/trialstreamer-baseline-pubmed-2020-04-26.zip?download=1">trialstreamer-baseline-pubmed-2020-04-26.zip</a>
+          <br/><small class="text-muted nowrap">md5:9a1bece745b568065a05d6cd09554436 <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="This is the file fingerprint (MD5 checksum), which can be used to verify the file integrity."></i></small>
+        </td>
+        <td class="nowrap">3.0 GB</td>
+        <td class="nowrap"><span class="pull-right"><button class="btn preview-link btn-xs btn-default" data-filename="trialstreamer-baseline-pubmed-2020-04-26.zip"><i class="fa fa-eye"></i> Preview</button> <a class="btn btn-xs btn-default" href="/record/5153084/files/trialstreamer-baseline-pubmed-2020-04-26.zip?download=1"><i class="fa fa-download"></i> Download</a></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="filename" href="/record/5153084/files/trialstreamer-update-pubmed-2020-05-14.csv?download=1">trialstreamer-update-pubmed-2020-05-14.csv</a>
+          <br/><small class="text-muted nowrap">md5:85f0f1f6cd71dd44a96b0a05022272bc <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="This is the file fingerprint (MD5 checksum), which can be used to verify the file integrity."></i></small>
+        </td>
+        <td class="nowrap">50.9 MB</td>
+        <td class="nowrap"><span class="pull-right"><button class="btn preview-link btn-xs btn-default" data-filename="trialstreamer-update-pubmed-2020-05-14.csv"><i class="fa fa-eye"></i> Preview</button> <a class="btn btn-xs btn-default" href="/record/5153084/files/trialstreamer-update-pubmed-2020-05-14.csv?download=1"><i class="fa fa-download"></i> Download</a></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="filename" href="/record/5153084/files/trialstreamer-update-pubmed-2020-05-18.csv?download=1">trialstreamer-update-pubmed-2020-05-18.csv</a>
+          <br/><small class="text-muted nowrap">md5:b6b1770e9cf06fafdd533265382e387c <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="This is the file fingerprint (MD5 checksum), which can be used to verify the file integrity."></i></small>
+        </td>
+        <td class="nowrap">12.6 MB</td>
+        <td class="nowrap"><span class="pull-right"><button class="btn preview-link btn-xs btn-default" data-filename="trialstreamer-update-pubmed-2020-05-18.csv"><i class="fa fa-eye"></i> Preview</button> <a class="btn btn-xs btn-default" href="/record/5153084/files/trialstreamer-update-pubmed-2020-05-18.csv?download=1"><i class="fa fa-download"></i> Download</a></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="filename" href="/record/5153084/files/trialstreamer-update-pubmed-2020-05-25.csv?download=1">trialstreamer-update-pubmed-2020-05-25.csv</a>
+          <br/><small class="text-muted nowrap">md5:49b283aceed7f448ac0025eebfc16ff7 <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="This is the file fingerprint (MD5 checksum), which can be used to verify the file integrity."></i></small>
+        </td>
+        <td class="nowrap">22.1 MB</td>
+        <td class="nowrap"><span class="pull-right"><button class="btn preview-link btn-xs btn-default" data-filename="trialstreamer-update-pubmed-2020-05-25.csv"><i class="fa fa-eye"></i> Preview</button> <a class="btn btn-xs btn-default" href="/record/5153084/files/trialstreamer-update-pubmed-2020-05-25.csv?download=1"><i class="fa fa-download"></i> Download</a></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="filename" href="/record/5153084/files/trialstreamer-update-pubmed-2020-06-01.csv?download=1">trialstreamer-update-pubmed-2020-06-01.csv</a>
+          <br/><small class="text-muted nowrap">md5:c0e924595da13596bcf59f8cd67114a1 <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="This is the file fingerprint (MD5 checksum), which can be used to verify the file integrity."></i></small>
+        </td>
+        <td class="nowrap">19.4 MB</td>
+        <td class="nowrap"><span class="pull-right"><button class="btn preview-link btn-xs btn-default" data-filename="trialstreamer-update-pubmed-2020-06-01.csv"><i class="fa fa-eye"></i> Preview</button> <a class="btn btn-xs btn-default" href="/record/5153084/files/trialstreamer-update-pubmed-2020-06-01.csv?download=1"><i class="fa fa-download"></i> Download</a></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="filename" href="/record/5153084/files/trialstreamer-update-pubmed-2020-06-08.csv?download=1">trialstreamer-update-pubmed-2020-06-08.csv</a>
+          <br/><small class="text-muted nowrap">md5:da03e0bfd2e17bd7627fe62026acd5c1 <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="This is the file fingerprint (MD5 checksum), which can be used to verify the file integrity."></i></small>
+        </td>
+        <td class="nowrap">24.7 MB</td>
+        <td class="nowrap"><span class="pull-right"><button class="btn preview-link btn-xs btn-default" data-filename="trialstreamer-update-pubmed-2020-06-08.csv"><i class="fa fa-eye"></i> Preview</button> <a class="btn btn-xs btn-default" href="/record/5153084/files/trialstreamer-update-pubmed-2020-06-08.csv?download=1"><i class="fa fa-download"></i> Download</a></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="filename" href="/record/5153084/files/trialstreamer-update-pubmed-2020-06-15.csv?download=1">trialstreamer-update-pubmed-2020-06-15.csv</a>
+          <br/><small class="text-muted nowrap">md5:1a84644c92695e59b6d521aa246c4d07 <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="This is the file fingerprint (MD5 checksum), which can be used to verify the file integrity."></i></small>
+        </td>
+        <td class="nowrap">21.1 MB</td>
+        <td class="nowrap"><span class="pull-right"><button class="btn preview-link btn-xs btn-default" data-filename="trialstreamer-update-pubmed-2020-06-15.csv"><i class="fa fa-eye"></i> Preview</button> <a class="btn btn-xs btn-default" href="/record/5153084/files/trialstreamer-update-pubmed-2020-06-15.csv?download=1"><i class="fa fa-download"></i> Download</a></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="filename" href="/record/5153084/files/trialstreamer-update-pubmed-2020-06-22.csv?download=1">trialstreamer-update-pubmed-2020-06-22.csv</a>
+          <br/><small class="text-muted nowrap">md5:20b1b497cd2c4b246f36fc7aeee51e41 <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="This is the file fingerprint (MD5 checksum), which can be used to verify the file integrity."></i></small>
+        </td>
+        <td class="nowrap">21.3 MB</td>
+        <td class="nowrap"><span class="pull-right"><button class="btn preview-link btn-xs btn-default" data-filename="trialstreamer-update-pubmed-2020-06-22.csv"><i class="fa fa-eye"></i> Preview</button> <a class="btn btn-xs btn-default" href="/record/5153084/files/trialstreamer-update-pubmed-2020-06-22.csv?download=1"><i class="fa fa-download"></i> Download</a></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="filename" href="/record/5153084/files/trialstreamer-update-pubmed-2020-06-29.csv?download=1">trialstreamer-update-pubmed-2020-06-29.csv</a>
+          <br/><small class="text-muted nowrap">md5:d9551ab5211aed938a96865b0ea6f52f <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="This is the file fingerprint (MD5 checksum), which can be used to verify the file integrity."></i></small>
+        </td>
+        <td class="nowrap">20.9 MB</td>
+        <td class="nowrap"><span class="pull-right"><button class="btn preview-link btn-xs btn-default" data-filename="trialstreamer-update-pubmed-2020-06-29.csv"><i class="fa fa-eye"></i> Preview</button> <a class="btn btn-xs btn-default" href="/record/5153084/files/trialstreamer-update-pubmed-2020-06-29.csv?download=1"><i class="fa fa-download"></i> Download</a></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="filename" href="/record/5153084/files/trialstreamer-update-pubmed-2020-07-06.csv?download=1">trialstreamer-update-pubmed-2020-07-06.csv</a>
+          <br/><small class="text-muted nowrap">md5:20db61fdb46148e8191434488ae78326 <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="This is the file fingerprint (MD5 checksum), which can be used to verify the file integrity."></i></small>
+        </td>
+        <td class="nowrap">20.3 MB</td>
+        <td class="nowrap"><span class="pull-right"><button class="btn preview-link btn-xs btn-default" data-filename="trialstreamer-update-pubmed-2020-07-06.csv"><i class="fa fa-eye"></i> Preview</button> <a class="btn btn-xs btn-default" href="/record/5153084/files/trialstreamer-update-pubmed-2020-07-06.csv?download=1"><i class="fa fa-download"></i> Download</a></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="filename" href="/record/5153084/files/trialstreamer-update-pubmed-2020-07-13.csv?download=1">trialstreamer-update-pubmed-2020-07-13.csv</a>
+          <br/><small class="text-muted nowrap">md5:66d38be237b8c67834c1ad85c0346d75 <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="This is the file fingerprint (MD5 checksum), which can be used to verify the file integrity."></i></small>
+        </td>
+        <td class="nowrap">18.3 MB</td>
+        <td class="nowrap"><span class="pull-right"><button class="btn preview-link btn-xs btn-default" data-filename="trialstreamer-update-pubmed-2020-07-13.csv"><i class="fa fa-eye"></i> Preview</button> <a class="btn btn-xs btn-default" href="/record/5153084/files/trialstreamer-update-pubmed-2020-07-13.csv?download=1"><i class="fa fa-download"></i> Download</a></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="filename" href="/record/5153084/files/trialstreamer-update-pubmed-2020-07-20.csv?download=1">trialstreamer-update-pubmed-2020-07-20.csv</a>
+          <br/><small class="text-muted nowrap">md5:06f3fe3ab0e4c9cd0313c0d2ca4e2098 <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="This is the file fingerprint (MD5 checksum), which can be used to verify the file integrity."></i></small>
+        </td>
+        <td class="nowrap">21.7 MB</td>
+        <td class="nowrap"><span class="pull-right"><button class="btn preview-link btn-xs btn-default" data-filename="trialstreamer-update-pubmed-2020-07-20.csv"><i class="fa fa-eye"></i> Preview</button> <a class="btn btn-xs btn-default" href="/record/5153084/files/trialstreamer-update-pubmed-2020-07-20.csv?download=1"><i class="fa fa-download"></i> Download</a></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="filename" href="/record/5153084/files/trialstreamer-update-pubmed-2020-07-27.csv?download=1">trialstreamer-update-pubmed-2020-07-27.csv</a>
+          <br/><small class="text-muted nowrap">md5:9b728a39861f405235c1a25bc81ebdf8 <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="This is the file fingerprint (MD5 checksum), which can be used to verify the file integrity."></i></small>
+        </td>
+        <td class="nowrap">18.2 MB</td>
+        <td class="nowrap"><span class="pull-right"><button class="btn preview-link btn-xs btn-default" data-filename="trialstreamer-update-pubmed-2020-07-27.csv"><i class="fa fa-eye"></i> Preview</button> <a class="btn btn-xs btn-default" href="/record/5153084/files/trialstreamer-update-pubmed-2020-07-27.csv?download=1"><i class="fa fa-download"></i> Download</a></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="filename" href="/record/5153084/files/trialstreamer-update-pubmed-2020-08-03.csv?download=1">trialstreamer-update-pubmed-2020-08-03.csv</a>
+          <br/><small class="text-muted nowrap">md5:e5b8200f04b1b54f63d61b02dc4fc76f <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="This is the file fingerprint (MD5 checksum), which can be used to verify the file integrity."></i></small>
+        </td>
+        <td class="nowrap">20.4 MB</td>
+        <td class="nowrap"><span class="pull-right"><button class="btn preview-link btn-xs btn-default" data-filename="trialstreamer-update-pubmed-2020-08-03.csv"><i class="fa fa-eye"></i> Preview</button> <a class="btn btn-xs btn-default" href="/record/5153084/files/trialstreamer-update-pubmed-2020-08-03.csv?download=1"><i class="fa fa-download"></i> Download</a></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="filename" href="/record/5153084/files/trialstreamer-update-pubmed-2020-08-10.csv?download=1">trialstreamer-update-pubmed-2020-08-10.csv</a>
+          <br/><small class="text-muted nowrap">md5:e6676a2f674cc8d4aaa42f1d111a3473 <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="This is the file fingerprint (MD5 checksum), which can be used to verify the file integrity."></i></small>
+        </td>
+        <td class="nowrap">19.0 MB</td>
+        <td class="nowrap"><span class="pull-right"><button class="btn preview-link btn-xs btn-default" data-filename="trialstreamer-update-pubmed-2020-08-10.csv"><i class="fa fa-eye"></i> Preview</button> <a class="btn btn-xs btn-default" href="/record/5153084/files/trialstreamer-update-pubmed-2020-08-10.csv?download=1"><i class="fa fa-download"></i> Download</a></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="filename" href="/record/5153084/files/trialstreamer-update-pubmed-2020-08-17.csv?download=1">trialstreamer-update-pubmed-2020-08-17.csv</a>
+          <br/><small class="text-muted nowrap">md5:a628cc9103cbfd53da5adb17ca2f0141 <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="This is the file fingerprint (MD5 checksum), which can be used to verify the file integrity."></i></small>
+        </td>
+        <td class="nowrap">17.2 MB</td>
+        <td class="nowrap"><span class="pull-right"><button class="btn preview-link btn-xs btn-default" data-filename="trialstreamer-update-pubmed-2020-08-17.csv"><i class="fa fa-eye"></i> Preview</button> <a class="btn btn-xs btn-default" href="/record/5153084/files/trialstreamer-update-pubmed-2020-08-17.csv?download=1"><i class="fa fa-download"></i> Download</a></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="filename" href="/record/5153084/files/trialstreamer-update-pubmed-2020-08-24.csv?download=1">trialstreamer-update-pubmed-2020-08-24.csv</a>
+          <br/><small class="text-muted nowrap">md5:d8056d9820d6994942ec0bec99e2fb7d <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="This is the file fingerprint (MD5 checksum), which can be used to verify the file integrity."></i></small>
+        </td>
+        <td class="nowrap">19.5 MB</td>
+        <td class="nowrap"><span class="pull-right"><button class="btn preview-link btn-xs btn-default" data-filename="trialstreamer-update-pubmed-2020-08-24.csv"><i class="fa fa-eye"></i> Preview</button> <a class="btn btn-xs btn-default" href="/record/5153084/files/trialstreamer-update-pubmed-2020-08-24.csv?download=1"><i class="fa fa-download"></i> Download</a></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="filename" href="/record/5153084/files/trialstreamer-update-pubmed-2020-08-31.csv?download=1">trialstreamer-update-pubmed-2020-08-31.csv</a>
+          <br/><small class="text-muted nowrap">md5:8f3a995a7fb60333f6b39498cbe5dbaa <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="This is the file fingerprint (MD5 checksum), which can be used to verify the file integrity."></i></small>
+        </td>
+        <td class="nowrap">19.0 MB</td>
+        <td class="nowrap"><span class="pull-right"><button class="btn preview-link btn-xs btn-default" data-filename="trialstreamer-update-pubmed-2020-08-31.csv"><i class="fa fa-eye"></i> Preview</button> <a class="btn btn-xs btn-default" href="/record/5153084/files/trialstreamer-update-pubmed-2020-08-31.csv?download=1"><i class="fa fa-download"></i> Download</a></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="filename" href="/record/5153084/files/trialstreamer-update-pubmed-2020-09-07.csv?download=1">trialstreamer-update-pubmed-2020-09-07.csv</a>
+          <br/><small class="text-muted nowrap">md5:50bcd5598615d0f279bb45a421f048c4 <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="This is the file fingerprint (MD5 checksum), which can be used to verify the file integrity."></i></small>
+        </td>
+        <td class="nowrap">21.9 MB</td>
+        <td class="nowrap"><span class="pull-right"><button class="btn preview-link btn-xs btn-default" data-filename="trialstreamer-update-pubmed-2020-09-07.csv"><i class="fa fa-eye"></i> Preview</button> <a class="btn btn-xs btn-default" href="/record/5153084/files/trialstreamer-update-pubmed-2020-09-07.csv?download=1"><i class="fa fa-download"></i> Download</a></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="filename" href="/record/5153084/files/trialstreamer-update-pubmed-2020-09-14.csv?download=1">trialstreamer-update-pubmed-2020-09-14.csv</a>
+          <br/><small class="text-muted nowrap">md5:ed7b89cab931963d3d8cf8b9edab8b4b <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="This is the file fingerprint (MD5 checksum), which can be used to verify the file integrity."></i></small>
+        </td>
+        <td class="nowrap">19.8 MB</td>
+        <td class="nowrap"><span class="pull-right"><button class="btn preview-link btn-xs btn-default" data-filename="trialstreamer-update-pubmed-2020-09-14.csv"><i class="fa fa-eye"></i> Preview</button> <a class="btn btn-xs btn-default" href="/record/5153084/files/trialstreamer-update-pubmed-2020-09-14.csv?download=1"><i class="fa fa-download"></i> Download</a></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="filename" href="/record/5153084/files/trialstreamer-update-pubmed-2020-09-21.csv?download=1">trialstreamer-update-pubmed-2020-09-21.csv</a>
+          <br/><small class="text-muted nowrap">md5:f9c412373ee3ddb49cdf695061142c87 <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="This is the file fingerprint (MD5 checksum), which can be used to verify the file integrity."></i></small>
+        </td>
+        <td class="nowrap">20.5 MB</td>
+        <td class="nowrap"><span class="pull-right"><button class="btn preview-link btn-xs btn-default" data-filename="trialstreamer-update-pubmed-2020-09-21.csv"><i class="fa fa-eye"></i> Preview</button> <a class="btn btn-xs btn-default" href="/record/5153084/files/trialstreamer-update-pubmed-2020-09-21.csv?download=1"><i class="fa fa-download"></i> Download</a></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="filename" href="/record/5153084/files/trialstreamer-update-pubmed-2020-09-28.csv?download=1">trialstreamer-update-pubmed-2020-09-28.csv</a>
+          <br/><small class="text-muted nowrap">md5:42b7e96da3e75b4fe379bdb8d0abc52b <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="This is the file fingerprint (MD5 checksum), which can be used to verify the file integrity."></i></small>
+        </td>
+        <td class="nowrap">19.4 MB</td>
+        <td class="nowrap"><span class="pull-right"><button class="btn preview-link btn-xs btn-default" data-filename="trialstreamer-update-pubmed-2020-09-28.csv"><i class="fa fa-eye"></i> Preview</button> <a class="btn btn-xs btn-default" href="/record/5153084/files/trialstreamer-update-pubmed-2020-09-28.csv?download=1"><i class="fa fa-download"></i> Download</a></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="filename" href="/record/5153084/files/trialstreamer-update-pubmed-2020-10-05.csv?download=1">trialstreamer-update-pubmed-2020-10-05.csv</a>
+          <br/><small class="text-muted nowrap">md5:0925bd13e8b492c23d45dbc033aaca5f <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="This is the file fingerprint (MD5 checksum), which can be used to verify the file integrity."></i></small>
+        </td>
+        <td class="nowrap">223.4 MB</td>
+        <td class="nowrap"><span class="pull-right"><button class="btn preview-link btn-xs btn-default" data-filename="trialstreamer-update-pubmed-2020-10-05.csv"><i class="fa fa-eye"></i> Preview</button> <a class="btn btn-xs btn-default" href="/record/5153084/files/trialstreamer-update-pubmed-2020-10-05.csv?download=1"><i class="fa fa-download"></i> Download</a></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="filename" href="/record/5153084/files/trialstreamer-update-pubmed-2020-10-12.csv?download=1">trialstreamer-update-pubmed-2020-10-12.csv</a>
+          <br/><small class="text-muted nowrap">md5:79b1bae01c17c6a7e11969f4d0fc9fe2 <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="This is the file fingerprint (MD5 checksum), which can be used to verify the file integrity."></i></small>
+        </td>
+        <td class="nowrap">21.1 MB</td>
+        <td class="nowrap"><span class="pull-right"><button class="btn preview-link btn-xs btn-default" data-filename="trialstreamer-update-pubmed-2020-10-12.csv"><i class="fa fa-eye"></i> Preview</button> <a class="btn btn-xs btn-default" href="/record/5153084/files/trialstreamer-update-pubmed-2020-10-12.csv?download=1"><i class="fa fa-download"></i> Download</a></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="filename" href="/record/5153084/files/trialstreamer-update-pubmed-2020-10-19.csv?download=1">trialstreamer-update-pubmed-2020-10-19.csv</a>
+          <br/><small class="text-muted nowrap">md5:eca79fd69a1a6165823c0b9c8020fb19 <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="This is the file fingerprint (MD5 checksum), which can be used to verify the file integrity."></i></small>
+        </td>
+        <td class="nowrap">19.3 MB</td>
+        <td class="nowrap"><span class="pull-right"><button class="btn preview-link btn-xs btn-default" data-filename="trialstreamer-update-pubmed-2020-10-19.csv"><i class="fa fa-eye"></i> Preview</button> <a class="btn btn-xs btn-default" href="/record/5153084/files/trialstreamer-update-pubmed-2020-10-19.csv?download=1"><i class="fa fa-download"></i> Download</a></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="filename" href="/record/5153084/files/trialstreamer-update-pubmed-2020-10-26.csv?download=1">trialstreamer-update-pubmed-2020-10-26.csv</a>
+          <br/><small class="text-muted nowrap">md5:9ffbd0ba81d96a8f632e443f373a3955 <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="This is the file fingerprint (MD5 checksum), which can be used to verify the file integrity."></i></small>
+        </td>
+        <td class="nowrap">22.9 MB</td>
+        <td class="nowrap"><span class="pull-right"><button class="btn preview-link btn-xs btn-default" data-filename="trialstreamer-update-pubmed-2020-10-26.csv"><i class="fa fa-eye"></i> Preview</button> <a class="btn btn-xs btn-default" href="/record/5153084/files/trialstreamer-update-pubmed-2020-10-26.csv?download=1"><i class="fa fa-download"></i> Download</a></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="filename" href="/record/5153084/files/trialstreamer-update-pubmed-2020-11-02.csv?download=1">trialstreamer-update-pubmed-2020-11-02.csv</a>
+          <br/><small class="text-muted nowrap">md5:876f155c238448e330178af2eaf4c9dd <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="This is the file fingerprint (MD5 checksum), which can be used to verify the file integrity."></i></small>
+        </td>
+        <td class="nowrap">20.6 MB</td>
+        <td class="nowrap"><span class="pull-right"><button class="btn preview-link btn-xs btn-default" data-filename="trialstreamer-update-pubmed-2020-11-02.csv"><i class="fa fa-eye"></i> Preview</button> <a class="btn btn-xs btn-default" href="/record/5153084/files/trialstreamer-update-pubmed-2020-11-02.csv?download=1"><i class="fa fa-download"></i> Download</a></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="filename" href="/record/5153084/files/trialstreamer-update-pubmed-2020-11-09.csv?download=1">trialstreamer-update-pubmed-2020-11-09.csv</a>
+          <br/><small class="text-muted nowrap">md5:b497a21adf8e2c3e60226cf79272335c <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="This is the file fingerprint (MD5 checksum), which can be used to verify the file integrity."></i></small>
+        </td>
+        <td class="nowrap">20.2 MB</td>
+        <td class="nowrap"><span class="pull-right"><button class="btn preview-link btn-xs btn-default" data-filename="trialstreamer-update-pubmed-2020-11-09.csv"><i class="fa fa-eye"></i> Preview</button> <a class="btn btn-xs btn-default" href="/record/5153084/files/trialstreamer-update-pubmed-2020-11-09.csv?download=1"><i class="fa fa-download"></i> Download</a></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="filename" href="/record/5153084/files/trialstreamer-update-pubmed-2020-11-16.csv?download=1">trialstreamer-update-pubmed-2020-11-16.csv</a>
+          <br/><small class="text-muted nowrap">md5:9b31f834808986663f7d625c194e8dde <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="This is the file fingerprint (MD5 checksum), which can be used to verify the file integrity."></i></small>
+        </td>
+        <td class="nowrap">20.6 MB</td>
+        <td class="nowrap"><span class="pull-right"><button class="btn preview-link btn-xs btn-default" data-filename="trialstreamer-update-pubmed-2020-11-16.csv"><i class="fa fa-eye"></i> Preview</button> <a class="btn btn-xs btn-default" href="/record/5153084/files/trialstreamer-update-pubmed-2020-11-16.csv?download=1"><i class="fa fa-download"></i> Download</a></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="filename" href="/record/5153084/files/trialstreamer-update-pubmed-2020-11-23.csv?download=1">trialstreamer-update-pubmed-2020-11-23.csv</a>
+          <br/><small class="text-muted nowrap">md5:1c06c07e2fa5ac368fab737615905fcf <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="This is the file fingerprint (MD5 checksum), which can be used to verify the file integrity."></i></small>
+        </td>
+        <td class="nowrap">22.7 MB</td>
+        <td class="nowrap"><span class="pull-right"><button class="btn preview-link btn-xs btn-default" data-filename="trialstreamer-update-pubmed-2020-11-23.csv"><i class="fa fa-eye"></i> Preview</button> <a class="btn btn-xs btn-default" href="/record/5153084/files/trialstreamer-update-pubmed-2020-11-23.csv?download=1"><i class="fa fa-download"></i> Download</a></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="filename" href="/record/5153084/files/trialstreamer-update-pubmed-2020-11-30.csv?download=1">trialstreamer-update-pubmed-2020-11-30.csv</a>
+          <br/><small class="text-muted nowrap">md5:03bc6a3557f577c5457d98f25af1fa89 <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="This is the file fingerprint (MD5 checksum), which can be used to verify the file integrity."></i></small>
+        </td>
+        <td class="nowrap">19.6 MB</td>
+        <td class="nowrap"><span class="pull-right"><button class="btn preview-link btn-xs btn-default" data-filename="trialstreamer-update-pubmed-2020-11-30.csv"><i class="fa fa-eye"></i> Preview</button> <a class="btn btn-xs btn-default" href="/record/5153084/files/trialstreamer-update-pubmed-2020-11-30.csv?download=1"><i class="fa fa-download"></i> Download</a></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="filename" href="/record/5153084/files/trialstreamer-update-pubmed-2020-12-07.csv?download=1">trialstreamer-update-pubmed-2020-12-07.csv</a>
+          <br/><small class="text-muted nowrap">md5:f3c3273767a7d06490b9fdb00130f6db <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="This is the file fingerprint (MD5 checksum), which can be used to verify the file integrity."></i></small>
+        </td>
+        <td class="nowrap">20.6 MB</td>
+        <td class="nowrap"><span class="pull-right"><button class="btn preview-link btn-xs btn-default" data-filename="trialstreamer-update-pubmed-2020-12-07.csv"><i class="fa fa-eye"></i> Preview</button> <a class="btn btn-xs btn-default" href="/record/5153084/files/trialstreamer-update-pubmed-2020-12-07.csv?download=1"><i class="fa fa-download"></i> Download</a></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="filename" href="/record/5153084/files/trialstreamer-update-pubmed-2020-12-14.csv?download=1">trialstreamer-update-pubmed-2020-12-14.csv</a>
+          <br/><small class="text-muted nowrap">md5:8c153cd3b98ff112735e3bce21de04d7 <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="This is the file fingerprint (MD5 checksum), which can be used to verify the file integrity."></i></small>
+        </td>
+        <td class="nowrap">20.9 MB</td>
+        <td class="nowrap"><span class="pull-right"><button class="btn preview-link btn-xs btn-default" data-filename="trialstreamer-update-pubmed-2020-12-14.csv"><i class="fa fa-eye"></i> Preview</button> <a class="btn btn-xs btn-default" href="/record/5153084/files/trialstreamer-update-pubmed-2020-12-14.csv?download=1"><i class="fa fa-download"></i> Download</a></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="filename" href="/record/5153084/files/trialstreamer-update-pubmed-2020-12-28.csv?download=1">trialstreamer-update-pubmed-2020-12-28.csv</a>
+          <br/><small class="text-muted nowrap">md5:b600d707d4f91b9a34747adb879c66a7 <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="This is the file fingerprint (MD5 checksum), which can be used to verify the file integrity."></i></small>
+        </td>
+        <td class="nowrap">37.0 MB</td>
+        <td class="nowrap"><span class="pull-right"><button class="btn preview-link btn-xs btn-default" data-filename="trialstreamer-update-pubmed-2020-12-28.csv"><i class="fa fa-eye"></i> Preview</button> <a class="btn btn-xs btn-default" href="/record/5153084/files/trialstreamer-update-pubmed-2020-12-28.csv?download=1"><i class="fa fa-download"></i> Download</a></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="filename" href="/record/5153084/files/trialstreamer-update-pubmed-2021-01-04.csv?download=1">trialstreamer-update-pubmed-2021-01-04.csv</a>
+          <br/><small class="text-muted nowrap">md5:09d5dd9bfce150376a118447496d9b6b <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="This is the file fingerprint (MD5 checksum), which can be used to verify the file integrity."></i></small>
+        </td>
+        <td class="nowrap">179 Bytes</td>
+        <td class="nowrap"><span class="pull-right"><button class="btn preview-link btn-xs btn-default" data-filename="trialstreamer-update-pubmed-2021-01-04.csv"><i class="fa fa-eye"></i> Preview</button> <a class="btn btn-xs btn-default" href="/record/5153084/files/trialstreamer-update-pubmed-2021-01-04.csv?download=1"><i class="fa fa-download"></i> Download</a></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="filename" href="/record/5153084/files/trialstreamer-update-pubmed-2021-01-11.csv?download=1">trialstreamer-update-pubmed-2021-01-11.csv</a>
+          <br/><small class="text-muted nowrap">md5:096f978ce8484dfd1052f635f1bfef19 <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="This is the file fingerprint (MD5 checksum), which can be used to verify the file integrity."></i></small>
+        </td>
+        <td class="nowrap">111.9 MB</td>
+        <td class="nowrap"><span class="pull-right"><button class="btn preview-link btn-xs btn-default" data-filename="trialstreamer-update-pubmed-2021-01-11.csv"><i class="fa fa-eye"></i> Preview</button> <a class="btn btn-xs btn-default" href="/record/5153084/files/trialstreamer-update-pubmed-2021-01-11.csv?download=1"><i class="fa fa-download"></i> Download</a></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="filename" href="/record/5153084/files/trialstreamer-update-pubmed-2021-01-18.csv?download=1">trialstreamer-update-pubmed-2021-01-18.csv</a>
+          <br/><small class="text-muted nowrap">md5:09d5dd9bfce150376a118447496d9b6b <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="This is the file fingerprint (MD5 checksum), which can be used to verify the file integrity."></i></small>
+        </td>
+        <td class="nowrap">179 Bytes</td>
+        <td class="nowrap"><span class="pull-right"><button class="btn preview-link btn-xs btn-default" data-filename="trialstreamer-update-pubmed-2021-01-18.csv"><i class="fa fa-eye"></i> Preview</button> <a class="btn btn-xs btn-default" href="/record/5153084/files/trialstreamer-update-pubmed-2021-01-18.csv?download=1"><i class="fa fa-download"></i> Download</a></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="filename" href="/record/5153084/files/trialstreamer-update-pubmed-2021-01-25.csv?download=1">trialstreamer-update-pubmed-2021-01-25.csv</a>
+          <br/><small class="text-muted nowrap">md5:09d5dd9bfce150376a118447496d9b6b <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="This is the file fingerprint (MD5 checksum), which can be used to verify the file integrity."></i></small>
+        </td>
+        <td class="nowrap">179 Bytes</td>
+        <td class="nowrap"><span class="pull-right"><button class="btn preview-link btn-xs btn-default" data-filename="trialstreamer-update-pubmed-2021-01-25.csv"><i class="fa fa-eye"></i> Preview</button> <a class="btn btn-xs btn-default" href="/record/5153084/files/trialstreamer-update-pubmed-2021-01-25.csv?download=1"><i class="fa fa-download"></i> Download</a></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="filename" href="/record/5153084/files/trialstreamer-update-pubmed-2021-02-01.csv?download=1">trialstreamer-update-pubmed-2021-02-01.csv</a>
+          <br/><small class="text-muted nowrap">md5:36b2b135d42ed6da87288590bf0321b2 <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="This is the file fingerprint (MD5 checksum), which can be used to verify the file integrity."></i></small>
+        </td>
+        <td class="nowrap">71.0 MB</td>
+        <td class="nowrap"><span class="pull-right"><button class="btn preview-link btn-xs btn-default" data-filename="trialstreamer-update-pubmed-2021-02-01.csv"><i class="fa fa-eye"></i> Preview</button> <a class="btn btn-xs btn-default" href="/record/5153084/files/trialstreamer-update-pubmed-2021-02-01.csv?download=1"><i class="fa fa-download"></i> Download</a></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="filename" href="/record/5153084/files/trialstreamer-update-pubmed-2021-02-08.csv?download=1">trialstreamer-update-pubmed-2021-02-08.csv</a>
+          <br/><small class="text-muted nowrap">md5:47d2cdc0a3af7418091ed62f6e7791d5 <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="This is the file fingerprint (MD5 checksum), which can be used to verify the file integrity."></i></small>
+        </td>
+        <td class="nowrap">5.2 MB</td>
+        <td class="nowrap"><span class="pull-right"><button class="btn preview-link btn-xs btn-default" data-filename="trialstreamer-update-pubmed-2021-02-08.csv"><i class="fa fa-eye"></i> Preview</button> <a class="btn btn-xs btn-default" href="/record/5153084/files/trialstreamer-update-pubmed-2021-02-08.csv?download=1"><i class="fa fa-download"></i> Download</a></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="filename" href="/record/5153084/files/trialstreamer-update-pubmed-2021-02-15.csv?download=1">trialstreamer-update-pubmed-2021-02-15.csv</a>
+          <br/><small class="text-muted nowrap">md5:8e312d798d186d52ac7eec3ab6c91a4c <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="This is the file fingerprint (MD5 checksum), which can be used to verify the file integrity."></i></small>
+        </td>
+        <td class="nowrap">48.7 MB</td>
+        <td class="nowrap"><span class="pull-right"><button class="btn preview-link btn-xs btn-default" data-filename="trialstreamer-update-pubmed-2021-02-15.csv"><i class="fa fa-eye"></i> Preview</button> <a class="btn btn-xs btn-default" href="/record/5153084/files/trialstreamer-update-pubmed-2021-02-15.csv?download=1"><i class="fa fa-download"></i> Download</a></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="filename" href="/record/5153084/files/trialstreamer-update-pubmed-2021-02-22.csv?download=1">trialstreamer-update-pubmed-2021-02-22.csv</a>
+          <br/><small class="text-muted nowrap">md5:1f4913cf3c30ef8235cd3c845e5c5cff <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="This is the file fingerprint (MD5 checksum), which can be used to verify the file integrity."></i></small>
+        </td>
+        <td class="nowrap">9.3 MB</td>
+        <td class="nowrap"><span class="pull-right"><button class="btn preview-link btn-xs btn-default" data-filename="trialstreamer-update-pubmed-2021-02-22.csv"><i class="fa fa-eye"></i> Preview</button> <a class="btn btn-xs btn-default" href="/record/5153084/files/trialstreamer-update-pubmed-2021-02-22.csv?download=1"><i class="fa fa-download"></i> Download</a></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="filename" href="/record/5153084/files/trialstreamer-update-pubmed-2021-03-01.csv?download=1">trialstreamer-update-pubmed-2021-03-01.csv</a>
+          <br/><small class="text-muted nowrap">md5:e54efcecde551861fc5d65e379fce2e0 <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="This is the file fingerprint (MD5 checksum), which can be used to verify the file integrity."></i></small>
+        </td>
+        <td class="nowrap">32.5 MB</td>
+        <td class="nowrap"><span class="pull-right"><button class="btn preview-link btn-xs btn-default" data-filename="trialstreamer-update-pubmed-2021-03-01.csv"><i class="fa fa-eye"></i> Preview</button> <a class="btn btn-xs btn-default" href="/record/5153084/files/trialstreamer-update-pubmed-2021-03-01.csv?download=1"><i class="fa fa-download"></i> Download</a></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="filename" href="/record/5153084/files/trialstreamer-update-pubmed-2021-03-08.csv?download=1">trialstreamer-update-pubmed-2021-03-08.csv</a>
+          <br/><small class="text-muted nowrap">md5:2cc279852b7d18b36463a34382bacc9c <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="This is the file fingerprint (MD5 checksum), which can be used to verify the file integrity."></i></small>
+        </td>
+        <td class="nowrap">29.4 MB</td>
+        <td class="nowrap"><span class="pull-right"><button class="btn preview-link btn-xs btn-default" data-filename="trialstreamer-update-pubmed-2021-03-08.csv"><i class="fa fa-eye"></i> Preview</button> <a class="btn btn-xs btn-default" href="/record/5153084/files/trialstreamer-update-pubmed-2021-03-08.csv?download=1"><i class="fa fa-download"></i> Download</a></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="filename" href="/record/5153084/files/trialstreamer-update-pubmed-2021-03-15.csv?download=1">trialstreamer-update-pubmed-2021-03-15.csv</a>
+          <br/><small class="text-muted nowrap">md5:08cdde73e0bdb878c0dbe5e3ee680e28 <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="This is the file fingerprint (MD5 checksum), which can be used to verify the file integrity."></i></small>
+        </td>
+        <td class="nowrap">10.4 MB</td>
+        <td class="nowrap"><span class="pull-right"><button class="btn preview-link btn-xs btn-default" data-filename="trialstreamer-update-pubmed-2021-03-15.csv"><i class="fa fa-eye"></i> Preview</button> <a class="btn btn-xs btn-default" href="/record/5153084/files/trialstreamer-update-pubmed-2021-03-15.csv?download=1"><i class="fa fa-download"></i> Download</a></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="filename" href="/record/5153084/files/trialstreamer-update-pubmed-2021-03-22.csv?download=1">trialstreamer-update-pubmed-2021-03-22.csv</a>
+          <br/><small class="text-muted nowrap">md5:09d5dd9bfce150376a118447496d9b6b <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="This is the file fingerprint (MD5 checksum), which can be used to verify the file integrity."></i></small>
+        </td>
+        <td class="nowrap">179 Bytes</td>
+        <td class="nowrap"><span class="pull-right"><button class="btn preview-link btn-xs btn-default" data-filename="trialstreamer-update-pubmed-2021-03-22.csv"><i class="fa fa-eye"></i> Preview</button> <a class="btn btn-xs btn-default" href="/record/5153084/files/trialstreamer-update-pubmed-2021-03-22.csv?download=1"><i class="fa fa-download"></i> Download</a></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="filename" href="/record/5153084/files/trialstreamer-update-pubmed-2021-03-29.csv?download=1">trialstreamer-update-pubmed-2021-03-29.csv</a>
+          <br/><small class="text-muted nowrap">md5:bd9d6332662b0006a9955a98dc5a1725 <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="This is the file fingerprint (MD5 checksum), which can be used to verify the file integrity."></i></small>
+        </td>
+        <td class="nowrap">56.5 MB</td>
+        <td class="nowrap"><span class="pull-right"><button class="btn preview-link btn-xs btn-default" data-filename="trialstreamer-update-pubmed-2021-03-29.csv"><i class="fa fa-eye"></i> Preview</button> <a class="btn btn-xs btn-default" href="/record/5153084/files/trialstreamer-update-pubmed-2021-03-29.csv?download=1"><i class="fa fa-download"></i> Download</a></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="filename" href="/record/5153084/files/trialstreamer-update-pubmed-2021-04-05.csv?download=1">trialstreamer-update-pubmed-2021-04-05.csv</a>
+          <br/><small class="text-muted nowrap">md5:3221e180e550f99b6477e126f4dc0739 <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="This is the file fingerprint (MD5 checksum), which can be used to verify the file integrity."></i></small>
+        </td>
+        <td class="nowrap">4.1 MB</td>
+        <td class="nowrap"><span class="pull-right"><button class="btn preview-link btn-xs btn-default" data-filename="trialstreamer-update-pubmed-2021-04-05.csv"><i class="fa fa-eye"></i> Preview</button> <a class="btn btn-xs btn-default" href="/record/5153084/files/trialstreamer-update-pubmed-2021-04-05.csv?download=1"><i class="fa fa-download"></i> Download</a></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="filename" href="/record/5153084/files/trialstreamer-update-pubmed-2021-04-12.csv?download=1">trialstreamer-update-pubmed-2021-04-12.csv</a>
+          <br/><small class="text-muted nowrap">md5:9e34798ebaabe2662a57e2b4fcaecb97 <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="This is the file fingerprint (MD5 checksum), which can be used to verify the file integrity."></i></small>
+        </td>
+        <td class="nowrap">30.9 MB</td>
+        <td class="nowrap"><span class="pull-right"><button class="btn preview-link btn-xs btn-default" data-filename="trialstreamer-update-pubmed-2021-04-12.csv"><i class="fa fa-eye"></i> Preview</button> <a class="btn btn-xs btn-default" href="/record/5153084/files/trialstreamer-update-pubmed-2021-04-12.csv?download=1"><i class="fa fa-download"></i> Download</a></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="filename" href="/record/5153084/files/trialstreamer-update-pubmed-2021-04-19.csv?download=1">trialstreamer-update-pubmed-2021-04-19.csv</a>
+          <br/><small class="text-muted nowrap">md5:c93912dae0800bee23b0835b422c2e3d <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="This is the file fingerprint (MD5 checksum), which can be used to verify the file integrity."></i></small>
+        </td>
+        <td class="nowrap">26.7 MB</td>
+        <td class="nowrap"><span class="pull-right"><button class="btn preview-link btn-xs btn-default" data-filename="trialstreamer-update-pubmed-2021-04-19.csv"><i class="fa fa-eye"></i> Preview</button> <a class="btn btn-xs btn-default" href="/record/5153084/files/trialstreamer-update-pubmed-2021-04-19.csv?download=1"><i class="fa fa-download"></i> Download</a></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="filename" href="/record/5153084/files/trialstreamer-update-pubmed-2021-04-26.csv?download=1">trialstreamer-update-pubmed-2021-04-26.csv</a>
+          <br/><small class="text-muted nowrap">md5:09d5dd9bfce150376a118447496d9b6b <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="This is the file fingerprint (MD5 checksum), which can be used to verify the file integrity."></i></small>
+        </td>
+        <td class="nowrap">179 Bytes</td>
+        <td class="nowrap"><span class="pull-right"><button class="btn preview-link btn-xs btn-default" data-filename="trialstreamer-update-pubmed-2021-04-26.csv"><i class="fa fa-eye"></i> Preview</button> <a class="btn btn-xs btn-default" href="/record/5153084/files/trialstreamer-update-pubmed-2021-04-26.csv?download=1"><i class="fa fa-download"></i> Download</a></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="filename" href="/record/5153084/files/trialstreamer-update-pubmed-2021-05-03.csv?download=1">trialstreamer-update-pubmed-2021-05-03.csv</a>
+          <br/><small class="text-muted nowrap">md5:4370467ec2048182f44f17251b3b8184 <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="This is the file fingerprint (MD5 checksum), which can be used to verify the file integrity."></i></small>
+        </td>
+        <td class="nowrap">44.8 MB</td>
+        <td class="nowrap"><span class="pull-right"><button class="btn preview-link btn-xs btn-default" data-filename="trialstreamer-update-pubmed-2021-05-03.csv"><i class="fa fa-eye"></i> Preview</button> <a class="btn btn-xs btn-default" href="/record/5153084/files/trialstreamer-update-pubmed-2021-05-03.csv?download=1"><i class="fa fa-download"></i> Download</a></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="filename" href="/record/5153084/files/trialstreamer-update-pubmed-2021-05-10.csv?download=1">trialstreamer-update-pubmed-2021-05-10.csv</a>
+          <br/><small class="text-muted nowrap">md5:f8feb541124af33b8f2e1772159d0461 <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="This is the file fingerprint (MD5 checksum), which can be used to verify the file integrity."></i></small>
+        </td>
+        <td class="nowrap">23.8 MB</td>
+        <td class="nowrap"><span class="pull-right"><button class="btn preview-link btn-xs btn-default" data-filename="trialstreamer-update-pubmed-2021-05-10.csv"><i class="fa fa-eye"></i> Preview</button> <a class="btn btn-xs btn-default" href="/record/5153084/files/trialstreamer-update-pubmed-2021-05-10.csv?download=1"><i class="fa fa-download"></i> Download</a></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="filename" href="/record/5153084/files/trialstreamer-update-pubmed-2021-05-17.csv?download=1">trialstreamer-update-pubmed-2021-05-17.csv</a>
+          <br/><small class="text-muted nowrap">md5:f1377997f9e6dd12a45dc02d858f1eb4 <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="This is the file fingerprint (MD5 checksum), which can be used to verify the file integrity."></i></small>
+        </td>
+        <td class="nowrap">34.8 MB</td>
+        <td class="nowrap"><span class="pull-right"><button class="btn preview-link btn-xs btn-default" data-filename="trialstreamer-update-pubmed-2021-05-17.csv"><i class="fa fa-eye"></i> Preview</button> <a class="btn btn-xs btn-default" href="/record/5153084/files/trialstreamer-update-pubmed-2021-05-17.csv?download=1"><i class="fa fa-download"></i> Download</a></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="filename" href="/record/5153084/files/trialstreamer-update-pubmed-2021-05-31.csv?download=1">trialstreamer-update-pubmed-2021-05-31.csv</a>
+          <br/><small class="text-muted nowrap">md5:d6f3eee12d191001322c05a792bcc9e6 <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="This is the file fingerprint (MD5 checksum), which can be used to verify the file integrity."></i></small>
+        </td>
+        <td class="nowrap">24.1 MB</td>
+        <td class="nowrap"><span class="pull-right"><button class="btn preview-link btn-xs btn-default" data-filename="trialstreamer-update-pubmed-2021-05-31.csv"><i class="fa fa-eye"></i> Preview</button> <a class="btn btn-xs btn-default" href="/record/5153084/files/trialstreamer-update-pubmed-2021-05-31.csv?download=1"><i class="fa fa-download"></i> Download</a></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="filename" href="/record/5153084/files/trialstreamer-update-pubmed-2021-06-07.csv?download=1">trialstreamer-update-pubmed-2021-06-07.csv</a>
+          <br/><small class="text-muted nowrap">md5:157aa7483e64b705a0285ad05131daeb <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="This is the file fingerprint (MD5 checksum), which can be used to verify the file integrity."></i></small>
+        </td>
+        <td class="nowrap">32.0 MB</td>
+        <td class="nowrap"><span class="pull-right"><button class="btn preview-link btn-xs btn-default" data-filename="trialstreamer-update-pubmed-2021-06-07.csv"><i class="fa fa-eye"></i> Preview</button> <a class="btn btn-xs btn-default" href="/record/5153084/files/trialstreamer-update-pubmed-2021-06-07.csv?download=1"><i class="fa fa-download"></i> Download</a></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="filename" href="/record/5153084/files/trialstreamer-update-pubmed-2021-06-14.csv?download=1">trialstreamer-update-pubmed-2021-06-14.csv</a>
+          <br/><small class="text-muted nowrap">md5:c80c28e5520fdbd439f15c981e3d8df1 <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="This is the file fingerprint (MD5 checksum), which can be used to verify the file integrity."></i></small>
+        </td>
+        <td class="nowrap">33.1 MB</td>
+        <td class="nowrap"><span class="pull-right"><button class="btn preview-link btn-xs btn-default" data-filename="trialstreamer-update-pubmed-2021-06-14.csv"><i class="fa fa-eye"></i> Preview</button> <a class="btn btn-xs btn-default" href="/record/5153084/files/trialstreamer-update-pubmed-2021-06-14.csv?download=1"><i class="fa fa-download"></i> Download</a></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="filename" href="/record/5153084/files/trialstreamer-update-pubmed-2021-06-21.csv?download=1">trialstreamer-update-pubmed-2021-06-21.csv</a>
+          <br/><small class="text-muted nowrap">md5:dce100d70d78cb69421a19bfb751ebbb <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="This is the file fingerprint (MD5 checksum), which can be used to verify the file integrity."></i></small>
+        </td>
+        <td class="nowrap">26.1 MB</td>
+        <td class="nowrap"><span class="pull-right"><button class="btn preview-link btn-xs btn-default" data-filename="trialstreamer-update-pubmed-2021-06-21.csv"><i class="fa fa-eye"></i> Preview</button> <a class="btn btn-xs btn-default" href="/record/5153084/files/trialstreamer-update-pubmed-2021-06-21.csv?download=1"><i class="fa fa-download"></i> Download</a></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="filename" href="/record/5153084/files/trialstreamer-update-pubmed-2021-06-28.csv?download=1">trialstreamer-update-pubmed-2021-06-28.csv</a>
+          <br/><small class="text-muted nowrap">md5:627adea5785018079cb48bc2ac14c6c3 <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="This is the file fingerprint (MD5 checksum), which can be used to verify the file integrity."></i></small>
+        </td>
+        <td class="nowrap">29.7 MB</td>
+        <td class="nowrap"><span class="pull-right"><button class="btn preview-link btn-xs btn-default" data-filename="trialstreamer-update-pubmed-2021-06-28.csv"><i class="fa fa-eye"></i> Preview</button> <a class="btn btn-xs btn-default" href="/record/5153084/files/trialstreamer-update-pubmed-2021-06-28.csv?download=1"><i class="fa fa-download"></i> Download</a></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="filename" href="/record/5153084/files/trialstreamer-update-pubmed-2021-07-05.csv?download=1">trialstreamer-update-pubmed-2021-07-05.csv</a>
+          <br/><small class="text-muted nowrap">md5:bd650364441a53cf248d570607eaac10 <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="This is the file fingerprint (MD5 checksum), which can be used to verify the file integrity."></i></small>
+        </td>
+        <td class="nowrap">25.3 MB</td>
+        <td class="nowrap"><span class="pull-right"><button class="btn preview-link btn-xs btn-default" data-filename="trialstreamer-update-pubmed-2021-07-05.csv"><i class="fa fa-eye"></i> Preview</button> <a class="btn btn-xs btn-default" href="/record/5153084/files/trialstreamer-update-pubmed-2021-07-05.csv?download=1"><i class="fa fa-download"></i> Download</a></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="filename" href="/record/5153084/files/trialstreamer-update-pubmed-2021-07-12.csv?download=1">trialstreamer-update-pubmed-2021-07-12.csv</a>
+          <br/><small class="text-muted nowrap">md5:f6a9262b61a1e8c5fa91cfd16c960ba5 <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="This is the file fingerprint (MD5 checksum), which can be used to verify the file integrity."></i></small>
+        </td>
+        <td class="nowrap">20.3 MB</td>
+        <td class="nowrap"><span class="pull-right"><button class="btn preview-link btn-xs btn-default" data-filename="trialstreamer-update-pubmed-2021-07-12.csv"><i class="fa fa-eye"></i> Preview</button> <a class="btn btn-xs btn-default" href="/record/5153084/files/trialstreamer-update-pubmed-2021-07-12.csv?download=1"><i class="fa fa-download"></i> Download</a></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="filename" href="/record/5153084/files/trialstreamer-update-pubmed-2021-07-19.csv?download=1">trialstreamer-update-pubmed-2021-07-19.csv</a>
+          <br/><small class="text-muted nowrap">md5:dff4d2cf0da78be339004c76c20a3ab7 <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="This is the file fingerprint (MD5 checksum), which can be used to verify the file integrity."></i></small>
+        </td>
+        <td class="nowrap">18.8 MB</td>
+        <td class="nowrap"><span class="pull-right"><button class="btn preview-link btn-xs btn-default" data-filename="trialstreamer-update-pubmed-2021-07-19.csv"><i class="fa fa-eye"></i> Preview</button> <a class="btn btn-xs btn-default" href="/record/5153084/files/trialstreamer-update-pubmed-2021-07-19.csv?download=1"><i class="fa fa-download"></i> Download</a></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="filename" href="/record/5153084/files/trialstreamer-update-pubmed-2021-07-26.csv?download=1">trialstreamer-update-pubmed-2021-07-26.csv</a>
+          <br/><small class="text-muted nowrap">md5:1a011244b6dbe615923ab43257be6798 <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="This is the file fingerprint (MD5 checksum), which can be used to verify the file integrity."></i></small>
+        </td>
+        <td class="nowrap">22.1 MB</td>
+        <td class="nowrap"><span class="pull-right"><button class="btn preview-link btn-xs btn-default" data-filename="trialstreamer-update-pubmed-2021-07-26.csv"><i class="fa fa-eye"></i> Preview</button> <a class="btn btn-xs btn-default" href="/record/5153084/files/trialstreamer-update-pubmed-2021-07-26.csv?download=1"><i class="fa fa-download"></i> Download</a></span></td>
+      </tr>
+      <tr>
+        <td>
+          <a class="filename" href="/record/5153084/files/trialstreamer-update-pubmed-2021-08-02.csv?download=1">trialstreamer-update-pubmed-2021-08-02.csv</a>
+          <br/><small class="text-muted nowrap">md5:ff012d9015b35e417194c7d3cad4b5b1 <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="This is the file fingerprint (MD5 checksum), which can be used to verify the file integrity."></i></small>
+        </td>
+        <td class="nowrap">21.6 MB</td>
+        <td class="nowrap"><span class="pull-right"><button class="btn preview-link btn-xs btn-default" data-filename="trialstreamer-update-pubmed-2021-08-02.csv"><i class="fa fa-eye"></i> Preview</button> <a class="btn btn-xs btn-default" href="/record/5153084/files/trialstreamer-update-pubmed-2021-08-02.csv?download=1"><i class="fa fa-download"></i> Download</a></span></td>
+      </tr></tbody>
+    </table>
+  </div>
+</div>
+
+
+
+
+
+
+<div id="citations">
+  <invenio-search
+   disable-url-handler="true"
+   search-endpoint="https://zenodo-broker.web.cern.ch/api/relationships"
+   search-extra-params='{"group_by": "version", "id": "10.5281/zenodo.3767068", "page": 1, "size": 10}'
+   search-hidden-params='{"relation": "isCitedBy", "scheme": "doi"}'
+   search-headers='{"Accept": "application/json"}' >
+    <div class="panel panel-default" id="citation">
+      <div class="panel-heading">
+        <!-- Beta ribbon -->
+        <div class="row" style="margin-bottom: -15px;">
+          <div class="col-sm-1">
+            <div class="ribbon-wrapper-green">
+              <a href="https://help.zenodo.org/#citations" target="_blank" rel="noopener noreferrer">
+                <div class="corner-ribbon top-left ribbon-green">Beta</div>
+              </a>
+            </div>
+          </div>
+          <div class="col-sm-11" style="margin-top: 5px;">
+            <a class="panel-toggle" data-toggle="collapse" href="#collapseCitations" style="margin-left:-25px;">
+              Citations
+            </a>
+            <a href="https://help.zenodo.org/#citations" target="_blank" rel="noopener noreferrer">
+              <i class="fa fa-question-circle"></i>
+            </a>
+            <small class="text-muted">
+              <invenio-search-count template="/static/templates/citations/count.html">
+              </invenio-search-count>
+            </small>
+            <a class="panel-toggle" data-toggle="collapse" href="#collapseCitations" style="margin-left:-25px;">
+              <span class="pull-right show-on-collapsed"><i class="fa fa-chevron-right"></i></span>
+              <span class="pull-right hide-on-collapsed"><i class="fa fa-chevron-down"></i></span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Without beta ribbon -->
+        <!--<a class="panel-toggle" data-toggle="collapse" href="#collapseCitations">-->
+          <!--Citations-->
+          <!--<small class="text-muted">-->
+            <!--<invenio-search-count-->
+            <!--template="/static/templates/citations/count.html">-->
+            <!--</invenio-search-count>-->
+          <!--</small>-->
+          <!--<span class="pull-right show-on-collapsed"><i class="fa fa-chevron-right"></i></span>-->
+          <!--<span class="pull-right hide-on-collapsed"><i class="fa fa-chevron-down"></i></span>-->
+        <!--</a>-->
+
+      </div>
+      <div id="collapseCitations" class="collapse in">
+        <div class="search-page">
+          <div class="container-fluid facets">
+            <div class="row">
+              <div class="col-sm-9">
+                <invenio-search-facets
+                   ng-init="vm.record_id='10.5281/zenodo.5153084'; vm.version_id='10.5281/zenodo.3767068'"
+                   template="/static/templates/citations/facets.html">
+                </invenio-search-facets>
+              </div>
+              <div class="col-sm-3">
+                <invenio-search-bar
+                  template="/static/templates/invenio_search_ui/searchbar.html"
+                  placeholder="Search">
+                </invenio-search-bar>
+              </div>
+            </div>
+          </div>
+          <div class="container-fluid">
+          <invenio-search-error
+            template="/static/templates/zenodo_search_ui/error.html"
+            message="Error">
+          </invenio-search-error>
+          </div>
+          <invenio-search-results
+           template="/static/templates/citations/results.html">
+          </invenio-search-results>
+          <div class="row">
+            <div class="col-md-2 col-sm-12">
+            </div>
+            <div class="col-md-7 col-sm-12 text-center">
+              <invenio-search-pagination
+                template="/static/templates/citations/pagination.html">
+              </invenio-search-pagination>
+            </div>
+            <div class="col-md-3 col-sm-12" style="padding-top: 5px;">
+              <invenio-search-select-box
+                 sort-key="size"
+                 available-options='{
+                  "options": [
+                     {
+                       "title": "10",
+                       "value": "10"
+                     },
+                     {
+                       "title": "20",
+                       "value": "20"
+                     },
+                     {
+                       "title": "50",
+                       "value": "50"
+                     }
+                  ]}'
+                 template="/static/templates/citations/selectbox.html">
+                </invenio-search-select-box>
+            </div>
+          </div>
+      </div>
+    </div>
+    </div>
+  </invenio-search>
+</div>
+
+    </div>
+    <div class="col-sm-4 col-md-4 col-right">
+
+
+
+      
+      <div class="well"><!-- Stats -->
+<div class="row stats-box">
+  <div id="accordion">
+    <!-- Banner --><div class="row">
+      <div class="col-sm-6">
+        <span class="stats-data">615</span>
+      </div>
+      <div class="col-sm-6">
+        <span class="stats-data">1,847</span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <i class="fa fa-eye " data-toggle="tooltip" tooltip data-placement="top" title="Total views." data-original-title="Total views."></i> views
+      </div>
+      <div class="col-sm-6">
+        <i class="fa fa-download " data-toggle="tooltip" tooltip data-placement="top" title="Total downloads." data-original-title="Total downloads."></i> downloads
+      </div>
+    </div>
+
+    <!-- Collapsed details -->
+    <div id="toggle-stats" class="row">
+      <div class="col-sm-12">
+        <a style="cursor: pointer;" class="panel-toggle" data-toggle="collapse" data-target="#collapse-stats" aria-expanded="true" aria-controls="collapse-stats">
+          See more details...
+        </a>
+      </div>
+    </div>
+    <div id="collapse-stats" class="collapse" aria-labelledby="toggle-stats" data-parent="#accordion">
+      <table class="table stats-table">
+        <!-- Skip table header if no versions --><tr>
+          <th></th>
+          <th>All versions</th>
+          <th>This version</th>
+        </tr><tr>
+          <td>Views <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="Total views." data-original-title="Total views."></i></td><td>615</td><td>5</td>
+        </tr>
+        <tr>
+          <td>Downloads <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="Total downloads." data-original-title="Total downloads."></i></td><td>1,847</td><td>2</td>
+        </tr>
+        <tr>
+          <td>Data volume <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="Total download volume." data-original-title="Total download volume."></i></td><td>437.4 GB</td><td>72.5 MB</td>
+        </tr>
+        <tr>
+          <td>Unique views <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="Views in one hour user-sessions are counted only once." data-original-title="Views in one hour user-sessions are counted only once."></i></td><td>498</td><td>5</td>
+        </tr>
+        <tr>
+          <td>Unique downloads <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="Downloads in one hour user-sessions are counted only once." data-original-title="Downloads in one hour user-sessions are counted only once."></i></td><td>418</td><td>1</td>
+        </tr>
+      </table>
+      <div class="row">
+        <a href="https://help.zenodo.org/#statistics">More info on how stats are collected.</a>
+      </div>
+    </div>
+  </div>
+</div>
+      </div>
+<div class="well metadata">
+  
+    <small class="text-muted">Indexed in</small>
+    <a href="https://explore.openaire.eu/search/dataset?datasetId=r37b0ad08687::4390c0c3d496942b633e57f58f5ba409">
+      <img src="/static/img/openaire-horizontal-old.png" class="img-thumbnail" width="100%" />
+    </a>
+</div>
+      <div class="well metadata"><dl>
+    <dt>Publication date:</dt>
+    <dd>April 26, 2020</dd>
+    <dt>DOI:</dt>
+    <dd>
+      <span class="get-badge" data-toggle="`tooltip" data-placement="bottom"
+            title="Get the DOI badge!">
+        <img data-toggle="modal" data-target="[data-modal='10.5281/zenodo.5153084']"
+              src="/badge/DOI/10.5281/zenodo.5153084.svg" alt="10.5281/zenodo.5153084">
+        </img>
+      </span>
+      <div class="modal fade badge-modal" data-modal="10.5281/zenodo.5153084">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-body">
+              <h4>Zenodo DOI Badge</h4>
+              <h4>
+                  <small>DOI</small>
+              </h4>
+              <h4>
+                  <pre>10.5281/zenodo.5153084</pre>
+              </h4>
+              
+              
+    <h4>
+        <small>Markdown</small>
+    </h4>
+    <h4>
+        <pre>[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5153084.svg)](https://doi.org/10.5281/zenodo.5153084)</pre>
+    </h4>
+    <h4>
+        <small>reStructedText</small>
+    </h4>
+    <h4>
+        <pre>.. image:: https://zenodo.org/badge/DOI/10.5281/zenodo.5153084.svg
+   :target: https://doi.org/10.5281/zenodo.5153084</pre>
+    </h4>
+    <h4>
+        <small>HTML</small>
+    </h4>
+    <h4>
+      <pre>&lt;a href="https://doi.org/10.5281/zenodo.5153084"&gt;&lt;img src="https://zenodo.org/badge/DOI/10.5281/zenodo.5153084.svg" alt="DOI"&gt;&lt;/a&gt;</pre>
+    </h4>
+
+    <h4>
+        <small>Image URL</small>
+    </h4>
+    <h4>
+      <pre>https://zenodo.org/badge/DOI/10.5281/zenodo.5153084.svg</pre>
+    </h4>
+
+    <h4>
+        <small>Target URL</small>
+    </h4>
+    <h4>
+      <pre>https://doi.org/10.5281/zenodo.5153084</pre>
+    </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </dd>
+
+  
+    <dt>Grants:</dt>
+    <dd>
+        <u>Research Councils UK:</u><br />
+        <ul>
+          <li>
+          RobotReviewer: development and evaluation of a machine learning tool to speed up evidence synthesis in cardiovascular diseases (MR/N015185/1) 
+          </li>
+        </ul>
+    </dd>
+    <dt>License (for files):</dt>
+    <dd><a rel="license" href="https://creativecommons.org/publicdomain/zero/1.0/legalcode"><i class="fa fa-external-link"></i> Creative Commons Zero v1.0 Universal</a></dd>
+  </dl>
+      </div>
+  <div class="well metadata">
+    <h4>Versions</h4>
+    <table class="table">
+      <tr class="info">
+        <td>
+          <a href="/record/5153084">Version 63 </a>
+          <small class="text-muted">10.5281/zenodo.5153084</small>
+        </td>
+        <td align="right"><small class="text-muted">Apr 26, 2020</small></td>
+      </tr>
+      <tr >
+        <td>
+          <a href="/record/5137142">Version 62 </a>
+          <small class="text-muted">10.5281/zenodo.5137142</small>
+        </td>
+        <td align="right"><small class="text-muted">Apr 26, 2020</small></td>
+      </tr>
+      <tr >
+        <td>
+          <a href="/record/5112911">Version 61 </a>
+          <small class="text-muted">10.5281/zenodo.5112911</small>
+        </td>
+        <td align="right"><small class="text-muted">Apr 26, 2020</small></td>
+      </tr>
+      <tr >
+        <td>
+          <a href="/record/5081941">Version 60 </a>
+          <small class="text-muted">10.5281/zenodo.5081941</small>
+        </td>
+        <td align="right"><small class="text-muted">Apr 26, 2020</small></td>
+      </tr>
+      <tr >
+        <td>
+          <a href="/record/5069691">Version 59 </a>
+          <small class="text-muted">10.5281/zenodo.5069691</small>
+        </td>
+        <td align="right"><small class="text-muted">Apr 26, 2020</small></td>
+      </tr>
+      
+      <tr><td colspan="2" align="center"><a href="/search?q=conceptrecid%3A%223767068%22&amp;sort=-version&amp;all_versions=True"><small>View all 63 versions</small></a></tr>
+    </table>
+    <small>
+      <strong>Cite all versions?</strong> You can cite all versions by using the DOI <a href="https://doi.org/10.5281/zenodo.3767068">10.5281/zenodo.3767068</a>. This DOI represents all versions, and will always resolve to the latest one. <a href="http://help.zenodo.org/#versioning">Read more</a>.
+    </small>
+  </div>
+      <div class="well"><h4>Share</h4>
+  <!-- AddThis Button BEGIN -->
+  <div class="addthis_toolbox addthis_default_style addthis_32x32_style" addthis:url="https://doi.org/10.5281/zenodo.5153084">
+  <a class="addthis_button_mendeley"></a>
+  <a class="addthis_button_citeulike"></a>
+  <a class="addthis_button_twitter"></a>
+  <a class="addthis_button_preferred_1"></a>
+  <a class="addthis_button_preferred_2"></a>
+  <a class="addthis_button_compact"></a>
+  </div>
+  <!-- AddThis Button END -->
+  <h4>Cite as</h4>
+  <div id='invenio-csl'>
+    
+    <invenio-csl
+        ng-init="vm.citationResult = 'Marshall, Iain, Nye, Benjamin, Kuiper, Joël, Marshall, Rachel, Soboczenski, Frank, Nenkova, Ani, Noel Storr, Anna, Thomas, James, &amp; Wallace, Byron. (2020). Trialstreamer data [Data set]. Zenodo. https://doi.org/10.5281/zenodo.5153084'"
+    >
+      <invenio-csl-citeproc
+       endpoint="/api/records/5153084"
+       template="/static/templates/invenio_csl/citeproc.html"></invenio-csl-citeproc>
+      <invenio-csl-error
+       template="/static/node_modules/invenio-csl-js/dist/templates/error.html"></invenio-csl-error>
+      <invenio-csl-loading
+       template="/static/node_modules/invenio-csl-js/dist/templates/loading.html"></invenio-csl-loading>
+      <invenio-csl-typeahead
+       lazy="true"
+       placeholder="Start typing a citation style..."
+       remote="/api/csl/styles"
+       template="/static/node_modules/invenio-csl-js/dist/templates/typeahead.html"
+       item-template="/static/templates/invenio_csl/item.html">
+      </invenio-csl-typeahead>
+    </invenio-csl>
+  </div>
+      </div>
+      <div class="well"><h4>Export</h4>
+<ul class="list-inline">
+  <li><a href="/record/5153084/export/hx">BibTeX</a></li>
+  <li><a href="/record/5153084/export/csl">CSL</a></li>
+  <li><a href="/record/5153084/export/dcite4">DataCite</a></li>
+  <li><a href="/record/5153084/export/xd">Dublin Core</a></li>
+  <li><a href="/record/5153084/export/dcat">DCAT</a></li>
+  <li><a href="/record/5153084/export/json">JSON</a></li>
+  <li><a href="/record/5153084/export/schemaorg_jsonld">JSON-LD</a></li>
+  <li><a href="/record/5153084/export/geojson">GeoJSON</a></li>
+  <li><a href="/record/5153084/export/xm">MARCXML</a></li>
+  <li><a href="https://www.mendeley.com/import/?url=https://zenodo.org/record/5153084"><i class="fa fa-external-link"></i> Mendeley</a></li>
+</ul>
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="footer">
+  <div class="menu-wrapper">
+    <div class="container">
+      <div class="row footer-menu">
+        <div class="col-xs-12 col-md-8">
+          <div class="row">
+            <div class="col-xs-2 col-md-2">
+              <h5>About</h5>
+              <ul class="list-unstyled">
+                <li><a href="http://about.zenodo.org">About</a></li>
+                <li><a href="http://about.zenodo.org/policies">Policies</a></li>
+                <li><a href="http://about.zenodo.org/infrastructure">Infrastructure</a></li>
+                <li><a href="http://about.zenodo.org/principles">Principles</a></li>
+                <li><a href="http://about.zenodo.org/contact">Contact</a></li>
+              </ul>
+            </div>
+            <div class="col-xs-2 col-md-2">
+              <h5>Blog</h5>
+              <ul class="list-unstyled">
+                <li><a href="http://blog.zenodo.org">Blog</a></li>
+              </ul>
+            </div>
+            <div class="col-xs-2 col-md-2">
+              <h5>Help</h5>
+              <ul class="list-unstyled">
+                <li><a href="http://help.zenodo.org">FAQ</a></li>
+                <li><a href="http://help.zenodo.org/features">Features</a></li>
+                <li><a href="/support">Support</a></li>
+              </ul>
+            </div>
+            <div class="col-xs-2 col-md-2">
+              <h5>Developers</h5>
+              <ul class="list-unstyled">
+              <li><a href="http://developers.zenodo.org">REST API</a></li>
+              <li><a href="http://developers.zenodo.org#oai-pmh">OAI-PMH</a></li>
+              </ul>
+            </div>
+            <div class="col-xs-2 col-md-2">
+              <h5>Contribute</h5>
+              <ul class="list-unstyled">
+                <li><a href="https://github.com/zenodo/zenodo"><i class="fa fa-external-link"></i> GitHub</a></li>
+                <li><a href="/donate"><i class="fa fa-external-link"></i> Donate</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-4">
+          <div class="pull-right-md text-center-sm text-center-xs">
+            <h5>Funded by</h5>
+            <ul class="list-inline">
+              <li><a href="https://home.cern"><img src="/static/img/cern.png" width="60" height="60" /></a></li>
+              <li><a href="https://www.openaire.eu"><img src="/static/img/openaire.png" width="80" /></a></li>
+              <li><a href="https://ec.europa.eu/programmes/horizon2020/"><img src="/static/img/eu.png" width="88" height="60" /></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6 col-sm-push-6">
+        <div class="pull-right-sm text-center-xs">
+          <ul class="list-inline">
+            <li><a href="https://stats.uptimerobot.com/vlYOVuWgM">Status</a></li>
+            <li><a href="http://about.zenodo.org/privacy-policy">Privacy policy</a></li>
+            <li><a href="http://about.zenodo.org/terms">Terms of Use</a></li>
+            <li><a href="/support">Support</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-6 col-sm-pull-6 text-center-xs">
+        <p><a title="Except where otherwise noted, content on this site is licensed under a Creative Commons Attribution 4.0 International License." rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons Licence" height="20" src="https://i.creativecommons.org/l/by/4.0/88x31.png" /></a>&nbsp; Powered by <a href="https://home.cern/science/computing/data-centre">CERN Data Centre</a> &amp; <a href="http://inveniosoftware.org">Invenio</a>.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  <script type='application/ld+json'>{"@context": "https://schema.org/", "@id": "https://doi.org/10.5281/zenodo.5153084", "@type": "Dataset", "creator": [{"@type": "Person", "affiliation": "King\u0027s College London", "name": "Marshall, Iain"}, {"@type": "Person", "affiliation": "Northeastern University", "name": "Nye, Benjamin"}, {"@type": "Person", "affiliation": "Vortext Systems", "name": "Kuiper, Jo\u00ebl"}, {"@type": "Person", "affiliation": "Cochrane", "name": "Marshall, Rachel"}, {"@type": "Person", "affiliation": "King\u0027s College London", "name": "Soboczenski, Frank"}, {"@type": "Person", "affiliation": "University of Pennsylvania", "name": "Nenkova, Ani"}, {"@type": "Person", "affiliation": "University of Oxford", "name": "Noel Storr, Anna"}, {"@type": "Person", "affiliation": "UCL", "name": "Thomas, James"}, {"@type": "Person", "affiliation": "Northeastern University", "name": "Wallace, Byron"}], "datePublished": "2020-04-26", "description": "\u003cp\u003eTrialstreamer annotated collection of RCTs.\u003c/p\u003e\n\n\u003cp\u003eThis respository contains baseline files (large), and subsequent updates (daily for PubMed, weekly for ICTRP).\u003c/p\u003e\n\n\u003cp\u003e\u0026nbsp;\u003c/p\u003e", "distribution": [{"@type": "DataDownload", "contentUrl": "https://zenodo.org/api/files/0641aaf8-163f-4f23-9e47-52e912f6f884/trialstreamer-baseline-ictrp-2020-04-264.zip", "encodingFormat": "zip"}, {"@type": "DataDownload", "contentUrl": "https://zenodo.org/api/files/0641aaf8-163f-4f23-9e47-52e912f6f884/trialstreamer-baseline-pubmed-2020-04-26.zip", "encodingFormat": "zip"}, {"@type": "DataDownload", "contentUrl": "https://zenodo.org/api/files/0641aaf8-163f-4f23-9e47-52e912f6f884/trialstreamer-update-pubmed-2020-05-14.csv", "encodingFormat": "csv"}, {"@type": "DataDownload", "contentUrl": "https://zenodo.org/api/files/0641aaf8-163f-4f23-9e47-52e912f6f884/trialstreamer-update-pubmed-2020-05-18.csv", "encodingFormat": "csv"}, {"@type": "DataDownload", "contentUrl": "https://zenodo.org/api/files/0641aaf8-163f-4f23-9e47-52e912f6f884/trialstreamer-update-pubmed-2020-05-25.csv", "encodingFormat": "csv"}, {"@type": "DataDownload", "contentUrl": "https://zenodo.org/api/files/0641aaf8-163f-4f23-9e47-52e912f6f884/trialstreamer-update-pubmed-2020-06-01.csv", "encodingFormat": "csv"}, {"@type": "DataDownload", "contentUrl": "https://zenodo.org/api/files/0641aaf8-163f-4f23-9e47-52e912f6f884/trialstreamer-update-pubmed-2020-06-08.csv", "encodingFormat": "csv"}, {"@type": "DataDownload", "contentUrl": "https://zenodo.org/api/files/0641aaf8-163f-4f23-9e47-52e912f6f884/trialstreamer-update-pubmed-2020-06-15.csv", "encodingFormat": "csv"}, {"@type": "DataDownload", "contentUrl": "https://zenodo.org/api/files/0641aaf8-163f-4f23-9e47-52e912f6f884/trialstreamer-update-pubmed-2020-06-22.csv", "encodingFormat": "csv"}, {"@type": "DataDownload", "contentUrl": "https://zenodo.org/api/files/0641aaf8-163f-4f23-9e47-52e912f6f884/trialstreamer-update-pubmed-2020-06-29.csv", "encodingFormat": "csv"}, {"@type": "DataDownload", "contentUrl": "https://zenodo.org/api/files/0641aaf8-163f-4f23-9e47-52e912f6f884/trialstreamer-update-pubmed-2020-07-06.csv", "encodingFormat": "csv"}, {"@type": "DataDownload", "contentUrl": "https://zenodo.org/api/files/0641aaf8-163f-4f23-9e47-52e912f6f884/trialstreamer-update-pubmed-2020-07-13.csv", "encodingFormat": "csv"}, {"@type": "DataDownload", "contentUrl": "https://zenodo.org/api/files/0641aaf8-163f-4f23-9e47-52e912f6f884/trialstreamer-update-pubmed-2020-07-20.csv", "encodingFormat": "csv"}, {"@type": "DataDownload", "contentUrl": "https://zenodo.org/api/files/0641aaf8-163f-4f23-9e47-52e912f6f884/trialstreamer-update-pubmed-2020-07-27.csv", "encodingFormat": "csv"}, {"@type": "DataDownload", "contentUrl": "https://zenodo.org/api/files/0641aaf8-163f-4f23-9e47-52e912f6f884/trialstreamer-update-pubmed-2020-08-03.csv", "encodingFormat": "csv"}, {"@type": "DataDownload", "contentUrl": "https://zenodo.org/api/files/0641aaf8-163f-4f23-9e47-52e912f6f884/trialstreamer-update-pubmed-2020-08-10.csv", "encodingFormat": "csv"}, {"@type": "DataDownload", "contentUrl": "https://zenodo.org/api/files/0641aaf8-163f-4f23-9e47-52e912f6f884/trialstreamer-update-pubmed-2020-08-17.csv", "encodingFormat": "csv"}, {"@type": "DataDownload", "contentUrl": "https://zenodo.org/api/files/0641aaf8-163f-4f23-9e47-52e912f6f884/trialstreamer-update-pubmed-2020-08-24.csv", "encodingFormat": "csv"}, {"@type": "DataDownload", "contentUrl": "https://zenodo.org/api/files/0641aaf8-163f-4f23-9e47-52e912f6f884/trialstreamer-update-pubmed-2020-08-31.csv", "encodingFormat": "csv"}, {"@type": "DataDownload", "contentUrl": "https://zenodo.org/api/files/0641aaf8-163f-4f23-9e47-52e912f6f884/trialstreamer-update-pubmed-2020-09-07.csv", "encodingFormat": "csv"}, {"@type": "DataDownload", "contentUrl": "https://zenodo.org/api/files/0641aaf8-163f-4f23-9e47-52e912f6f884/trialstreamer-update-pubmed-2020-09-14.csv", "encodingFormat": "csv"}, {"@type": "DataDownload", "contentUrl": "https://zenodo.org/api/files/0641aaf8-163f-4f23-9e47-52e912f6f884/trialstreamer-update-pubmed-2020-09-21.csv", "encodingFormat": "csv"}, {"@type": "DataDownload", "contentUrl": "https://zenodo.org/api/files/0641aaf8-163f-4f23-9e47-52e912f6f884/trialstreamer-update-pubmed-2020-09-28.csv", "encodingFormat": "csv"}, {"@type": "DataDownload", "contentUrl": "https://zenodo.org/api/files/0641aaf8-163f-4f23-9e47-52e912f6f884/trialstreamer-update-pubmed-2020-10-05.csv", "encodingFormat": "csv"}, {"@type": "DataDownload", "contentUrl": "https://zenodo.org/api/files/0641aaf8-163f-4f23-9e47-52e912f6f884/trialstreamer-update-pubmed-2020-10-12.csv", "encodingFormat": "csv"}, {"@type": "DataDownload", "contentUrl": "https://zenodo.org/api/files/0641aaf8-163f-4f23-9e47-52e912f6f884/trialstreamer-update-pubmed-2020-10-19.csv", "encodingFormat": "csv"}, {"@type": "DataDownload", "contentUrl": "https://zenodo.org/api/files/0641aaf8-163f-4f23-9e47-52e912f6f884/trialstreamer-update-pubmed-2020-10-26.csv", "encodingFormat": "csv"}, {"@type": "DataDownload", "contentUrl": "https://zenodo.org/api/files/0641aaf8-163f-4f23-9e47-52e912f6f884/trialstreamer-update-pubmed-2020-11-02.csv", "encodingFormat": "csv"}, {"@type": "DataDownload", "contentUrl": "https://zenodo.org/api/files/0641aaf8-163f-4f23-9e47-52e912f6f884/trialstreamer-update-pubmed-2020-11-09.csv", "encodingFormat": "csv"}, {"@type": "DataDownload", "contentUrl": "https://zenodo.org/api/files/0641aaf8-163f-4f23-9e47-52e912f6f884/trialstreamer-update-pubmed-2020-11-16.csv", "encodingFormat": "csv"}, {"@type": "DataDownload", "contentUrl": "https://zenodo.org/api/files/0641aaf8-163f-4f23-9e47-52e912f6f884/trialstreamer-update-pubmed-2020-11-23.csv", "encodingFormat": "csv"}, {"@type": "DataDownload", "contentUrl": "https://zenodo.org/api/files/0641aaf8-163f-4f23-9e47-52e912f6f884/trialstreamer-update-pubmed-2020-11-30.csv", "encodingFormat": "csv"}, {"@type": "DataDownload", "contentUrl": "https://zenodo.org/api/files/0641aaf8-163f-4f23-9e47-52e912f6f884/trialstreamer-update-pubmed-2020-12-07.csv", "encodingFormat": "csv"}, {"@type": "DataDownload", "contentUrl": "https://zenodo.org/api/files/0641aaf8-163f-4f23-9e47-52e912f6f884/trialstreamer-update-pubmed-2020-12-14.csv", "encodingFormat": "csv"}, {"@type": "DataDownload", "contentUrl": "https://zenodo.org/api/files/0641aaf8-163f-4f23-9e47-52e912f6f884/trialstreamer-update-pubmed-2020-12-28.csv", "encodingFormat": "csv"}, {"@type": "DataDownload", "contentUrl": "https://zenodo.org/api/files/0641aaf8-163f-4f23-9e47-52e912f6f884/trialstreamer-update-pubmed-2021-01-04.csv", "encodingFormat": "csv"}, {"@type": "DataDownload", "contentUrl": "https://zenodo.org/api/files/0641aaf8-163f-4f23-9e47-52e912f6f884/trialstreamer-update-pubmed-2021-01-11.csv", "encodingFormat": "csv"}, {"@type": "DataDownload", "contentUrl": "https://zenodo.org/api/files/0641aaf8-163f-4f23-9e47-52e912f6f884/trialstreamer-update-pubmed-2021-01-18.csv", "encodingFormat": "csv"}, {"@type": "DataDownload", "contentUrl": "https://zenodo.org/api/files/0641aaf8-163f-4f23-9e47-52e912f6f884/trialstreamer-update-pubmed-2021-01-25.csv", "encodingFormat": "csv"}, {"@type": "DataDownload", "contentUrl": "https://zenodo.org/api/files/0641aaf8-163f-4f23-9e47-52e912f6f884/trialstreamer-update-pubmed-2021-02-01.csv", "encodingFormat": "csv"}, {"@type": "DataDownload", "contentUrl": "https://zenodo.org/api/files/0641aaf8-163f-4f23-9e47-52e912f6f884/trialstreamer-update-pubmed-2021-02-08.csv", "encodingFormat": "csv"}, {"@type": "DataDownload", "contentUrl": "https://zenodo.org/api/files/0641aaf8-163f-4f23-9e47-52e912f6f884/trialstreamer-update-pubmed-2021-02-15.csv", "encodingFormat": "csv"}, {"@type": "DataDownload", "contentUrl": "https://zenodo.org/api/files/0641aaf8-163f-4f23-9e47-52e912f6f884/trialstreamer-update-pubmed-2021-02-22.csv", "encodingFormat": "csv"}, {"@type": "DataDownload", "contentUrl": "https://zenodo.org/api/files/0641aaf8-163f-4f23-9e47-52e912f6f884/trialstreamer-update-pubmed-2021-03-01.csv", "encodingFormat": "csv"}, {"@type": "DataDownload", "contentUrl": "https://zenodo.org/api/files/0641aaf8-163f-4f23-9e47-52e912f6f884/trialstreamer-update-pubmed-2021-03-08.csv", "encodingFormat": "csv"}, {"@type": "DataDownload", "contentUrl": "https://zenodo.org/api/files/0641aaf8-163f-4f23-9e47-52e912f6f884/trialstreamer-update-pubmed-2021-03-15.csv", "encodingFormat": "csv"}, {"@type": "DataDownload", "contentUrl": "https://zenodo.org/api/files/0641aaf8-163f-4f23-9e47-52e912f6f884/trialstreamer-update-pubmed-2021-03-22.csv", "encodingFormat": "csv"}, {"@type": "DataDownload", "contentUrl": "https://zenodo.org/api/files/0641aaf8-163f-4f23-9e47-52e912f6f884/trialstreamer-update-pubmed-2021-03-29.csv", "encodingFormat": "csv"}, {"@type": "DataDownload", "contentUrl": "https://zenodo.org/api/files/0641aaf8-163f-4f23-9e47-52e912f6f884/trialstreamer-update-pubmed-2021-04-05.csv", "encodingFormat": "csv"}, {"@type": "DataDownload", "contentUrl": "https://zenodo.org/api/files/0641aaf8-163f-4f23-9e47-52e912f6f884/trialstreamer-update-pubmed-2021-04-12.csv", "encodingFormat": "csv"}, {"@type": "DataDownload", "contentUrl": "https://zenodo.org/api/files/0641aaf8-163f-4f23-9e47-52e912f6f884/trialstreamer-update-pubmed-2021-04-19.csv", "encodingFormat": "csv"}, {"@type": "DataDownload", "contentUrl": "https://zenodo.org/api/files/0641aaf8-163f-4f23-9e47-52e912f6f884/trialstreamer-update-pubmed-2021-04-26.csv", "encodingFormat": "csv"}, {"@type": "DataDownload", "contentUrl": "https://zenodo.org/api/files/0641aaf8-163f-4f23-9e47-52e912f6f884/trialstreamer-update-pubmed-2021-05-03.csv", "encodingFormat": "csv"}, {"@type": "DataDownload", "contentUrl": "https://zenodo.org/api/files/0641aaf8-163f-4f23-9e47-52e912f6f884/trialstreamer-update-pubmed-2021-05-10.csv", "encodingFormat": "csv"}, {"@type": "DataDownload", "contentUrl": "https://zenodo.org/api/files/0641aaf8-163f-4f23-9e47-52e912f6f884/trialstreamer-update-pubmed-2021-05-17.csv", "encodingFormat": "csv"}, {"@type": "DataDownload", "contentUrl": "https://zenodo.org/api/files/0641aaf8-163f-4f23-9e47-52e912f6f884/trialstreamer-update-pubmed-2021-05-31.csv", "encodingFormat": "csv"}, {"@type": "DataDownload", "contentUrl": "https://zenodo.org/api/files/0641aaf8-163f-4f23-9e47-52e912f6f884/trialstreamer-update-pubmed-2021-06-07.csv", "encodingFormat": "csv"}, {"@type": "DataDownload", "contentUrl": "https://zenodo.org/api/files/0641aaf8-163f-4f23-9e47-52e912f6f884/trialstreamer-update-pubmed-2021-06-14.csv", "encodingFormat": "csv"}, {"@type": "DataDownload", "contentUrl": "https://zenodo.org/api/files/0641aaf8-163f-4f23-9e47-52e912f6f884/trialstreamer-update-pubmed-2021-06-21.csv", "encodingFormat": "csv"}, {"@type": "DataDownload", "contentUrl": "https://zenodo.org/api/files/0641aaf8-163f-4f23-9e47-52e912f6f884/trialstreamer-update-pubmed-2021-06-28.csv", "encodingFormat": "csv"}, {"@type": "DataDownload", "contentUrl": "https://zenodo.org/api/files/0641aaf8-163f-4f23-9e47-52e912f6f884/trialstreamer-update-pubmed-2021-07-05.csv", "encodingFormat": "csv"}, {"@type": "DataDownload", "contentUrl": "https://zenodo.org/api/files/0641aaf8-163f-4f23-9e47-52e912f6f884/trialstreamer-update-pubmed-2021-07-12.csv", "encodingFormat": "csv"}, {"@type": "DataDownload", "contentUrl": "https://zenodo.org/api/files/0641aaf8-163f-4f23-9e47-52e912f6f884/trialstreamer-update-pubmed-2021-07-19.csv", "encodingFormat": "csv"}, {"@type": "DataDownload", "contentUrl": "https://zenodo.org/api/files/0641aaf8-163f-4f23-9e47-52e912f6f884/trialstreamer-update-pubmed-2021-07-26.csv", "encodingFormat": "csv"}, {"@type": "DataDownload", "contentUrl": "https://zenodo.org/api/files/0641aaf8-163f-4f23-9e47-52e912f6f884/trialstreamer-update-pubmed-2021-08-02.csv", "encodingFormat": "csv"}], "identifier": "https://doi.org/10.5281/zenodo.5153084", "inLanguage": {"@type": "Language", "alternateName": "eng", "name": "English"}, "license": "https://creativecommons.org/publicdomain/zero/1.0/legalcode", "name": "Trialstreamer data", "url": "https://zenodo.org/record/5153084"}</script>
+
+<script src="/static/gen/zenodo.f843b7ec.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+<script src="/static/gen/zenodo.search.ff7bb1ad.js"></script>
+<script type="text/javascript">var addthis_config = {"data_track_addressbar": true};</script>
+<script type="text/javascript">
+  // Bootstrap the Invenio CSL Formatter and invenio-search-js
+  require([
+    "jquery",
+    'typeahead.js',
+    'bloodhound',
+    "node_modules/angular/angular",
+    "node_modules/invenio-csl-js/dist/invenio-csl-js",
+    "node_modules/invenio-search-js/dist/invenio-search-js",
+    "js/zenodo/module"
+    ], function(typeahead, Bloodhound) {
+      angular.element(document).ready(function() {
+
+        // FIXME: This is already defined in js/zenodo_deposit/filters.js.
+        // It should be moved to a common place...
+        angular.module('zenodo.filters').filter('limitToEllipsis', function () {
+          return function(text, n) {
+            return (text.length > n) ? text.substr(0, n-1) + '&hellip;' : text;
+          };
+        });
+
+        angular.bootstrap(document.getElementById("citations"), [
+            'invenioSearch',
+            'zenodo.filters',
+            'mgcrea.ngStrap.tooltip',
+          ]
+        );
+
+        angular.bootstrap(document.getElementById("invenio-csl"), [
+            'invenioCsl',
+          ]
+        );
+      });
+    }
+  );
+  require([
+    "jquery",
+    "js/zenodo/functions",
+    ], function($, recordCommunityCurate) {
+      $(function () {
+        $("#recordCommunityCuration .btn").click(recordCommunityCurate);
+        $('.preview-link').on('click', function(event) {
+          $('#preview').show();
+          var filename = encodeURIComponent($(event.target).data('filename'));
+          $('#preview-iframe').attr("src","/record/5153084/preview/" + filename);
+        });
+      });
+    }
+  );
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip();
+  });
+</script>
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5137aff66ad9c2a1"></script>
+
+<script type="text/javascript">
+var _paq = _paq || [];
+_paq.push(["setDomains", ["*.zenodo.org","*.zenodo.cern.ch","*.zenodo.eu","*.zenodo.net"]]);
+_paq.push(["trackPageView"]);
+_paq.push(["enableLinkTracking"]);
+
+(function() {
+  var u=(("https:" == document.location.protocol) ? "https" : "http") + "://piwik.web.cern.ch/";
+  _paq.push(["setTrackerUrl", u+"piwik.php"]);
+  _paq.push(["setSiteId", "57"]);
+  var d=document, g=d.createElement("script"), s=d.getElementsByTagName("script")[0]; g.type="text/javascript";
+  g.defer=true; g.async=true; g.src=u+"piwik.js"; s.parentNode.insertBefore(g,s);
+})();
+</script>
+  </body>
+</html>
