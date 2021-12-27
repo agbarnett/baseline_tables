@@ -6,6 +6,8 @@ library(dplyr)
 library(readxl)
 library(stringr)
 library(XML) # for API
+library(TeachingDemos)
+char2seed('rochdale')
 
 # get all the csv files on the trialstreamer data webpage
 page = "https://zenodo.org/record/5153084"
@@ -84,6 +86,11 @@ conversion = filter(conversion, !is.na(pmcid)) %>% # remove missing PMC
 to_export = left_join(trialstreamer, conversion, by='pmid') %>%
   filter(!is.na(pmcid)) %>% # must have PMC so I can read in the table
   rename('pmc' = 'pmcid') # to match other data
+
+# Collect data in random order
+to_export = mutate(to_export, runif=runif(n())) %>%
+  arrange(runif) %>%
+  select(-runif)
 
 # save
 trialstreamer = to_export

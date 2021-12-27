@@ -1,0 +1,429 @@
+---
+title: "Results from the Bayesian model of differences in mean and precision"
+author: "Adrian Barnett"
+date: "`r format(Sys.time(), '%d %B %Y')`"
+output: word_document
+---
+
+```{r, include=FALSE}
+## called by 5_run_summary.R ###
+
+knitr::opts_chunk$set(echo = FALSE, warning=FALSE, message=FALSE, error=FALSE, comment='', dpi=400)
+options(width=1000) # Wide pages
+options(scipen=999) # avoid scientific presentation
+library(ggplot2)
+library(dplyr)
+library(janitor) # for cross-tabulations
+library(flextable)
+library(stringr)
+library(tidyverse)
+library(ggformula) # for density plots
+library(uniftest) # for test of uniform distribution
+source('99_functions.R')
+
+# get the bugs results
+load(infile)
+```
+
+```{r}
+# get mean and credible interval for every node
+all_stats = reshape2::melt(bugs$sims.matrix) %>%
+  group_by(Var2) %>%
+  summarise(n = n(),
+            mean = mean(value),
+            median = median(value),
+            lower = quantile(value, 0.025),
+            upper = quantile(value, 1 - 0.025)) %>%
+  ungroup() %>%
+  mutate(Var2 = as.character(Var2),
+         strip = str_remove_all(Var2, '[^0-9|,]'),
+         nicevar = case_when(
+    str_detect(Var2, '^mu.var')  ~ 'Precision',
+    str_detect(Var2, '^var.flag') ~ 'Precision flag',
+    str_detect(Var2, '^p_precision') ~ 'P precision')
+    ) %>%
+  separate(col=strip, into=c('study','index'), sep=',', convert=TRUE) %>% # split on comma, can ignore warnings
+  rename('Variable' = 'Var2') %>%
+  left_join(study_numbers, by='study') %>% # add PMCID
+  mutate(pmcid = ifelse(nicevar=='P precision', NA, pmcid)) # merge does not work for this variable
+
+# add study type if it is a simulation
+if(simulation == FALSE){ # from 1_which_data_source.R
+  all_stats = mutate(all_stats, sgroup='None', h0 = 'N/A')
+}
+if(simulation == TRUE){ # from 1_which_data_source.R
+  all_stats = mutate(all_stats,
+                     h0 = case_when( # group for plotting
+str_detect(pmcid, pattern='small') ~ 'No',
+str_detect(pmcid, pattern='large') ~ 'No',
+str_detect(pmcid, pattern='skewed') ~ 'No',
+str_detect(pmcid, pattern='none') ~ 'No',
+str_detect(pmcid, pattern='precise') ~ 'Yes',
+str_detect(pmcid, pattern='variable') ~ 'Yes'
+  ),
+      sgroup = case_when( # group for plotting
+str_detect(pmcid, pattern='small') ~ 'Small binary',
+str_detect(pmcid, pattern='large') ~ 'Large binary',
+str_detect(pmcid, pattern='skewed') ~ 'Skewed',
+str_detect(pmcid, pattern='none') ~ 'As expected',
+str_detect(pmcid, pattern='precise') ~ 'Too precise',
+str_detect(pmcid, pattern='variable') ~ 'Too variable'
+  ))
+}
+
+# flags in vector
+flag = filter(all_stats, str_detect(string=Variable, 'flag')) 
+
+# save for 6_tree_flag.R
+save(all_stats, file=tree_outfile) # change file dependent on data
+```
+
+The results are based on `r max(for_model$study)` trials. These results are for the `r source` sample. 
+
+The MCMC estimates were `r bugs$n.iter` iterations thinned by `r bugs$n.thin` from `r bugs$n.chains` chains with a burn-in of `r bugs$n.burnin`.
+
+# Probabilities
+
+The table shows the marginal probabilities for the precision probability. This probability controls the proportion of trials that are flagged as having some issue.
+
+```{r}
+probs = filter(all_stats, str_detect(Variable, '^p_')) %>%
+  select(nicevar, mean, lower, upper) %>%
+  rename('Variable' = 'nicevar')
+ftab = flextable(probs) %>%
+  theme_box() %>%
+  colformat_double(digits=3) %>%
+  autofit() 
+ftab
+```
+
+The table shows the mean and 95% credible interval.
+
+# Flag means
+
+The histogram shows the mean flag for each study. The precision flags are 0 = just right, 1 = too precise or too variable.
+
+```{r}
+gplot = ggplot(data=flag, aes(x=mean))+
+  geom_histogram(fill='grey66')+
+  xlab('Mean flag')+
+  theme_bw()
+if(simulation == TRUE){ # add facet if it is a simulation
+  gplot = gplot + facet_wrap(~sgroup)
+}
+gplot
+```
+
+# Precision 
+
+```{r}
+# just results that are not in the spike - to do, results above threshold
+non_spike = filter(all_stats, 
+                   nicevar == 'Precision flag',
+                   median !=0) %>%  # 
+  select(study)
+plot_precision = filter(all_stats, nicevar=='Precision') %>%
+  right_join(non_spike, by='study') %>%
+  mutate(facet = ifelse(mean < 0, 'Too variable', 'Too precise'))
+# truncate at 10^6 to make plot readable
+trun = nrow(filter(plot_precision, exp(mean) > 10^6))
+plot_precision = filter(plot_precision, exp(mean) <= 10^6)
+# plot
+gplot = ggplot(data=plot_precision, aes(x=exp(mean)))+
+  geom_histogram(fill='grey66')+
+  geom_vline(xintercept = 1, lty=2)+
+  theme_bw()+
+  scale_x_log10()+
+  xlab('Mean precision multiplier (log-10 scale)')+
+  facet_wrap(~facet, scales='free')
+gplot
+```
+
+The plot is for trials where the median flag was non-zero. 
+
+We truncated the plot at 10^6 as a few extreme outliers made it difficult to visualise the distribution. There were `r trun` results truncated.
+
+#### Means and intervals
+
+```{r}
+# max numbers to randomly select
+max_numbers = group_by(plot_precision, facet) %>%
+  tally()
+max_select = min(20, min(max_numbers$n)) # if fewer than 20 studies per group, then change 
+# max
+for_plot = group_by(plot_precision, facet) %>%
+  sample_n(size=max_select, replace=FALSE) %>% # randomly select a few results
+  mutate(studynum = as.numeric(as.factor(study))) %>% # re-order study number without gaps for plotting (within facet)
+  ungroup()
+#
+gplot = ggplot(data=for_plot, aes(x=studynum, y=exp(mean), ymin=exp(lower), ymax=exp(upper)))+
+  geom_point(col='dodgerblue')+
+  geom_hline(yintercept=1, lty=2, col='dark red')+
+  geom_errorbar(width=0, col='dodgerblue')+
+  theme_bw()+
+  xlab('')+
+  scale_y_log10()+
+  ylab('Mean precision (log-10 scale)')+
+  coord_flip()+
+  facet_wrap(~facet, scales='free')
+gplot
+```
+
+Forest plot of means and 95% credible intervals. Results for a random selection of 20 trials per group. The dotted line at 1 is no change in precision. 
+
+#### Means and intervals by study size
+
+```{r, fig.width=7}
+for_plot = mutate(plot_precision,
+                  ci_width = upper - lower)
+#
+gplot = ggplot(data=for_plot, aes(x=size, y=ci_width))+
+  geom_point()+
+  geom_hline(yintercept=0, lty=2, col='dark red')+
+  theme_bw()+
+  xlab('Sample size')+
+  scale_x_log10()+
+  ylab('Credible interval width')+
+  facet_wrap(~facet, scales='free')
+if(simulation == TRUE){ # add color if it is a simulation - to do
+  gplot = gplot + geom_point(data=for_plot, aes(x=size, y=ci_width, col=sgroup))
+}
+gplot
+```
+
+#### Frequency table of categories
+
+```{r}
+# threshold for P
+threshold = 0.8
+# table using three categories
+medians = filter(all_stats, 
+                nicevar == 'Precision flag') %>%
+  select(study, mean) %>%
+  rename('p_mean' = 'mean')
+means = filter(all_stats, nicevar=='Precision') %>%
+  select(study, sgroup, mean) %>%
+  right_join(medians, by='study') %>%
+  mutate(group = 
+           case_when(
+             p_mean <=  threshold ~ 'No issue',
+             p_mean > threshold & mean <= 0 ~ 'Too variable', 
+             p_mean > threshold & mean > 0 ~ 'Too precise'))
+if(simulation == FALSE){
+  my_tab = janitor::tabyl(means, group) %>%
+    adorn_totals("row") %>%
+    adorn_pct_formatting()
+}
+if(simulation == TRUE){ # add simulation group
+  my_tab = janitor::tabyl(means, sgroup, group)
+}
+ftab = flextable(my_tab) %>%
+  theme_box() %>%
+  autofit()
+ftab
+```
+
+We used a threshold for the study-level probability of an additional precision of `r threshold`.
+
+# Plots of t-statistics
+
+Here we show plots of the t-statistics from the trials that were flagged as too precise or too variable.
+The top three results were chosen based on the value of $\epsilon$ and hence show the most extreme examples. For comparison we plot three randomly selected trials that were not flagged.
+
+# a) Too variable
+
+```{r, fig.width=10, fig.height=7}
+## show the t-stats of selected papers
+selected_papers = select_papers(
+  in_data = for_model,
+  stats = all_stats,
+  flag = 'Precision flag',
+  flag_value = 1, # results that get flagged (could lower threshold?)
+  mean_select = 'negative', # too variable
+  flag_null_value = 0, # results that are not flagged for comparison
+  variable = 'Precision',
+  n_select = 3
+)
+gplot_variable = ggplot(data=selected_papers, aes(x=t, fill=factor(type)))+
+  scale_fill_manual("Potential\nissue", values=c('tomato2','grey66'), labels=c('Yes','No'))+
+  geom_histogram()+
+  xlab('Standardised difference')+
+  ylab('Frequency')+
+  facet_wrap(~pmcid_ordered, scales='free_y')+
+  theme_bw()+
+  theme(panel.grid.minor = element_blank())
+gplot_variable
+#jpeg(outjpg, width=5, height=4, units='in', res=400)
+#print(gplot)
+#dev.off()
+```
+
+
+# b) Too precise
+
+```{r, fig.width=10, fig.height=7}
+## show the t-stats of selected papers
+selected_papers = select_papers(
+  in_data = for_model,
+  stats = all_stats,
+  flag = 'Precision flag',
+  flag_value = 1, 
+  mean_select = 'positive', # too precise
+  flag_null_value = 0, # 
+  variable = 'Precision',
+  n_select = 3
+)
+gplot_precise = ggplot(data=selected_papers, aes(x=t, fill=factor(type)))+
+  scale_fill_manual("Potential\nissue", values=c('goldenrod1','dodgerblue'), labels=c('Yes','No'))+
+  geom_histogram()+
+  xlab('Standardised difference')+
+  ylab('Frequency')+
+  facet_wrap(~pmcid, scales='free_y')+
+  theme_bw()+
+  theme(panel.grid.minor = element_blank())
+gplot_precise
+#jpeg(outjpg, width=5, height=4, units='in', res=400)
+#print(gplot)
+#dev.off()
+
+## save for paper
+save(gplot_variable, gplot_precise, file=example_outfile)
+```
+
+# P-value distributions
+
+Here we examine the distributions of p-values and t-statistics to show the differences.
+We try to take the results of a typical simulation by choosing a simulation that most closely matches the average mean and standard deviation for p-values across all simulations. We restrict the data to trials with 30 or more rows in the table in order to show distributions with a reasonable sample size.
+
+### Distributions of p-values for selected trials
+
+```{r}
+# get the table data with p-values
+stage = 'model'
+source('1_which_data_source.R') # uses `source` and `stage`
+#
+for_model = make_stats_for_bayes_model(indata = table_data) # see 99_functions.R
+# add study type if it is a simulation
+if(simulation == FALSE){ # from 1_which_data_source.R
+  for_model = mutate(for_model, sgroup='None', h0='N/A')
+}
+if(simulation == TRUE){ # from 1_which_data_source.R
+  for_model = mutate(for_model,
+                     h0 = case_when( # group for plotting
+str_detect(pmcid, pattern='small') ~ 'No',
+str_detect(pmcid, pattern='large') ~ 'No',
+str_detect(pmcid, pattern='skewed') ~ 'No',
+str_detect(pmcid, pattern='none') ~ 'No',
+str_detect(pmcid, pattern='precise') ~ 'Yes',
+str_detect(pmcid, pattern='variable') ~ 'Yes'
+  ),
+      sgroup = case_when( # group for plotting
+str_detect(pmcid, pattern='small') ~ 'Small binary',
+str_detect(pmcid, pattern='large') ~ 'Large binary',
+str_detect(pmcid, pattern='skewed') ~ 'Skewed',
+str_detect(pmcid, pattern='none') ~ 'As expected',
+str_detect(pmcid, pattern='precise') ~ 'Too precise',
+str_detect(pmcid, pattern='variable') ~ 'Too variable'
+  ))
+}
+# show example distribution for each issue
+stats = group_by(for_model, h0, sgroup, pmcid) %>%
+  summarise(n = n(),
+            mean = mean(p), # get mean per study
+            sd = sd(p)) %>%
+  filter(!is.na(sd),
+         n >= 30) # at least 30 p-values to show
+overall = group_by(stats, h0, sgroup) %>%
+  summarise(N = n(),
+            omean = mean(mean), # get overall mean of means
+            osd = mean(sd)) 
+# now find closest matching example
+close = left_join(stats, overall, by=c('h0','sgroup')) %>%
+  mutate(mdiff = mean - omean,
+         sdiff = sd - osd,
+         distance = sqrt(mdiff^2 + sdiff^2)) %>%
+  group_by(h0, sgroup) %>%
+  arrange(h0, sgroup, distance) %>%
+  slice(1)
+# now get p-value distributions for close matches
+selected = filter(for_model, pmcid %in% close$pmcid) 
+pdist = ggplot(data = selected, aes(x=p, fill=h0))+
+  geom_histogram()+
+  scale_x_continuous(limits=c(-0.05,1.05))+
+  scale_fill_manual('Difference between groups', values=c('skyblue','darkorange'))+
+  theme_bw()+
+  theme(panel.grid.minor = element_blank(),
+        legend.position = 'top')+
+  facet_wrap(~sgroup)
+if(simulation==FALSE){
+  pdist = pdist + theme(legend.position = 'none')
+}
+pdist
+```
+
+### Distributions of t-statistics for the same selected trials
+
+```{r}
+theme_set(theme_bw())
+# 
+standard = data.frame(t = rnorm(100000))
+#
+tdist = gf_dhistogram( ~ t | sgroup, data = selected) %>%
+  gf_fitdistr( dist = 'dnorm', color = "blue") %>%
+  gf_fitdistr( ~ t, dist = 'dnorm', color = "red", data=standard) 
+tdist
+```
+
+The red shows a standard normal distribution and the blue line shows a normal distribution fitted to the observed density. 
+
+### Testing that p-values for a uniform distribution
+
+To summarise the simulations we tested if the p-values for each study followed a uniform distribution using the Kolmogorov--Smirnov test for uniformity. The table below shows the frequency that were statistically significant using a 0.05 threshold. Each simulation was repeated 500 times. 
+
+```{r}
+# test uniform distribution for p-values
+unif_pvals = group_by(for_model, h0, sgroup, pmcid) %>%
+  summarise(p = kolmogorov.unif.test(p, nrepl=2000, k=0)$p.value)
+# summary stats
+unif_tab = mutate(unif_pvals, sig = p<0.05) %>%
+  summarise(below = sum(sig), n=n()) %>%
+  mutate(prop = roundz(100*below/n, 1),
+         cell = paste(below, ' (', prop, ')', sep='')) %>%
+  arrange(h0, sgroup, below) 
+renamed = select(unif_tab, h0, sgroup, cell) %>%
+  rename('H0' = 'h0',
+    'Simulation' = 'sgroup',
+    'n (%)' = 'cell')
+# nice table  
+ftab = flextable(renamed) %>%
+  theme_box() %>%
+  merge_v(j=1) %>%
+  autofit()
+ftab
+```
+
+### Histograms of p-values for uniform test
+
+```{r}
+hplot = ggplot(unif_pvals, aes(x=p, fill=h0))+
+  geom_histogram()+
+  xlab('P-value')+
+  ylab('Count')+
+  facet_wrap(~sgroup)+
+  scale_fill_manual('Difference between groups', values=c('skyblue','darkorange'))+
+  theme_bw()+
+  theme(panel.grid.minor = element_blank(),
+        legend.position = 'top')
+hplot
+```
+
+```{r, include=FALSE}
+## save results for use in paper
+# make combined table 
+if(simulation==FALSE){
+  my_tab = mutate(my_tab, sgroup='None')
+}
+overall_table = left_join(my_tab, unif_tab, by='sgroup')
+# save
+save(tdist, pdist, overall_table, hplot, file=results_outfile)
+```

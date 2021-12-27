@@ -17,7 +17,7 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/static/apple-touch-icon-72-precomposed.png"/>
     <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/static/apple-touch-icon-57-precomposed.png"/>
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,100,italic" rel="stylesheet">
-<link href="/static/gen/zenodo.3867f39d.css" rel="stylesheet">
+<link href="/static/gen/zenodo.5fb6164a.css" rel="stylesheet">
 <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
 <!--[if lt IE 9]>
   <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -154,6 +154,11 @@
   </nav>
 
 
+  <div class="alert alert-warning">
+    <div class="container">
+    There is a <a class="alert-link" href="/record/5760897">newer version</a> of this record available.
+  </div>
+  </div>
 </header>
 <div class="container record-detail">
   <div class="row">
@@ -180,11 +185,11 @@ Open Access
 <span class="text-muted" data-toggle="tooltip" title="University of Oxford">Noel Storr, Anna</span>; 
 <span class="text-muted" data-toggle="tooltip" title="UCL">Thomas, James</span>; 
 <span class="text-muted" data-toggle="tooltip" title="Northeastern University">Wallace, Byron</span></p>
-      <p><p>Trialstreamer annotated collection of RCTs.</p>
+      <div class="record-description"><p>Trialstreamer annotated collection of RCTs.</p>
 
 <p>This respository contains baseline files (large), and subsequent updates (daily for PubMed, weekly for ICTRP).</p>
 
-<p>&nbsp;</p></p>
+<p>&nbsp;</p></div>
 
 
   <div class="panel panel-default" id="preview">
@@ -873,10 +878,10 @@ Open Access
   <div id="accordion">
     <!-- Banner --><div class="row">
       <div class="col-sm-6">
-        <span class="stats-data">615</span>
+        <span class="stats-data">935</span>
       </div>
       <div class="col-sm-6">
-        <span class="stats-data">1,847</span>
+        <span class="stats-data">39,357</span>
       </div>
     </div>
     <div class="row">
@@ -903,19 +908,19 @@ Open Access
           <th>All versions</th>
           <th>This version</th>
         </tr><tr>
-          <td>Views <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="Total views." data-original-title="Total views."></i></td><td>615</td><td>5</td>
+          <td>Views <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="Total views." data-original-title="Total views."></i></td><td>935</td><td>11</td>
         </tr>
         <tr>
-          <td>Downloads <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="Total downloads." data-original-title="Total downloads."></i></td><td>1,847</td><td>2</td>
+          <td>Downloads <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="Total downloads." data-original-title="Total downloads."></i></td><td>39,357</td><td>857</td>
         </tr>
         <tr>
-          <td>Data volume <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="Total download volume." data-original-title="Total download volume."></i></td><td>437.4 GB</td><td>72.5 MB</td>
+          <td>Data volume <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="Total download volume." data-original-title="Total download volume."></i></td><td>4.3 TB</td><td>53.9 GB</td>
         </tr>
         <tr>
-          <td>Unique views <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="Views in one hour user-sessions are counted only once." data-original-title="Views in one hour user-sessions are counted only once."></i></td><td>498</td><td>5</td>
+          <td>Unique views <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="Views in one hour user-sessions are counted only once." data-original-title="Views in one hour user-sessions are counted only once."></i></td><td>764</td><td>11</td>
         </tr>
         <tr>
-          <td>Unique downloads <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="Downloads in one hour user-sessions are counted only once." data-original-title="Downloads in one hour user-sessions are counted only once."></i></td><td>418</td><td>1</td>
+          <td>Unique downloads <i class="fa fa-question-circle text-muted" data-toggle="tooltip" tooltip data-placement="top" title="Downloads in one hour user-sessions are counted only once." data-original-title="Downloads in one hour user-sessions are counted only once."></i></td><td>1,096</td><td>17</td>
         </tr>
       </table>
       <div class="row">
@@ -928,7 +933,7 @@ Open Access
 <div class="well metadata">
   
     <small class="text-muted">Indexed in</small>
-    <a href="https://explore.openaire.eu/search/dataset?datasetId=r37b0ad08687::4390c0c3d496942b633e57f58f5ba409">
+    <a href="https://explore.openaire.eu/search/dataset?pid=10.5281/zenodo.5153084">
       <img src="/static/img/openaire-horizontal-old.png" class="img-thumbnail" width="100%" />
     </a>
 </div>
@@ -1012,43 +1017,52 @@ Open Access
   <div class="well metadata">
     <h4>Versions</h4>
     <table class="table">
-      <tr class="info">
+      <tr >
         <td>
-          <a href="/record/5153084">Version 63 </a>
-          <small class="text-muted">10.5281/zenodo.5153084</small>
+          <a href="/record/5760897">Version 80 </a>
+          <small class="text-muted">10.5281/zenodo.5760897</small>
         </td>
         <td align="right"><small class="text-muted">Apr 26, 2020</small></td>
       </tr>
       <tr >
         <td>
-          <a href="/record/5137142">Version 62 </a>
-          <small class="text-muted">10.5281/zenodo.5137142</small>
+          <a href="/record/5734208">Version 79 </a>
+          <small class="text-muted">10.5281/zenodo.5734208</small>
         </td>
         <td align="right"><small class="text-muted">Apr 26, 2020</small></td>
       </tr>
       <tr >
         <td>
-          <a href="/record/5112911">Version 61 </a>
-          <small class="text-muted">10.5281/zenodo.5112911</small>
+          <a href="/record/5718019">Version 78 </a>
+          <small class="text-muted">10.5281/zenodo.5718019</small>
         </td>
         <td align="right"><small class="text-muted">Apr 26, 2020</small></td>
       </tr>
       <tr >
         <td>
-          <a href="/record/5081941">Version 60 </a>
-          <small class="text-muted">10.5281/zenodo.5081941</small>
+          <a href="/record/5702451">Version 77 </a>
+          <small class="text-muted">10.5281/zenodo.5702451</small>
         </td>
         <td align="right"><small class="text-muted">Apr 26, 2020</small></td>
       </tr>
       <tr >
         <td>
-          <a href="/record/5069691">Version 59 </a>
-          <small class="text-muted">10.5281/zenodo.5069691</small>
+          <a href="/record/5653236">Version 76 </a>
+          <small class="text-muted">10.5281/zenodo.5653236</small>
         </td>
         <td align="right"><small class="text-muted">Apr 26, 2020</small></td>
       </tr>
+        <tr><td colspan="2" align="center">...</tr>
+        <tr class="info">
+          <td>
+            <a href="/record/5153084">Version 63</a>
+            <small class="text-muted">10.5281/zenodo.5153084</small>
+          </td>
+          <td align="right"><small class="text-muted">Apr 26, 2020</small></td>
+        </tr>
       
-      <tr><td colspan="2" align="center"><a href="/search?q=conceptrecid%3A%223767068%22&amp;sort=-version&amp;all_versions=True"><small>View all 63 versions</small></a></tr>
+      
+      <tr><td colspan="2" align="center"><a href="/search?q=conceptrecid%3A%223767068%22&amp;sort=-version&amp;all_versions=True"><small>View all 80 versions</small></a></tr>
     </table>
     <small>
       <strong>Cite all versions?</strong> You can cite all versions by using the DOI <a href="https://doi.org/10.5281/zenodo.3767068">10.5281/zenodo.3767068</a>. This DOI represents all versions, and will always resolve to the latest one. <a href="http://help.zenodo.org/#versioning">Read more</a>.

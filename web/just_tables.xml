@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
+<?xml version="1.0" encoding="UTF-8"?><html><body><just-tables>
+NULL
+<table-wrap position="float" id="t0010"><label>Table 2</label><caption> Summary of participant characteristics and available results by assay and specimen type by year.</caption>
+<table frame="hsides" rules="groups">
+<thead><tr>
+<th>Year</th>
+<th>1</th>
+<th>2</th>
+<th>3</th>
+<th>total</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Number of participants vaccinated</td>
+<td>254</td>
+<td>249</td>
+<td>162</td>
+<td>665</td>
+</tr>
+<tr>
+<td>Record of post-vaccination visit</td>
+<td>249</td>
+<td>246</td>
+<td>159</td>
+<td>654</td>
+</tr>
+<tr><td colspan="5">  </td></tr>
+<tr>
+<td>Male (%)</td>
+<td>124 (49%)</td>
+<td>121 (49%)</td>
+<td>80 (49%)</td>
+<td>325 (49%)</td>
+</tr>
+<tr>
+<td>Age at vaccination median (min - max)</td>
+<td>8 (5–11)</td>
+<td>9 (6–11)</td>
+<td>9 (7–12)</td>
+<td>9 (5–12)</td>
+</tr>
+<tr>
+<td>Interval between samples median (min - max)</td>
+<td>22 (18–57)</td>
+<td>26 (21–43)</td>
+<td>27 (21–49)</td>
+<td>25 (18 – 57)</td>
+</tr>
+<tr>
+<td>Received prior Pandemrix (%)</td>
+<td>104 (41%)</td>
+<td>110 (44%)</td>
+<td>75 (46%)</td>
+<td>289 (43%)</td>
+</tr>
+<tr><td colspan="5">  </td></tr>
+<tr><td colspan="5">Paired pre- and post-vaccination samples:</td></tr>
+<tr>
+<td>HAI result available</td>
+<td>217</td>
+<td>215</td>
+<td>144</td>
+<td>576 (87%)</td>
+</tr>
+<tr>
+<td>OF ELISA result available</td>
+<td>249</td>
+<td>237</td>
+<td>152</td>
+<td>638 (96%)</td>
+</tr>
+</tbody>
+</table></table-wrap></just-tables></body></html>

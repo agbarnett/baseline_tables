@@ -1,8 +1,8 @@
 # 1_extract_tables_pmc.R
-# automatically extract the data from the baseline tables in the trials
+# automatically extract the data from the baseline tables in the trials from pubmed central
 # see http://bradleyboehmke.github.io/2015/12/scraping-html-tables.html
 # use PMC ftp service https://www.ncbi.nlm.nih.gov/pmc/tools/ftp/
-# July 2021
+# August 2021
 library(rvest)
 library(stringr)
 library(stringi)
@@ -10,32 +10,43 @@ library(lubridate) # for dealing with multiple date formats
 library(dplyr)
 library(tidyverse)
 library(magrittr)
-library(metareadr) # to read papers from PMC
+library(xml2)
+library(metareadr) # to read papers from PMC; installed from github
 source('1_pattern.R') 
 source('99_functions.R')
-
+load('data/emails_and_states.RData') # from 0_country_email.R, used for affiliations
+  
 # select which source of data to use
 sources = c('my_search', 'trialstreamer', 'validation')
 source = sources[3]
-source('1_which_data_source.R')
+stage = 'data'
+source('1_which_data_source.R') # uses `source` and `stage`
 
-# Collect data in random order
-data = mutate(data, runif=runif(n())) %>%
-  arrange(runif) %>%
-  select(-runif)
+#  set up data
+table_data = errors = pvals = pvalues = excluded = design = full_list = NULL #
+
+# exclude some papers prior to running algorithm
+load('data/additional_exclusions.RData') # from 1_excluded_by_hand.R
+hand_exclude = filter(hand_exclude, pmcid %in% data$pmcid) # any exclusions in this data?
+if(nrow(hand_exclude) > 0){
+  data = filter(data, !pmcid %in% hand_exclude$pmcid)
+  excluded = bind_rows(excluded, hand_exclude)
+}
 
 ## big loop ##
-N = nrow(data)
-#N = 1000 # temporary
-table_data = pvalues = excluded = design = NULL # set up data
-for (k in 1:N){
-pmcid = str_remove(pattern='PMC', string=data$pmc[k]) # have to remove numbers
+N = 10000 # final processing size
+N = min(N, nrow(data))
+restart = 1
+for (k in restart:N){
+  pmcid = data$pmcid[k] # 
+  full_list = bind_rows(full_list, data.frame(num=k, pmcid=pmcid)) # useful to have a complete list of all PMCIDs
+  pmcid_function = str_remove(pattern='PMC', string=pmcid) # have to remove numbers for function
 # get full text as web page, need try catch because some are embargoed or otherwise not available
 out_nlm = NULL
-out_nlm = tryCatch(mt_read_pmcoa(pmcid = pmcid, file_format = "pmc", file_name="web/full.xml"), # save to external XML file
+out_nlm = tryCatch(mt_read_pmcoa(pmcid = pmcid_function, file_format = "pmc", file_name="web/full.xml"), # save to external XML file
                    error = function(e) print(paste('NLM did not work', pmcid))) # flag for error
-if(length(out_nlm) > 0){ # if neither NLM or Europe work
-  this = data.frame(pmc = pmcid, reason = 'Full text page not available')
+if(length(out_nlm) > 0){ # if neither NLM (national library medicine) or Europe work
+  this = data.frame(pmcid = pmcid, reason = 'Full text page not available')
   excluded = bind_rows(excluded, this)
   next # skip to next
 }
@@ -48,29 +59,41 @@ abstract = xml_find_all(webpage, ".//abstract") %>% xml_text() # tables and figu
 # exclude single arm studies
 single_arm = any(str_detect(abstract, pattern='single.arm|singlearm'))
 if(single_arm==TRUE){
-  this = data.frame(pmc = pmcid, reason = 'Single-arm study')
+  this = data.frame(pmcid = pmcid, reason = 'Single-arm study')
   excluded = bind_rows(excluded, this)
   next # skip to next
 }
 # search for randomised trial in title or abstract
 title_abstract = paste(title, abstract, collapse=' ')
-rct = str_detect(title_abstract, pattern=rct_patterns) # pattern from 0_pattern.R
+rct = str_detect(title_abstract, pattern=rct_patterns) # pattern from 1_pattern.R
 # search for cluster in title or abstract
-cluster = str_detect(title_abstract, pattern='cluster|Cluster') # 
+cluster = str_detect(title_abstract, pattern='\\bcluster|\\bCluster') # 
 # exclude cross-sectional studies, exploratory studies, pooled analysis, etc (could exclude others here)
-cross_sec = any(str_detect(tolower(title_abstract), pattern = non_rct_pattern))
-if(cross_sec==TRUE & exclude_non_rct==TRUE){ # exclude_non_rct flag from 1_which_data_source.R
-  this = data.frame(pmc = pmcid, reason = 'Not an RCT')
+cross_sec_title = any(str_detect(tolower(title), pattern = non_rct_pattern_title))
+cross_sec_abstract = any(str_detect(tolower(abstract), pattern = non_rct_pattern_abstract))
+if((cross_sec_title ==TRUE | cross_sec_abstract == TRUE) & exclude_non_rct==TRUE){ # exclude_non_rct flag from 1_which_data_source.R
+  this = data.frame(pmcid = pmcid, reason = 'Not an RCT')
   excluded = bind_rows(excluded, this)
   next # skip to next
 }
-# exclude pre-post studies, must have pre and post
-pre = any(str_detect(tolower(title_abstract), pattern = 'pre-'))
-post = any(str_detect(tolower(title_abstract), pattern = 'post-'))
-if(pre==TRUE & post==TRUE){
-  this = data.frame(pmc = pmcid, reason = 'Not an RCT')
-  excluded = bind_rows(excluded, this)
-  next # skip to next
+# exclude pre-post studies, must have pre and post, turned off for now, use table to detect pre-post
+turned_off = function(){
+  pre = any(str_detect(tolower(title_abstract), pattern = 'pre-'))
+  post = any(str_detect(tolower(title_abstract), pattern = 'post-'))
+  if(pre==TRUE & post==TRUE){
+    this = data.frame(pmcid = pmcid, reason = 'Not an RCT')
+    excluded = bind_rows(excluded, this)
+    next # skip to next
+  }
+}
+
+# get the first author affiliation
+affiliation = get_affiliation(webpage)
+
+## get the journal
+journal = xml_find_all(webpage, ".//journal-meta//journal-title-group//journal-title") %>% xml_text()
+if(length(journal) == 0){
+  journal = xml_find_all(webpage, ".//journal-meta//journal-title") %>% xml_text()
 }
 
 ## remove some sections from XML
@@ -92,6 +115,10 @@ page_remove_xref <- gsub("<xref[^>]*>|<\\/xref>", " ", page_char)
 page_add_breaks <- gsub("<table-wrap", "\n<table-wrap", page_remove_xref) # add breaks before tables, helps with p-value in text by making sure table is separate to paragraph
 # replace breaks with spaces (sometimes used in tables)
 page_add_breaks <- gsub("<break\\/>|<break>", " ", page_add_breaks)
+# replace badly formatted plus/minus, e.g., PMC7607674
+page_add_breaks <- gsub("<underline>\\+<\\/underline>", "±", page_add_breaks)
+# replace `n1=` with `n=`, e.g. PMC6731465
+page_add_breaks <- gsub("\\bn\\s?[0-9]=", "n=", page_add_breaks)
 # remove colspan, causes havoc in tables with labels; but removing it caused problems too, so commented out
 #page_add_breaks = str_replace_all(pattern='colspan="."', replacement = 'colspan="1"', string=page_add_breaks)
 webpage <- read_xml(page_add_breaks)
@@ -132,14 +159,14 @@ table_captions = tolower(table_captions) %>%
   str_squish()
 
 # are there any baseline tables based on captions?
-captions_baseline = str_detect(string=tolower(table_captions), pattern=words_or) # find captions with baseline words, see 0_patterns.R
+captions_baseline = str_detect(string=tolower(table_captions), pattern=words_or) # find captions with baseline words, see 1_patterns.R
 captions_negative = str_detect(string=tolower(table_captions), pattern=negative_words) # find captions with negative words
 if(any(captions_negative) == TRUE){
   captions_baseline[which(captions_negative)] = FALSE # flip these captions to false
 }
 any_baseline_tables = any(captions_baseline)
 if(any_baseline_tables == FALSE){
-  this = data.frame(pmc = pmcid, reason = 'No baseline table')
+  this = data.frame(pmcid = pmcid, reason = 'No baseline table')
   excluded = bind_rows(excluded, this)
   next # skip to next
 }
@@ -213,10 +240,11 @@ in_text = gsub("-\\W(?=\\d{1})", " ", in_text, perl = TRUE) # things like "22- 3
 
 ## extract just the tables using the simplified table captions
 # first create simple version of in_text
+#in_text= in_text %>% str_replace_all(pattern='&lt;', replacement = '<') # not working
 simple_in_text = tolower(in_text) %>%
+  str_replace_all('&amp;', '&') %>% 
   str_replace_all('&gt;', '>') %>% # must be a better way, but for now just removing special characters as they come!
   str_replace_all('&lt;', '<') %>%
-  str_replace_all('&amp;', ' ') %>%
   str_remove_all("[^0-9|a-z| ]") %>% # remove all special characters to make matching below easier
   str_squish()
 tables_in_text = list()
@@ -261,13 +289,8 @@ just_tables = read_html("web/just_tables.xml", encoding='UTF-8')
 ## check table is not mostly text (usually a 'what this paper adds study')
 old_table_number = table_number # needed for text search for p-values
 table_number = exclude_text_tables(just_tables, table_number=1) # restart table number at one because non-baseline tables have been dropped
-if(table_number == 998){ # function above also checks for availability
-  this = data.frame(pmc = pmcid, reason = 'No baseline table')
-  excluded = bind_rows(excluded, this)
-  next
-}
-if(table_number == 999){ # function above also checks for empty tables
-  this = data.frame(pmc = pmcid, reason = 'Graphical table')
+if(table_number == 998 | table_number == 999){ # function above also checks for availability
+  this = data.frame(pmcid = pmcid, reason = 'No baseline table')
   excluded = bind_rows(excluded, this)
   next
 }
@@ -287,13 +310,18 @@ table_captions = table_captions[which(captions_baseline)] # just keep baseline t
 caption = table_captions[table_number] #
 follow_up = str_detect(string=tolower(caption), pattern = fu_pattern)
 if(follow_up == TRUE){
-  this = data.frame(pmc = pmcid, reason = 'Follow-up results in baseline table')
+  this = data.frame(pmcid = pmcid, reason = 'Follow-up results in baseline table')
   excluded = bind_rows(excluded, this)
   next # skip to next
 }
 
 # function that does heavy lifting, trial and error with weight:
-results = baseline_table(webpage = just_tables, table_number, footnote, weight=2)
+results = tryCatch(baseline_table(webpage = just_tables, pmcid=pmcid, table_number, footnote, weight=2), # 
+                   error = function(e) print(paste('Function not working for', pmcid))) # flag for error
+if(class(results) == 'character'){
+  errors = c(errors, pmcid)
+  next #skip to next if there's an error
+}
 table = results$table
 
 ## check for p-values in text in the results section
@@ -327,11 +355,15 @@ if(is.null(results$reason) == TRUE | is.null(results$pvalues_in_table) == FALSE)
 if(add_pval == TRUE){
   pvalues_in_table_text = data.frame(pmcid=pmcid, in_table = results$pvalues_in_table, in_text = pvalues_in_text) # record p-values in table
   pvalues = bind_rows(pvalues, pvalues_in_table_text)
+  if(any(names(results) == 'pvalues') == TRUE){
+    this_pvals = mutate(results$pvalues, pmcid=pmcid) # add PMCID
+    pvals = bind_rows(pvals, this_pvals)
+  }
 }
 
 # exclude from table analysis if data could not be extracted
-if(is.null(table) == TRUE){
-  this = data.frame(pmc = pmcid, reason = results$reason)
+if(is.null(results$reason) == FALSE){
+  this = data.frame(pmcid = pmcid, reason = results$reason)
   excluded = bind_rows(excluded, this)
   next # skip to next
 }
@@ -358,13 +390,17 @@ sem = str_detect(string=to_search, pattern=sem_patterns)
   
 ## concatenate 
 # main data
+pilot = str_detect(tolower(title), pattern='\\bpilot\\b')
 table = mutate(table, pmcid = pmcid, pmid = data$pmid[k]) # pmid for merge with trialstreamer
 table_data = bind_rows(table_data, table)
 # study design (starts with details from pubmed)
 this_design = data[k,] %>%
   mutate(
+    affiliation = affiliation,
+    journal = journal,
     rct = rct,
     cluster = cluster,
+    pilot = pilot,
     block_randomisation = block_randomisation,
     adaptive_randomisation = adaptive_randomisation, 
     sem = sem) # add meta-data
@@ -379,19 +415,11 @@ if(k%%50 ==0 ){cat('up to ',k,'\r', sep='')}
 
 } # end of big loop
 
-## add final exclusions
-load('data/additional_exclusions.RData') # from 1_excluded_by_hand.R
-# a) add to excluded data
-excluded = bind_rows(excluded, hand_exclude)
-# b) knock out of data sets
-table_data = filter(table_data, !pmcid %in% hand_exclude$pmc)
-pvalues = filter(pvalues, !pmcid %in% hand_exclude$pmc)
-design = filter(design, !pmcid %in% hand_exclude$pmc)
+## remove any duplicates, possible because of restarts
+table_data = unique(table_data)
 
 # add study design meta-data to excluded data
-data = mutate(data, pmc = str_remove(pattern='^PMC', string=pmcid)) # for merging
-excluded = mutate(excluded, pmc = str_remove(pattern='^PMC', string=pmc)) # for merging
-excluded = left_join(excluded, data, by='pmc')
+excluded = left_join(excluded, data, by='pmcid')
 
 ## save
-save(excluded, pvalues, table_data, design, file=outfile) # outfile from 1_which_data_source.R
+save(excluded, errors, full_list, pvals, pvalues, table_data, design, file=outfile) # outfile from 1_which_data_source.R

@@ -1,0 +1,48 @@
+In this comparison we include some tables that would be excluded in the main analysis because they are not RCTs. These tables are still useful here though, as they allow us to test the accuracy of the algorithm on similar tables.
+
+
+# from 3_compare_algorithm_hand.Rmd
+
+The results are ordered by the reason for rejection from the algorithm.
+
+```{r}
+both = full_join(excluded_hand, excluded_algorithm, by='pmcid') %>%
+  select(pmcid, hand, algorithm) %>%
+  unique() %>%
+  arrange(algorithm) # sort by reason
+ftab = flextable(both) %>%
+  fontsize(size=8, part = 'all') %>%
+  autofit()
+ftab
+```
+
+
+#### Table as above but just for first three rows of the table
+
+```{r}
+stats = filter(matches, row <= 3) %>%
+  select(pmcid, statistic.y, starts_with('match')) %>%
+  pivot_longer(cols=starts_with('match')) %>%
+  filter(!is.na(value)) %>% # remove missing comparisons (both stats needed) %>%
+  group_by(statistic.y, name) %>%
+  summarise(n = n(), 
+            match = sum(value)) %>%
+  mutate(percent = 100*match/n,
+         stat = case_when(
+           name == 'match_stat1' ~ 'First',
+           name == 'match_stat2' ~ 'Second'
+         ),
+         cell = paste(match, ' / ', n, ' (', roundz(percent,1),')', sep='')) %>%
+  select(statistic.y, stat, cell) %>%
+  rename('Statistic type' = 'statistic.y',
+         'Statistic' = 'stat',
+         'n / N (%)' = 'cell')
+#
+ftab = flextable(stats) %>%
+  theme_box() %>%
+  merge_v(j=1) %>%
+  autofit()
+ftab
+
+```
+

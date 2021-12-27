@@ -1,0 +1,2152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OAI-PMH xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/ http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd">
+  <responseDate>2021-12-24T04:39:58Z</responseDate>
+  <request verb="GetRecord" identifier="oai:pubmedcentral.nih.gov:7908111" metadataPrefix="pmc">https:/www.ncbi.nlm.nih.gov/pmc/oai/oai.cgi</request>
+  <GetRecord>
+    <record>
+      <header>
+        <identifier>oai:pubmedcentral.nih.gov:7908111</identifier>
+        <datestamp>2021-02-27</datestamp>
+        <setSpec>ijerph</setSpec>
+        <setSpec>pmc-open</setSpec>
+      </header>
+      <metadata>
+        <article xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ali="http://www.niso.org/schemas/ali/1.0/" xmlns:mml="http://www.w3.org/1998/Math/MathML" xmlns:xlink="http://www.w3.org/1999/xlink" xsi:schemaLocation="https://jats.nlm.nih.gov/ns/archiving/1.3/ https://jats.nlm.nih.gov/archiving/1.3/xsd/JATS-archivearticle1-3.xsd" article-type="research-article">
+          <front>
+            <journal-meta>
+              <journal-id journal-id-type="nlm-ta">Int J Environ Res Public Health</journal-id>
+              <journal-id journal-id-type="iso-abbrev">Int J Environ Res Public Health</journal-id>
+              <journal-id journal-id-type="publisher-id">ijerph</journal-id>
+              <journal-title-group>
+                <journal-title>International Journal of Environmental Research and Public Health</journal-title>
+              </journal-title-group>
+              <issn pub-type="ppub">1661-7827</issn>
+              <issn pub-type="epub">1660-4601</issn>
+              <publisher>
+                <publisher-name>MDPI</publisher-name>
+              </publisher>
+            </journal-meta>
+            <article-meta>
+              <article-id pub-id-type="accession">PMC7908111</article-id>
+              <article-id pub-id-type="pmcid">PMC7908111</article-id>
+              <article-id pub-id-type="pmc-uid">7908111</article-id>
+              <article-id pub-id-type="pmid">33572955</article-id>
+              <article-id pub-id-type="pmid">33572955</article-id>
+              <article-id pub-id-type="doi">10.3390/ijerph18031214</article-id>
+              <article-id pub-id-type="publisher-id">ijerph-18-01214</article-id>
+              <article-categories>
+                <subj-group subj-group-type="heading">
+                  <subject>Article</subject>
+                </subj-group>
+              </article-categories>
+              <title-group>
+                <article-title>Efficacy of an Intervention to Reduce Stigma Beliefs and Attitudes among Primary Care and Mental Health Professionals: Two Cluster Randomised-Controlled Trials</article-title>
+              </title-group>
+              <contrib-group>
+                <contrib contrib-type="author">
+                  <contrib-id contrib-id-type="orcid" authenticated="true">https://orcid.org/0000-0002-4163-6545</contrib-id>
+                  <name>
+                    <surname>Eiroa-Orosa</surname>
+                    <given-names>Francisco José</given-names>
+                  </name>
+                  <xref ref-type="aff" rid="af1-ijerph-18-01214">1</xref>
+                  <xref ref-type="aff" rid="af2-ijerph-18-01214">2</xref>
+                  <xref rid="c1-ijerph-18-01214" ref-type="corresp">*</xref>
+                </contrib>
+                <contrib contrib-type="author">
+                  <name>
+                    <surname>Lomascolo</surname>
+                    <given-names>María</given-names>
+                  </name>
+                  <xref ref-type="aff" rid="af3-ijerph-18-01214">3</xref>
+                </contrib>
+                <contrib contrib-type="author">
+                  <name>
+                    <surname>Tosas-Fernández</surname>
+                    <given-names>Anaïs</given-names>
+                  </name>
+                  <xref ref-type="aff" rid="af3-ijerph-18-01214">3</xref>
+                </contrib>
+              </contrib-group>
+              <contrib-group>
+                <contrib contrib-type="editor">
+                  <name>
+                    <surname>Burger</surname>
+                    <given-names>Huibert</given-names>
+                  </name>
+                  <role>Academic Editor</role>
+                </contrib>
+              </contrib-group>
+              <aff id="af1-ijerph-18-01214"><label>1</label>Section of Personality, Assessment and Psychological Treatment, Department of Clinical Psychology and Psychobiology, Faculty of Psychology, University of Barcelona, 08035 Barcelona, Spain</aff>
+              <aff id="af2-ijerph-18-01214"><label>2</label>First-Person Research Group, Veus, Catalan Federation of 1st Person Mental Health Organisations, 08035 Barcelona, Spain</aff>
+              <aff id="af3-ijerph-18-01214"><label>3</label>Obertament, Catalan Alliance against Stigma and Discrimination in Mental Health, 08010 Barcelona, Spain; <email>mlomascolo@obertament.org</email> (M.L.); <email>anais.fernandez.tosas@gmail.com</email> (A.T.-F.)</aff>
+              <author-notes>
+                <corresp id="c1-ijerph-18-01214"><label>*</label>Correspondence: <email>feiroa@ub.edu</email></corresp>
+              </author-notes>
+              <pub-date pub-type="epub">
+                <day>29</day>
+                <month>1</month>
+                <year>2021</year>
+              </pub-date>
+              <pub-date pub-type="ppub">
+                <month>2</month>
+                <year>2021</year>
+              </pub-date>
+              <volume>18</volume>
+              <issue>3</issue>
+              <elocation-id>1214</elocation-id>
+              <history>
+                <date date-type="received">
+                  <day>20</day>
+                  <month>12</month>
+                  <year>2020</year>
+                </date>
+                <date date-type="accepted">
+                  <day>26</day>
+                  <month>1</month>
+                  <year>2021</year>
+                </date>
+              </history>
+              <permissions>
+                <copyright-statement>© 2021 by the authors.</copyright-statement>
+                <copyright-year>2021</copyright-year>
+                <license license-type="open-access">
+                  <license-p>Licensee MDPI, Basel, Switzerland. This article is an open access article distributed under the terms and conditions of the Creative Commons Attribution (CC BY) license (<ext-link ext-link-type="uri" xlink:href="http://creativecommons.org/licenses/by/4.0/">http://creativecommons.org/licenses/by/4.0/</ext-link>).</license-p>
+                </license>
+              </permissions>
+              <abstract>
+                <p>Although it may seem paradoxical, primary care and mental health professionals develop prejudices and discriminatory attitudes towards people with mental health problems in a very similar way to the rest of the population. The main objective of this project was to design, implement and evaluate two awareness-raising interventions respectively tailored to reduce stigmatising beliefs and attitudes towards persons with a mental health diagnosis among primary care (PC) and mental health (MH) professionals. These interventions were developed by Obertament, the Catalan alliance against stigma and discrimination in mental health. Activists from this organisation with lived experience of mental health diagnosis carried out awareness-raising interventions in PC and MH health centres. The Targeted, Local, Credible, Continuous Contact (TLC3) methodology was adapted to the Catalan healthcare context. The efficacy of these interventions was evaluated using two prospective double-blind cluster-randomised-controlled trials. Stigmatizing beliefs and behaviours were measured with the Opening Minds Stigma Scale for Health Care Providers in PC centres and with the Beliefs and Attitudes towards Mental Health Service users’ rights in MH centres. Reductions in both PC and MH professionals’ stigmatising beliefs and attitudes were found in the 1-month follow-up, although a ‘rebound effect’ at the 3-month follow up was detected. This emphasizes the importance of the continuity of the presence of anti-stigma activities and messages. Attrition rates were high, which can hamper the reliability of the results. Further follow-up studies should enquiry effects of long-term interventions aimed at reducing stigmatising beliefs and attitudes among primary care and mental health professionals using assessment systems that include the measurement of knowledge acquired and actual behavioural change.</p>
+              </abstract>
+              <kwd-group>
+                <kwd>activism</kwd>
+                <kwd>discrimination</kwd>
+                <kwd>mental health</kwd>
+                <kwd>primary care</kwd>
+                <kwd>participation</kwd>
+                <kwd>stigma</kwd>
+              </kwd-group>
+            </article-meta>
+          </front>
+          <body>
+            <sec sec-type="intro" id="sec1-ijerph-18-01214">
+              <title>1. Introduction</title>
+              <p>Although it may seem paradoxical, primary care and mental health professionals, those who maintain more direct and constant contact with people diagnosed with mental disorders, develop prejudices and discriminatory attitudes, e.g., stigma, towards people with mental health problems in a very similar way to the rest of the population [<xref rid="B1-ijerph-18-01214" ref-type="bibr">1</xref>,<xref rid="B2-ijerph-18-01214" ref-type="bibr">2</xref>,<xref rid="B3-ijerph-18-01214" ref-type="bibr">3</xref>] and people diagnosed with mental disorders themselves [<xref rid="B4-ijerph-18-01214" ref-type="bibr">4</xref>]. According to reviews looking at characteristics of these phenomena in primary care and mental health settings, stigmatisation towards people diagnosed with psychotic disorders is more intense than towards people diagnosed of anxiety or depression [<xref rid="B5-ijerph-18-01214" ref-type="bibr">5</xref>,<xref rid="B6-ijerph-18-01214" ref-type="bibr">6</xref>]. Evidence on the sociodemographic characteristics of professionals showing more stigmatizing behaviours points to higher rates among males or when interacting with the opposite sex [<xref rid="B1-ijerph-18-01214" ref-type="bibr">1</xref>], but is contradictory regarding age and experience, with some studies focused on alcohol abuse showing a positive correlation with age [<xref rid="B7-ijerph-18-01214" ref-type="bibr">7</xref>,<xref rid="B8-ijerph-18-01214" ref-type="bibr">8</xref>] and others, based on vignettes of people diagnosed with depression or schizophrenia [<xref rid="B6-ijerph-18-01214" ref-type="bibr">6</xref>,<xref rid="B9-ijerph-18-01214" ref-type="bibr">9</xref>], negative. These differences may be due to the combination of generational factors, together with others related to one’s own professional evolution, continued contact with diagnosed people and the development of selective tolerance according to the characteristics of each population [<xref rid="B6-ijerph-18-01214" ref-type="bibr">6</xref>,<xref rid="B7-ijerph-18-01214" ref-type="bibr">7</xref>,<xref rid="B8-ijerph-18-01214" ref-type="bibr">8</xref>,<xref rid="B9-ijerph-18-01214" ref-type="bibr">9</xref>]. Regardless of the profiles mentioned, stigma does lead to overshadowing of somatic diagnoses and pessimism about adherence to treatment [<xref rid="B5-ijerph-18-01214" ref-type="bibr">5</xref>,<xref rid="B10-ijerph-18-01214" ref-type="bibr">10</xref>,<xref rid="B11-ijerph-18-01214" ref-type="bibr">11</xref>]. This leads to disempowerment and increased internalised stigma amongst service users [<xref rid="B12-ijerph-18-01214" ref-type="bibr">12</xref>].</p>
+              <p>Most people diagnosed with mental disorders have experienced some form of discrimination in healthcare settings, with figures reaching 90% in large cohorts [<xref rid="B13-ijerph-18-01214" ref-type="bibr">13</xref>]. Despite decreases in these rates attributable to the multitude of anti-stigma campaigns implemented and, in general, the public debate about it around the world [<xref rid="B14-ijerph-18-01214" ref-type="bibr">14</xref>], levels of discrimination still prevent affected people from seeking professional help and adequate treatment when they reach health services [<xref rid="B5-ijerph-18-01214" ref-type="bibr">5</xref>,<xref rid="B10-ijerph-18-01214" ref-type="bibr">10</xref>,<xref rid="B15-ijerph-18-01214" ref-type="bibr">15</xref>,<xref rid="B16-ijerph-18-01214" ref-type="bibr">16</xref>]. However, health professionals are also key to change, since the way in which they conceptualize mental disorders ends up influencing the rest of the population [<xref rid="B17-ijerph-18-01214" ref-type="bibr">17</xref>]. Despite these facts, the systematic inclusion of anti-stigma contents in initial or continued health professional training or the implementation of specific awareness campaigns is a relatively new phenomenon [<xref rid="B1-ijerph-18-01214" ref-type="bibr">1</xref>,<xref rid="B2-ijerph-18-01214" ref-type="bibr">2</xref>]. Therefore, interventions to reduce stigma towards people diagnosed with mental disorders specifically targeted towards health professionals are being promoted [<xref rid="B1-ijerph-18-01214" ref-type="bibr">1</xref>]. Ingredients such as information about mental disorders, development of specific skills, and modifications in the culture of the health centres have been pointed out as the most effective [<xref rid="B18-ijerph-18-01214" ref-type="bibr">18</xref>].</p>
+              <p>According to recent reviews and meta-analyses [<xref rid="B1-ijerph-18-01214" ref-type="bibr">1</xref>,<xref rid="B14-ijerph-18-01214" ref-type="bibr">14</xref>,<xref rid="B19-ijerph-18-01214" ref-type="bibr">19</xref>,<xref rid="B20-ijerph-18-01214" ref-type="bibr">20</xref>,<xref rid="B21-ijerph-18-01214" ref-type="bibr">21</xref>,<xref rid="B22-ijerph-18-01214" ref-type="bibr">22</xref>,<xref rid="B23-ijerph-18-01214" ref-type="bibr">23</xref>], studies examining mental health stigma reduction interventions carried out with healthcare professionals have generally found positive results regarding interventions including social contact with people diagnosed of a mental illness and problem-based learning. However, positive results do not usually last, since the differences with control groups disappear after relatively short periods of time [<xref rid="B21-ijerph-18-01214" ref-type="bibr">21</xref>]. Furthermore, until recently, most studies have been focused on students [<xref rid="B20-ijerph-18-01214" ref-type="bibr">20</xref>,<xref rid="B24-ijerph-18-01214" ref-type="bibr">24</xref>,<xref rid="B25-ijerph-18-01214" ref-type="bibr">25</xref>] or a specific diagnostic characteristic such as people diagnosed with substance abuse [<xref rid="B19-ijerph-18-01214" ref-type="bibr">19</xref>] or borderline personality disorder [<xref rid="B1-ijerph-18-01214" ref-type="bibr">1</xref>].</p>
+              <p>However, there are three notable exceptions to the paucity of interventions applicable to different health professionals and mental health problems. The Canadian campaign <italic>Opening Minds</italic> applied a grounded theory model [<xref rid="B26-ijerph-18-01214" ref-type="bibr">26</xref>] to design a guide of recommendations to implement anti-stigma interventions in primary care. Following these recommendations, different organisations implemented a series of interventions throughout the geography of this country. Although there was some freedom in the format of the interventions, given the vast experience of the recovery and anti-stigma movements in Canada, all used a unified assessment methodology with a unique measurement instrument, the Opening Minds Stigma Scale for Health Care Providers [<xref rid="B27-ijerph-18-01214" ref-type="bibr">27</xref>]. A pooled analysis of their impact has shown statistically significant decreases, especially for younger professionals and those with higher initial levels of stigma [<xref rid="B28-ijerph-18-01214" ref-type="bibr">28</xref>]. Additionally, through a qualitative evaluation, the campaign has produced a synthesis of the six structural ingredients key to the success of such interventions. Programs including a recovery emphasis, personal testimony from a trained speaker who has lived experience of mental illness, employing multiple forms of social contact, teaching skills involving what to say and what to do, that employed myth-busting, and that used an enthusiastic facilitator, performed significantly better than programs that did not include all these ingredients [<xref rid="B29-ijerph-18-01214" ref-type="bibr">29</xref>].</p>
+              <p>Time to change in England carried out a large trial of a short educational intervention with medical students [<xref rid="B30-ijerph-18-01214" ref-type="bibr">30</xref>], that offered positive results. However, as the aforementioned reviews have shown [<xref rid="B21-ijerph-18-01214" ref-type="bibr">21</xref>], the results were not sustained over time. They have also released the results of a pilot project carried out with mental health professionals [<xref rid="B31-ijerph-18-01214" ref-type="bibr">31</xref>]. Multi-wave surveys carried among professionals who participated in the pilot social contact workshops carried by mental health activists (people with experience of mental suffering who collaborate with campaigns against stigma) were compared with a control group. Results showed increased understanding and confidence attitudes among professionals who participated in the workshops. </p>
+              <p>More recently [<xref rid="B32-ijerph-18-01214" ref-type="bibr">32</xref>] the protocol of an integrative programme to reduce stigma in Chilean healthcare workers from 11 primary care centres has been published. The intervention is based on previous qualitative analyses carried out with service users and health teams [<xref rid="B18-ijerph-18-01214" ref-type="bibr">18</xref>]. The project consists of education strategies, direct (facilitators will have a diagnosis of mental disorder), and indirect contact (videos and narratives) with people diagnosed with severe mental disorders, and skill development.</p>
+              <p>As discussed above, to date there have been few national-wide campaigns, encompassing different types of healthcare professionals and possible mental health conditions, with available evaluations of interventions in healthcare settings. This article deals with the implementation and evaluation of awareness-raising interventions, aimed at reducing stigmatising beliefs and attitudes among primary care and mental health professionals. This is the first study to assess the effect of a homogeneous intervention applied to a whole territory under an autonomous health authority encompassing both primary care and mental health centres, as well as content applicable to any type of mental disorder.</p>
+            </sec>
+            <sec id="sec2-ijerph-18-01214">
+              <title>2. Materials and Methods</title>
+              <sec id="sec2dot1-ijerph-18-01214">
+                <title>2.1. Co-Creation Process</title>
+                <p>During 2017 and 2018, there were a series of meetings to prepare this project. Representatives of the main primary care (PC) and mental health (MH) providers in Catalonia expressed their views on the implementation of awareness-raising interventions in their centres together with Obertament technicians and activists with lived experience of mental health diagnosis and service use. There was an independent organization in charge of the moderation of this co-creation process, Spora Synergies (<uri xlink:href="http://www.spora.ws/">http://www.spora.ws/</uri>), which facilitated and offered a qualitative analysis of the meetings that allowed decision making. The contents of these analyses have not been included as it would be beyond the scope of this article. The agreements reached when reflecting on these meetings were that a local referent (a professional in charge of supervising the coordination with Obertament) was necessary for the development of awareness interventions. In the same way, it was deemed necessary to combine a theoretical part (that professionals requested to understand the need for the intervention) with first-person accounts. Additionally, it was concluded that, for the message to be truly internalised, all primary health centres must develop self-diagnosis activities that can be used to envision actions against stigma in an autonomous way, but with the accompaniment of the activists who have carried out the intervention. Two activists, Obertament collaborators with experience of extreme psychic suffering, were recruited to perform the interventions.</p>
+              </sec>
+              <sec id="sec2dot2-ijerph-18-01214">
+                <title>2.2. Awareness Interventions</title>
+                <p>The interventions aimed to raise awareness toward the discrimination faced by people diagnosed with a mental disorder when they use primary care and mental health services. The methodology was based on the Targeted, Local, Credible, Continuous Contact (TLC3) principles as described by Corrigan [<xref rid="B33-ijerph-18-01214" ref-type="bibr">33</xref>]. The content of the awareness-raising interventions included both theoretical and practical contents, aimed at improving professional care, promoting the participation of mental health users in decisions related to their treatment and the exercise of their rights; always combining the view of service users with the therapeutic framework in which professionals operate. The awareness-raising interventions consisted of four parts: a 4-h training workshop, a 4-h self-diagnosis workshop, a self-organised activity, and a follow-up session. <xref ref-type="fig" rid="ijerph-18-01214-f001">Figure 1</xref> shows a flow diagram of the intervention structure. The contents of each session are detailed below.</p>
+                <sec id="sec2dot2dot1-ijerph-18-01214">
+                  <title>2.2.1. Training Workshop</title>
+                  <p>In this part, pedagogical contents were combined with different Obertament videos (indirect contact) that had been used during the social-marketing campaigns (<uri xlink:href="https://obertament.org/ca/sanitat/per-que-sanitat">https://obertament.org/ca/sanitat/per-que-sanitat</uri>) as well as first-person accounts (direct contact) of how activists have coped with mental ill-health and how discrimination affects recovery outside and inside the healthcare system. Participants were invited to ask questions and were provided with information on peer- and relatives support organizations. The contact component of the intervention emphasised evidential aspects about different recovery journeys and tried to refute myths about mental illness. The pedagogical contents of the session follow.</p>
+                  <sec>
+                    <title>First Block: Mental Health and Mental Illness</title>
+                    <p>After a presentation, professionals were invited to participate in a dynamic group conversation to estimate and discuss the prevalence of mental health problems. The opinions of the participants were contrasted with the fact that, according to the World Health Organization, one in four people will have a mental health disorder during their lives. Therefore, it became patent that mental disorders are not exceptions but commonplaces. Next, activists gave a lecture combined with personal accounts focused on the following components: mental health as more than mental illness, mental health in the community, social determinants of mental health, myths about mental health problems, mental crises as an exception and not a rule in the lives of diagnosed persons. After a break, the concepts of recovery and discrimination were discussed also using personal accounts. The key messages were: (1) recovering a purpose in life is different from being ‘cured’ and (2) a good part of distress experienced by persons diagnosed with mental health disorders is not due to the symptoms inherent to their disorder but to the discrimination they suffer because of being identified as having a diagnosis of a mental disorder. This happens by making public that a diagnosis has been received or simply by involuntarily showing the side effects of medications.</p>
+                  </sec>
+                  <sec>
+                    <title>Second Block: Stigma and Discrimination</title>
+                    <p>The block began with a lecture on the concept of stigma that had the following components: Definition of stigma and categorization, stigma and prejudices, prejudices in mental health. The objective was for participants to be introduced to the concept of stigma and to become aware of how human beings need to label behaviours and social groups to feel safe. It was explained that, although this has an evident adaptive role, when we label disadvantaged groups, we tend to justify the discrimination to which they are subjected. This is a process with varying levels of awareness. Therefore, it is important to be able to make our feelings conscious analysing the prejudices we have towards other people and groups. This allows health professionals to make decisions adapted to each situation and therefore less biased.</p>
+                    <p>Once the concept and scope of stigma had already been clarified, the lecture followed by explaining and exemplifying how stigma causes discrimination and in which domains, including health contexts. For example, it was explained that many people think unjustifiably that people with a mental disorder cannot study or work. This makes it less likely that a person with this condition can complete a course or get a job, reinforcing the prejudices. In this way, both diagnosed people (by not trying), employers (by negatively evaluating this characteristic in a selection process) and society as a whole (by taking for granted the fact that people diagnosed cannot achieve certain goals) contribute to fulfilling this unfounded prophecy.</p>
+                  </sec>
+                  <sec>
+                    <title>Third Block: Healthcare and Primary Care/Mental Health Care</title>
+                    <p>This part had some different components depending on whether it was implemented in PC or MH health centres. The block commenced with a discussion on the differences between ‘personal’ and ‘professional’ treatment. This discussion was contrasted with examples and personal experiences of the activists. The message was that although there are available professional-quality treatments, sometimes service users perceive that the personal treatment they receive does not help them to recover. Next, data about treatments and care load adapted to PC and SM contexts was offered. This was contrasted with the data available on discrimination suffered by service users at both PC and SM facilities.</p>
+                  </sec>
+                  <sec>
+                    <title>Fourth Block: Fighting Stigma</title>
+                    <p>In this final part, activists briefly described the Obertament project and its objectives as well as similar initiatives around the world. To reinforce the legitimacy of the activity, special attention was paid to other projects that have developed similar interventions targeted to health professionals in other countries such as Canada and the United Kingdom (see <xref ref-type="sec" rid="sec1-ijerph-18-01214">Section 1</xref>). Before finishing, the implementation referent (a professional from each PC or MH centre), explained how the selected self-organised activity would be carried out.</p>
+                  </sec>
+                </sec>
+                <sec id="sec2dot2dot2-ijerph-18-01214">
+                  <title>2.2.2. Self-Diagnosis Session</title>
+                  <p>The second session was focused on a self-diagnosis carried out by the PC teams in relation to stigma and discrimination. That is, it aimed to give tools to professionals so themselves can define jointly what stigmatizing practices they detect in their own work environment and how they could reverse them. A group dynamic was used with three main objectives: (1) Identifying the stigmatizing and discriminatory practices and behaviours that take place in their own working centre and (2) defining proposals agreed between the team to deal with the practices and behaviours identified as stigmatizing and (3) prioritizing the proposals and plan their implementation. This session was not implemented with the MH teams for reasons of training time availability.</p>
+                </sec>
+                <sec id="sec2dot2dot3-ijerph-18-01214">
+                  <title>2.2.3. Follow-Up Session</title>
+                  <p>This shorter session, carried out approximately a month after the baseline assessment, was used to reinforce the concepts learned in addition to sharing the progress of the self-organised activities. When these activities included a public presentation, this was done during this session.</p>
+                </sec>
+              </sec>
+              <sec id="sec2dot3-ijerph-18-01214">
+                <title>2.3. Procedure</title>
+                <p>The anti-stigma awareness-raising interventions were evaluated through a prospective single-blind cluster-randomised-controlled trial. Each cluster was a health centre. The design was single blinded since the evaluators did not know which centres have been evaluated as case or control. Only the organisers of the intervention workshops had this information. The twelve centres (6 PC + 6 MH: 2 adult MH, 2 children and adolescent MH and 2 substance abuse) taking part in the study were designated by the Department of Health of the Catalan Government blindly to the evaluators before randomisation.</p>
+                <p>Upon enrolment, each centre was included in a randomisation table with a fixed number of control (3 PC + 3 MH) and intervention (3 PC + 3 MH) sites. In this way, each centre had the same possibilities of belonging to the experimental or to the control conditions. Once the centre was randomised, professionals received a registration questionnaire, which included the baseline assessment. It was composed by sociodemographic (including gender, age, and personal contact with mental disorders) and professional (profession category) information + a tailored beliefs and attitudes sale (see below <xref ref-type="sec" rid="sec2dot5-ijerph-18-01214">Section 2.5</xref>). The centres included in the experimental group accessed the course immediately, while the centres included in the control group waited, giving time to carry out the follow-up assessments within the intervention group, before beginning the course. Both groups completed a follow-up at one month and another at three months after the baseline assessment. <xref ref-type="fig" rid="ijerph-18-01214-f002">Figure 2</xref> shows a flow diagram of the design.</p>
+              </sec>
+              <sec id="sec2dot4-ijerph-18-01214" sec-type="subjects">
+                <title>2.4. Participants </title>
+                <p>Considering as possible universes all primary care and mental health centres (children and adolescents, adults and substance abuse) in Catalonia and the effect sizes of an intervention carried out with social work students [<xref rid="B34-ijerph-18-01214" ref-type="bibr">34</xref>], using a similar methodology, the number of participants was estimated according to the following calculation of statistical power. Accepting an alpha risk of 0.05 and a beta risk of 0.2 in a two-sided test, assuming a correlation between the first and second measure of <italic>r</italic> = 0.6, 99 subjects were considered necessary in each group to recognize as statistically significant difference greater than or equal to 0.4 standard deviations.</p>
+                <p>Following these sample size calculations, the intervention workshops were implemented in randomly assigned Catalan PC and MH centres comprising a total of 371 professionals (185 PC + 186 MH). The recipients were professionals working in such settings: administrative officers, general practitioners, odontologists, nurses, psychiatrists, psychologists, and social workers. <xref ref-type="fig" rid="ijerph-18-01214-f003">Figure 3</xref> and <xref ref-type="fig" rid="ijerph-18-01214-f004">Figure 4</xref> show flow diagrams of the recruitment and follow-up process.</p>
+              </sec>
+              <sec id="sec2dot5-ijerph-18-01214">
+                <title>2.5. Instruments</title>
+                <p>The Opening Minds Stigma Scale for Health Care Providers (OMS-HC; [<xref rid="B27-ijerph-18-01214" ref-type="bibr">27</xref>,<xref rid="B35-ijerph-18-01214" ref-type="bibr">35</xref>]), is a 15-item scale that measures stigma levels and has been specially designed for use in primary care. The overall internal consistency for the whole scale (α = 0.79) and three subscales, namely Attitudes (α = 0.68), Disclosure (α = 0.67) and Social distance (α = 0.68) has been found to be acceptable. Internal consistency is also satisfactory across different health professional groups (physicians, nurses, etc.). The scale has been successful in detecting positive changes (SRM ≤ 0.50 to ≤ 0.91) in various anti-stigma interventions [<xref rid="B35-ijerph-18-01214" ref-type="bibr">35</xref>]. The Attitudes subscale includes different attitudes of health care providers towards people with mental illness such as being comfortable helping a person who has a mental illness, having negative reactions, feeling that there is little to do, thinking that people with mental illness do not try hard enough to get better or feeling compassion. The Disclosure subscale includes items on their willingness to seek help and disclose if they were in treatment for a mental illness to colleagues or friends. Finally, the Social Distance subscale includes items on willingness to work with colleagues who had a managed mental illness, going to a physician if they knew that the physician had been treated for a mental illness or wanting a person with a mental illness, even if it were appropriately managed, to work with children or living next to them.</p>
+                <p>The professionals’ Beliefs and Attitudes towards Mental Health Service users’ rights scale (BAMHS; [<xref rid="B36-ijerph-18-01214" ref-type="bibr">36</xref>]) has been developed by our group for this project. In preliminary analyses carried out within cross-sectional studies, we have found four subscales: justification beliefs (α = 0.70), coercion (α = 0.65), paternalism (α = 0.71) and discrimination (α = 0.65) with good global reliability (α = 0.87). The justification beliefs subscale materialises the professional beliefs that health-related professionals have which justify the status quo including items claiming that mental disorders are diseases like any other, that aggressiveness is due to mental disorders, that it is not possible to recover without the intervention of a professional, and that some patients will never recover. The coercion dimension addresses recurrent topics with mental health professionals when discussing service users’ rights including questions on involuntary hospitalization, mechanical restraints, and, inversely, respect for service users’ autonomy. The paternalism subscale represents a series of beliefs related to the supposed inability of people diagnosed with mental disorders to take charge of their lives including having children, making decisions regarding their treatment, or prioritizing treatment over dignity. Finally, the discrimination subscale materialises widespread prejudices towards mental health service users such as voting rights, friendship, overuse of emergency settings or feeling comfortable if a person with a mental disorder were a teacher in a school.</p>
+              </sec>
+              <sec id="sec2dot6-ijerph-18-01214">
+                <title>2.6. Statistical Analyses</title>
+                <p>Instrument reliability was measured using Cronbach’s alpha. Baseline comparability between groups (including sociodemographic and professional data and scale scores) was assessed using Odds ratios and χ<sup>2</sup> tests for categorical data and Student’s <italic>t</italic>-test for continuous data. Attrition was analysed by means of Mann–Whitney’s U or <italic>t</italic>-tests comparing baseline characteristics and scores as well as differential scores between baseline and the first follow up between participants who completed the second follow-up and those not completing it. All the participants were included in the analyses in the group to which they were randomised irrespective of whether they have missing data. To evaluate the differences between groups at the follow-up session (1 month after baseline) and the 3-months follow-up assessment, depending on normality of distributions and available data, we used Mann–Whitney’s U or independent measures <italic>t</italic>-tests and Wilcoxon signed-rank or repeated measures <italic>t</italic>-tests (the latter in each group separately) and general linear models considering the evolution of intervention and control groups. Due to the high attrition rate, we used multiple imputations with chained equations to account for missing information. We carried sub-analyses for the adult, children and adolescent, and substance abuse mental health centres. Additionally, we used multilevel mixed-effects linear models. </p>
+              </sec>
+            </sec>
+            <sec sec-type="results" id="sec3-ijerph-18-01214">
+              <title>3. Results</title>
+              <sec id="sec3dot1-ijerph-18-01214">
+                <title>3.1. Primary Care</title>
+                <p>The reliability of the stigma measure (OMS-HC) was acceptable staying above <italic>α</italic> = 0.7 for the instrument as a whole and above <italic>α</italic> = 0.5 for all subscales (attitudes, disclosure, and social distance), except for the disclosure subscale in the second follow-up (<italic>α</italic> = 0.4).</p>
+                <p>Regarding baseline characteristics (<xref rid="ijerph-18-01214-t001" ref-type="table">Table 1</xref>), there was a statistically significant difference between the intervention and control groups in the total score of the OMS-HC scale (<italic>t</italic> = 2.138, <italic>p</italic> &lt; 0.05), although not in any of the subscales. There were also differences between the control and intervention group in terms of gender (67% vs. 82%; <italic>χ<sup>2</sup></italic> = 5.223, <italic>p</italic> ≤ 0.05). No gender differences were found for any of the OMS-HC subscales. A mild statistically significant correlation was found between the Social distance subscale and age at baseline (<italic>r</italic> = 0.172, <italic>p</italic> &lt; 0.05). Attrition analyses did not show any baseline differences between completers and participants lost to follow up, but it detected that participants who responded to the second follow-up had had greater reductions in the total stigma score (<italic>z</italic> = −2.459, <italic>p</italic> &lt; 0.05).</p>
+                <p>No statistically significant differences were observed between intervention and control group scores at any of the follow-up points (<xref rid="ijerph-18-01214-t002" ref-type="table">Table 2</xref>). Repeated measures <italic>t</italic>-tests showed no statistically significant change in the control group while in the intervention group statistically significant decreases were seen between baseline and first follow-up for the OMS-HC total score (<italic>t</italic> = 2.813, <italic>p</italic> &lt; 0.01) and the disclosure subscale (<italic>t</italic> = 2.534, <italic>p</italic> &lt; 0.05). There was not enough sample to make comparisons between the first and second follow-up without multiple imputations. When performing multiple imputations to recover lost data, similar results were observed between baseline and first follow-up. This allowed us to estimate that differences in evolution between first and second follow-up were statistically significant (downward in the intervention group) for the total score, and the disclosure, and social distance subscales.</p>
+                <p>The general linear models showed a statistically significant drop between the first observation and the second for the OMS-HC disclosure scores with statistically significant effects (<italic>F</italic> = 26.881, <italic>p</italic> &lt; 0.001) on the quadratic evolution, which implies a ‘rebound effect’ (there was a very marked drop in the intervention group which then returned to higher values). These results for the disclosure subscale were generally confirmed and expanded to the OMS-HC total score using imputed data. Finally, multilevel mixed-effects linear models showed no effects for any of the scores.</p>
+              </sec>
+              <sec id="sec3dot2-ijerph-18-01214">
+                <title>3.2. Mental Health</title>
+                <p>The reliability of the beliefs and attitudes measure (BAMHS) was acceptable, remaining above <italic>α</italic> = 0.7 for the instrument as a whole and above <italic>α</italic> = 0.4 for all subscales (beliefs, coercion, paternalism, and discrimination), except for the disclosure subscale in the second follow-up (<italic>α</italic> = 0.16). </p>
+                <p>Regarding baseline characteristics, there were no statistically significant differences in any sociodemographic characteristics or in the scores of the questionnaire (<xref rid="ijerph-18-01214-t003" ref-type="table">Table 3</xref>). No gender differences were found for any of the BAMHS subscales or total score. A mild statistically significant correlation was found between the Paternalism subscale and age at baseline (<italic>r</italic> = 0.209, <italic>p</italic> &lt; 0.005). Attrition analyses did not show any baseline or differential scores differences between completers and participants lost to follow up.</p>
+                <p>Statistically significant differences were observed between intervention and control group for beliefs (<italic>z</italic> = −2.419, <italic>p</italic> &lt; 0.05) and the total BAMHS score (<italic>z</italic> = −2.392, <italic>p</italic> &lt; 0.05) at the first follow-up point (<xref rid="ijerph-18-01214-t004" ref-type="table">Table 4</xref>) but no differences were observed in the second follow-up. The results of the repeated measures <italic>t</italic>-tests showed a statistically significant decrease in the control group of the discrimination subscale between the first and second follow-up. In the intervention group there was a trend in the decrease of the total score (<italic>t</italic> = 1.708, <italic>p</italic> = 0.091) and a statistically significant decrease of the coercion subscale (<italic>t</italic> = 3.056, <italic>p</italic> &lt; 0.005) between the baseline and the first follow-up. When we carried out calculations by type of centre, we saw that these results corresponded mainly to adult mental health centres (where both total and coercion had statistically significant decreases between baseline and first follow-up). In the case of children and adolescent centres and addiction centres, the sample size only allowed comparisons between baseline and first follow-up. In the case of children and adolescent centres, the intervention group had a statistically significant decrease between baseline and first follow-up in the total score and in beliefs about the system (which reflects an increase in self-criticism). In the case of substance abuse, no statistically significant changes were found in any of the samples or differences in evolution. General linear models showed different evolutions just in the case of the discrimination subscale (<italic>F</italic> = 5.450, <italic>p</italic> &lt; 0.01).</p>
+                <p>Calculations carried out with imputed data clearly confirmed the results on coercion although, as was the case in the primary care, there was a ‘rebound effect’. In addition, general linear models showed differences in overall evolution between the control and intervention groups in the discrimination scores, with decreases in the intervention group in the first follow-up, which are then softened in the second in most of the imputed scenarios. Finally, multilevel mixed-effects linear models showed statistically different evolutions in the total (<italic>F</italic> = 3.922, <italic>p</italic> &lt; 0.05) and beliefs (<italic>F</italic> = 5.277, <italic>p</italic> &lt; 0.05) scores.</p>
+              </sec>
+            </sec>
+            <sec sec-type="discussion" id="sec4-ijerph-18-01214">
+              <title>4. Discussion</title>
+              <p>This study aimed to evaluate two awareness-raising interventions respectively tailored to reduce stigma beliefs and attitudes towards persons with a mental health diagnosis among primary care and mental health professionals. The results show intervention size effects close to those registered in other territories where similar activities have taken place [<xref rid="B1-ijerph-18-01214" ref-type="bibr">1</xref>,<xref rid="B14-ijerph-18-01214" ref-type="bibr">14</xref>,<xref rid="B19-ijerph-18-01214" ref-type="bibr">19</xref>,<xref rid="B20-ijerph-18-01214" ref-type="bibr">20</xref>,<xref rid="B21-ijerph-18-01214" ref-type="bibr">21</xref>,<xref rid="B22-ijerph-18-01214" ref-type="bibr">22</xref>,<xref rid="B23-ijerph-18-01214" ref-type="bibr">23</xref>]. Despite these generally favourable results, as seen in the previous literature [<xref rid="B21-ijerph-18-01214" ref-type="bibr">21</xref>] a rebound effect is seen in further follow-up assessments. We hypothesise that this may be due to the short duration of the interventions and the fact that the first follow-up assessment of the intervention groups was done after a session of self-organised activities with a high degree of motivation on the part of participants. This emphasizes the importance of the continuity of the presence of the anti-stigma movement through reinforcement activities. Therefore, to implement and consolidate a cultural change like the one proposed with these interventions, it is necessary to continue working in this line. Such changes require time and a strong alliance between the organisations involved and the public administrations. In this sense, the project intends to be an active agent of change, promoting awareness and changing attitudes to advocate for the rights of people with mental health problems in healthcare contexts. </p>
+              <p>The results of this study and, in general, the efforts to implement this type of awareness-raising projects against the stigma on people diagnosed with mental disorders, should be seen in the context of the struggle for a more inclusive society in the new era opened by the Convention on the Rights of Persons with Disabilities [<xref rid="B37-ijerph-18-01214" ref-type="bibr">37</xref>] in which health it is considered a right for all. As commented in the introduction, stigma in the field of mental health care causes delays and resistance to the use of services that contribute to the aggravation of mental health conditions [<xref rid="B2-ijerph-18-01214" ref-type="bibr">2</xref>]. At the primary care level, many people do not get the treatment they need since many health professionals attribute somatic symptoms to mental health problems. Cases have been reported in which this ‘diagnostic overshadowing’ has caused that heart attacks could not be detected correctly, or transplantations have been delayed or even denied [<xref rid="B28-ijerph-18-01214" ref-type="bibr">28</xref>]. In the case of mental health, many delay help seeking due to fear of discrimination [<xref rid="B13-ijerph-18-01214" ref-type="bibr">13</xref>]. The results of this project will serve to justify anti-stigma awareness-raising projects carried out with healthcare trainees and professionals at the local and international levels that can prevent these situations from occurring, and therefore improve the physical and mental health status of people diagnosed with mental disorders. This is a very important aspect in a context of scarce resources.</p>
+              <p>Among the limitations of this study, the attrition rate is particularly remarkable. Although it is somewhat common in this type of interventions [<xref rid="B38-ijerph-18-01214" ref-type="bibr">38</xref>], in which prejudices about service users are disclosed, discussion on this issue is needed. Some professionals failed to fill the baseline questionnaires, especially in the case of the control groups. This caused the number of participants in both groups to be unbalanced. Additionally, problems carrying out follow-ups, included the high healthcare pressure of professionals and several strikes and civil servant evaluations that coincided with the implementation of this study. This situation may create doubts about the reliability of this study results, especially among primary care professionals in whom we see a higher response rate among participants with higher initial effects, that must be resolved with further follow-up studies. Additionally, formative evaluation activities were not carried out due to lack of time and resources. Future studies should include evaluation measures to quantify the degree to which participants grasped the contents of training actions. Finally, only beliefs and attitudes were measured, but not actual behaviours. Future evaluations of these types of interventions carried out with more resources should assess whether they have a direct impact on the actual health professionals practice.</p>
+            </sec>
+            <sec sec-type="conclusions" id="sec5-ijerph-18-01214">
+              <title>5. Conclusions</title>
+              <p>This project aimed at raising awareness on the stigma experienced by people with mental health problems in the healthcare field by trying to promote reflection on clinical practice among healthcare professionals. We intended to foster a change of attitudes and practices in relation to the need to guarantee the rights of service users. Although the results of the evaluation of the first implementation at the Catalan level point to favourable but mild and ephemeral effects, interventions with long-term follow-up activities must be implemented and evaluated using assessment systems that include the measurement of knowledge acquired and actual behavioural change to ensure the impact of the anti-stigma movement in healthcare practise.</p>
+            </sec>
+          </body>
+          <back>
+            <ack>
+              <title>Acknowledgments</title>
+              <p>We would like to thank all the Obertament staff and activists as well as health professionals involved in this project.</p>
+            </ack>
+            <fn-group>
+              <fn>
+                <p><bold>Publisher’s Note:</bold> MDPI stays neutral with regard to jurisdictional claims in published maps and institutional affiliations.</p>
+              </fn>
+            </fn-group>
+            <app-group>
+              <app id="app1-ijerph-18-01214">
+                <title>Supplementary Materials</title>
+                <p>The following are available online at <uri xlink:href="https://www.mdpi.com/1660-4601/18/3/1214/s1">https://www.mdpi.com/1660-4601/18/3/1214/s1</uri>.</p>
+                <supplementary-material content-type="local-data" id="ijerph-18-01214-s001">
+                  <media xlink:href="ijerph-18-01214-s001.zip">
+                    <caption>
+                      <p>Click here for additional data file.</p>
+                    </caption>
+                  </media>
+                </supplementary-material>
+              </app>
+            </app-group>
+            <notes>
+              <title>Author Contributions</title>
+              <p>Conceptualization, F.J.E.-O., M.L. and A.T.-F.; methodology, F.J.E.-O. and M.L.; software, F.J.E.-O.; validation, F.J.E.-O.; formal analysis, F.J.E.-O.; investigation, F.J.E.-O.; resources, M.L. and A.T.-F.; data curation, F.J.E.-O.; writing—original draft preparation, F.J.E.-O.; writing—review and editing, F.J.E.-O.; visualization, F.J.E.-O.; supervision, F.J.E.-O.; project administration, M.L. and A.T.-F.; funding acquisition, M.L. and A.T.-F. All authors have read and agreed to the published version of the manuscript.</p>
+            </notes>
+            <notes>
+              <title>Funding</title>
+              <p>This research was funded by the Department of Health of the Catalan Government. F.J.E.-O. has received funding from the Spanish Ministry of Science and Innovation under the Ramón y Cajal Grant Agreement number RYC2018-023850-I.</p>
+            </notes>
+            <notes>
+              <title>Institutional Review Board Statement</title>
+              <p>The study was conducted according to the guidelines of the Declaration of Helsinki and approved by the University of Barcelona’s Bioethics Commission (IRB 00003099).</p>
+            </notes>
+            <notes>
+              <title>Informed Consent Statement</title>
+              <p>All participants provided informed consent before inclusion in the study.</p>
+            </notes>
+            <notes notes-type="data-availability">
+              <title>Data Availability Statement</title>
+              <p>The databases used for this study are available online as <xref ref-type="app" rid="app1-ijerph-18-01214">Supplementary Material</xref> of this article.</p>
+            </notes>
+            <notes notes-type="COI-statement">
+              <title>Conflicts of Interest</title>
+              <p>The funders had no role in the design of the study; in the collection, analyses, or interpretation of data; in the writing of the manuscript, or in the decision to publish the results.</p>
+            </notes>
+            <ref-list>
+              <title>References</title>
+              <ref id="B1-ijerph-18-01214">
+                <label>1.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Henderson</surname>
+                      <given-names>C.</given-names>
+                    </name>
+                    <name>
+                      <surname>Noblett</surname>
+                      <given-names>J.</given-names>
+                    </name>
+                    <name>
+                      <surname>Parke</surname>
+                      <given-names>H.</given-names>
+                    </name>
+                    <name>
+                      <surname>Clement</surname>
+                      <given-names>S.</given-names>
+                    </name>
+                    <name>
+                      <surname>Caffrey</surname>
+                      <given-names>A.</given-names>
+                    </name>
+                    <name>
+                      <surname>Gale-Grant</surname>
+                      <given-names>O.</given-names>
+                    </name>
+                    <name>
+                      <surname>Schulze</surname>
+                      <given-names>B.</given-names>
+                    </name>
+                    <name>
+                      <surname>Druss</surname>
+                      <given-names>B.</given-names>
+                    </name>
+                    <name>
+                      <surname>Thornicroft</surname>
+                      <given-names>G.</given-names>
+                    </name>
+                  </person-group>
+                  <article-title>Mental health-related stigma in health care and mental health-care settings</article-title>
+                  <source>Lancet Psychiatry</source>
+                  <year>2014</year>
+                  <volume>1</volume>
+                  <fpage>467</fpage>
+                  <lpage>482</lpage>
+                  <pub-id pub-id-type="doi">10.1016/S2215-0366(14)00023-6</pub-id>
+                  <pub-id pub-id-type="pmid">26361202</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="B2-ijerph-18-01214">
+                <label>2.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Schulze</surname>
+                      <given-names>B.</given-names>
+                    </name>
+                  </person-group>
+                  <article-title>Stigma and mental health professionals: A review of the evidence on an intricate relationship</article-title>
+                  <source>Int. Rev. Psychiatry</source>
+                  <year>2007</year>
+                  <volume>19</volume>
+                  <fpage>137</fpage>
+                  <lpage>155</lpage>
+                  <pub-id pub-id-type="doi">10.1080/09540260701278929</pub-id>
+                  <?supplied-pmid 17464792?>
+                  <pub-id pub-id-type="pmid">17464792</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="B3-ijerph-18-01214">
+                <label>3.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Lauber</surname>
+                      <given-names>C.</given-names>
+                    </name>
+                    <name>
+                      <surname>Nordt</surname>
+                      <given-names>C.</given-names>
+                    </name>
+                    <name>
+                      <surname>Braunschweig</surname>
+                      <given-names>C.</given-names>
+                    </name>
+                    <name>
+                      <surname>Rossler</surname>
+                      <given-names>W.</given-names>
+                    </name>
+                  </person-group>
+                  <article-title>Do mental health professionals stigmatize their patients?</article-title>
+                  <source>Acta Psychiatr. Scand.</source>
+                  <year>2006</year>
+                  <volume>113</volume>
+                  <fpage>51</fpage>
+                  <lpage>59</lpage>
+                  <pub-id pub-id-type="doi">10.1111/j.1600-0447.2005.00718.x</pub-id>
+                  <?supplied-pmid 16445483?>
+                  <pub-id pub-id-type="pmid">16445483</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="B4-ijerph-18-01214">
+                <label>4.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Hansson</surname>
+                      <given-names>L.</given-names>
+                    </name>
+                    <name>
+                      <surname>Jormfeldt</surname>
+                      <given-names>H.</given-names>
+                    </name>
+                    <name>
+                      <surname>Svedberg</surname>
+                      <given-names>P.</given-names>
+                    </name>
+                    <name>
+                      <surname>Svensson</surname>
+                      <given-names>B.</given-names>
+                    </name>
+                  </person-group>
+                  <article-title>Mental health professionals’ attitudes towards people with mental illness: Do they differ from attitudes held by people with mental illness?</article-title>
+                  <source>Int. J. Soc. Psychiatry</source>
+                  <year>2013</year>
+                  <volume>59</volume>
+                  <fpage>48</fpage>
+                  <lpage>54</lpage>
+                  <pub-id pub-id-type="doi">10.1177/0020764011423176</pub-id>
+                  <?supplied-pmid 21954319?>
+                  <pub-id pub-id-type="pmid">21954319</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="B5-ijerph-18-01214">
+                <label>5.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Vistorte</surname>
+                      <given-names>A.O.R.</given-names>
+                    </name>
+                    <name>
+                      <surname>Ribeiro</surname>
+                      <given-names>W.S.</given-names>
+                    </name>
+                    <name>
+                      <surname>Jaen</surname>
+                      <given-names>D.</given-names>
+                    </name>
+                    <name>
+                      <surname>Jorge</surname>
+                      <given-names>M.R.</given-names>
+                    </name>
+                    <name>
+                      <surname>Evans-Lacko</surname>
+                      <given-names>S.</given-names>
+                    </name>
+                    <name>
+                      <surname>Mari</surname>
+                      <given-names>J.D.J.</given-names>
+                    </name>
+                  </person-group>
+                  <article-title>Stigmatizing attitudes of primary care professionals towards people with mental disorders: A systematic review</article-title>
+                  <source>Int. J. Psychiatry Med.</source>
+                  <year>2018</year>
+                  <volume>53</volume>
+                  <fpage>317</fpage>
+                  <lpage>338</lpage>
+                  <pub-id pub-id-type="doi">10.1177/0091217418778620</pub-id>
+                  <?supplied-pmid 29807502?>
+                  <pub-id pub-id-type="pmid">29807502</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="B6-ijerph-18-01214">
+                <label>6.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Jorm</surname>
+                      <given-names>A.F.</given-names>
+                    </name>
+                    <name>
+                      <surname>Korten</surname>
+                      <given-names>A.E.</given-names>
+                    </name>
+                    <name>
+                      <surname>Jacomb</surname>
+                      <given-names>P.A.</given-names>
+                    </name>
+                    <name>
+                      <surname>Christensen</surname>
+                      <given-names>H.</given-names>
+                    </name>
+                    <name>
+                      <surname>Henderson</surname>
+                      <given-names>S.</given-names>
+                    </name>
+                  </person-group>
+                  <article-title>Attitudes Towards People with a Mental Disorder: A Survey of the Australian Public and Health Professionals</article-title>
+                  <source>Aust. New Zeal. J. Psychiatry</source>
+                  <year>1999</year>
+                  <volume>33</volume>
+                  <fpage>77</fpage>
+                  <lpage>83</lpage>
+                  <pub-id pub-id-type="doi">10.1046/j.1440-1614.1999.00513.x</pub-id>
+                  <?supplied-pmid 10197888?>
+                  <pub-id pub-id-type="pmid">10197888</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="B7-ijerph-18-01214">
+                <label>7.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Ronzani</surname>
+                      <given-names>T.M.</given-names>
+                    </name>
+                    <name>
+                      <surname>Higgins-Biddle</surname>
+                      <given-names>J.</given-names>
+                    </name>
+                    <name>
+                      <surname>Furtado</surname>
+                      <given-names>E.F.</given-names>
+                    </name>
+                  </person-group>
+                  <article-title>Stigmatization of alcohol and other drug users by primary care providers in Southeast Brazil</article-title>
+                  <source>Soc. Sci. Med.</source>
+                  <year>2009</year>
+                  <volume>69</volume>
+                  <fpage>1080</fpage>
+                  <lpage>1084</lpage>
+                  <pub-id pub-id-type="doi">10.1016/j.socscimed.2009.07.026</pub-id>
+                  <pub-id pub-id-type="pmid">19692163</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="B8-ijerph-18-01214">
+                <label>8.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Fernández</surname>
+                      <given-names>E.R.</given-names>
+                    </name>
+                    <name>
+                      <surname>Martínez</surname>
+                      <given-names>F.E.</given-names>
+                    </name>
+                    <name>
+                      <surname>Jordana</surname>
+                      <given-names>M.C.</given-names>
+                    </name>
+                    <name>
+                      <surname>Moraga</surname>
+                      <given-names>A.G.</given-names>
+                    </name>
+                  </person-group>
+                  <article-title>Actitud de los médicos de atención primaria sobre los pacientes con consumo excesivo de alcohol</article-title>
+                  <source>Aten. Primaria</source>
+                  <year>1999</year>
+                  <volume>24</volume>
+                  <fpage>447</fpage>
+                  <lpage>455</lpage>
+                  <pub-id pub-id-type="pmid">10630026</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="B9-ijerph-18-01214">
+                <label>9.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Lauber</surname>
+                      <given-names>C.</given-names>
+                    </name>
+                    <name>
+                      <surname>Nordt</surname>
+                      <given-names>C.</given-names>
+                    </name>
+                    <name>
+                      <surname>Falcato</surname>
+                      <given-names>L.</given-names>
+                    </name>
+                    <name>
+                      <surname>Rössler</surname>
+                      <given-names>W.</given-names>
+                    </name>
+                  </person-group>
+                  <article-title>Public acceptance of restrictions on mentally ill people</article-title>
+                  <source>Acta Psychiatr. Scand. Suppl.</source>
+                  <year>2000</year>
+                  <volume>102</volume>
+                  <fpage>26</fpage>
+                  <lpage>32</lpage>
+                  <pub-id pub-id-type="doi">10.1034/j.1600-0447.2000.00005.x</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="B10-ijerph-18-01214">
+                <label>10.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Thornicroft</surname>
+                      <given-names>G.</given-names>
+                    </name>
+                    <name>
+                      <surname>Rose</surname>
+                      <given-names>D.</given-names>
+                    </name>
+                    <name>
+                      <surname>Kassam</surname>
+                      <given-names>A.</given-names>
+                    </name>
+                  </person-group>
+                  <article-title>Discrimination in health care against people with mental illness</article-title>
+                  <source>Int. Rev. Psychiatry</source>
+                  <year>2007</year>
+                  <volume>19</volume>
+                  <fpage>113</fpage>
+                  <lpage>122</lpage>
+                  <pub-id pub-id-type="doi">10.1080/09540260701278937</pub-id>
+                  <pub-id pub-id-type="pmid">17464789</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="B11-ijerph-18-01214">
+                <label>11.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Sapag</surname>
+                      <given-names>J.C.</given-names>
+                    </name>
+                    <name>
+                      <surname>Sena</surname>
+                      <given-names>B.F.</given-names>
+                    </name>
+                    <name>
+                      <surname>Bustamante</surname>
+                      <given-names>I.V.</given-names>
+                    </name>
+                    <name>
+                      <surname>Bobbili</surname>
+                      <given-names>S.J.</given-names>
+                    </name>
+                    <name>
+                      <surname>Velasco</surname>
+                      <given-names>P.R.</given-names>
+                    </name>
+                    <name>
+                      <surname>Mascayano</surname>
+                      <given-names>F.</given-names>
+                    </name>
+                    <name>
+                      <surname>Alvarado</surname>
+                      <given-names>R.</given-names>
+                    </name>
+                    <name>
+                      <surname>Khenti</surname>
+                      <given-names>A.</given-names>
+                    </name>
+                  </person-group>
+                  <article-title>Stigma towards mental illness and substance use issues in primary health care: Challenges and opportunities for Latin America</article-title>
+                  <source>Glob. Public Health</source>
+                  <year>2018</year>
+                  <volume>13</volume>
+                  <fpage>1468</fpage>
+                  <lpage>1480</lpage>
+                  <pub-id pub-id-type="doi">10.1080/17441692.2017.1356347</pub-id>
+                  <?supplied-pmid 28766377?>
+                  <pub-id pub-id-type="pmid">28766377</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="B12-ijerph-18-01214">
+                <label>12.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Wang</surname>
+                      <given-names>K.</given-names>
+                    </name>
+                    <name>
+                      <surname>Link</surname>
+                      <given-names>B.G.</given-names>
+                    </name>
+                    <name>
+                      <surname>Corrigan</surname>
+                      <given-names>P.W.</given-names>
+                    </name>
+                    <name>
+                      <surname>Davidson</surname>
+                      <given-names>L.</given-names>
+                    </name>
+                    <name>
+                      <surname>Flanagan</surname>
+                      <given-names>E.</given-names>
+                    </name>
+                  </person-group>
+                  <article-title>Perceived provider stigma as a predictor of mental health service users’ internalized stigma and disempowerment</article-title>
+                  <source>Psychiatry Res.</source>
+                  <year>2018</year>
+                  <volume>259</volume>
+                  <fpage>526</fpage>
+                  <lpage>531</lpage>
+                  <pub-id pub-id-type="doi">10.1016/j.psychres.2017.11.036</pub-id>
+                  <?supplied-pmid 29156425?>
+                  <pub-id pub-id-type="pmid">29156425</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="B13-ijerph-18-01214">
+                <label>13.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Corker</surname>
+                      <given-names>E.</given-names>
+                    </name>
+                    <name>
+                      <surname>Hamilton</surname>
+                      <given-names>S.</given-names>
+                    </name>
+                    <name>
+                      <surname>Henderson</surname>
+                      <given-names>C.</given-names>
+                    </name>
+                    <name>
+                      <surname>Weeks</surname>
+                      <given-names>C.</given-names>
+                    </name>
+                    <name>
+                      <surname>Pinfold</surname>
+                      <given-names>V.</given-names>
+                    </name>
+                    <name>
+                      <surname>Rose</surname>
+                      <given-names>D.</given-names>
+                    </name>
+                    <name>
+                      <surname>Williams</surname>
+                      <given-names>P.</given-names>
+                    </name>
+                    <name>
+                      <surname>Flach</surname>
+                      <given-names>C.</given-names>
+                    </name>
+                    <name>
+                      <surname>Gill</surname>
+                      <given-names>V.</given-names>
+                    </name>
+                    <name>
+                      <surname>Lewis-Holmes</surname>
+                      <given-names>E.</given-names>
+                    </name>
+                    <etal/>
+                  </person-group>
+                  <article-title>Experiences of discrimination among people using mental health services in England 2008-2011</article-title>
+                  <source>Br. J. Psychiatry</source>
+                  <year>2013</year>
+                  <volume>202</volume>
+                  <fpage>58</fpage>
+                  <lpage>64</lpage>
+                  <pub-id pub-id-type="doi">10.1192/bjp.bp.112.112912</pub-id>
+                  <?supplied-pmid 23553696?>
+                  <pub-id pub-id-type="pmid">23553696</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="B14-ijerph-18-01214">
+                <label>14.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Lien</surname>
+                      <given-names>Y.Y.</given-names>
+                    </name>
+                    <name>
+                      <surname>Lin</surname>
+                      <given-names>H.S.</given-names>
+                    </name>
+                    <name>
+                      <surname>Tsai</surname>
+                      <given-names>C.H.</given-names>
+                    </name>
+                    <name>
+                      <surname>Lien</surname>
+                      <given-names>Y.J.</given-names>
+                    </name>
+                    <name>
+                      <surname>Wu</surname>
+                      <given-names>T.T.</given-names>
+                    </name>
+                  </person-group>
+                  <article-title>Changes in attitudes toward mental illness in healthcare professionals and students</article-title>
+                  <source>Int. J. Environ. Res. Public Health</source>
+                  <year>2019</year>
+                  <volume>16</volume>
+                  <elocation-id>6689</elocation-id>
+                  <pub-id pub-id-type="doi">10.3390/ijerph16234655</pub-id>
+                  <?supplied-pmid 31766689?>
+                  <pub-id pub-id-type="pmid">31766689</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="B15-ijerph-18-01214">
+                <label>15.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Corrigan</surname>
+                      <given-names>P.W.</given-names>
+                    </name>
+                    <name>
+                      <surname>Druss</surname>
+                      <given-names>B.G.</given-names>
+                    </name>
+                    <name>
+                      <surname>Perlick</surname>
+                      <given-names>D.A.</given-names>
+                    </name>
+                  </person-group>
+                  <article-title>The Impact of Mental Illness Stigma on Seeking and Participating in Mental Health Care</article-title>
+                  <source>Psychol. Sci. Public Interest</source>
+                  <year>2014</year>
+                  <volume>15</volume>
+                  <fpage>37</fpage>
+                  <lpage>70</lpage>
+                  <pub-id pub-id-type="doi">10.1177/1529100614531398</pub-id>
+                  <pub-id pub-id-type="pmid">26171956</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="B16-ijerph-18-01214">
+                <label>16.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Daumerie</surname>
+                      <given-names>N.</given-names>
+                    </name>
+                    <name>
+                      <surname>Vasseur Bacle</surname>
+                      <given-names>S.</given-names>
+                    </name>
+                    <name>
+                      <surname>Giordana</surname>
+                      <given-names>J.-Y.</given-names>
+                    </name>
+                    <name>
+                      <surname>Bourdais Mannone</surname>
+                      <given-names>C.</given-names>
+                    </name>
+                    <name>
+                      <surname>Caria</surname>
+                      <given-names>A.</given-names>
+                    </name>
+                    <name>
+                      <surname>Roelandt</surname>
+                      <given-names>J.-L.</given-names>
+                    </name>
+                  </person-group>
+                  <article-title>La discrimination vécue par les personnes ayant reçu un diagnostic de troubles schizophréniques. Premiers résultats français de l’étude INDIGO</article-title>
+                  <source>Encephale</source>
+                  <year>2012</year>
+                  <volume>38</volume>
+                  <fpage>224</fpage>
+                  <lpage>231</lpage>
+                  <pub-id pub-id-type="doi">10.1016/j.encep.2011.06.007</pub-id>
+                  <pub-id pub-id-type="pmid">22726410</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="B17-ijerph-18-01214">
+                <label>17.</label>
+                <element-citation publication-type="book">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Loch</surname>
+                      <given-names>A.A.</given-names>
+                    </name>
+                    <name>
+                      <surname>Rössler</surname>
+                      <given-names>W.</given-names>
+                    </name>
+                  </person-group>
+                  <article-title>Who Is Contributing?</article-title>
+                  <source>The Stigma of Mental Illness-End of the Story?</source>
+                  <publisher-name>Springer International Publishing</publisher-name>
+                  <publisher-loc>Cham, Switzerland</publisher-loc>
+                  <year>2017</year>
+                  <fpage>111</fpage>
+                  <lpage>121</lpage>
+                </element-citation>
+              </ref>
+              <ref id="B18-ijerph-18-01214">
+                <label>18.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Vaccari</surname>
+                      <given-names>P.</given-names>
+                    </name>
+                    <name>
+                      <surname>Ramírez-Vielma</surname>
+                      <given-names>R.</given-names>
+                    </name>
+                    <name>
+                      <surname>Saldivia</surname>
+                      <given-names>S.</given-names>
+                    </name>
+                    <name>
+                      <surname>Cova</surname>
+                      <given-names>F.</given-names>
+                    </name>
+                    <name>
+                      <surname>Vielma-Aguilera</surname>
+                      <given-names>A.</given-names>
+                    </name>
+                    <name>
+                      <surname>Victoriano</surname>
+                      <given-names>V.</given-names>
+                    </name>
+                    <name>
+                      <surname>Ulloa-Vidal</surname>
+                      <given-names>N.</given-names>
+                    </name>
+                    <name>
+                      <surname>Grandón</surname>
+                      <given-names>P.</given-names>
+                    </name>
+                  </person-group>
+                  <article-title>Stigma towards people with a diagnosis of severe mental disorder in primary healthcare centers: Perspectives of service users and health teams in Chile</article-title>
+                  <source>Int. J. Ment. Health Syst.</source>
+                  <year>2020</year>
+                  <volume>14</volume>
+                  <fpage>6</fpage>
+                  <pub-id pub-id-type="doi">10.1186/s13033-020-0340-5</pub-id>
+                  <pub-id pub-id-type="pmid">32047532</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="B19-ijerph-18-01214">
+                <label>19.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Livingston</surname>
+                      <given-names>J.D.</given-names>
+                    </name>
+                    <name>
+                      <surname>Milne</surname>
+                      <given-names>T.</given-names>
+                    </name>
+                    <name>
+                      <surname>Fang</surname>
+                      <given-names>M.L.</given-names>
+                    </name>
+                    <name>
+                      <surname>Amari</surname>
+                      <given-names>E.</given-names>
+                    </name>
+                  </person-group>
+                  <article-title>The effectiveness of interventions for reducing stigma related to substance use disorders: A systematic review</article-title>
+                  <source>Addiction</source>
+                  <year>2012</year>
+                  <volume>107</volume>
+                  <fpage>39</fpage>
+                  <lpage>50</lpage>
+                  <pub-id pub-id-type="doi">10.1111/j.1360-0443.2011.03601.x</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="B20-ijerph-18-01214">
+                <label>20.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Lien</surname>
+                      <given-names>Y.Y.</given-names>
+                    </name>
+                    <name>
+                      <surname>Lin</surname>
+                      <given-names>H.S.</given-names>
+                    </name>
+                    <name>
+                      <surname>Lien</surname>
+                      <given-names>Y.J.</given-names>
+                    </name>
+                    <name>
+                      <surname>Tsai</surname>
+                      <given-names>C.H.</given-names>
+                    </name>
+                    <name>
+                      <surname>Wu</surname>
+                      <given-names>T.T.</given-names>
+                    </name>
+                    <name>
+                      <surname>Li</surname>
+                      <given-names>H.</given-names>
+                    </name>
+                    <name>
+                      <surname>Tu</surname>
+                      <given-names>Y.K.</given-names>
+                    </name>
+                  </person-group>
+                  <article-title>Challenging mental illness stigma in healthcare professionals and students: A systematic review and network meta-analysis</article-title>
+                  <source>Psychol. Health</source>
+                  <year>2020</year>
+                  <volume>1</volume>
+                  <fpage>1</fpage>
+                  <lpage>16</lpage>
+                  <pub-id pub-id-type="doi">10.1080/08870446.2020.1828413</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="B21-ijerph-18-01214">
+                <label>21.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Stubbs</surname>
+                      <given-names>A.</given-names>
+                    </name>
+                  </person-group>
+                  <article-title>Reducing mental illness stigma in health care students and professionals: A review of the literature</article-title>
+                  <source>Australas. Psychiatry</source>
+                  <year>2014</year>
+                  <volume>22</volume>
+                  <fpage>579</fpage>
+                  <lpage>584</lpage>
+                  <pub-id pub-id-type="doi">10.1177/1039856214556324</pub-id>
+                  <pub-id pub-id-type="pmid">25371444</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="B22-ijerph-18-01214">
+                <label>22.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Gronholm</surname>
+                      <given-names>P.C.</given-names>
+                    </name>
+                    <name>
+                      <surname>Henderson</surname>
+                      <given-names>C.</given-names>
+                    </name>
+                    <name>
+                      <surname>Deb</surname>
+                      <given-names>T.</given-names>
+                    </name>
+                    <name>
+                      <surname>Thornicroft</surname>
+                      <given-names>G.</given-names>
+                    </name>
+                  </person-group>
+                  <article-title>Interventions to reduce discrimination and stigma: The state of the art</article-title>
+                  <source>Soc. Psychiatry Psychiatr. Epidemiol.</source>
+                  <year>2017</year>
+                  <volume>52</volume>
+                  <fpage>249</fpage>
+                  <lpage>258</lpage>
+                  <pub-id pub-id-type="doi">10.1007/s00127-017-1341-9</pub-id>
+                  <?supplied-pmid 28144713?>
+                  <pub-id pub-id-type="pmid">28144713</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="B23-ijerph-18-01214">
+                <label>23.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Heim</surname>
+                      <given-names>E.</given-names>
+                    </name>
+                    <name>
+                      <surname>Kohrt</surname>
+                      <given-names>B.A.</given-names>
+                    </name>
+                    <name>
+                      <surname>Koschorke</surname>
+                      <given-names>M.</given-names>
+                    </name>
+                    <name>
+                      <surname>Milenova</surname>
+                      <given-names>M.</given-names>
+                    </name>
+                    <name>
+                      <surname>Thornicroft</surname>
+                      <given-names>G.</given-names>
+                    </name>
+                  </person-group>
+                  <article-title>Reducing mental health-related stigma in primary health care settings in low- and middle-income countries: A systematic review</article-title>
+                  <source>Epidemiol. Psychiatr. Sci.</source>
+                  <year>2020</year>
+                  <volume>29</volume>
+                  <fpage>e3</fpage>
+                  <pub-id pub-id-type="doi">10.1017/S2045796018000458</pub-id>
+                  <?supplied-pmid 30176952?>
+                  <pub-id pub-id-type="pmid">30176952</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="B24-ijerph-18-01214">
+                <label>24.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Palou</surname>
+                      <given-names>R.G.</given-names>
+                    </name>
+                    <name>
+                      <surname>Vigué</surname>
+                      <given-names>G.P.</given-names>
+                    </name>
+                    <name>
+                      <surname>Tort-Nasarre</surname>
+                      <given-names>G.</given-names>
+                    </name>
+                  </person-group>
+                  <article-title>Attitudes and stigma toward mental health in nursing students: A systematic review</article-title>
+                  <source>Perspect. Psychiatr. Care</source>
+                  <year>2020</year>
+                  <volume>56</volume>
+                  <fpage>243</fpage>
+                  <lpage>255</lpage>
+                  <pub-id pub-id-type="doi">10.1111/ppc.12419</pub-id>
+                  <?supplied-pmid 31353478?>
+                  <pub-id pub-id-type="pmid">31353478</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="B25-ijerph-18-01214">
+                <label>25.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Al-Ma’ani</surname>
+                      <given-names>M.A.Q.M.</given-names>
+                    </name>
+                    <name>
+                      <surname>Hamdan-Mansour</surname>
+                      <given-names>A.M.</given-names>
+                    </name>
+                  </person-group>
+                  <article-title>The Effect of Contact-Based Interventions on the Attitudes and Behaviors of Nursing Students towards People with Mental Illness: A Literature Review</article-title>
+                  <source>Open J. Nurs.</source>
+                  <year>2020</year>
+                  <volume>10</volume>
+                  <fpage>260</fpage>
+                  <lpage>276</lpage>
+                  <pub-id pub-id-type="doi">10.4236/ojn.2020.103018</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="B26-ijerph-18-01214">
+                <label>26.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Knaak</surname>
+                      <given-names>S.</given-names>
+                    </name>
+                    <name>
+                      <surname>Patten</surname>
+                      <given-names>S.</given-names>
+                    </name>
+                  </person-group>
+                  <article-title>A grounded theory model for reducing stigma in health professionals in Canada</article-title>
+                  <source>Acta Psychiatr. Scand.</source>
+                  <year>2016</year>
+                  <volume>134</volume>
+                  <fpage>53</fpage>
+                  <lpage>62</lpage>
+                  <pub-id pub-id-type="doi">10.1111/acps.12612</pub-id>
+                  <?supplied-pmid 27426646?>
+                  <pub-id pub-id-type="pmid">27426646</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="B27-ijerph-18-01214">
+                <label>27.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Kassam</surname>
+                      <given-names>A.</given-names>
+                    </name>
+                    <name>
+                      <surname>Papish</surname>
+                      <given-names>A.</given-names>
+                    </name>
+                    <name>
+                      <surname>Modgill</surname>
+                      <given-names>G.</given-names>
+                    </name>
+                    <name>
+                      <surname>Patten</surname>
+                      <given-names>S.</given-names>
+                    </name>
+                  </person-group>
+                  <article-title>The development and psychometric properties of a new scale to measure mental illness related stigma by health care providers: The opening minds scale for Health Care Providers (OMS-HC)</article-title>
+                  <source>BMC Psychiatry</source>
+                  <year>2012</year>
+                  <volume>12</volume>
+                  <pub-id pub-id-type="doi">10.1186/1471-244X-12-62</pub-id>
+                  <?supplied-pmid 22694771?>
+                  <pub-id pub-id-type="pmid">22694771</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="B28-ijerph-18-01214">
+                <label>28.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Knaak</surname>
+                      <given-names>S.</given-names>
+                    </name>
+                    <name>
+                      <surname>Szeto</surname>
+                      <given-names>A.C.H.</given-names>
+                    </name>
+                    <name>
+                      <surname>Kassam</surname>
+                      <given-names>A.</given-names>
+                    </name>
+                    <name>
+                      <surname>Hamer</surname>
+                      <given-names>A.</given-names>
+                    </name>
+                    <name>
+                      <surname>Modgill</surname>
+                      <given-names>G.</given-names>
+                    </name>
+                    <name>
+                      <surname>Patten</surname>
+                      <given-names>S.</given-names>
+                    </name>
+                  </person-group>
+                  <article-title>Understanding Stigma: A Pooled Analysis of a National Program Aimed at Health Care Providers to Reduce Stigma towards Patients with a Mental Illness</article-title>
+                  <source>J. Ment. Health Addict. Nurs.</source>
+                  <year>2017</year>
+                  <volume>1</volume>
+                  <fpage>e19</fpage>
+                  <lpage>e29</lpage>
+                  <pub-id pub-id-type="doi">10.22374/jmhan.v1i1.19</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="B29-ijerph-18-01214">
+                <label>29.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Knaak</surname>
+                      <given-names>S.</given-names>
+                    </name>
+                    <name>
+                      <surname>Modgill</surname>
+                      <given-names>G.</given-names>
+                    </name>
+                    <name>
+                      <surname>Patten</surname>
+                      <given-names>S.B.</given-names>
+                    </name>
+                  </person-group>
+                  <article-title>Key Ingredients of Anti-Stigma Programs for Health Care Providers: A Data Synthesis of Evaluative Studies</article-title>
+                  <source>Can. J. Psychiatry</source>
+                  <year>2014</year>
+                  <volume>59</volume>
+                  <fpage>19</fpage>
+                  <lpage>26</lpage>
+                  <pub-id pub-id-type="doi">10.1177/070674371405901S06</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="B30-ijerph-18-01214">
+                <label>30.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Friedrich</surname>
+                      <given-names>B.</given-names>
+                    </name>
+                    <name>
+                      <surname>Evans-Lacko</surname>
+                      <given-names>S.</given-names>
+                    </name>
+                    <name>
+                      <surname>London</surname>
+                      <given-names>J.</given-names>
+                    </name>
+                    <name>
+                      <surname>Rhydderch</surname>
+                      <given-names>D.</given-names>
+                    </name>
+                    <name>
+                      <surname>Henderson</surname>
+                      <given-names>C.</given-names>
+                    </name>
+                    <name>
+                      <surname>Thornicroft</surname>
+                      <given-names>G.</given-names>
+                    </name>
+                  </person-group>
+                  <article-title>Anti-stigma training for medical students: The Education Not Discrimination project</article-title>
+                  <source>Br. J. Psychiatry</source>
+                  <year>2013</year>
+                  <volume>202</volume>
+                  <fpage>s89</fpage>
+                  <lpage>s94</lpage>
+                  <pub-id pub-id-type="doi">10.1192/bjp.bp.112.114017</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="B31-ijerph-18-01214">
+                <label>31.</label>
+                <element-citation publication-type="book">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Rowe</surname>
+                      <given-names>B.</given-names>
+                    </name>
+                    <name>
+                      <surname>Hubbard</surname>
+                      <given-names>T.</given-names>
+                    </name>
+                    <name>
+                      <surname>Harris</surname>
+                      <given-names>C.</given-names>
+                    </name>
+                    <name>
+                      <surname>Cryer</surname>
+                      <given-names>J.</given-names>
+                    </name>
+                  </person-group>
+                  <source>Time to Change Evaluating the Mental Health Professionals Programme</source>
+                  <publisher-name>Revealing Reality</publisher-name>
+                  <publisher-loc>London, UK</publisher-loc>
+                  <year>2016</year>
+                </element-citation>
+              </ref>
+              <ref id="B32-ijerph-18-01214">
+                <label>32.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Grandón</surname>
+                      <given-names>P.</given-names>
+                    </name>
+                    <name>
+                      <surname>Saldivia</surname>
+                      <given-names>S.</given-names>
+                    </name>
+                    <name>
+                      <surname>Vaccari</surname>
+                      <given-names>P.</given-names>
+                    </name>
+                    <name>
+                      <surname>Ramirez-Vielma</surname>
+                      <given-names>R.</given-names>
+                    </name>
+                    <name>
+                      <surname>Victoriano</surname>
+                      <given-names>V.</given-names>
+                    </name>
+                    <name>
+                      <surname>Zambrano</surname>
+                      <given-names>C.</given-names>
+                    </name>
+                    <name>
+                      <surname>Ortiz</surname>
+                      <given-names>C.</given-names>
+                    </name>
+                    <name>
+                      <surname>Cova</surname>
+                      <given-names>F.</given-names>
+                    </name>
+                  </person-group>
+                  <article-title>An Integrative Program to Reduce Stigma in Primary Healthcare Workers Toward People With Diagnosis of Severe Mental Disorders: A Protocol for a Randomized Controlled Trial</article-title>
+                  <source>Front. Psychiatry</source>
+                  <year>2019</year>
+                  <volume>10</volume>
+                  <fpage>1</fpage>
+                  <lpage>10</lpage>
+                  <pub-id pub-id-type="doi">10.3389/fpsyt.2019.00110</pub-id>
+                  <pub-id pub-id-type="pmid">30723425</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="B33-ijerph-18-01214">
+                <label>33.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Corrigan</surname>
+                      <given-names>P.W.</given-names>
+                    </name>
+                  </person-group>
+                  <article-title>Best Practices: Strategic Stigma Change (SSC): Five Principles for Social Marketing Campaigns to Reduce Stigma</article-title>
+                  <source>Psychiatr. Serv.</source>
+                  <year>2011</year>
+                  <volume>62</volume>
+                  <fpage>824</fpage>
+                  <lpage>826</lpage>
+                  <pub-id pub-id-type="doi">10.1176/ps.62.8.pss6208_0824</pub-id>
+                  <?supplied-pmid 21807820?>
+                  <pub-id pub-id-type="pmid">21807820</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="B34-ijerph-18-01214">
+                <label>34.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Rubio-Valera</surname>
+                      <given-names>M.</given-names>
+                    </name>
+                    <name>
+                      <surname>Aznar-Lou</surname>
+                      <given-names>I.</given-names>
+                    </name>
+                    <name>
+                      <surname>Vives-Collet</surname>
+                      <given-names>M.</given-names>
+                    </name>
+                    <name>
+                      <surname>Fernández</surname>
+                      <given-names>A.</given-names>
+                    </name>
+                    <name>
+                      <surname>Gil-Girbau</surname>
+                      <given-names>M.</given-names>
+                    </name>
+                    <name>
+                      <surname>Serrano-Blanco</surname>
+                      <given-names>A.</given-names>
+                    </name>
+                  </person-group>
+                  <article-title>Reducing the Mental Health–Related Stigma of Social Work Students</article-title>
+                  <source>Res. Soc. Work Pract.</source>
+                  <year>2018</year>
+                  <volume>28</volume>
+                  <fpage>164</fpage>
+                  <lpage>172</lpage>
+                  <pub-id pub-id-type="doi">10.1177/1049731516641492</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="B35-ijerph-18-01214">
+                <label>35.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Modgill</surname>
+                      <given-names>G.</given-names>
+                    </name>
+                    <name>
+                      <surname>Patten</surname>
+                      <given-names>S.B.</given-names>
+                    </name>
+                    <name>
+                      <surname>Knaak</surname>
+                      <given-names>S.</given-names>
+                    </name>
+                    <name>
+                      <surname>Kassam</surname>
+                      <given-names>A.</given-names>
+                    </name>
+                    <name>
+                      <surname>Szeto</surname>
+                      <given-names>A.C.</given-names>
+                    </name>
+                  </person-group>
+                  <article-title>Opening Minds Stigma Scale for Health Care Providers (OMS-HC): Examination of psychometric properties and responsiveness</article-title>
+                  <source>BMC Psychiatry</source>
+                  <year>2014</year>
+                  <volume>14</volume>
+                  <fpage>120</fpage>
+                  <pub-id pub-id-type="doi">10.1186/1471-244X-14-120</pub-id>
+                  <?supplied-pmid 24758158?>
+                  <pub-id pub-id-type="pmid">24758158</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="B36-ijerph-18-01214">
+                <label>36.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Eiroa-Orosa</surname>
+                      <given-names>F.J.</given-names>
+                    </name>
+                    <name>
+                      <surname>Limiñana-Bravo</surname>
+                      <given-names>L.</given-names>
+                    </name>
+                  </person-group>
+                  <article-title>An Instrument to Measure Mental Health Professionals’ Beliefs and Attitudes towards Service Users’ Rights</article-title>
+                  <source>Int. J. Environ. Res. Public Health</source>
+                  <year>2019</year>
+                  <volume>16</volume>
+                  <elocation-id>244</elocation-id>
+                  <pub-id pub-id-type="doi">10.3390/ijerph16020244</pub-id>
+                  <?supplied-pmid 30654510?>
+                  <pub-id pub-id-type="pmid">30654510</pub-id>
+                </element-citation>
+              </ref>
+              <ref id="B37-ijerph-18-01214">
+                <label>37.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <collab>United Nations</collab>
+                  </person-group>
+                  <article-title>Convention on the rights of persons with disabilities</article-title>
+                  <source>Treaty Ser.</source>
+                  <year>2006</year>
+                  <volume>2515</volume>
+                  <fpage>3</fpage>
+                </element-citation>
+              </ref>
+              <ref id="B38-ijerph-18-01214">
+                <label>38.</label>
+                <element-citation publication-type="journal">
+                  <person-group person-group-type="author">
+                    <name>
+                      <surname>Szeto</surname>
+                      <given-names>A.</given-names>
+                    </name>
+                    <name>
+                      <surname>Dobson</surname>
+                      <given-names>K.S.</given-names>
+                    </name>
+                    <name>
+                      <surname>Luong</surname>
+                      <given-names>D.</given-names>
+                    </name>
+                    <name>
+                      <surname>Krupa</surname>
+                      <given-names>T.</given-names>
+                    </name>
+                    <name>
+                      <surname>Kirsh</surname>
+                      <given-names>B.</given-names>
+                    </name>
+                  </person-group>
+                  <article-title>Workplace Antistigma Programs at the Mental Health Commission of Canada: Part 2. Lessons Learned</article-title>
+                  <source>Can. J. Psychiatry</source>
+                  <year>2019</year>
+                  <volume>64</volume>
+                  <fpage>13S</fpage>
+                  <lpage>17S</lpage>
+                  <pub-id pub-id-type="doi">10.1177/0706743719842563</pub-id>
+                  <pub-id pub-id-type="pmid">31067994</pub-id>
+                </element-citation>
+              </ref>
+            </ref-list>
+          </back>
+          <floats-group>
+            <fig id="ijerph-18-01214-f001" orientation="portrait" position="float">
+              <label>Figure 1</label>
+              <caption>
+                <p>Flow diagram of the intervention structure. The sessions supported by the activists are coloured in white, the activity self-organised by the professionals is coloured in grey. PC: Primary Care.</p>
+              </caption>
+              <graphic xlink:href="ijerph-18-01214-g001"/>
+            </fig>
+            <fig id="ijerph-18-01214-f002" orientation="portrait" position="float">
+              <label>Figure 2</label>
+              <caption>
+                <p>Flow diagram of both evaluation designs.</p>
+              </caption>
+              <graphic xlink:href="ijerph-18-01214-g002"/>
+            </fig>
+            <fig id="ijerph-18-01214-f003" orientation="portrait" position="float">
+              <label>Figure 3</label>
+              <caption>
+                <p>Flow diagram of the primary care centres recruitment and follow-up process.</p>
+              </caption>
+              <graphic xlink:href="ijerph-18-01214-g003"/>
+            </fig>
+            <fig id="ijerph-18-01214-f004" orientation="portrait" position="float">
+              <label>Figure 4</label>
+              <caption>
+                <p>Flow diagram of the mental health centres recruitment and follow-up process.</p>
+              </caption>
+              <graphic xlink:href="ijerph-18-01214-g004"/>
+            </fig>
+            <table-wrap id="ijerph-18-01214-t001" orientation="portrait" position="float">
+              <object-id pub-id-type="pii">ijerph-18-01214-t001_Table 1</object-id>
+              <label>Table 1</label>
+              <caption>
+                <p>Sociodemographic characteristics and baseline scores of primary care participants.</p>
+              </caption>
+              <table frame="hsides" rules="groups">
+                <thead>
+                  <tr>
+                    <th rowspan="2" align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin" colspan="1">
+</th>
+                    <th colspan="2" align="center" valign="middle" style="border-top:solid thin" rowspan="1">All (<italic>n</italic> = 185)</th>
+                    <th colspan="2" align="center" valign="middle" style="border-top:solid thin" rowspan="1">Intervention (<italic>n</italic> = 128)</th>
+                    <th colspan="2" align="center" valign="middle" style="border-top:solid thin" rowspan="1">Control (<italic>n</italic> = 57)</th>
+                    <th colspan="3" align="center" valign="middle" style="border-top:solid thin" rowspan="1">Statistical Significance</th>
+                  </tr>
+                  <tr>
+                    <th align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">N</th>
+                    <th align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">%</th>
+                    <th align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">N</th>
+                    <th align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">%</th>
+                    <th align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">N</th>
+                    <th align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">%</th>
+                    <th colspan="2" align="center" valign="middle" style="border-bottom:solid thin" rowspan="1">OR, 95% CI</th>
+                    <th align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+                      <italic>p</italic>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">Gender (% females)</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">137</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">70.6</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">112</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">81.8</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">38</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">66.7</td>
+                    <td colspan="2" align="center" valign="middle" rowspan="1">2.24. 1.11–4.52</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.022</td>
+                  </tr>
+                  <tr>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">Experience with mental health issues (%)</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">80</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">41.7</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">52</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">38.5</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">28</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">49.1</td>
+                    <td colspan="2" align="center" valign="middle" rowspan="1">0.649. 0.35–1.21</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.173</td>
+                  </tr>
+                  <tr>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Relative with mental health issues (%)</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">135</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">69.2</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">96</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">69.6</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">39</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">68.4</td>
+                    <td colspan="2" align="center" valign="middle" style="border-bottom:solid thin" rowspan="1">1.055. 0.54–2.05</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.875</td>
+                  </tr>
+                  <tr>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">
+</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">M</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">SD</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">M</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">SD</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">M</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">SD</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">t</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">
+                      <italic>p</italic>
+                    </td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">d</td>
+                  </tr>
+                  <tr>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">Age (M ± SD)</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">44.34</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">10.82</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">44.02</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">11.41</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">45.05</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">9.41</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.630.</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.530</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.095</td>
+                  </tr>
+                  <tr>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">Attitudes<break/>S</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">2.20</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.57</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">2.25</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.58</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">2.11</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.52</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">1.570</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.118</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.0897</td>
+                  </tr>
+                  <tr>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">Disclosure</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">2.50</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.68</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">2.55</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.67</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">2.39</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.69</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">1.504</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.134</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.1073</td>
+                  </tr>
+                  <tr>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">Social distance</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">2.12</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.59</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">2.16</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.62</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">2.05</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.51</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">1.171</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.243</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.0938</td>
+                  </tr>
+                  <tr>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">OMS-HC total</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">2.36</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.40</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">2.40</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.41</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">2.26</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.37</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">2.138</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.034</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.0626</td>
+                  </tr>
+                </tbody>
+              </table>
+            </table-wrap>
+            <table-wrap id="ijerph-18-01214-t002" orientation="portrait" position="float">
+              <object-id pub-id-type="pii">ijerph-18-01214-t002_Table 2</object-id>
+              <label>Table 2</label>
+              <caption>
+                <p>Follow-up scores among primary care participants (raw data *).</p>
+              </caption>
+              <table frame="hsides" rules="groups">
+                <thead>
+                  <tr>
+                    <th align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin" rowspan="1" colspan="1">
+</th>
+                    <th colspan="4" align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin" rowspan="1">First Follow-Up</th>
+                    <th colspan="4" align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin" rowspan="1">Second Follow-Up</th>
+                    <th colspan="6" align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin" rowspan="1">Statistical Significance</th>
+                    <th align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin" rowspan="1" colspan="1">
+</th>
+                    <th align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin" rowspan="1" colspan="1">
+</th>
+                    <th align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin" rowspan="1" colspan="1">
+</th>
+                  </tr>
+                  <tr>
+                    <th rowspan="2" align="center" valign="middle" style="border-bottom:solid thin" colspan="1">
+</th>
+                    <th colspan="2" align="center" valign="middle" rowspan="1">Intervention</th>
+                    <th colspan="2" align="center" valign="middle" rowspan="1">Control</th>
+                    <th colspan="2" align="center" valign="middle" rowspan="1">Intervention</th>
+                    <th colspan="2" align="center" valign="middle" rowspan="1">Control</th>
+                    <th colspan="3" align="center" valign="middle" rowspan="1">First Follow-Up</th>
+                    <th colspan="3" align="center" valign="middle" rowspan="1">Second Follow-Up</th>
+                    <th colspan="3" align="center" valign="middle" rowspan="1">RM-ANOVA **</th>
+                  </tr>
+                  <tr>
+                    <th align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">M</th>
+                    <th align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">SD</th>
+                    <th align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">M</th>
+                    <th align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">SD</th>
+                    <th align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">M</th>
+                    <th align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">SD</th>
+                    <th align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">M</th>
+                    <th align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">SD</th>
+                    <th align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">z</th>
+                    <th align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+                      <italic>p</italic>
+                    </th>
+                    <th align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">d</th>
+                    <th align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">z </th>
+                    <th align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+                      <italic>p</italic>
+                    </th>
+                    <th align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">d</th>
+                    <th align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">F</th>
+                    <th align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+                      <italic>p</italic>
+                    </th>
+                    <th align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">ηp<sup>2</sup></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">Attitudes<break/>S</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">2.15</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.60</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">2.21</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.50</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">2.22</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.61</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">2.25</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.53</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">−0.566</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.571</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">−0.115</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">−0.521</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.602</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">−0.057</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">1.708</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.259</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.363</td>
+                  </tr>
+                  <tr>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">Disclosure</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">2.43</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.74</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">2.43</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.40</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">2.17</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.38</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">2.66</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.60</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">−0.015</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.988</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">−0.003</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">−1.511</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.131</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">−0.948</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">11.878</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.008</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.798</td>
+                  </tr>
+                  <tr>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">Social distance</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">2.04</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.63</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">2.24</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.45</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">1.93</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.37</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">2.13</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.56</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">−1.197</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.231</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">−0.332</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">−0.393</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.694</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">−0.393</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.631</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.564</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.174</td>
+                  </tr>
+                  <tr>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">OMS-HC total</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">2.26</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.48</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">2.38</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.30</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">2.18</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.31</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">2.41</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.43</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">−0.725</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.468</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">−0.249</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">−1.035</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.301</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">−0.587</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">1.911</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.228</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.389</td>
+                  </tr>
+                </tbody>
+              </table>
+              <table-wrap-foot>
+                <fn>
+                  <p>* Data before applying multiple imputation; ** Group × time interaction within 3 time points.</p>
+                </fn>
+              </table-wrap-foot>
+            </table-wrap>
+            <table-wrap id="ijerph-18-01214-t003" orientation="portrait" position="float">
+              <object-id pub-id-type="pii">ijerph-18-01214-t003_Table 3</object-id>
+              <label>Table 3</label>
+              <caption>
+                <p>Sociodemographic characteristics and baseline scores of mental health participants.</p>
+              </caption>
+              <table frame="hsides" rules="groups">
+                <thead>
+                  <tr>
+                    <th rowspan="2" align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin" colspan="1">
+</th>
+                    <th colspan="2" align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin" rowspan="1">All (<italic>n</italic> = 186)</th>
+                    <th colspan="2" align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin" rowspan="1">Intervention (<italic>n</italic> = 113)</th>
+                    <th colspan="2" align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin" rowspan="1">Control (<italic>n</italic> = 73)</th>
+                    <th colspan="3" align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin" rowspan="1">Statistical Significance</th>
+                  </tr>
+                  <tr>
+                    <th align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">N</th>
+                    <th align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">%</th>
+                    <th align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">N</th>
+                    <th align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">%</th>
+                    <th align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">N</th>
+                    <th align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">%</th>
+                    <th colspan="2" align="center" valign="middle" style="border-bottom:solid thin" rowspan="1">OR, 95% CI</th>
+                    <th align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+                      <italic>p</italic>
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">Gender (% females)</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">177</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">78.3</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">105</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">76.6</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">72</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">80.9</td>
+                    <td colspan="2" align="center" valign="middle" rowspan="1">1.291. 0.667–4.498</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.448</td>
+                  </tr>
+                  <tr>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">Experience with mental health issues (%)</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">87</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">38.5</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">49</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">35.5</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">38</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">43.2</td>
+                    <td colspan="2" align="center" valign="middle" rowspan="1">1.380. 0.799–2.386</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.248</td>
+                  </tr>
+                  <tr>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Relative with mental health issues (%)</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">174</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">78.7</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">106</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">78.5</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">68</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">79.1</td>
+                    <td colspan="2" align="center" valign="middle" style="border-bottom:solid thin" rowspan="1">1.034. 0.533–2.004</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.922</td>
+                  </tr>
+                  <tr>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">
+</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">M</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">SD</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">M</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">SD</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">M</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">SD</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">t </td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">
+                      <italic>p</italic>
+                    </td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">d</td>
+                  </tr>
+                  <tr>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">Age (M ± SD)</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">41.56</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">12.35</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">41.72</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">12.70</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">41.30</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">11.81</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">−0.237</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.813</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.033</td>
+                  </tr>
+                  <tr>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">Beliefs</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">2.46</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.39</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">2.44</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.39</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">2.49</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.39</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.884</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.378</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">−0.133</td>
+                  </tr>
+                  <tr>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">Coercion</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">2.48</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.46</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">2.49</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.44</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">2.46</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.49</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.881</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.38</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.070</td>
+                  </tr>
+                  <tr>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">Paternalism</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">2.30</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.40</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">2.27</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.39</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">2.34</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.43</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">−0.467</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.641</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">−0.179</td>
+                  </tr>
+                  <tr>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">Discrimination</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">1.91</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.42</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">1.93</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.45</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">1.88</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.38</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">−0.456</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.649</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.120</td>
+                  </tr>
+                  <tr>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">BAMHS total</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">2.36</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.27</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">2.35</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.27</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">2.39</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.28</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.910</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.364</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">−0.137</td>
+                  </tr>
+                </tbody>
+              </table>
+            </table-wrap>
+            <table-wrap id="ijerph-18-01214-t004" orientation="portrait" position="float">
+              <object-id pub-id-type="pii">ijerph-18-01214-t004_Table 4</object-id>
+              <label>Table 4</label>
+              <caption>
+                <p>Follow-up scores among mental health participants (raw data *).</p>
+              </caption>
+              <table frame="hsides" rules="groups">
+                <thead>
+                  <tr>
+                    <th rowspan="2" align="center" valign="middle" style="border-top:solid thin" colspan="1">
+</th>
+                    <th colspan="4" align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin" rowspan="1">First Follow-Up</th>
+                    <th colspan="4" align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin" rowspan="1">Second Follow-Up</th>
+                    <th colspan="6" align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin" rowspan="1">Statistical Significance</th>
+                    <th align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin" rowspan="1" colspan="1">
+</th>
+                    <th align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin" rowspan="1" colspan="1">
+</th>
+                    <th align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin" rowspan="1" colspan="1">
+</th>
+                  </tr>
+                  <tr>
+                    <th colspan="2" align="center" valign="middle" rowspan="1">Intervention</th>
+                    <th colspan="2" align="center" valign="middle" rowspan="1">Control</th>
+                    <th colspan="2" align="center" valign="middle" rowspan="1">Intervention</th>
+                    <th colspan="2" align="center" valign="middle" rowspan="1">Control</th>
+                    <th colspan="3" align="center" valign="middle" rowspan="1">First Follow-Up</th>
+                    <th colspan="3" align="center" valign="middle" rowspan="1">Second Follow-Up</th>
+                    <th colspan="3" align="center" valign="middle" rowspan="1">RM-ANOVA **</th>
+                  </tr>
+                  <tr>
+                    <th align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
+</th>
+                    <th align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">M</th>
+                    <th align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">SD</th>
+                    <th align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">M</th>
+                    <th align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">SD</th>
+                    <th align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">M</th>
+                    <th align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">SD</th>
+                    <th align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">M</th>
+                    <th align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">SD</th>
+                    <th align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">z</th>
+                    <th align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">p</th>
+                    <th align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">d</th>
+                    <th align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">z </th>
+                    <th align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">p</th>
+                    <th align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">d</th>
+                    <th align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">F</th>
+                    <th align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">p</th>
+                    <th align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">ηp<sup>2</sup></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">Beliefs</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">2.41</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.40</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">2.55</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.37</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">2.52</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.35</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">2.56</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.37</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">−2.419</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.016</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">−0.349</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">−0.166</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.868</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">−0.349</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.388</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.681</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.019</td>
+                  </tr>
+                  <tr>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">Coercion</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">2.38</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.42</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">2.47</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.49</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">2.42</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.39</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">2.43</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.48</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">−1.449</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.147</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">−0.195</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">−0.360</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.719</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">−0.195</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.478</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.624</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.023</td>
+                  </tr>
+                  <tr>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">Paternalism</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">2.28</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.43</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">2.32</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.40</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">2.23</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.39</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">2.32</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.40</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">−1.006</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.314</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">−0.093</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">−0.695</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.487</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">−0.093</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.065</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.937</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.003</td>
+                  </tr>
+                  <tr>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">Discrimination</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">1.94</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.45</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">1.88</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.46</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">1.88</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.38</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">2.06</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.39</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">−0.594</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.552</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1"> 0.130</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">−1.549</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.121</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1"> 0.130</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">5.450</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.008</td>
+                    <td align="center" valign="middle" rowspan="1" colspan="1">0.214</td>
+                  </tr>
+                  <tr>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">BAMHS total</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">2.33</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.29</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">2.39</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.29</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">2.33</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.28</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">2.41</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.27</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">−2.392</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.017</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">−0.235</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">−0.700</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.484</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">−0.235</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.781</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.465</td>
+                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.038</td>
+                  </tr>
+                </tbody>
+              </table>
+              <table-wrap-foot>
+                <fn>
+                  <p>* Data before applying multiple imputation ** Group × time interaction within three time points.</p>
+                </fn>
+              </table-wrap-foot>
+            </table-wrap>
+          </floats-group>
+        </article>
+      </metadata>
+    </record>
+  </GetRecord>
+</OAI-PMH>

@@ -7,7 +7,13 @@ library(TeachingDemos)
 char2seed('trials')
 
 # get the data from 0_find_trials_pmc.R 
-load('data/pmid_trials.RData')
+alldata = NULL
+for (year in 2017:2020){
+  infile = paste('data/pmid_trials.',year,'.RData', sep='')
+  load(infile)
+  alldata = bind_rows(alldata, data)
+}
+data = alldata # name back
 numbers_to_take = 101:200 # number to check (done in batches)
 data = mutate(data.frame(data), runif = runif(n=n())) %>%
   arrange(runif) %>% # randomly order

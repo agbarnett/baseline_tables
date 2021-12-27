@@ -80,3 +80,23 @@ merge_single_stats = function(in_table){
   #
   return(in_table)
 }
+
+
+# checking for the size of the differences, for 2_process_extracted_data.R
+# version with exact matches
+n = 10
+table_data = data.frame(pmcid=1,
+                        statistic = 'continuous', # Wrong!
+                        row = 1:n,
+                        dp1 = 0,
+                        stat1 = rpois(n=n, lambda=10), sample_size=50) %>%
+  mutate(stat2 = 100*(stat1/sample_size))
+# version with bit of noise
+n = 10
+table_data = data.frame(pmcid=1,
+                        statistic = 'continuous', # Wrong!
+                        row = 1:n,
+                        dp1 = 0,
+                        stat1 = rpois(n=n, lambda=10), sample_size=50) %>%
+  mutate(stat2 = 100*(stat1/sample_size),
+         stat2 = stat2 - 2) # noise, like rounding error

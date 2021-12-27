@@ -1,5 +1,5 @@
 ---
-title: 'Summary statistics on the tables'
+title: 'Summary statistics on the baseline tables'
 author: "Adrian Barnett"
 date: "`r format(Sys.time(), '%d %B %Y')`"
 output:
@@ -13,7 +13,7 @@ output:
 knitr::opts_chunk$set(echo = FALSE, warning=FALSE, message=FALSE, error=FALSE, comment='', dpi=400)
 options(width=1000) # Wide pages
 options(scipen=999) # avoid scientific presentation
-#source('99_functions.R')
+source('99_functions.R') # for roundz
 #library(broom) # for regression models
 library(janitor) # for tables with totals
 library(dplyr)
@@ -21,25 +21,149 @@ library(tidyr)
 library(stringr)
 library(flextable)
 library(ggplot2)
+library(fitdistrplus) # for fitting gamma distribution to rows
 
-# get the data
-load('data/analysis_ready.RData') # from 2_process_extracted_data.R
+## get the data; select which source of data to use
+sources = c('my_search', 'trialstreamer', 'validation')
+source = sources[2]
+stage = 'model' # also works for summary
+source('1_which_data_source.R') # uses `source` and `stage`
+```
+
+# Exclusions
+
+## Exclusions prior to reading data
+
+From the 10,000 original papers.
+
+```{r}
+tab = tabyl(excluded, reason) %>%
+  arrange(-n) %>%
+  adorn_totals("row") %>%
+  adorn_pct_formatting() 
+ftab = flextable(tab) %>%
+  theme_box() %>%
+  autofit()
+ftab
+```
+
+## Exclusions from data that could be read in
+
+```{r}
+ftab = flextable(excluded_counts) %>%
+  theme_box() %>%
+  autofit()
+ftab
+```
+
+The table shows the number of excluded rows of data, apart from the "Algorithm error" row which is the total number of excluded studies.
+
+The total number of included studies was `r length(unique(table_data$pmcid))` with `r format(nrow(table_data), big.mark=',')` rows.
+
+<!--- Some results were changed in the processing step: --->
+
+```{r}
+# Not worth presenting, all part of the algorithm
+tab = tabyl(dat=table_data , var1='changed') %>%
+  adorn_totals() %>%
+  mutate(percent = round(percent*100))
+ftab = flextable(tab) %>%
+  theme_box() %>%
+  autofit()
 ```
 
 # Number of summary statistics (rows) per table
 
-```{r}
+```{r, include=FALSE}
 rows = group_by(table_data, pmcid) %>%
   summarise(row = max(row),
             col = max(column)) %>%
   ungroup()
+# add distribution curve using best-fitting gamma distribution
+fg = fitdist(data=rows$row, distr="gamma") # spits stuff to screen
+max_row = max(rows$row)
+N = nrow(rows)
+pred = dgamma(x=1:max_row, shape=fg$estimate[1], rate=fg$estimate[2])
+gamma_line = data.frame(row = 1:max_row, fitted = pred*N)
+```
+
+```{r}
+#
 gplot = ggplot(data=rows, aes(x=row))+
   geom_bar(fill='skyblue') +
+  geom_line(data=gamma_line, aes(x=row, y=fitted), col='dark red')+
   ylab('Count')+
   xlab('Number of statistics')+
   theme_bw()
 gplot
 ```
+
+The mean number of rows per table was `r round(mean(rows$row),0)`. The red line shows a gamma distribution with a shape parameter of `r roundz(fg$estimate[1],1)` and rate of `r roundz(fg$estimate[2],2)`. 
+
+# Sample sizes
+
+### Boxplot by table column
+
+```{r}
+# 
+sizes = dplyr::select(table_data, pmcid, column, sample_size) %>%
+  unique()
+#
+gplot = ggplot(data=sizes, aes(x=factor(column), y=sample_size))+
+  geom_boxplot()+
+  scale_y_log10()+
+  ylab('Sample size')+
+  xlab('Table column')+
+  theme_bw()
+gplot
+```
+
+### Summary statistics for sample size per group
+
+```{r}
+#
+probs = c(0.05,0.25,0.5,0.75,0.95)
+tab = summarise(sizes, 
+                sample = round(quantile(sample_size, probs)))
+tab = bind_cols(probs, tab)
+names(tab)[1] = 'percentile'
+ftab = flextable(tab) %>%
+  theme_box() %>%
+  autofit()
+ftab
+```
+
+The table shows the sample size for 5 percentiles. This is for the sample size per group. 
+
+### Parametric fit to log sample size
+
+```{r, include=FALSE}
+fg = fitdist(data=log(sizes$sample_size), distr="gamma") # spits stuff to screen
+max_size = max(sizes$sample_size)
+N = nrow(sizes)
+pred = dgamma(x=log(1:max_size), shape=fg$estimate[1], rate=fg$estimate[2])
+gamma_line = data.frame(row = log(1:max_size), fitted = pred*N)
+# make random data for easy plotting in histogram
+rgamma = data.frame(rgamma(n=N, shape=fg$estimate[1], rate=fg$estimate[2]))
+names(rgamma) = 'sample_size'
+rgamma = mutate(rgamma, sample_size = round(exp(sample_size)))
+```
+
+```{r}
+# 
+to_plot = bind_rows(sizes, rgamma, .id='source') %>%
+  mutate(source = ifelse(source==1, 'Observed data', 'Fitted from gamma'))
+#
+gplot = ggplot(data=to_plot, aes(x=log(sample_size)))+
+  geom_histogram(fill='skyblue') +
+  ylab('Count')+
+  xlab('Log-transformed sample size')+
+  theme_bw()+
+  facet_wrap(~source)
+gplot
+```
+
+The gamma distribution fitted to the log-transformed (base e) sample size has a shape parameter of `r roundz(fg$estimate[1],1)` and rate of `r roundz(fg$estimate[2],2)`. 
 
 # Number of groups (columns) per table
 
@@ -62,6 +186,65 @@ table = table_data %>% tabyl(statistic) %>%
   mutate(percent = round(percent*100)) 
 ftab = flextable(table) %>%
   theme_box() %>%
-  colformat_num(j=2, big.mark=',', digits=0)
+  colformat_num(j=2, big.mark=',', digits=0) %>%
+  autofit()
 ftab
 ```
+
+# About the papers
+
+## Top ten journals
+
+```{r}
+tab = group_by(design, journal) %>%
+  tally() %>%
+  arrange(-n) %>%
+  slice(1:10)
+ftab = flextable(tab) %>%
+  theme_box() %>%
+  autofit()
+ftab
+```
+
+In total there were `r length(unique(design$journal))` journals.
+
+## Top ten countries
+
+```{r}
+tab = group_by(design, affiliation) %>%
+  tally() %>%
+  arrange(-n) %>%
+  slice(1:10)
+ftab = flextable(tab) %>%
+  theme_box() %>%
+  autofit()
+tab
+```
+
+In total there were `r length(unique(design$affiliation))` countries.
+
+## Study design features
+
+```{r}
+features = dplyr::select(design, pmcid, rct, cluster, pilot, block_randomisation, adaptive_randomisation, sem) %>%
+  reshape2::melt(id= 'pmcid') %>%
+  group_by(variable) %>%
+  summarise(N = n(), Yes = sum(value)) %>%
+  mutate(percent = roundz(100*Yes/N)) %>%
+  ungroup() %>%
+  arrange(-Yes) %>%
+  rename('Study design' = 'variable')
+ftab = flextable(features) %>%
+  theme_box() %>%
+  autofit()
+ftab
+```
+
+The variables are based on mentions in the text as follows:
+
+* rct = RCT or versions of "randomised controlled trial" in the title or abstract
+* block_randomisation = "block" and versions of "randomisation" within 5 words of each other anywhere in paper
+* adaptive randomisation = "adaptive randomisation" anywhere in paper
+* cluster = "cluster*" in title or abstract
+* pilot = "pilot" in title
+* sem = "SE", "SEM" or "standard error" in baseline table or footnote

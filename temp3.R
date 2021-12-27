@@ -74,3 +74,20 @@ if(ncol(table1) >= 12){
   to.return$table = NULL
   return(to.return) # bail out here
 }
+
+## from 99_functions
+# old code for finding n=
+
+# from line 142
+# create labels to add to header, but only if 'n=' (or similar) is not already in labels
+already = str_detect(string=tolower(names(table1)), pattern=paste(sample_numbers, collapse='|')) #
+if(any(already) != TRUE){
+  labels = paste('n=',table1[n_row, ], sep='')
+  labels[labels=='n='] = '' # remove empty labels
+  names(table1) = paste(names(table1), labels)
+}
+
+# from functions line 778
+ns = str_squish(str_split_fixed(string = intext, pattern = pattern, n = 2)[,2]) # split on `n = number`, use look-ahead to avoid number being cut
+ns = str_split_fixed(string = ns, pattern = ' ', n = 2)[,1] # split again on space (in case of garbage after n=xx)
+ns = as.numeric(str_remove(string = ns, pattern = '\\)')) # extract number - can create warning - ignore
