@@ -1,6 +1,6 @@
 # 99_functions.R
 # functions for extracting baseline table data and p-value testing
-# August 2021
+# December 2021
 
 # to replace missing with zero, used by 3_compare_algorithm_hand.Rmd
 replace_zero = function(x){replace_na(x, '0')}
@@ -13,7 +13,7 @@ baseline_table = function(webpage, # paper tables in xml format
                           pmcid ,
                           table_number = 1, 
                           footnote,
-                          weight = 1) # weight feeds into statistics detect function
+                          weight = 2) # weight feeds into statistics detect function
   {
   
   # binary variable tested later; were there p-values in table?
@@ -304,7 +304,7 @@ baseline_table = function(webpage, # paper tables in xml format
   }
   
   ## remove columns that are just the range, e.g. PMC8073435  ...
-  plus = paste(c(min_max_pattern_whole, '^quintile', '^reference range$'), collapse='|') # ... and add quintile, PMC6761647, reference range PMC7281967
+  plus = paste(c(min_max_pattern_whole, '^quintile', '^reference.range$','^mean.difference$'), collapse='|') # ... and add quintile, PMC6761647, reference range PMC7281967, mean difference PMC3953023
   test_cols1 = str_detect(string = tolower(names(table1)), pattern=plus) # check names
   test_cols2 = str_detect(string = tolower(table1[1,]), pattern=plus) # check first row
   test_cols = as.logical(pmax(test_cols1, test_cols2))
@@ -326,6 +326,9 @@ baseline_table = function(webpage, # paper tables in xml format
   table1 = combine_columns(table1, stat1=c('n','number'), stat2=c('\\%','percent','percentage'))
   if(ncol(table1) <= 2){return(stop_one_column())}# stop if 1 column
   table1 = combine_columns(table1, stat1=c('\\%','percent'), stat2=c('n','number'), reverse=TRUE)
+  if(ncol(table1) <= 2){return(stop_one_column())}# stop if 1 column
+  table1 = combine_columns(table1, stat1=c('\\%','percent'), stat2=c('9.\\%CI','9.% CI','9. % CI'), reverse=FALSE)
+  if(ncol(table1) <= 2){return(stop_one_column())}# stop if 1 column
   
   ## combine neighbouring rows that have `mean` and `sd`, or median and range
   table1 = combine_rows(table1, stat1=c('mean'), stat2=c('sd','standard deviation','95\\%\\s?c.?i.?')) 
@@ -440,7 +443,6 @@ baseline_table = function(webpage, # paper tables in xml format
 
   ##### detect use of statistics for each row ####
   ## split table if there are multiple header rows (usually a second row mid-way down table)
-  # add row number for merging - WORKING ON THIS!!
   no_header = mutate(no_header, rrr = 1:n())
   table_header = mutate(table_header, dummy=NA) # add dummy for rrr
   #
@@ -580,7 +582,8 @@ baseline_table = function(webpage, # paper tables in xml format
   
   ## get sample size from top row(s) or cells, then add to table. 
   # keep header from before removing p-value columns because of potential for mis-alignment
-  sample_sizes = sample_sizes_est(table_header = table_header[,-1], processed_table = table, first_rows = table1[1:4,]) # header without first column 
+  mrow = min(4, nrow(table1))
+  sample_sizes = sample_sizes_est(table_header = table_header[,-1], processed_table = table, first_rows = table1[1:mrow,]) # header without first column 
   nrow_sample = 99
   if(is.null(sample_sizes)==TRUE){nrow_sample = 0}
   if(is.null(sample_sizes)==FALSE){if(nrow(sample_sizes) <= 1){nrow_sample = nrow(sample_sizes)}}
@@ -792,7 +795,7 @@ if(nrow(sample_sizes) > 0){
   names(first_rows_nums) = as.character(1:ncol(first_rows_nums)) # generic column name
   first_rows_nums$row = 1:nrow(first_rows_nums)
   any_n = reshape::melt(id.vars = 'row', data.frame(first_rows_nums), variable_name = "column") %>%
-    mutate( value = str_squish(value),
+    mutate(value = str_squish(value),
       n_detect = str_detect(string=value, pattern = sample_patterns)) %>%
     group_by(row) %>%
     summarise(sum = sum(n_detect)) %>%
@@ -831,16 +834,21 @@ if(nrow(sample_sizes) > 0){
   if(any(processed_table$statistic == 'numbers')){
     numbers = filter(processed_table, statistic == 'numbers',
                      !is.na(stat1),
-                     !is.na(stat2)) %>%
+                     !is.na(stat2),
+                     is.na(stat3)) %>%
       mutate(n_est =  stat1 + stat2) %>% # estimate sample size from n1 + n2
       filter(!is.na(n_est)) %>% # remove missing
       group_by(column) %>%
-      summarise(sample_size = Mode(n_est)) %>% # get mode as an estimate of sample size
-      ungroup()
+      summarise(sample_size = Mode(n_est),
+                iqr = IQR(n_est),
+                sd = sd(n_est)) %>% # get mode as an estimate of sample size
+      ungroup() %>%
+      filter(iqr == 0) %>% # only allow a small difference in sample sizes
+      select(column, sample_size)
     if(nrow(numbers) > 0){return(numbers)} # use if there are any results
   }
   
-  ## try reconstructing n from percents 
+  ## try reconstructing sample size from percents 
   # are there rows with the same estimated N?
   est_N = filter(processed_table, statistic == 'percent',
                  dp1 == 0, # must be a number
@@ -855,18 +863,16 @@ if(nrow(sample_sizes) > 0){
   if(any(is.infinite(est_N$n_est)) == TRUE){
     do_not_use = TRUE
   }
-  find_same = group_by(est_N, row, n_est_round) %>%
-    mutate(N = n()) %>% # count number of non-missing statistics
-    group_by(row, n_est_round, N) %>%
-    tally() %>%
-    ungroup() %>%
-    filter(n == N) %>% # all cells give the same N
-    pull(row)
-  nums = filter(est_N, row==find_same[1]) %>%
-    select(column, n_est_round) %>%
-    rename('sample_size' = 'n_est_round')
-  if(nrow(nums) > 0 & do_not_use == FALSE ){ 
-      return(nums)
+  # find median and Standard deviation in sample size
+  check_stats = group_by(est_N, column) %>%
+    summarise(sd = sd(n_est_round),
+              iqr = IQR(n_est_round),
+              median = round(median(n_est_round))) %>%
+    filter(iqr == 0) %>% # only if there's a small variance in the sample size
+    select(column, median) %>%
+    rename('sample_size' = 'median')
+  if(nrow(check_stats) > 0 & do_not_use == FALSE ){ 
+      return(check_stats)
   }
 
   ## try reconstructing n from numbers (last try)
@@ -918,7 +924,7 @@ make_cells = function(indata){
 ## t-test from summary stats, from https://stats.stackexchange.com/questions/30394/how-to-perform-two-sample-t-tests-in-r-by-inputting-sample-statistics-rather-tha
 # m1, m2: the sample means
 # s1, s2: the sample standard deviations
-# n1, n2: the same sizes
+# n1, n2: the sample sizes
 # equal.variance: whether or not to assume equal variance. Default is FALSE. 
 t.test2 <- function(mean, sd, n, equal.variance=TRUE, return_what = 'difference')
 {
@@ -951,6 +957,12 @@ t.test2 <- function(mean, sd, n, equal.variance=TRUE, return_what = 'difference'
 # approximation of two-sample t-test for binomial data (see D'Agostino 1998)
 t.test2.binomial <- function(a, b, c, d, return_what = 't')
 {
+  # fix for zero counts for successes or failures
+  if(a == 0){a = 0.5}
+  if(b == 0){b = 0.5}
+  if(c == 0){c = c + 0.5}
+  if(d == 0){d = d + 0.5}
+  #
   m = a + c
   n = b + d
   p1 = a/m
@@ -1013,9 +1025,9 @@ make_stats_for_bayes_model = function(indata,
   }
 
   
-# a) continuous
+# a) continuous (including CIs which have been changed to mean (SD))
   cstats = filter(bind_data,
-                   statistic == 'continuous') %>% # must have positive SD
+                   statistic %in% c('ci','continuous')) %>% # must have positive SD
   group_by(pmcid, row, statistic) %>%
   summarise(
     size = sum(sample_size), # total sample size
@@ -1028,7 +1040,7 @@ make_stats_for_bayes_model = function(indata,
          !is.na(sem2)) %>%
   ungroup() 
 
-  # percents
+  # percentages
   pstats = NULL
   if(any(bind_data$statistic %in% c('percent','numbers')) == TRUE){ # needed because simulations may have no percents
   pstats = filter(bind_data,
@@ -1139,7 +1151,7 @@ combine_columns = function(intable, stat1='', stat2='', reverse=FALSE){
   pat_stat1_h_startend = paste('^', paste('[a-z]?', stat1, collapse='$|^', sep=''), '$', sep='') # start/end
   pat_stat1_h_end = paste(' ',paste('[a-z]?', stat1, collapse='$| ', sep=''), '$', sep='') # start/end
   pat_stat1_h = paste(pat_stat1_h_words, pat_stat1_h_startend, pat_stat1_h_end, sep='|', collapse ='|')
-  # version for first row
+  # version for first/second row
   pat_stat1_words = paste('\\b', paste(stat1_no_n, collapse='\\b|\\b'), '\\b', sep='') # whole words with or
   pat_stat1_startend = paste('^', paste(stat1, collapse='$|^'), '$', sep='') # start/end
   pat_stat1_end = paste(' ', paste(stat1, collapse='$| '), '$', sep='') # end
@@ -1150,7 +1162,7 @@ combine_columns = function(intable, stat1='', stat2='', reverse=FALSE){
   pat_stat2_h_startend = paste('^', paste('[a-z]?', stat2, collapse='$|^', sep=''), '$', sep='') # start/end
   pat_stat2_h_end = paste(' ',paste('[a-z]?', stat2, collapse='$| ', sep=''), '$', sep='') # start/end
   pat_stat2_h = paste(pat_stat2_h_words, pat_stat2_h_startend, pat_stat2_h_end, sep='|', collapse ='|')
-  # version for first row
+  # version for first/second row
   pat_stat2_words = paste('\\b', paste(stat2_no_n, collapse='\\b|\\b'), '\\b', sep='') # whole words with or
   pat_stat2_startend = paste('^', paste(stat2, collapse='$|^'), '$', sep='') # start/end
   pat_stat2_end = paste(' ', paste(stat2, collapse='$| '), '$', sep='') # end
@@ -1170,59 +1182,72 @@ combine_columns = function(intable, stat1='', stat2='', reverse=FALSE){
   #numbers_start = numbers_start_function(intable) -depending on where numbers start
   # search for stat1
   test_stat1_header = str_detect(string = str_squish(names(intable)), pattern=pat_stat1_h) # check names
-  test_stat1_row = str_detect(string = str_squish(intable[1,]), pattern=pat_stat1) # check names
+  test_stat1_row = str_detect(string = str_squish(intable[1,]), pattern=pat_stat1) # check first row
+  test_stat1_row2 = str_detect(string = str_squish(intable[2,]), pattern=pat_stat1) # check second row
   # search for stat2
-  test_stat2_header = str_detect(string = str_squish(names(intable)), pattern=pat_stat2_h) # check first row
+  test_stat2_header = str_detect(string = str_squish(names(intable)), pattern=pat_stat2_h) # check names
   test_stat2_row = str_detect(string = str_squish(intable[1,]), pattern=pat_stat2) # check first row
+  test_stat2_row2 = str_detect(string = str_squish(intable[2,]), pattern=pat_stat2) # check second row
   # remove `n=` from matches if looking for n
   n_equals1 = n_equals2 = NULL
   if(str_detect(string=pat_stat1, ' n\\$') | str_detect(string=pat_stat2, ' n\\$')){ # if n is in search
     n_equals_header = str_detect(str_squish(names(intable)), pattern='n\\s?=\\s?[0-9]')
     n_equals_row = str_detect(str_squish(intable[1,]), pattern='n\\s?=\\s?[0-9]')
+    n_equals_row2 = str_detect(str_squish(intable[2,]), pattern='n\\s?=\\s?[0-9]')
     n_equals_header[is.na(n_equals_header)] = FALSE
     n_equals_row[is.na(n_equals_row)] = FALSE
-    n_equals = as.logical(pmax(n_equals_header, n_equals_row))
-    if(str_detect(string=pat_stat1, ' n\\$')){n_equals1=n_equals} # stat1 or 2?
-    if(str_detect(string=pat_stat2, ' n\\$')){n_equals2=n_equals}
+    n_equals_row2[is.na(n_equals_row2)] = FALSE
+    n_equals = as.logical(pmax(n_equals_header, n_equals_row, n_equals_row2))
+    if(str_detect(string=pat_stat1, ' n\\$')){n_equals1 = n_equals} # stat1 or 2?
+    if(str_detect(string=pat_stat2, ' n\\$')){n_equals2 = n_equals}
   }
   # search all rows for %'s in cells, only if % is one of the search strings
   if(str_detect(string=pat_stat1, '\\%') | str_detect(string=pat_stat2, '\\%')){
     percents = (str_count(intable, pattern='[0-9]\\%') / nrow(intable)) > 0.5 # more than 50% match; gives warning, but works
     if(any(percents) == TRUE){
       if(str_detect(string=pat_stat1, '\\%')){ # % in first search
+        test_stat1_row2[which(percents)] = TRUE
         test_stat1_row[which(percents)] = TRUE
         test_stat1_header[which(percents)] = TRUE
       }
       if(str_detect(string=pat_stat2, '\\%')){ # % in first search
-        test_stat2_row[which(percents)] = TRUE # apply to header and row
+        test_stat2_row2[which(percents)] = TRUE # apply to header and row
+        test_stat2_row[which(percents)] = TRUE # 
         test_stat2_header[which(percents)] = TRUE
       }
     }
   }
-  # knock out `n=`
+  # knock out `n=` on selected rows
   if(is.null(n_equals1) == FALSE){
-    test_stat1_header[n_equals1] = FALSE
-    test_stat1_row[n_equals1] = FALSE
+    if(any(n_equals_header)){test_stat1_header[n_equals1] = FALSE}
+    if(any(n_equals_row)){test_stat1_row[n_equals1] = FALSE}
+    if(any(n_equals_row2)){test_stat1_row2[n_equals1] = FALSE}
   }
   if(is.null(n_equals2) == FALSE){
-    test_stat2_header[n_equals2] = FALSE
-    test_stat2_row[n_equals2] = FALSE
+    if(any(n_equals_header)){test_stat2_header[n_equals2] = FALSE}
+    if(any(n_equals_header)){test_stat2_row[n_equals2] = FALSE}
+    if(any(n_equals_header)){test_stat2_row2[n_equals2] = FALSE}
   }
   # negative search for both
   test_both_header = str_detect(string = str_squish(names(intable)), pattern=pat_not_h) # 
   test_both_row = str_detect(string = str_squish(intable[1,]), pattern=pat_not) # 
+  test_both_row2 = str_detect(string = str_squish(intable[2,]), pattern=pat_not) # 
   test_both_header_rev = str_detect(string = str_squish(names(intable)), pattern=pat_not_h_rev) # 
   test_both_row_rev = str_detect(string = str_squish(intable[1,]), pattern=pat_not_rev) # 
+  test_both_row2_rev = str_detect(string = str_squish(intable[2,]), pattern=pat_not_rev) # 
   test_both_header = pmax(test_both_header, test_both_header_rev)
   test_both_row = pmax(test_both_row, test_both_row_rev)
+  test_both_row2 = pmax(test_both_row2, test_both_row2_rev)
   # test if neighbours (lag shifts one to the right)
-  neighbours_header = test_stat2_header == lag(test_stat1_header) & test_stat2_header == TRUE # first row
-  neighbours_row = test_stat2_row == lag(test_stat1_row) & test_stat2_row == TRUE # second row
+  neighbours_header = test_stat2_header == lag(test_stat1_header) & test_stat2_header == TRUE # header
+  neighbours_row = test_stat2_row == lag(test_stat1_row) & test_stat2_row == TRUE # first row
+  neighbours_row2 = test_stat2_row2 == lag(test_stat1_row2) & test_stat2_row2 == TRUE # second row
   neighbours_both = as.logical(pmax(test_both_header, test_both_row)) # combine negative searches
   neighbours_header[is.na(neighbours_header)] = FALSE
   neighbours_row[is.na(neighbours_row)] = FALSE
+  neighbours_row2[is.na(neighbours_row2)] = FALSE
   neighbours_both[is.na(neighbours_both)] = FALSE
-  neighbours = as.logical(pmax(neighbours_header, neighbours_row)) # combine header and row
+  neighbours = as.logical(pmax(neighbours_header, neighbours_row, neighbours_row2)) # combine header and row
   neighbours[neighbours_both==TRUE] = FALSE # turn off any negative matches
   if(sum(neighbours) > 1){ # merge columns, only if applied to 2+ groups, otherwise might just be getting order wrong, e.g., 1:% 2:n 3:% 4:n would wrongly merge 2 and 3
     names_order = NULL # for re-ordering columns
@@ -1344,6 +1369,7 @@ complex_merge = function(table1, table2, by){
   return(merged_data)
 } # end of function
 
+
 ## get first author country
 get_affiliation = function(inpage){
   
@@ -1399,7 +1425,7 @@ get_affiliation = function(inpage){
   return(affiliation)
 } # end of function
 
-## run the bayesian model
+## run the Bayesian model
 run_bugs = function(in_data,
                     debug = FALSE,
                     find_problem = FALSE, # search for problem studies
@@ -1620,11 +1646,12 @@ statistics_detect = function(intable,
       median_specific_detect = str_detect(both, pattern=median_specific)
       continuous_specific_detect = str_detect(both, pattern=continuous_specific)
       percent_specific_detect = str_detect(both, pattern=percent_specific)
+      ci_specific_detect = str_detect(both, pattern='\\% confidence interval')
       footnote_stats = mutate(footnote_stats, # divide by foot_weight below to make sure weights count big
                               footnote_medians = footnote_medians + ((1/foot_weight)*median_specific_detect),
                               footnote_continuous = footnote_continuous + ((1/foot_weight)*continuous_specific_detect),
                               footnote_percents = footnote_percents + ((1/foot_weight)*percent_specific_detect),
-                              footnote_cis = footnote_cis)
+                              footnote_cis = footnote_cis + ((1/foot_weight)*1.1*ci_specific_detect)) # 1.1 to beat mean for continuous as both come together
     }
   }
   
@@ -1682,6 +1709,7 @@ statistics_detect = function(intable,
 select_papers = function(
 in_data,
 stats,
+exclude = NULL, # exclude based on multiplier; useful to exclude extreme results
 flag, # looking at mean or variance flag
 flag_value, # flag value to select
 flag_null_value, # flag value to select for comparison
@@ -1699,6 +1727,13 @@ flagged = filter(stats, nicevar == flag, median == flag_value) %>%
 # merge with mean
 means = filter(stats, nicevar == variable) %>%
   right_join(flagged, by='study')
+# exclude based on precision multiplier (either too big or too small)
+if(is.null(exclude)==FALSE & mean_select == 'positive'){
+  means = filter(means, mean <= log(exclude)) # given on non-log scale so need to transform
+}
+if(is.null(exclude)==FALSE & mean_select == 'negative'){
+  means = filter(means, mean >= log(exclude)) # given on non-log scale so need to transform
+}
 if(mean_select == 'negative'){
   means = arrange(means, mean)
 }
@@ -1724,7 +1759,11 @@ means = filter(stats, nicevar == variable) %>%
 t_stats_not_flagged = left_join(means, in_data, by='study')
 
 # make ordered factor (so that issue and not are grouped)
-for_order = c(unique(t_stats_flagged$pmcid), unique(t_stats_not_flagged$pmcid))
+pmcid1 = unique(t_stats_flagged$pmcid)
+pmcid1 = pmcid1[order(pmcid1)] # for neater ordering in plots
+pmcid2 = unique(t_stats_not_flagged$pmcid)
+pmcid2 = pmcid2[order(pmcid2)] # for neater ordering in plots
+for_order = c(pmcid1, pmcid2)
 
 # combine and return
 t_stats = bind_rows(t_stats_flagged, t_stats_not_flagged, .id='type') %>%

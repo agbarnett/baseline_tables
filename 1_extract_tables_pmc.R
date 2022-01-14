@@ -2,7 +2,7 @@
 # automatically extract the data from the baseline tables in the trials from pubmed central
 # see http://bradleyboehmke.github.io/2015/12/scraping-html-tables.html
 # use PMC ftp service https://www.ncbi.nlm.nih.gov/pmc/tools/ftp/
-# August 2021
+# January 2022
 library(rvest)
 library(stringr)
 library(stringi)
@@ -15,10 +15,10 @@ library(metareadr) # to read papers from PMC; installed from github
 source('1_pattern.R') 
 source('99_functions.R')
 load('data/emails_and_states.RData') # from 0_country_email.R, used for affiliations
-  
+
 # select which source of data to use
 sources = c('my_search', 'trialstreamer', 'validation')
-source = sources[3]
+source = sources[2]
 stage = 'data'
 source('1_which_data_source.R') # uses `source` and `stage`
 
@@ -54,6 +54,16 @@ if(length(out_nlm) > 0){ # if neither NLM (national library medicine) or Europe 
 ## get study title and other meta-information from full paper
 webpage = read_xml("web/full.xml", encoding='UTF-8') 
 title = xml_find_all(webpage, ".//article-title") %>% .[1] %>%xml_text() # tables and figures
+# date
+first_date = xml_find_all(webpage, ".//pub-date") %>% .[1]
+year = xml_find_all(first_date, './/year') %>%xml_text()
+month = xml_find_all(first_date, './/month') %>%xml_text()
+if(length(month) == 0){month=6}
+day  = xml_find_all(first_date, './/day') %>%xml_text()
+if(length(day) == 0){day=15}
+pubdate = as.Date(ISOdate(year = year,
+               month = month, 
+               day = day))
 # get abstract
 abstract = xml_find_all(webpage, ".//abstract") %>% xml_text() # tables and figures
 # exclude single arm studies
@@ -396,6 +406,7 @@ table_data = bind_rows(table_data, table)
 # study design (starts with details from pubmed)
 this_design = data[k,] %>%
   mutate(
+    date = pubdate,
     affiliation = affiliation,
     journal = journal,
     rct = rct,

@@ -46,3 +46,48 @@ ftab
 
 ```
 
+#### From 5_summary_stats.Rmd
+
+### Boxplot by table column
+
+```{r}
+# 
+sizes = dplyr::select(table_data, pmcid, column, sample_size) %>%
+  unique()
+#
+gplot = ggplot(data=sizes, aes(x=factor(column), y=sample_size))+
+  geom_boxplot()+
+  scale_y_log10()+
+  ylab('Sample size')+
+  xlab('Table column')+
+  theme_bw()
+gplot
+```
+
+### Parametric fit to log sample size
+
+```{r, include=FALSE}
+fg = fitdist(data=log(sizes$sample_size), distr="gamma") # spits stuff to screen
+max_size = max(sizes$sample_size)
+N = nrow(sizes)
+pred = dgamma(x=log(1:max_size), shape=fg$estimate[1], rate=fg$estimate[2])
+gamma_line = data.frame(row = log(1:max_size), fitted = pred*N)
+# make random data for easy plotting in histogram
+rgamma = data.frame(rgamma(n=N, shape=fg$estimate[1], rate=fg$estimate[2]))
+names(rgamma) = 'sample_size'
+rgamma = mutate(rgamma, sample_size = round(exp(sample_size)))
+```
+
+```{r}
+# 
+to_plot = bind_rows(sizes, rgamma, .id='source') %>%
+  mutate(source = ifelse(source==1, 'Observed data', 'Fitted from gamma'))
+#
+gplot = ggplot(data=to_plot, aes(x=log(sample_size)))+
+  geom_histogram(fill='skyblue') +
+  ylab('Count')+
+  xlab('Log-transformed sample size')+
+  theme_bw()+
+  facet_wrap(~source)
+gplot
+```

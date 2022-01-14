@@ -111,6 +111,8 @@ if(stage == 'plot'){
     tree_outfile = 'data/tree_ready_trialstreamer.RData'
     results_outfile = 'results/uniform_trialstreamer.RData'
     example_outfile = 'results/example_trialstreamer.RData'
+    supplement_outfile = 'results/supplement_trialstreamer.RData'
+    precision_outfile = 'results/precision_trialstreamer.RData'
     simulation = FALSE
   }
   if(source == 'validation'){
@@ -120,6 +122,8 @@ if(stage == 'plot'){
     tree_outfile = 'data/tree_ready_validation.RData'
     results_outfile = 'results/uniform_validation.RData'
     example_outfile = 'results/example_validation.RData'
+    supplement_outfile = 'results/supplement_validation.RData'
+    precision_outfile = 'results/precision_validation.RData'
     simulation = FALSE
   }
   if(source == 'simulation'){
@@ -138,6 +142,8 @@ if(stage == 'plot'){
     tree_outfile = 'data/tree_ready_bland.RData'
     results_outfile = 'results/uniform_bland.RData'
     example_outfile = 'results/example_bland.RData'
+    supplement_outfile = 'results/supplement_bland.RData'
+    precision_outfile = 'results/precision_bland.RData'
     simulation = TRUE
   }  
   load(infile) 
@@ -148,7 +154,7 @@ if(stage == 'plot'){
 if(stage == 'tree'){
   
   if(source == 'trialstreamer'){
-    infile1 = 'data/tree_ready.RData' # from 5_summary_results.Rmd
+    infile1 = 'data/tree_ready_trialstreamer.RData' # from 5_summary_results.Rmd
     infile2 = 'data/analysis_ready_trialstreamer.RData' # from 2_process_extracted_data.R
     outtree = 'figures/precision_tree_trialstreamer.jpg'
   }

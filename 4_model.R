@@ -1,6 +1,6 @@
 # 4_model.R
 # Fits a Bayesian model to the baseline table data extracted from RCTs published on pubmed central
-# November 2021
+# January 2022
 library(dplyr)
 library(tidyr)
 library(TeachingDemos)
@@ -12,7 +12,7 @@ source('99_functions.R')
 
 ## get the data; select which source of data to use
 sources = c('my_search', 'trialstreamer', 'validation', 'simulation', 'bland')
-source = sources[5] # controls which data source is run
+source = sources[2] # controls which data source is run
 stage = 'model'
 source('1_which_data_source.R') # uses `source` and `stage`
 
@@ -26,10 +26,40 @@ if(add_retracted == TRUE){
 
 # prepare the data for the Bayesian model
 for_model = make_stats_for_bayes_model(indata = table_data) # see 99_functions.R
-# quick visual checks
+
+## check for missing rows in model after calculation of t-statistics
+table_counts = filter(table_data, statistic %in% c('continuous','percent','numbers')) %>%
+  select(pmcid, row, column) %>%
+  arrange(pmcid, row, column) %>%
+  group_by(pmcid, row) %>%
+  slice(n()) %>% # last result per row
+  mutate(comb = ncol(combn(column, 2))) %>% # number of paired comparisons per row
+  group_by(pmcid) %>%
+  summarise(table = sum(comb) )
+model_counts = group_by(for_model, pmcid) %>% summarise(model = length(unique(row)))
+count_compare = full_join(table_counts, model_counts, by='pmcid') %>%
+  filter(table != model)
+# differences are often due to errors in table, e.g., PMC7763038
+
+## exclude perfectly correlated neighbours, e.g. male/female gender
+# does knock out some valid data, e.g, PMC7821012, but works very well on others, e.g, PMC6937882 with multiple examples
+to_remove = filter(for_model, statistic %in% c('percent','numbers')) %>%
+  group_by(pmcid) %>%
+  arrange(pmcid, row) %>%
+  mutate(r = row - round(row),
+         diff = abs(lag(t) - t*(-1)) ) %>% # perfectly negative correlation in neighbouring rows
+  ungroup() %>%
+  filter(diff < 0.001 & t!=0 & r==0) %>% # small difference; r==0 means only applies to two groups
+  select(pmcid, row) 
+for_model = anti_join(for_model, to_remove, by=c('pmcid','row'))
+n_removed = nrow(to_remove)
+
+# quick visual checks of data
 with(for_model, plot(log2(size), t))
 with(for_model, plot(as.numeric(as.factor(pmcid)), t))
 with(for_model, plot(mdiff, log2(sem)))
+
+
 
 # temporary
 #for_model_small = filter(for_model, study <= 300)
@@ -48,4 +78,4 @@ bugs$last.values = NULL
 study_numbers = group_by(for_model, pmcid, study) %>%
   summarise(size = median(size)) %>% # median sample size 
   ungroup()
-save(for_model, study_numbers, bugs, file=outfile)
+save(for_model, study_numbers, n_removed, bugs, file=outfile)

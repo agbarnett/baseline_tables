@@ -1,12 +1,12 @@
 # 1_pattern.R
 # patterns for detecting statistics in the tables; all in lower case
 # patterns for excluding papers
-# August 2021
+# January 2022
 
 ### a) continuous (mean and sd)
 # common units in lower case
 # removed 'min' for minutes because it gets confused with minimum, but added 'per min'
-units = c('mg/dl','mg / dl','g/dl','g / dl','iu/l','iu / l','ml','mmhg', 'mm hg','ng/ml','ng / ml', 'cm','kg/m2','kg / m2', 'kg/m<sup>2</sup>','mmol/l', 'per year', 'per month', 'per day', 'minutes', 'minute', 'per min','mins', 'year', 'years', 'yr', 'yrs', 'hours', 'hour', 'hr', 'hrs', 'score', 'scale', 'index','x103 cells/mm3', 'fev', 'fvc', 'hemoglobin a1c')
+units = c('mg/l','mg / l','mg/dl','mg / dl','g/dl','g / dl','iu/l','iu / l','ml','mmhg', 'mm hg','ng/ml','ng / ml', 'cm','kg/m2','kg / m2', 'kg/m<sup>2</sup>','mmol/l', 'per year', 'per month', 'per day', 'minutes', 'minute', 'per min','mins', 'year', 'years', 'yr', 'yrs', 'hours', 'hour', 'hr', 'hrs', 'score', 'scale', 'index','x103 cells/mm3', 'fev', 'fvc', 'hemoglobin a1c')
 units = paste('\\b', paste(units, collapse='\\b|\\b'), '\\b', sep='') # must be whole words
 # common stats and variables in lower case, removed 'total' because it get confused with total columns
 stats = c('mean', 'sd', 's.d', 'standard dev','standard deviation','percentile','score', 'index', 'age', 'bmi', 'height', 'weight', 'waist','Hba1c')
@@ -33,7 +33,7 @@ spacer = c('to','-','–','–') # centre spaces, hyphens are different!
 median_numbers = c(paste('[0-9]',spacer,'[0-9]'), paste('[0-9]',spacer,'[0-9]', sep='')) # with and without spaces; also used in cells
 median_numbers = c(median_numbers, '!!!') # triple !!! is flag added by me
 #
-words = c('median', 'iqr') # triple !!! is flag added by me
+words = c('median', 'iqr', 'range') # added range which will pick up ranges, but likely better they are here than confused with continuous
 words = paste('\\b', paste(words, collapse='\\b|\\b'), '\\b', sep='') # words must be whole words
 # combine
 together = c(words, median_numbers)
@@ -118,7 +118,8 @@ for (sep in date_separators){
   }
 }
 dates_patterns = dates_patterns[order(-nchar(dates_patterns))] # from longest to shortest
-dates_patterns = paste('\\b', paste(dates_patterns, collapse='\\b|\\b'), '\\b', sep='') # words must be whole dates
+# changed below from \\b to \\s because of PMC7005701
+dates_patterns = paste('\\s', paste(dates_patterns, collapse='\\s|\\s'), '\\s', sep='') # words must be whole dates
 # to convert statistics: no longer used
 #words = c('date','dates')
 #words = paste('\\b', paste(words, collapse='\\b|\\b'), '\\b', sep='') # words must be whole words
@@ -131,7 +132,8 @@ rct_patterns = rct_patterns[order(-nchar(rct_patterns))] # from longest to short
 rct_patterns = paste(rct_patterns, collapse = '|')
 
 ### i) totals and other columns to exclude
-total_words = c('all$','all ','whole population','whole group','randomi.ed sample','randomi.ed population','sum total','subtotal','sub.total','total','total n','overall','men','women','male','female','boys','girls') # need space after 'all'
+# cannot add `n` because sometimes it is the number
+total_words = c('all$','all ','entire','whole population','whole sample','whole group','randomi.ed sample','randomi.ed population','sum total','subtotal','sub.total','total','total n','overall','men','women','male','female','boys','girls','model\\s[0-9]') # need space after 'all'
 total_words = total_words[order(-nchar(total_words))] # from longest to shortest
 total_words_alt = paste('^[a-z]', paste(total_words, sep=''), sep='', collapse='|') # at start - needed to detect column headings that I've changed to avoid duplicate names
 total_words = paste(paste('^', total_words, sep=''), collapse='|') # at start
@@ -168,11 +170,11 @@ negative_words = paste(negative_words, collapse='|')
 
 ### k) sample size, \s = optional space
 # a) words
-sample_words = c('sample size','^number$','^\\s?n$','^n \\(','^baseline sample count','^total$','^all$','^total number of participants','^total number of subjects','^total number of patients','^total n\\b','^total number$')
+sample_words = c('sample size','^number$','^\\s?n$','^n [A-Z|a-z]','^n \\(','^baseline sample count','^total$','^all$','^total number of participants','^total number of subjects','^total number of patients','^total n\\b','^total number$')
 sample_words = sample_words[order(-nchar(sample_words))] # from longest to shortest
 additional_sample_words = c('^number of ','^no of ','^no\\. of ') # a few additional words, not used for general search of all row headers
 # b) patterns that need to be paired with numbers 
-sample_numbers1 = c('n\\s?:\\s?[0-9]','n\\s?=\\s?[0-9]') # numbers with specific n labels
+sample_numbers1 = c('\\bn\\s?:\\s?[0-9]','\\bn\\s?=\\s?[0-9]') # numbers with specific n labels; added break because of PMC1540413 "UN:(3)"
 sample_numbers2 = c('\\([0-9]\\)','\\([0-9][0-9]\\)','\\([0-9][0-9][0-9]\\)','\\([0-9][0-9][0-9][0-9]\\)') # more general numbers
 combined_sample = c(sample_words, additional_sample_words, sample_numbers1)
 combined_sample = combined_sample[order(-nchar(combined_sample))] # from longest to shortest
@@ -213,7 +215,7 @@ test_pattern = paste(test_words, collapse='|')
 
 ### o) phrases that are used in paper titles that are not an RCT; drop-out for studies of drop-out like PMC5340923
 # split by words in title and abstract, e.g., subgroup in title
-non_rct_words_title = c('^correction','^retraction','protocol','dropout','drop.out','subgroup','sub.group','survey','meta.analysis','systematic.review','cross.sectional','cohort.stud','case.control.stud','qualitative.stud','analysis.of.untreated','post.marketing.surveillance','n.of.1 trial') # have to be mentioned in title
+non_rct_words_title = c('^correction','^retraction','protocol','dropout','drop.out','subgroup','sub.group','survey','meta.analysis','systematic.review','cross.sectional','cohort.stud','case.control.stud','qualitative.stud','analysis.of.untreated','post.marketing.surveillance','n.of.1 trial','phenotype') # have to be mentioned in title
 non_rct_words_abstract = c('non.randomi.ed','practice.related.variation','combined.post.hoc','machine.learning','deep.learning','effect.of.baseline','regional.differences',
         'secondary.analysis','secondary.data.analysis','pooled.analysis','pooled.efficacy','exploratory.study','exploratory.analysis','prognostic.model','updated follow.up',
         'paired control','case.control','case.series','crossover','cross.over','consecutive.patients','mixed treatment comparison','quasi.experimental')
@@ -227,5 +229,6 @@ prepost_words = c('pre','post') # whole words
 prepost_pattern = paste('\\b', paste(prepost_words, collapse='\\b|\\b'), '\\b', sep='') # must be whole words
 
 ### q) confidence intervals, e.g., PMC3184712
-ci_pattern = '95\\%\\s?c.?i.?'
+ci_words = c('95\\%\\s?c.?i.?','95\\%.confidence.interval','95\\%.credible.interval')
+ci_pattern = paste(ci_words, collapse='|')
 #test = c('95% ci','95% ci','95% xxx','95%ci','95% c.i.')

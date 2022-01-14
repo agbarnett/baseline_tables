@@ -1,5 +1,5 @@
 ---
-title: "Results from the Bayesian model of differences in mean and precision"
+title: "Results from the Bayesian model for flagging trials"
 author: "Adrian Barnett"
 date: "`r format(Sys.time(), '%d %B %Y')`"
 output: word_document
@@ -57,6 +57,7 @@ if(simulation == TRUE){ # from 1_which_data_source.R
 str_detect(pmcid, pattern='small') ~ 'No',
 str_detect(pmcid, pattern='large') ~ 'No',
 str_detect(pmcid, pattern='skewed') ~ 'No',
+str_detect(pmcid, pattern='rounded') ~ 'No',
 str_detect(pmcid, pattern='none') ~ 'No',
 str_detect(pmcid, pattern='precise') ~ 'Yes',
 str_detect(pmcid, pattern='variable') ~ 'Yes'
@@ -65,9 +66,10 @@ str_detect(pmcid, pattern='variable') ~ 'Yes'
 str_detect(pmcid, pattern='small') ~ 'Small binary',
 str_detect(pmcid, pattern='large') ~ 'Large binary',
 str_detect(pmcid, pattern='skewed') ~ 'Skewed',
+str_detect(pmcid, pattern='rounded') ~ 'Rounded',
 str_detect(pmcid, pattern='none') ~ 'As expected',
-str_detect(pmcid, pattern='precise') ~ 'Too precise',
-str_detect(pmcid, pattern='variable') ~ 'Too variable'
+str_detect(pmcid, pattern='precise') ~ 'Under-dispersed',
+str_detect(pmcid, pattern='variable') ~ 'Over-dispersed'
   ))
 }
 
@@ -101,7 +103,7 @@ The table shows the mean and 95% credible interval.
 
 # Flag means
 
-The histogram shows the mean flag for each study. The precision flags are 0 = just right, 1 = too precise or too variable.
+The histogram shows the mean flag for each study. The precision flags are 0 = ideal variance, 1 = over- or under-dispersed.
 
 ```{r}
 gplot = ggplot(data=flag, aes(x=mean))+
@@ -117,31 +119,34 @@ gplot
 # Precision 
 
 ```{r}
-# just results that are not in the spike - to do, results above threshold
+# just results that are not in the spike
 non_spike = filter(all_stats, 
                    nicevar == 'Precision flag',
                    median !=0) %>%  # 
   select(study)
 plot_precision = filter(all_stats, nicevar=='Precision') %>%
   right_join(non_spike, by='study') %>%
-  mutate(facet = ifelse(mean < 0, 'Too variable', 'Too precise'))
+  mutate(facet = ifelse(mean < 0, 'Over-dispersed', 'Under-dispersed'))
 # truncate at 10^6 to make plot readable
-trun = nrow(filter(plot_precision, exp(mean) > 10^6))
-plot_precision = filter(plot_precision, exp(mean) <= 10^6)
+cut = 10^6
+trun = nrow(filter(plot_precision, exp(mean) > cut))
+plot_precision = filter(plot_precision, exp(mean) <= cut)
 # plot
-gplot = ggplot(data=plot_precision, aes(x=exp(mean)))+
+gplot_precision = ggplot(data=plot_precision, aes(x=exp(mean)))+
   geom_histogram(fill='grey66')+
   geom_vline(xintercept = 1, lty=2)+
   theme_bw()+
   scale_x_log10()+
   xlab('Mean precision multiplier (log-10 scale)')+
+  ylab('Count')+
   facet_wrap(~facet, scales='free')
-gplot
+gplot_precision
+save(cut, trun, gplot_precision, file=precision_outfile)
 ```
 
 The plot is for trials where the median flag was non-zero. 
 
-We truncated the plot at 10^6 as a few extreme outliers made it difficult to visualise the distribution. There were `r trun` results truncated.
+We truncated the plot at `r format(cut, big.mark=',')` as a few extreme outliers made it difficult to visualise the distribution. There were `r trun` results truncated.
 
 #### Means and intervals
 
@@ -195,7 +200,7 @@ gplot
 
 ```{r}
 # threshold for P
-threshold = 0.8
+threshold = c(0.5,0.8,0.99) # use three thresholds
 # table using three categories
 medians = filter(all_stats, 
                 nicevar == 'Precision flag') %>%
@@ -204,33 +209,86 @@ medians = filter(all_stats,
 means = filter(all_stats, nicevar=='Precision') %>%
   select(study, sgroup, mean) %>%
   right_join(medians, by='study') %>%
-  mutate(group = 
+  mutate(group1 = 
            case_when(
-             p_mean <=  threshold ~ 'No issue',
-             p_mean > threshold & mean <= 0 ~ 'Too variable', 
-             p_mean > threshold & mean > 0 ~ 'Too precise'))
+             p_mean <=  threshold[1] ~ 'No issue',
+             p_mean > threshold[1] & mean <= 0 ~ 'Over-dispersed', 
+             p_mean > threshold[1] & mean > 0 ~ 'Under-dispersed'),
+         group2 = 
+           case_when(
+             p_mean <=  threshold[2] ~ 'No issue',
+             p_mean > threshold[2] & mean <= 0 ~ 'Over-dispersed', 
+             p_mean > threshold[2] & mean > 0 ~ 'Under-dispersed'),
+         group3 = 
+           case_when(
+             p_mean <=  threshold[3] ~ 'No issue',
+             p_mean > threshold[3] & mean <= 0 ~ 'Over-dispersed', 
+             p_mean > threshold[3] & mean > 0 ~ 'Under-dispersed'))
+  # separate frequencies for each threshold
+  for_plot = pivot_longer(means, cols = starts_with('group')) %>%
+    group_by(sgroup, name, value) %>%
+    tally() %>%
+    group_by(sgroup, name) %>%
+    mutate(
+      percent = prop.table(n)*100,
+      threshold = case_when(
+      name == 'group1' ~ threshold[1],
+      name == 'group2' ~ threshold[2],
+      name == 'group3' ~ threshold[3]
+    )) %>%
+    ungroup()
+  my_tab = select(for_plot, sgroup, threshold, value, percent) %>%
+    mutate(percent = roundz(percent, 1)) %>%
+    group_by(sgroup, threshold) %>%
+    pivot_wider(values_from = percent, names_from = value) %>%
+    mutate(across(everything(), ~replace_na(., 0))) %>% # replace NA with 0
+    rename('simulation' = 'sgroup') %>%
+  ungroup()
+if(simulation == TRUE){
+ftab_results = flextable(my_tab) %>%
+  theme_box() %>%
+  merge_v(j=1) %>%
+  autofit()
+}
 if(simulation == FALSE){
-  my_tab = janitor::tabyl(means, group) %>%
-    adorn_totals("row") %>%
-    adorn_pct_formatting()
-}
-if(simulation == TRUE){ # add simulation group
-  my_tab = janitor::tabyl(means, sgroup, group)
-}
-ftab = flextable(my_tab) %>%
+ftab_results = select(my_tab, -simulation) %>%
+  flextable() %>%
   theme_box() %>%
   autofit()
-ftab
+}
+ftab_results
 ```
 
-We used a threshold for the study-level probability of an additional precision of `r threshold`.
+We used three thresholds of `r paste(threshold, collapse=' and ', sep='')` for the trial-level probability of an additional precision.
+
+#### Plot of above
+
+The plot below shows the same results as the table.
+
+```{r}
+p_plot = ggplot(data=for_plot, aes(x=factor(threshold), y=percent, fill=value))+
+  geom_bar(stat='identity', position='stack')+
+  scale_fill_manual(NULL, values=c('darkseagreen1','indianred1','orange4'))+
+  theme_bw()+
+  xlab('Threshold or uniform test')+
+#  xlab('Probability threshold for a non-zero change in the precision')+
+  ylab('Percent')+
+  theme(legend.position = 'right',
+        panel.grid.major = element_blank())
+if(simulation==TRUE){ # add facet if simulation
+  p_plot = p_plot + facet_wrap(~sgroup) +
+    theme(legend.position = c(0.8,0.2))
+
+}
+p_plot
+```
 
 # Plots of t-statistics
 
-Here we show plots of the t-statistics from the trials that were flagged as too precise or too variable.
+Here we show plots of the t-statistics from the trials that were flagged as over- or Under-dispersed.
 The top three results were chosen based on the value of $\epsilon$ and hence show the most extreme examples. For comparison we plot three randomly selected trials that were not flagged.
 
-# a) Too variable
+# a) Over-dispersed
 
 ```{r, fig.width=10, fig.height=7}
 ## show the t-stats of selected papers
@@ -239,27 +297,54 @@ selected_papers = select_papers(
   stats = all_stats,
   flag = 'Precision flag',
   flag_value = 1, # results that get flagged (could lower threshold?)
-  mean_select = 'negative', # too variable
+  mean_select = 'negative', # Over-dispersed
   flag_null_value = 0, # results that are not flagged for comparison
   variable = 'Precision',
   n_select = 3
 )
-gplot_variable = ggplot(data=selected_papers, aes(x=t, fill=factor(type)))+
+gplot_over = ggplot(data=selected_papers, aes(x=t, fill=factor(type)))+
   scale_fill_manual("Potential\nissue", values=c('tomato2','grey66'), labels=c('Yes','No'))+
   geom_histogram()+
-  xlab('Standardised difference')+
-  ylab('Frequency')+
+  xlab('t-statistic')+
+  ylab('Count')+
+  scale_y_continuous(labels = label_number(accuracy=1))+ # no decimal places in 
   facet_wrap(~pmcid_ordered, scales='free_y')+
   theme_bw()+
   theme(panel.grid.minor = element_blank())
-gplot_variable
-#jpeg(outjpg, width=5, height=4, units='in', res=400)
-#print(gplot)
-#dev.off()
+gplot_over
 ```
 
+# a2) Over-dispersed after excluding extremely small multipliers
 
-# b) Too precise
+```{r, fig.width=10, fig.height=7}
+exclude  = 0.01
+## show the t-stats of selected papers
+selected_papers = select_papers(
+  in_data = for_model,
+  stats = all_stats,
+  exclude = exclude, 
+  flag = 'Precision flag',
+  flag_value = 1, # results that get flagged (could lower threshold?)
+  mean_select = 'negative', # Over-dispersed
+  flag_null_value = 0, # results that are not flagged for comparison
+  variable = 'Precision',
+  n_select = 3
+)
+gplot_over2 = ggplot(data=selected_papers, aes(x=t, fill=factor(type)))+
+  scale_fill_manual("Potential\nissue", values=c('tomato2','grey66'), labels=c('Yes','No'))+
+  geom_histogram()+
+  xlab('t-statistic')+
+  ylab('Count')+
+  scale_y_continuous(labels = label_number(accuracy=1))+ # no decimal places in 
+  facet_wrap(~pmcid_ordered, scales='free_y')+
+  theme_bw()+
+  theme(panel.grid.minor = element_blank())
+gplot_over2
+```
+
+The plot above is after excluded precision multipliers that were smaller than `r exclude`.
+
+# b1) Under-dispersed
 
 ```{r, fig.width=10, fig.height=7}
 ## show the t-stats of selected papers
@@ -268,26 +353,56 @@ selected_papers = select_papers(
   stats = all_stats,
   flag = 'Precision flag',
   flag_value = 1, 
-  mean_select = 'positive', # too precise
+  mean_select = 'positive', #  Under-dispersed
   flag_null_value = 0, # 
   variable = 'Precision',
   n_select = 3
 )
-gplot_precise = ggplot(data=selected_papers, aes(x=t, fill=factor(type)))+
-  scale_fill_manual("Potential\nissue", values=c('goldenrod1','dodgerblue'), labels=c('Yes','No'))+
+gplot_under = ggplot(data=selected_papers, aes(x=t, fill=factor(type)))+
+  scale_fill_manual("Potential\nissue", values=c('tomato2','grey66'), labels=c('Yes','No'))+
   geom_histogram()+
-  xlab('Standardised difference')+
-  ylab('Frequency')+
-  facet_wrap(~pmcid, scales='free_y')+
+  xlab('t-statistic')+
+  ylab('Count')+
+  scale_y_continuous(labels = label_number(accuracy=1))+ # no decimal places in 
+  facet_wrap(~pmcid_ordered, scales='free_y')+
   theme_bw()+
   theme(panel.grid.minor = element_blank())
-gplot_precise
-#jpeg(outjpg, width=5, height=4, units='in', res=400)
-#print(gplot)
-#dev.off()
+gplot_under
+```
 
+# b2) Under-dispersed after excluding large precision multipliers
+
+```{r, fig.width=10, fig.height=7}
+exclude = 10 # for excluding large multipliers
+## show the t-stats of selected papers
+selected_papers = select_papers(
+  in_data = for_model,
+  stats = all_stats,
+  exclude = exclude, # exclude multipliers over this
+  flag = 'Precision flag',
+  flag_value = 1, 
+  mean_select = 'positive', # under-dispersed
+  flag_null_value = 0, # 
+  variable = 'Precision',
+  n_select = 3
+)
+gplot_under2 = ggplot(data=selected_papers, aes(x=t, fill=factor(type)))+
+  scale_fill_manual("Potential\nissue", values=c('tomato2','grey66'), labels=c('Yes','No'))+
+  geom_histogram()+
+  xlab('t-statistic')+
+  ylab('Count')+
+  scale_y_continuous(labels = label_number(accuracy=1))+ # no decimal places in 
+  facet_wrap(~pmcid_ordered, scales='free_y')+
+  theme_bw()+
+  theme(panel.grid.minor = element_blank())
+gplot_under2
+```
+
+We exclude multipliers over `r exclude`.
+
+```{r, include=FALSE}
 ## save for paper
-save(gplot_variable, gplot_precise, file=example_outfile)
+save(gplot_over, gplot_over2, gplot_under, gplot_under2, file=example_outfile)
 ```
 
 # P-value distributions
@@ -313,6 +428,7 @@ if(simulation == TRUE){ # from 1_which_data_source.R
 str_detect(pmcid, pattern='small') ~ 'No',
 str_detect(pmcid, pattern='large') ~ 'No',
 str_detect(pmcid, pattern='skewed') ~ 'No',
+str_detect(pmcid, pattern='rounded') ~ 'No',
 str_detect(pmcid, pattern='none') ~ 'No',
 str_detect(pmcid, pattern='precise') ~ 'Yes',
 str_detect(pmcid, pattern='variable') ~ 'Yes'
@@ -321,9 +437,10 @@ str_detect(pmcid, pattern='variable') ~ 'Yes'
 str_detect(pmcid, pattern='small') ~ 'Small binary',
 str_detect(pmcid, pattern='large') ~ 'Large binary',
 str_detect(pmcid, pattern='skewed') ~ 'Skewed',
+str_detect(pmcid, pattern='rounded') ~ 'Rounded',
 str_detect(pmcid, pattern='none') ~ 'As expected',
-str_detect(pmcid, pattern='precise') ~ 'Too precise',
-str_detect(pmcid, pattern='variable') ~ 'Too variable'
+str_detect(pmcid, pattern='precise') ~ 'Under-dispersed',
+str_detect(pmcid, pattern='variable') ~ 'Over-dispersed'
   ))
 }
 # show example distribution for each issue
@@ -344,7 +461,7 @@ close = left_join(stats, overall, by=c('h0','sgroup')) %>%
          distance = sqrt(mdiff^2 + sdiff^2)) %>%
   group_by(h0, sgroup) %>%
   arrange(h0, sgroup, distance) %>%
-  slice(1)
+  slice(1) # just one trial
 # now get p-value distributions for close matches
 selected = filter(for_model, pmcid %in% close$pmcid) 
 pdist = ggplot(data = selected, aes(x=p, fill=h0))+
@@ -370,15 +487,19 @@ standard = data.frame(t = rnorm(100000))
 #
 tdist = gf_dhistogram( ~ t | sgroup, data = selected) %>%
   gf_fitdistr( dist = 'dnorm', color = "blue") %>%
-  gf_fitdistr( ~ t, dist = 'dnorm', color = "red", data=standard) 
+  gf_fitdistr( ~ t, dist = 'dnorm', color = "red", data=standard) +
+  theme_bw()+
+  theme(panel.grid.minor = element_blank())
 tdist
+# save for supplement
+save(tdist, pdist, file=supplement_outfile)
 ```
 
-The red shows a standard normal distribution and the blue line shows a normal distribution fitted to the observed density. 
+The red line is a standard normal distribution and the blue line is a normal distribution fitted to the observed density. 
 
 ### Testing that p-values for a uniform distribution
 
-To summarise the simulations we tested if the p-values for each study followed a uniform distribution using the Kolmogorov--Smirnov test for uniformity. The table below shows the frequency that were statistically significant using a 0.05 threshold. Each simulation was repeated 500 times. 
+To summarise the simulations we tested if the p-values for each study followed a uniform distribution using the Kolmogorov--Smirnov test for uniformity. The table below shows the frequency that were statistically significant using a 0.05 threshold. This result is more relevant for the simulation data than the real data.
 
 ```{r}
 # test uniform distribution for p-values
@@ -395,35 +516,53 @@ renamed = select(unif_tab, h0, sgroup, cell) %>%
     'Simulation' = 'sgroup',
     'n (%)' = 'cell')
 # nice table  
-ftab = flextable(renamed) %>%
-  theme_box() %>%
-  merge_v(j=1) %>%
-  autofit()
-ftab
+if(simulation==FALSE){
+  ftab = select(renamed, -Simulation, -H0) %>%
+    flextable() %>%
+    theme_box() %>%
+    merge_v(j=1) %>%
+    autofit()
+  ftab
+}
+if(simulation==TRUE){
+  ftab = flextable(renamed) %>%
+    theme_box() %>%
+    merge_v(j=1) %>%
+    autofit()
+  ftab
+}
 ```
 
-### Histograms of p-values for uniform test
+### Histogram(s) of p-values for uniform test
 
 ```{r}
 hplot = ggplot(unif_pvals, aes(x=p, fill=h0))+
   geom_histogram()+
   xlab('P-value')+
   ylab('Count')+
-  facet_wrap(~sgroup)+
   scale_fill_manual('Difference between groups', values=c('skyblue','darkorange'))+
   theme_bw()+
   theme(panel.grid.minor = element_blank(),
-        legend.position = 'top')
+        legend.position = 'none')
+if(simulation=='TRUE'){ # add facet wrap and legend if simulation
+    hplot = hplot + facet_wrap(~sgroup)+
+      theme(legend.position = 'top')
+}
 hplot
 ```
 
 ```{r, include=FALSE}
 ## save results for use in paper
 # make combined table 
-if(simulation==FALSE){
+if(simulation == FALSE){
   my_tab = mutate(my_tab, sgroup='None')
+}
+if(simulation == TRUE){
+  my_tab = rename(my_tab, 'sgroup'='simulation')
 }
 overall_table = left_join(my_tab, unif_tab, by='sgroup')
 # save
-save(tdist, pdist, overall_table, hplot, file=results_outfile)
+save(tdist, pdist, overall_table, ftab_results, hplot, file=results_outfile)
 ```
+
+For simulated results the histograms are split by the simulation type.

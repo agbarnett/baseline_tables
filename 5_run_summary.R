@@ -1,6 +1,6 @@
 # 5_run_summary.R
 # run the summary dependent on the input data (e.g., simulation or trialstreamer)
-# November 2021
+# January 2022
 library(markdown)
 
 ## get the data; select which source of data to use

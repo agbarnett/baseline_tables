@@ -64,7 +64,7 @@ simulate_table1 = function(
   if(n_continuous > 0){
     mean1 = rnorm(n=n_continuous, mean=50, sd=100) # mean can be pretty much anywhere
     sd = rgamma(n=n_continuous, shape=5, rate=1)
-    # use standard normal if using skew
+    # use standard normal if using skew (avoid exponentiating large means)
     if(add_skew == TRUE){
       mean1 = rep(0, n_continuous)
       sd = rep(1, n_continuous)

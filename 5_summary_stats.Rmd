@@ -1,5 +1,5 @@
 ---
-title: 'Summary statistics on the baseline tables'
+title: 'Summary statistics on the baseline tables for the real data'
 author: "Adrian Barnett"
 date: "`r format(Sys.time(), '%d %B %Y')`"
 output:
@@ -37,23 +37,32 @@ source('1_which_data_source.R') # uses `source` and `stage`
 From the 10,000 original papers.
 
 ```{r}
+# tidy up reasons
+excluded = mutate(excluded,
+      reason = case_when(
+        reason == 'Table is graphic' ~ "No baseline table", # cannot separate these
+        reason == 'Not an RCT' ~ "Not a randomised trial",
+        reason == 'Complex format' ~ 'Difficult layout', # merge with this reason
+        TRUE ~ as.character(reason) # otherwise
+      ))
+#
 tab = tabyl(excluded, reason) %>%
   arrange(-n) %>%
   adorn_totals("row") %>%
   adorn_pct_formatting() 
-ftab = flextable(tab) %>%
+excluded_tab = flextable(tab) %>%
   theme_box() %>%
   autofit()
-ftab
+excluded_tab
 ```
 
 ## Exclusions from data that could be read in
 
 ```{r}
-ftab = flextable(excluded_counts) %>%
+excluded_rows = flextable(excluded_counts) %>%
   theme_box() %>%
   autofit()
-ftab
+excluded_rows
 ```
 
 The table shows the number of excluded rows of data, apart from the "Algorithm error" row which is the total number of excluded studies.
@@ -89,34 +98,55 @@ gamma_line = data.frame(row = 1:max_row, fitted = pred*N)
 
 ```{r}
 #
-gplot = ggplot(data=rows, aes(x=row))+
-  geom_bar(fill='skyblue') +
+gplot_rows = ggplot(data=rows, aes(x=row))+
+  geom_bar(fill='skyblue', col='grey33') +
   geom_line(data=gamma_line, aes(x=row, y=fitted), col='dark red')+
   ylab('Count')+
-  xlab('Number of statistics')+
+  xlab('Number of table rows')+
   theme_bw()
-gplot
+gplot_rows
+
+# save for paper supplement
+mean_row = mean(rows$row)
+save(gplot_rows, mean_row, fg, file='results/gamma_rows.RData')
 ```
 
-The mean number of rows per table was `r round(mean(rows$row),0)`. The red line shows a gamma distribution with a shape parameter of `r roundz(fg$estimate[1],1)` and rate of `r roundz(fg$estimate[2],2)`. 
+The mean number of rows per table was `r round(mean_row,0)`. The red line shows a gamma distribution with a shape parameter of `r roundz(fg$estimate[1],1)` and rate of `r roundz(fg$estimate[2],2)`. 
 
 # Sample sizes
 
-### Boxplot by table column
+### Histogram of sample size per group
 
-```{r}
-# 
+```{r, include=FALSE}
+# unique sample size per column and trial
 sizes = dplyr::select(table_data, pmcid, column, sample_size) %>%
   unique()
-#
-gplot = ggplot(data=sizes, aes(x=factor(column), y=sample_size))+
-  geom_boxplot()+
-  scale_y_log10()+
-  ylab('Sample size')+
-  xlab('Table column')+
-  theme_bw()
-gplot
+# add distribution curve using best-fitting gamma distribution
+fg = fitdist(data=log(sizes$sample_size), distr="gamma") # spits stuff to screen, so include=FALSE
+max_size = 10^5
+N = nrow(sizes)
+x = seq(2, 10000, length.out=N)
+pred = dgamma(x=log(x), shape=fg$estimate[1], rate=fg$estimate[2]) # must be log
+gamma_line = data.frame(sample_size = x, fitted = 0.4*pred*N)
 ```
+
+```{r}
+#
+gplot_sample = ggplot(data=sizes, aes(x=sample_size))+
+  geom_histogram(fill='skyblue3', col='grey33')+
+  geom_line(data=gamma_line, aes(x=sample_size, y=fitted), col='dark red')+
+  scale_x_log10()+
+  xlab('Sample size (log-e)')+
+  ylab('Count')+
+  theme_bw() +
+  theme(panel.grid.minor = element_blank())
+gplot_sample
+# save for paper supplement
+mean_size = mean(sizes$sample_size)
+save(gplot_sample, mean_size, fg, file='results/gamma_sizes.RData')
+```
+
+The gamma distribution (red line) fitted to the log-transformed (base e) sample size has a shape parameter of `r roundz(fg$estimate[1],1)` and rate of `r roundz(fg$estimate[2],2)`. 
 
 ### Summary statistics for sample size per group
 
@@ -133,37 +163,9 @@ ftab = flextable(tab) %>%
 ftab
 ```
 
-The table shows the sample size for 5 percentiles. This is for the sample size per group. 
+The table shows the sample size for five percentiles. This is for the sample size per group. 
 
-### Parametric fit to log sample size
 
-```{r, include=FALSE}
-fg = fitdist(data=log(sizes$sample_size), distr="gamma") # spits stuff to screen
-max_size = max(sizes$sample_size)
-N = nrow(sizes)
-pred = dgamma(x=log(1:max_size), shape=fg$estimate[1], rate=fg$estimate[2])
-gamma_line = data.frame(row = log(1:max_size), fitted = pred*N)
-# make random data for easy plotting in histogram
-rgamma = data.frame(rgamma(n=N, shape=fg$estimate[1], rate=fg$estimate[2]))
-names(rgamma) = 'sample_size'
-rgamma = mutate(rgamma, sample_size = round(exp(sample_size)))
-```
-
-```{r}
-# 
-to_plot = bind_rows(sizes, rgamma, .id='source') %>%
-  mutate(source = ifelse(source==1, 'Observed data', 'Fitted from gamma'))
-#
-gplot = ggplot(data=to_plot, aes(x=log(sample_size)))+
-  geom_histogram(fill='skyblue') +
-  ylab('Count')+
-  xlab('Log-transformed sample size')+
-  theme_bw()+
-  facet_wrap(~source)
-gplot
-```
-
-The gamma distribution fitted to the log-transformed (base e) sample size has a shape parameter of `r roundz(fg$estimate[1],1)` and rate of `r roundz(fg$estimate[2],2)`. 
 
 # Number of groups (columns) per table
 
@@ -183,12 +185,29 @@ gplot
 table = table_data %>% tabyl(statistic) %>%
   arrange(-n) %>% # high to low
   adorn_totals("row") %>%
-  mutate(percent = round(percent*100)) 
-ftab = flextable(table) %>%
+  mutate(percent = round(percent*100)) %>%
+  mutate(included = case_when(
+    statistic == 'percent' ~ 'Yes',
+    statistic == 'continuous' ~ 'Yes',
+    statistic == 'numbers' ~ 'Yes',
+    statistic == 'ci' ~ 'Yes',
+    statistic == 'Total' ~ ' ', # for ordering
+    TRUE ~ 'No'
+  ),
+  statistic = str_to_sentence(statistic), # Upper case first letter
+  statistic = ifelse(statistic=='Ci', 'CI', statistic),
+  statistic = ifelse(statistic=='Pvals', 'P-values', statistic),
+  statistic = ifelse(statistic=='Min_max', 'Range', statistic)) %>%
+  dplyr::select(included, statistic, n, percent) %>%
+  arrange(desc(included), desc(n)) %>%
+  rename('Included' = 'included',
+         'Statistic' = 'statistic')
+ftab_stats = flextable(table) %>%
   theme_box() %>%
+  merge_v(j=1) %>%
   colformat_num(j=2, big.mark=',', digits=0) %>%
   autofit()
-ftab
+ftab_stats
 ```
 
 # About the papers
@@ -200,10 +219,10 @@ tab = group_by(design, journal) %>%
   tally() %>%
   arrange(-n) %>%
   slice(1:10)
-ftab = flextable(tab) %>%
+journal_tab = flextable(tab) %>%
   theme_box() %>%
   autofit()
-ftab
+journal_tab
 ```
 
 In total there were `r length(unique(design$journal))` journals.
@@ -215,13 +234,13 @@ tab = group_by(design, affiliation) %>%
   tally() %>%
   arrange(-n) %>%
   slice(1:10)
-ftab = flextable(tab) %>%
+country_tab = flextable(tab) %>%
   theme_box() %>%
   autofit()
-tab
+country_tab
 ```
 
-In total there were `r length(unique(design$affiliation))` countries.
+In total there were `r length(unique(design$affiliation))` countries. The country was based on the affiliation of the first author.
 
 ## Study design features
 
@@ -248,3 +267,103 @@ The variables are based on mentions in the text as follows:
 * cluster = "cluster*" in title or abstract
 * pilot = "pilot" in title
 * sem = "SE", "SEM" or "standard error" in baseline table or footnote
+
+# P-values
+
+Here we examine the number of trials that included p-values in the table or text.
+
+```{r}
+# Use function as repeated below
+make_pvals = function(indata){
+tab = mutate(indata, 
+    in_table = factor(as.numeric(in_table), levels=0:1, labels=c('No','Yes')),
+    in_text = factor(as.numeric(in_text), levels=0:1, labels=c('No','Yes'))) %>%
+  group_by(in_table, in_text) %>%
+  tally() %>%
+  ungroup() %>%
+  mutate(percent = 100* n/sum(n),
+         cell = paste(n, ' (', roundz(percent,0), ')', sep=''),
+         in_text = as.character(in_text),
+         in_text = ifelse(is.na(in_text), 'Missing', in_text)) %>%
+  dplyr::select(in_table, in_text, cell) %>%
+  rename('In table' = 'in_table',
+         'In text' = 'in_text',
+         'n (%)' = 'cell')
+pval_tab = flextable(tab) %>%
+  theme_box() %>%
+  merge_v(j=1) %>%
+  autofit()
+} # end of function
+pval_tab = make_pvals(pvalues)
+pval_tab
+
+# overall table or text
+overall = mutate(pvalues, either = in_text==TRUE | in_table ==TRUE) %>%
+  summarise(n = n(), r = sum(either, na.rm = TRUE))
+overall_ci = with(overall, binom.test(x=r, n=n)) # exact binomial
+overall_pval = data.frame(mean = round(overall_ci$estimate*100),
+                     lower = round(overall_ci$conf.int[1]*100),
+                     upper = round(overall_ci$conf.int[2]*100))
+# simple results for text
+overall = summarise(pvalues, n = n(), r = sum(in_text, na.rm = TRUE))
+overall_ci = with(overall, binom.test(x=r, n=n)) 
+table_pval = data.frame(mean = round(overall_ci$estimate*100),
+                     lower = round(overall_ci$conf.int[1]*100),
+                     upper = round(overall_ci$conf.int[2]*100))
+```
+
+The results are missing for the table check where there was no text that refered to the table. 
+
+The overall percentage of trials where p-values were mentioned in the table only was `r table_pval$mean`% with a 95% CI from `r table_pval$lower`% to `r table_pval$upper`%.
+
+The overall percentage of trials where p-values were mentioned in the text or table was `r overall_pval$mean`% with a 95% CI from `r overall_pval$lower`% to `r overall_pval$upper`%.
+
+### Excluding cluster-randomised trials
+
+We repeat the above table after excluding cluster-randomised trials.
+
+```{r}
+pvalues = left_join(pvalues, design, by='pmcid') 
+n_cluster = sum(pvalues$cluster, na.rm=TRUE) # count the number of cluster RCTs
+pvalues = filter(pvalues, cluster == FALSE)
+pval_tab_cluster = make_pvals(pvalues)
+pval_tab_cluster
+# simple results for text
+overall = summarise(pvalues, n = n(), r = sum(in_text, na.rm = TRUE))
+overall_ci = with(overall, binom.test(x=r, n=n)) 
+table_pval_no_cluster = data.frame(mean = round(overall_ci$estimate*100),
+                     lower = round(overall_ci$conf.int[1]*100),
+                     upper = round(overall_ci$conf.int[2]*100))
+```
+
+Excluding the `r sum(design$cluster)` cluster-randomised trials made little differences to the percentages.
+
+# Decimal places
+
+Below we examine the number of decimal places for continuous variables. When researchers use few decimal places then the comparison between groups can appear under-dispersed. The results are stratified based on the size of the mean as larger means required fewer decimal places. The cells show the decimal place quantiles at 10, 25, 50 (median), 75 and 90. 
+
+```{r}
+# group by absolute mean
+dp_stats = filter(table_data, statistic=='continuous') %>%
+  dplyr::select(pmcid, stat1, stat2, dp1, dp2) %>%
+  mutate(stat1 = abs(stat1),  # absolute
+         stat1g = cut(stat1 , breaks=c(0,10,100,1000,Inf), scientific=FALSE, right=FALSE)) %>%
+  group_by(stat1g) %>%
+  summarise(n = n(),
+            q10 = quantile(dp1, 0.10),
+            q25 = quantile(dp1, 0.25),
+            q50 = median(dp1),
+            q75 = quantile(dp1, 0.75),
+            q90 = quantile(dp1, 0.90)) %>%
+  ungroup() %>%
+  rename('Range for mean' = 'stat1g')
+ftab = flextable(dp_stats) %>%
+  autofit() %>%
+  theme_box()
+ftab
+```
+
+```{r, include=FALSE}
+# save for paper and supplement
+save(country_tab, journal_tab, table_pval, n_cluster, table_pval_no_cluster, overall_pval, pval_tab, excluded_tab, excluded_rows, ftab_stats, file='results/summary_stats.RData')
+```

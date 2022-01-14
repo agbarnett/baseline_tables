@@ -37,11 +37,14 @@ p_hand = pvalues
 excluded_hand = rename(excluded, 'manual' = 'reason') 
 # fix up table data
 m_hand = filter(tables, str_sub(pmcid, 1, 3) =='PMC' ) # exclude notes
-# exclude tables that the algorithm could not extract
+# exclude tables that the algorithm could not extract ...
 m_hand = filter(m_hand, 
                 !pmcid %in% excluded_algorithm$pmc)
 p_hand = filter(p_hand, 
                 !pmcid %in% excluded_algorithm_pvalues$pmc)
+# patch-up job, but add two more entered by Amarzaya to avoid any missing
+p_plus = filter(pvalues, pmcid %in% c('PMC7230249','PMC7347680'))
+p_hand = bind_rows(p_hand, p_plus)
 ```
 
 This document examines the accuracy of the automated algorithm for extracting table data by comparing it with manually entered data for a random selection of 200 trials.
@@ -139,7 +142,6 @@ Acronyms explained:
 ```{r, include=FALSE}
 # check combinations
 check = filter(both, algorithm == 'No baseline table', is.na(manual)) # not excluded by manual
-
 ```
 
 As mentioned above, there were a relatively high number of trials that were available online for manual entry but not in XML format for the algorithm (green cell). 
@@ -289,7 +291,7 @@ bin = binom.confint(x=x, n=n, method='exact') %>%
          upper = roundz(upper*100, 0))
 ```
 
-The table shows the overall percent of matches for every table row. An exact 95% confidence interval for the match percentage is `r bin$lower` to `r bin$upper`.
+The table shows the overall percent of matches for every table row. An exact 95% confidence interval for the match percentage is `r bin$lower`% to `r bin$upper`%.
 
 ## Differences by numerical statistic
 
@@ -442,31 +444,35 @@ compare = group_by(pvals, in_table, reported) %>%
   )) %>%
   rename('Algorithm' = 'in_table',
          'manual' = 'reported') 
+# one to check
 check_pvals = filter(compare, Algorithm != manual)
 # table
 tab = tabyl(compare, manual, Algorithm) %>%
   adorn_totals("row") 
 #
 ftab = flextable(tab) %>%
-  add_header_row(values=c(' ', rep('Algorithm', 2))) %>%
-  merge_at(i=1, j=2:3, part='header') %>%
+  add_header_row(values=c(' ', rep('Algorithm', 3))) %>%
+  merge_at(i=1, j=2:4, part='header') %>%
   theme_box() %>%
   autofit() %>%
-  bg(i=2, j=2, part='body', bg='grey77') %>% # shade diagonals
-  bg(i=3, j=3, part='body', bg='grey77')  # shade diagonals
+  bg(i=1, j=2, part='body', bg='grey77') %>% # shade diagonals
+  bg(i=2, j=3, part='body', bg='grey77') %>% # shade diagonals
+  bg(i=3, j=4, part='body', bg='grey77')  # shade diagonals
 ftab
 # binomial confidence interval for error
 x = filter(compare, manual == Algorithm,
+           Algorithm !='Missing',
            manual !='Missing')
-x = nrow(x) # number of matches
-bin = binom.confint(x=x, n=x, method='exact') %>%
+x = nrow(x) # number of matches;
+n_pval = x
+pval_bin = binom.confint(x=x, n=x, method='exact') %>%
   mutate(lower = roundz(lower*100,1),
          upper = roundz(upper*100,0))
 ```
 
-The two "Missing" for the hand algorithm were tables that were excluded, although neither had p-values so would have agreed with the algorithm. 
+This table includes more results than the other analyses as we included two papers that would be excluded for our algorithm but were useful for this comparison. 
 
-The exact 95% confidence interval for the percentage of matches is `r bin$lower`% to `r bin$upper`%. Hence the algorithm has a high accuracy for delineating if p-values were included in baseline tables.
+The exact 95% confidence interval for the percentage of matches is `r pval_bin$lower`% to `r pval_bin$upper`%. Hence the algorithm has a high accuracy for delineating if p-values were included in baseline tables. We excluded the results that were missing for the algorithm or manual entry, as these missing were not about the p-value but about the study design and exclusion criteria.
 
 # Sample size
 
@@ -534,7 +540,6 @@ hplot = ggplot(data= compare, aes(x=ratio))+
   xlab("Ratio (algorithm / trialstreamer)")+
   theme_bw()
 hplot
-
 ```
 
 This is the difference in the total that the algorithm extracted from the baseline table and the number randomised estimated by _trialstreamer_. The number of comparisons was `r nrow(compare)`.
@@ -546,5 +551,10 @@ Large differences were explained by:
 * where _trialstreamer_ gave the number of clusters in the randomised trial, whereas the algorithm gave the much larger number of participants (PMC7690135).
 * because _trialstreamer_ used the year from the abstract rather than the number randomised (PMC4852093). 
 * because the baseline table used a subset of the full sample due to missing data or drop-out and the authors wrote the full sample in the abstract (PMC6746080). 
+
+```{r, include=FALSE}
+# to include results in the paper
+save(pval_bin, n_pval, bin, file='results/pval_validation.RData')
+```
 
 # Reference {#references}

@@ -5,9 +5,14 @@
 .Ruserdata
 notes_fraud.txt
 99_dumped.R
+dumped.Rmd
 0_my_pubmed_key.R
 temp.R
 temp2.R
 temp3.R
 temp4.R
 *.docx
+/baseline
+/paper
+/references
+/web
