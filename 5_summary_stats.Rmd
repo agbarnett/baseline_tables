@@ -1,5 +1,5 @@
 ---
-title: 'Summary statistics on the baseline tables for the real data'
+title: 'Summary statistics on the baseline tables for the trials published on Pubmed Central'
 author: "Adrian Barnett"
 date: "`r format(Sys.time(), '%d %B %Y')`"
 output:

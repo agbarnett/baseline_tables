@@ -11,7 +11,8 @@ temp.R
 temp2.R
 temp3.R
 temp4.R
-*.docx
+latex*.txt
+5_summary_results*.docx
 /baseline
 /paper
 /references

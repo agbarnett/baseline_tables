@@ -20,7 +20,7 @@ sources = c('my_search',
             'simulation_three', 
             'carlisle', 
             'saitoh')
-source = sources[5] # controls which data source is run
+source = sources[2] # controls which data source is run
 stage = 'model'
 source('1_which_data_source.R') # uses `source` and `stage`
 
