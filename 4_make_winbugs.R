@@ -79,3 +79,40 @@ cat('model
 }', file=bugs)
 close(bugs)
 
+# as previous, but without hyper parameter for theta
+bfile_no_hyper = 'bugs_model_no_hyper.txt'
+bugs = file(bfile_no_hyper, 'w')
+cat('model
+{
+  for(i in 1:N){
+      mdiff[i] ~ dt(0, tau[i], df[i])
+      tau[i] <- inv.sem2[i] * inv.var[study[i]] # precision
+  }
+  for(j in 1:N_studies){
+  # spike-slab for inverse-variance
+      log(inv.var[j]) <- mu.var[j, pick[j]]
+      pick[j] <- var.flag[j] + 1
+      var.flag[j] ~ dbern(0.5) # 
+      mu.var[j,1] <- 0 # spike at zero (no change in precision)
+      mu.var[j,2] ~ dnorm(0, 0.1) # "slab"
+  }
+}', file=bugs)
+close(bugs)
+
+# as previous, but for a single study (no vectors)
+bfile_no_hyper_single = 'bugs_model_no_hyper_single_study.txt'
+bugs = file(bfile_no_hyper_single, 'w')
+cat('model
+{
+  for(i in 1:N){
+      mdiff[i] ~ dt(0, tau[i], df[i])
+      tau[i] <- inv.sem2[i] * inv.var # precision
+  }
+  # spike-slab for inverse-variance
+  log(inv.var) <- mu.var[pick]
+  pick <- var.flag + 1
+  var.flag ~ dbern(0.5) # 
+  mu.var[1] <- 0 # spike at zero (no change in precision)
+  mu.var[2] ~ dnorm(0, 0.1) # "slab"
+}', file=bugs)
+close(bugs)

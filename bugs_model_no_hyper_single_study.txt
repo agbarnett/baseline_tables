@@ -1,0 +1,13 @@
+model
+{
+  for(i in 1:N){
+      mdiff[i] ~ dt(0, tau[i], df[i])
+      tau[i] <- inv.sem2[i] * inv.var # precision
+  }
+  # spike-slab for inverse-variance
+  log(inv.var) <- mu.var[pick]
+  pick <- var.flag + 1
+  var.flag ~ dbern(0.5) # 
+  mu.var[1] <- 0 # spike at zero (no change in precision)
+  mu.var[2] ~ dnorm(0, 0.1) # "slab"
+}

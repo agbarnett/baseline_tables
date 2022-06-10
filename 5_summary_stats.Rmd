@@ -22,6 +22,7 @@ library(stringr)
 library(flextable)
 library(ggplot2)
 library(fitdistrplus) # for fitting gamma distribution to rows
+library(xtable)
 
 ## get the data; select which source of data to use
 sources = c('my_search', 'trialstreamer', 'validation')
@@ -54,6 +55,8 @@ excluded_tab = flextable(tab) %>%
   theme_box() %>%
   autofit()
 excluded_tab
+# export to latex
+#print(xtable(tab, digits = c(0,0,0,0)), include.rownames=FALSE)
 ```
 
 ## Exclusions from data that could be read in
@@ -111,7 +114,7 @@ mean_row = mean(rows$row)
 save(gplot_rows, mean_row, fg, file='results/gamma_rows.RData')
 ```
 
-The mean number of rows per table was `r round(mean_row,0)`. The red line shows a gamma distribution with a shape parameter of `r roundz(fg$estimate[1],1)` and rate of `r roundz(fg$estimate[2],2)`. 
+The mean number of rows per table was `r round(mean_row,0)`. The red line shows a gamma distribution with a shape parameter of `r roundz(fg$estimate[1],1)` and rate of `r roundz(fg$estimate[2],2)`.
 
 # Sample sizes
 
@@ -146,7 +149,7 @@ mean_size = mean(sizes$sample_size)
 save(gplot_sample, mean_size, fg, file='results/gamma_sizes.RData')
 ```
 
-The gamma distribution (red line) fitted to the log-transformed (base e) sample size has a shape parameter of `r roundz(fg$estimate[1],1)` and rate of `r roundz(fg$estimate[2],2)`. 
+The gamma distribution (red line) fitted to the log-transformed (base e) sample size has a shape parameter of `r roundz(fg$estimate[1],1)` and rate of `r roundz(fg$estimate[2],2)`.
 
 ### Summary statistics for sample size per group
 
@@ -163,9 +166,7 @@ ftab = flextable(tab) %>%
 ftab
 ```
 
-The table shows the sample size for five percentiles. This is for the sample size per group. 
-
-
+The table shows the sample size for five percentiles. This is for the sample size per group.
 
 # Number of groups (columns) per table
 
@@ -195,7 +196,7 @@ table = table_data %>% tabyl(statistic) %>%
     TRUE ~ 'No'
   ),
   statistic = str_to_sentence(statistic), # Upper case first letter
-  statistic = ifelse(statistic=='Ci', 'CI', statistic),
+  statistic = ifelse(statistic=='Ci', 'Confidence interval', statistic),
   statistic = ifelse(statistic=='Pvals', 'P-values', statistic),
   statistic = ifelse(statistic=='Min_max', 'Range', statistic)) %>%
   dplyr::select(included, statistic, n, percent) %>%
@@ -208,9 +209,24 @@ ftab_stats = flextable(table) %>%
   colformat_num(j=2, big.mark=',', digits=0) %>%
   autofit()
 ftab_stats
+#print(xtable(table), include.rownames=FALSE)
 ```
 
 # About the papers
+
+## Dates
+
+```{r}
+date_tab = filter(design, !is.na(date)) %>%
+  mutate(daten = as.numeric(date)) %>%
+  summarise(Q1 = quantile(daten, 0.25),
+            median = quantile(daten, 0.5),
+            Q3 = quantile(daten, 0.75)) %>%
+  mutate(Q1 = as.Date(Q1, origin='1970-01-01'),
+         median = as.Date(median, origin='1970-01-01'),
+         Q3 = as.Date(Q3, origin='1970-01-01'))
+date_tab
+```
 
 ## Top ten journals
 
@@ -261,12 +277,12 @@ ftab
 
 The variables are based on mentions in the text as follows:
 
-* rct = RCT or versions of "randomised controlled trial" in the title or abstract
-* block_randomisation = "block" and versions of "randomisation" within 5 words of each other anywhere in paper
-* adaptive randomisation = "adaptive randomisation" anywhere in paper
-* cluster = "cluster*" in title or abstract
-* pilot = "pilot" in title
-* sem = "SE", "SEM" or "standard error" in baseline table or footnote
+-   rct = RCT or versions of "randomised controlled trial" in the title or abstract
+-   block_randomisation = "block" and versions of "randomisation" within 5 words of each other anywhere in paper
+-   adaptive randomisation = "adaptive randomisation" anywhere in paper
+-   cluster = "cluster\*" in title or abstract
+-   pilot = "pilot" in title
+-   sem = "SE", "SEM" or "standard error" in baseline table or footnote
 
 # P-values
 
@@ -312,7 +328,7 @@ table_pval = data.frame(mean = round(overall_ci$estimate*100),
                      upper = round(overall_ci$conf.int[2]*100))
 ```
 
-The results are missing for the table check where there was no text that refered to the table. 
+The results are missing for the table check where there was no text that refered to the table.
 
 The overall percentage of trials where p-values were mentioned in the table only was `r table_pval$mean`% with a 95% CI from `r table_pval$lower`% to `r table_pval$upper`%.
 
@@ -340,7 +356,7 @@ Excluding the `r sum(design$cluster)` cluster-randomised trials made little diff
 
 # Decimal places
 
-Below we examine the number of decimal places for continuous variables. When researchers use few decimal places then the comparison between groups can appear under-dispersed. The results are stratified based on the size of the mean as larger means required fewer decimal places. The cells show the decimal place quantiles at 10, 25, 50 (median), 75 and 90. 
+Below we examine the number of decimal places for continuous variables. When researchers use few decimal places then the comparison between groups can appear under-dispersed. The results are stratified based on the size of the mean as larger means required fewer decimal places. The cells show the decimal place quantiles at 10, 25, 50 (median), 75 and 90.
 
 ```{r}
 # group by absolute mean

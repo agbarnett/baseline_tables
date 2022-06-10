@@ -51,16 +51,24 @@ if(stage == 'processing'){
     outfile = 'analysis_ready'
   }
   if (source == 'trialstreamer' ){
-    infile = 'extracted_trialstreamer'
+    infile = 'extracted_trialstreamer' # from 1_extract_tables_pmc.R
     outfile = 'analysis_ready_trialstreamer'
   }
   if (source == 'validation' ){
     infile = 'extracted_validation'
     outfile = 'analysis_ready_validation'
   }
+  if (source == 'carlisle' ){
+    infile = 'carlisle' # from 0_read_carlisle.R
+    outfile = 'analysis_ready_carlisle'
+  }
+  if (source == 'saitoh' ){
+    infile = 'saitoh' # from 0_read_saitoh.R
+    outfile = 'analysis_ready_saitoh'
+  }
   infile = paste('data/', infile, '.RData', sep='')
   outfile = paste('data/', outfile, '.RData', sep='')
-  load(infile) # from 1_extract_tables_pmc.R
+  load(infile) 
 }
 
 
@@ -84,9 +92,25 @@ if(stage == 'model'){
     infile = 'data/simulated_data.RData' # from 0_simulated_data.R
     outfile = 'results/bugs_real_simulation.RData'
   }
+  if(source == 'simulation_two'){
+    infile = 'data/simulated_data_two.RData' # from 0b_simulate_data.R
+    outfile = 'results/bugs_real_simulation_two.RData'
+  }
+  if(source == 'simulation_three'){
+    infile = 'data/simulated_data_three.RData' # from 0b_simulate_data.R
+    outfile = 'results/bugs_real_simulation_three.RData'
+  }
   if(source == 'bland'){
     infile = 'data/simulated_data_bland.RData' # from 0_simulated_data_bland.R
     outfile = 'results/bugs_real_bland.RData'
+  }
+  if(source == 'carlisle'){
+    infile = 'data/analysis_ready_carlisle.RData' # 2_process_extracted_data.R
+    outfile = 'results/bugs_real_carlisle.RData'
+  }
+  if(source == 'saitoh'){
+    infile = 'data/analysis_ready_saitoh.RData' # 2_process_extracted_data.R
+    outfile = 'results/bugs_real_saitoh.RData'
   }
   load(infile) 
   
@@ -133,6 +157,29 @@ if(stage == 'plot'){
     tree_outfile = 'data/tree_ready_simulation.RData'
     results_outfile = 'results/uniform_simulation.RData'
     example_outfile = 'results/example_simulation.RData'
+    precision_outfile = 'results/precision_simulation.RData'
+    simulation = TRUE
+  }
+  if(source == 'simulation_two'){
+    infile = 'results/bugs_real_simulation_two.RData' # from 4_model.R
+    outjpg = 'figures/flagged_papers_simulation_two.jpg'
+    outfile = '5_summary_results_simulation_two.docx'
+    tree_outfile = 'data/tree_ready_simulation_two.RData'
+    results_outfile = 'results/uniform_simulation_two.RData'
+    example_outfile = 'results/example_simulation_two.RData'
+    precision_outfile = 'results/precision_simulation_two.RData'
+    supplement_outfile = 'results/supplement_simulation_two.RData'
+    simulation = TRUE
+  }
+  if(source == 'simulation_three'){
+    infile = 'results/bugs_real_simulation_three.RData' # from 4_model.R
+    outjpg = 'figures/flagged_papers_simulation_three.jpg'
+    outfile = '5_summary_results_simulation_three.docx'
+    tree_outfile = 'data/tree_ready_simulation_three.RData'
+    results_outfile = 'results/uniform_simulation_three.RData'
+    example_outfile = 'results/example_simulation_three.RData'
+    precision_outfile = 'results/precision_simulation_three.RData'
+    supplement_outfile = 'results/supplement_simulation_three.RData'
     simulation = TRUE
   }
   if(source == 'bland'){
@@ -145,6 +192,17 @@ if(stage == 'plot'){
     supplement_outfile = 'results/supplement_bland.RData'
     precision_outfile = 'results/precision_bland.RData'
     simulation = TRUE
+  }  
+  if(source == 'carlisle'){
+    infile = 'results/bugs_real_carlisle.RData' # from 4_model.R
+    outjpg = 'figures/flagged_papers_simulation_carlisle.jpg'
+    outfile = '5_summary_results_carlisle.docx'
+    tree_outfile = 'data/tree_ready_carlisle.RData'
+    results_outfile = 'results/uniform_carlisle.RData'
+    example_outfile = 'results/example_carlisle.RData'
+    supplement_outfile = 'results/supplement_carlisle.RData'
+    precision_outfile = 'results/precision_carlisle.RData'
+    simulation = FALSE
   }  
   load(infile) 
 }

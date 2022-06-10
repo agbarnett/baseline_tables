@@ -1,3 +1,20 @@
+# from abstract
+
+*Objective*: To automatically screen for under- and over-dispersion in the baseline tables of randomised trials submitted to journals. 
+
+*Design*: Observational study and simulation study. 
+
+*Setting*: Randomised controlled trials published in open access health and medical journals on _PubMed Central_. 
+
+*Outcome measures*: The estimated probability that a trial's summary statistics were under- or over-dispersed using a Bayesian model that compared the distribution of t-statistics for the between-group differences from the baseline table to an expected distribution without dispersion.
+
+*Results*: The algorithm had a relatively good accuracy for extracting tables, matching well on the size of the tables and sample size. Using t-statistics in the Bayesian model out-performed the uniform test of p-values, as it had a higher probability of detecting over-dispersed data and lower false positive percentage for skewed data that was not under- or over-dispersed. For the trials published on _PubMed Central_, tables were flagged because they were not from trials, had a non-standard presentation, or had likely reporting errors. The algorithm also flagged some trials as under-dispersed where there was a striking similarity between groups.
+
+*Conclusion*: Due to the variance in reporting across journals, the current method may not be suitable for automated screening for fraud of all submitted trials, but could be useful in targeted checks of suspected trials. If used in automated screening of papers at the submission stage, it would likely flag many instances of non-standard table presentation and poor reporting --- which would still benefit from being fixed.
+
+
+#
+
 In this comparison we include some tables that would be excluded in the main analysis because they are not RCTs. These tables are still useful here though, as they allow us to test the accuracy of the algorithm on similar tables.
 
 
@@ -91,3 +108,58 @@ gplot = ggplot(data=to_plot, aes(x=log(sample_size)))+
   facet_wrap(~source)
 gplot
 ```
+
+
+### from validation 3_compare_algorithm_hand.Rmd
+
+# P-values
+
+This section examines differences in the detection of p-values.
+
+```{r, pvalues}
+pvals = full_join(p_hand, p_algorithm, by='pmcid')
+#
+compare = group_by(pvals, in_table, reported) %>%
+  filter(pmcid != 'PMC7549819') %>% # exclude non-RCT
+  mutate(in_table = case_when(
+    in_table == TRUE ~ 'Yes',
+    in_table == FALSE ~ 'No',
+    is.na(in_table) == TRUE ~ 'Missing'
+  ),
+  reported = case_when(
+    reported == 'yes' ~ 'Yes',
+    reported == 'no' ~ 'No',
+    reported == '' ~ 'Missing', 
+    is.na(reported) == TRUE ~ 'Missing'
+  )) %>%
+  rename('Algorithm' = 'in_table',
+         'manual' = 'reported') 
+# one to check
+check_pvals = filter(compare, Algorithm != manual)
+# table
+tab = tabyl(compare, manual, Algorithm) %>%
+  adorn_totals("row") 
+#
+ftab = flextable(tab) %>%
+  add_header_row(values=c(' ', rep('Algorithm', 3))) %>%
+  merge_at(i=1, j=2:4, part='header') %>%
+  theme_box() %>%
+  autofit() %>%
+  bg(i=1, j=2, part='body', bg='grey77') %>% # shade diagonals
+  bg(i=2, j=3, part='body', bg='grey77') %>% # shade diagonals
+  bg(i=3, j=4, part='body', bg='grey77')  # shade diagonals
+ftab
+# binomial confidence interval for error
+x = filter(compare, manual == Algorithm,
+           Algorithm !='Missing',
+           manual !='Missing')
+x = nrow(x) # number of matches;
+n_pval = x
+pval_bin = binom.confint(x=x, n=x, method='exact') %>%
+  mutate(lower = roundz(lower*100,1),
+         upper = roundz(upper*100,0))
+```
+
+This table includes more results than the other analyses as we included two papers that would be excluded for our algorithm but were useful for this comparison. 
+
+The exact 95% confidence interval for the percentage of matches is `r pval_bin$lower`% to `r pval_bin$upper`%. Hence the algorithm has a high accuracy for delineating if p-values were included in baseline tables. We excluded the results that were missing for the algorithm or manual entry, as these missing were not about the p-value but about the study design and exclusion criteria.

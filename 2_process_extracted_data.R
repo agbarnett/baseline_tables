@@ -1,15 +1,15 @@
 # 2_process_extracted_data.R
 # checks and processing of extracted data with some edits and exclusions
 # all applied by row for consistency (so whole row needs to change)
-# January 2022
+# June 2022
 library(dplyr)
 library(stringr)
 #library(tidylog, warn.conflicts = FALSE)
 
 ## get the data
 # select which source of data to use
-sources = c('my_search', 'trialstreamer', 'validation')
-source = sources[2]
+sources = c('my_search', 'trialstreamer', 'validation', 'carlisle', 'saitoh')
+source = sources[5]
 stage = 'processing'
 source('1_which_data_source.R') # uses `source` and `stage`
 
@@ -496,21 +496,21 @@ check = filter(table_data,
                stat2 <0,
                statistic %in% c('continuous')) %>% # 
   select(pmcid, row) %>%
-  unique()
+  unique() %>%
+  mutate(n = 99) # dummy flag
 # remove from data
 table_data = anti_join(table_data, check, by=c('pmcid','row'))
 cat('Excluded ', nrow(check), ' rows with negative standard deviation.\n', sep='')
 # record excluded
 eframe = data.frame(reason = 'Rows with negative standard deviation', count = nrow(check))
 excluded_counts = bind_rows(excluded_counts, eframe)
-
-# now remove in data xxx
+# now remove in data 
 table_data = left_join(table_data, check, by=c('pmcid','row')) %>%
   mutate(
     changed = ifelse(is.na(n) == FALSE, TRUE, changed), # change flag
     statistic = ifelse(is.na(n) == FALSE, 'percent', statistic)) %>% # update statistic 
   select(-n) # no longer needed
-cat('Changed ', nrow(check), ' rows to percent from median/continuous.\n', sep='')
+cat('Removed ', nrow(check), ' rows with negative standard deviation.\n', sep='')
 remove(check)
 
 ## b2) if numbers but stat1 is actually %
@@ -555,9 +555,13 @@ if(nrow(n_per_row) > 0){
   excluded_counts = bind_rows(excluded_counts, eframe)
 }
 
+
+# results below not avaliable for Carlisle data
+if (source %in% c('carlisle','saitoh') == FALSE){
+
 ## p-values
 pvals = mutate(pvals,
-               pvalue = as.numeric(pvalue)) %>%
+               pvalue = as.numeric(pvalue)) %>% # can ignore warning here
   filter(!is.na(pvalue), # remove missing 
          pvalue <= 1, # only keep those from 0 to 1
          pvalue >= 0)
@@ -606,3 +610,9 @@ table_data = group_by(table_data, pmcid) %>%
 
 ## save for analysis ##
 save(excluded, excluded_counts, pvals, errors, pvalues, table_data, design, file=outfile)
+}
+
+if (source %in% c('carlisle','saitoh')){
+## save for analysis ##
+save(excluded_counts, table_data, file=outfile)
+}

@@ -1,8 +1,7 @@
 ---
 title: "**Automated detection of over- and under-dispersion in baseline tables in randomised controlled trials**"
 author:
-  - Adrian Barnett ^[Australian Centre for Health Services Innovation & Centre for Healthcare Transformation, Queensland University of Technology, Queensland, Australia, a.barnett@qut.edu.au]
-  - John Carlisle ^[NHS, UK]
+  - Adrian Barnett ^[Australian Centre for Health Services Innovation & Centre for Healthcare Transformation, Queensland University of Technology, Queensland, Australia, a.barnett@qut.edu.au (corresponding author)]
 
 output:
   bookdown::word_document2:
@@ -13,7 +12,7 @@ bibliography: references.bib
 csl: bmj-open.csl
 ---
 
-Word count: 6908
+Word count: 6563
 
 ```{r, include=FALSE}
 knitr::opts_chunk$set(echo = FALSE, warning=FALSE, message=FALSE, error=FALSE, comment='', dpi=400)
@@ -31,21 +30,15 @@ std_border  = fp_border(color="black") # for flextable
 
 \newpage
 
-# Abstract - not yet complete
+# Abstract
 
-*Objectives*: To screen for under- and over-dispersion in the baseline table of randomised trials. 
+*Background*: Papers describing the results of a randomised trial should include a table of summary statistics that compares randomised groups at baseline. Researchers who fraudulently ~~generate trials~~ often create randomised groups that are implausibly similar (under-dispersed) or accidentally create large differences between groups (over-dispersed) because they do not understand how to create realistic summary statistics from truly random data. ~We aimed to automatically screen for under- and over-dispersion in the baseline tables of published randomised trials.~ 
 
-*Design*: Observational study and simulation study. 
+*Methods*: We examined randomised controlled trials published in open access health and medical journals on _PubMed Central_. We estimated probability that a trial's summary statistics were under- or over-dispersed using a Bayesian model that examined the distribution of t-statistics for the between-group differences from the baseline table, and compared this with an expected distribution without dispersion. We used a simulation study to test the ability of the model to find over- or under-dispersion and compared its performance with an existing test of dispersion based on a uniform test of p-values.
 
-*Setting*: Published randomised controlled trials in open access journals. 
+*Results*: The algorithm had a relatively good accuracy for extracting the data from baseline tables, matching well on the size of the tables and sample size. Using t-statistics in the Bayesian model out-performed the uniform test of p-values, as it had a higher probability of detecting over-dispersed data and lower false positive percentage for skewed data that was not under- or over-dispersed. For the trials published on _PubMed Central_, some tables were flagged because: they were not from trials, had a non-standard presentation, or had likely reporting errors. The algorithm also flagged some trials as under-dispersed where there was a striking similarity between groups.
 
-*Participants*: 
-
-*Main outcome measures*: 
-
-*Results*: 
-
-*Conclusion*: 
+*Conclusion*: Due to the variance in reporting across journals, the current method may not be suitable for automated screening for fraud of all submitted trials, but could be useful in targeted checks of suspected trials. If used in automated screening of papers at the submission stage, it would likely flag many instances of non-standard table presentation and poor reporting.
 
 *Key words*: randomised controlled trials; research misconduct; reporting errors
 
@@ -55,15 +48,15 @@ std_border  = fp_border(color="black") # for flextable
 # Introduction
 
 Papers describing the results of a randomised trial often include a table that compares the randomised groups at baseline (hereafter called a "baseline table"). 
-This baseline table presents summary statistics that describe the sample such as age and gender.
+This baseline table presents summary statistics that describe the sample, such as average age and the percentage of males.
 The table's purpose is to demonstrate that the randomisation produced similar groups, which strengthens the case that any differences between groups are due to the randomised treatment [@Pocock2002].
-This table is recommended by the CONSORT guidelines which were designed to improve the reporting of randomised trials [@Schulz2010]. 
+A baseline table is recommended by the CONSORT guidelines, which were designed to improve the reporting of randomised trials [@Schulz2010]. 
 
 If randomisation has been successful, then the summary statistics will be similar across all groups at baseline, although large differences can happen simply due to chance, especially for small sample sizes. 
 To convey similarity many authors compare the randomised groups using multiple statistical tests, despite the circularity of testing if randomisation happened by chance [@Altman1985]. 
 <!--- Even in ideal circumstances, 1 in 20 of these tests would have a p-value below the 0.05 threshold.  --->
 
-Researchers who fabricated randomised trials have been discovered because their baseline tables were too perfect [@Simonsohn2013;@Adam2019;@Carlisle2020]. When fabricating the baseline table they created highly comparable groups that would pass peer review. In not trying to raise any alarms during peer review, they unwittingly raised the alarm at post peer review. Fraudulent researchers can also create baseline data with unusually large differences between groups, likely because they do not understand how to create realistic summary statistics when data are truly random [@Buyse1999]. Fraudulent researchers may not be uncovered by one baseline table alone, but an odd table can be the start of a wider investigation of their work [@Li2020]. 
+Researchers who fabricated randomised trials have been discovered because their baseline tables were too perfect [@Simonsohn2013;@Adam2019;@Carlisle2020]. When fabricating the baseline table they created highly comparable groups that would pass peer review. In not trying to raise any alarms during peer review, they unwittingly raised the alarm at post peer review. Fraudulent researchers can also create baseline data with unusually large differences between groups, likely because they do not understand how to create realistic summary statistics when data are truly random [@Buyse1999]. Fraudulent researchers may not be uncovered by one baseline table alone, but an odd table might prompt a wider investigation [@Li2020]. 
 
 To date, fraudulent researchers have been found in ad hoc ways, including concerns being raised by whistleblowers and researchers noticing strange patterns whilst reading papers in their field or conducting systematic reviews [@Roberts2007;@Bolland2016]. Other problems have been found by dedicated researchers trawling through papers by hand. Manually extracting data from papers is time consuming and automatic data extraction would be a useful advance. Automated detection tools would save time and increase scrutiny [@Bordewijk2021].
 
@@ -73,7 +66,7 @@ Previous methods for spotting potential problems in baseline tables have used p-
 
 The aim of this paper is not to provide undeniable evidence for fraud. Baseline tables that appear to have a problem could occur for a range of non-fraudulent reasons. These include planned or unplanned factors to do with randomisation, such as dynamic randomisation to create highly comparable groups, or subversion of the random allocation [@Kennedy2017]. Differences could also arise at the reporting stage, such as mislabelling summary statistics or reporting errors [@Bordewijk2021]. Our aim is to create a procedure that could be used to flag potential problems at the submission stage, which would help researchers improve their paper prior to publication [@Weissgerber2021].
 
-We report PubMed Central ID numbers to highlight examples without citing papers. Tables can easily be examined by interested readers using Google on the PubMed Central site (https://www.ncbi.nlm.nih.gov/pmc/). 
+We report PubMed Central ID numbers to highlight examples without citing papers. The example tables can easily be examined by interested readers using the PubMed Central site (see Additional file 1). 
 
 # Methods
 
@@ -87,17 +80,17 @@ We extracted baseline tables from the National Library of Medicine's PubMed Cent
 * Exclude papers that were not randomised trials, including i) protocols which have no data, and ii) papers that re-use trial data for other study designs (e.g., diagnostic accuracy). This exclusion was made based on the title and abstract, but some protocols were not identified in the title or abstract and hence were wrongly included.
 * Find the baseline table in the paper and extract all the summary statistics, the type of summary statistics (e.g., median or percentage), and the group sample sizes.
 
-A key step was estimating what summary statistic were used in each row of the baseline table. This was estimated based on the text in the rows and columns (e.g., "Mean", "%", etc) and the variable label, where particular variables such as age and BMI were often continuous, whereas variables such as gender were categorical.
+A key step was estimating what summary statistics were used in each row of the baseline table. This was estimated based on the text in the rows and columns (e.g., "Mean" , "%" , etc) and the variable label, where particular variables such as age and BMI were often continuous, whereas variables such as gender were categorical.
 
-A key step was estimating the group sample size. These were first estimated by checking for headings in the column headers (e.g., "N=") and then the rows. If no samples sizes could be found then they were estimated based on percentages in the baseline table. Some papers were excluded because no sample size could be extracted (see results).
+Another key step was estimating the group sample size. These were first estimated by checking for headings in the column headers (e.g., "N=") and then the rows. If no samples sizes could be found then they were estimated based on percentages in the baseline table. Some papers were excluded because no sample size could be extracted (see results).
 
-We extracted whether p-values were used in the table and/or mentioned in the text. We searched for text such as 'p-value' and 'statistically significant', and searched for common thresholds such as '<0.05'. We searched the paragraph of text that first referenced the baseline table to check whether authors mentioned statistical significance.
+We extracted whether p-values were used in the table and/or mentioned in the text. We searched for text such as 'p-value' and 'statistically significant' , and searched for common thresholds such as '<0.05' . We searched the paragraph of text that first referenced the baseline table to check whether authors mentioned statistical significance.
 
 ## Validation
 
-We validated our algorithm using hand-entered baseline data from randomised trials. To find eligible trials we searched _PubMed_ for randomised trials between 2017 and 2020 that were available open access on _PubMed Central_ and were not protocols, which gave 25,760 trials. A random selection of 200 trials was made, with the results compared between the algorithm and manually entered data by a post-doctoral research assistant. 118 papers were excluded by the algorithm, with the three most common reasons because the paper was not openly available (48), there was no baseline tables (36), or there was no comparison between groups in the table (16). A further 9 papers could not be compared because the research assistant judged them not to be randomised trials. This left 73 baseline tables to compare. 
+We validated our algorithm using hand-entered baseline data from randomised trials. To find eligible trials we searched _PubMed_ for randomised trials between 2017 and 2020 that were available open access on _PubMed Central_ and were not protocols, which gave 25,760 trials. A random selection of 200 trials was made, with the results compared between the algorithm and manually entered data by a post-doctoral research assistant. 118 papers were excluded by the algorithm, with the three most common reasons because the paper was not openly available ($n=48$), there was no baseline table ($n=36$), or there was no comparison between groups in the table ($n=16$). A further 9 papers could not be compared because the research assistant judged them not to be randomised trials. This left 73 baseline tables to compare. 
 
-Detailed comparisons of the algorithm and manual results are given in a supplement. In summary, our algorithm correctly guessed the summary statistic 87% of the time (795 out of 909; 95% CI 85% to 90%). The biggest differences were where the algorithm wrongly guessed continuous for a median (2%) or could not estimate any statistic when the row was a percentage (5%). There was a mean difference in the sample size of 0 (5% to 95% percentile: 0 to 0). The algorithm accurately estimated the size of the baseline table, with a median difference of 0 (5% to 95% percentile: --1 to 4) for the number of rows, and 0 (5% to 95% percentile: 0 to 0) for the number of randomised groups. 
+Detailed comparisons of the algorithm and manual results are given in a Additional file 1. In summary, our algorithm correctly guessed the summary statistic 87% of the time (795 out of 909; 95% CI 85% to 90%). The biggest differences were where the algorithm wrongly guessed continuous for a median (2%) or could not estimate any statistic when the row was a percentage (5%). The algorithm was able to extract the sample size, with a mean difference of 0 (5% to 95% percentile: 0 to 0). The algorithm accurately estimated the size of the baseline table, with a median difference of 0 (5% to 95% percentile: --1 to 4) for the number of rows, and 0 (5% to 95% percentile: 0 to 0) for the number of randomised groups. 
 
 We think this level of accuracy is reasonable as we encountered a large variety in the presentation of baseline tables, an issue that has been flagged by others [@Cahan2017]. Failures of the algorithm sometimes meant the table data were excluded as our approach struggled to extract the numbers, this means that we are not able to completely screen the literature. Failures where the wrong data were extracted, for example wrongly extracting a total column as if it were a separate group, sometimes led to the trial being flagged by our model and we examine this issue in the results. 
 
@@ -105,7 +98,7 @@ We compared the total sample size in our algorithm with that estimated by the _t
 
 ## Creating t-statistics for group differences
 
-We combined continuous and binary summary statistics by summarising the difference between randomised groups using the independent sample t-statistic, which put the group differences on a common scale. It may be surprising to use the t-statistic to compare categorical data, but the t-test is robust in situations where the chi-squared test would be a common choice, even for small sample sizes [@Dagostino1988]. Combining binary and continuous summary statistics greatly increases the amount of data we examined as these two statistics were the most commonly used; when using p-values the recommendation is to only use continuous summary statistics [@Bolland2019b]. We could not use statistics that were the median and inter-quartile range or range, as we could not compare these summary statistics using the parametric t-test. 
+We combined continuous and binary summary statistics from the baseline table by summarising the difference between randomised groups using the independent sample t-statistic, which put the group differences on a common scale. It may be surprising to use the t-statistic to compare binary data, but the t-test is robust in situations where the chi-squared test would be a common choice, even for small sample sizes [@Dagostino1988]. Combining continuous and binary summary statistics greatly increases the amount of data we examined, as these two statistics were the most commonly used. When using p-values the recommendation is to only use continuous summary statistics [@Bolland2019b]. We could not use summary statistics that were the median and quartiles or minimum to maximum, as we could not compare these statistics using the parametric t-test. 
 
 We excluded rows from the baseline table that were the inverse of the previous row, for example the percentage male followed by the percentage female. In this case the t-statistics for males and females would be perfectly negatively correlated and including these results twice would artificially increase the sample size. We excluded rows from the same trial where the t-statistic was the inverse of the previous, but not where the t-statistic was zero. This approach only excludes rows that are a perfect inverse and would miss results with a relatively large negative correlation, such rows for three age groups.
 
@@ -124,17 +117,17 @@ $$\log(\gamma_i) = [(1-p_i)\times 0] + [p_i \times \epsilon_i],$$
 $$p_i \sim \textrm{Bernoulli}(\theta),$$
 $$\theta \sim \textrm{Beta}(1,1),$$
 $$\epsilon_i \sim \textrm{N}(0,10).$$
-Each trial has a "switch" $p_i \in (0,1)$, that determines whether it is part of the spike or slab. 
-The spike at zero, with $p_i =0$, is for trials where the differences between randomised groups are as expected ($\sigma^{-2}_{i,j} = s_{i,j}^{-2}$). The slab, with $p_i =1$, is for trials with under- or over-dispersion. This difference was modelled using a normal distribution where over-dispersed results have a negative $\epsilon_i$ (and multiplier under 1, $\gamma_i<1$) and under-dispersed results have a positive $\epsilon_i$ ($\gamma_i>1$). The variance for this normal prior of 10 is small compared with typical vague priors in Bayesian models, but this covered the full range of possibilities, including where the summary statistics were identical between randomised groups, and larger variances had convergence issues. The binary switch for each trial is modelled using a Bernoulli distribution. The hyper-parameter $\theta$ controls is the proportion of trials with potential under- or over-dispersion and had a vague Beta prior, bound between zero and one. 
+Each trial had a "switch" $p_i \in (0,1)$, that determined whether it is part of the spike or slab. 
+The spike at zero, with $p_i =0$, was for trials where the differences between randomised groups are as expected ($\sigma^{-2}_{i,j} = s_{i,j}^{-2}$). The slab, with $p_i =1$, was for trials with under- or over-dispersion. This difference was modelled using a normal distribution where over-dispersed results have a negative $\epsilon_i$ (and multiplier under 1, $\gamma_i<1$) and under-dispersed results have a positive $\epsilon_i$ ($\gamma_i>1$). The variance for this normal prior of 10 is small compared with typical vague priors in Bayesian models, but in preliminary modelling we found this covered the full range of possibilities, including where the summary statistics were identical between randomised groups, and larger variances had convergence issues. The binary switch for each trial was modelled using a Bernoulli distribution. The hyper-parameter $\theta$ controls is the proportion of trials with potential under- or over-dispersion and had a vague Beta prior, bound between zero and one. 
 
 The degrees of freedom (df) for trial $i$ is the total sample size minus one ($N_i-1$), which allows for greater variance in differences for smaller trials. 
 
 Two statistics can be used to judge whether a baseline table has under- or over-dispersion:
 
 * The estimated trial-specific probability of a non-zero change in the precision $\overline{p}_i = \sum_{j=1}^M p_{i}^{(j)} / M$, for which we examined three thresholds of $\overline{p}_i >0.50$, $0.80$ and $0.99$ to flag a potential problem by averaging over the $M$ Markov Chain Monte Carlo estimates
-* The estimated precision $\overline{\epsilon}_i$ which indicates larger under- or over-dispersion for values further from zero.
+* The estimated precision $\overline{\epsilon}_i$ which indicates larger under- or over-dispersion for values further from zero. This is also averaged over the Markov Chain Monte Carlo estimates.
 
-We report whether a baseline table has a potential problem, but make no attempt to differentiate between fraud and honest errors [@George2015;@Mascha2017]. Checking for fraud needs to be done by checking other details, such as ethics clearances, and referencing other work by the same authors. However, our automated check could still be a useful flag when papers are submitted. 
+We report whether a baseline table has a potential problem, but make no attempt to differentiate between fraud and honest errors [@George2015;@Mascha2017]. Checking for fraud needs to be done by examining other details, such as ethics clearances, and other work by the same authors. However, our automated check could still be a useful flag when papers are submitted [@Bero2022]. 
 
 Our approach uses the baseline table reported by the authors and hence is reliant on reporting accuracy.
 Inaccurate reporting could lead to issues being flagged incorrectly, for example, authors reporting the standard error of the mean but incorrectly labelling it as the standard deviation.
@@ -171,31 +164,31 @@ gplot = ggplot(curves, aes(x = value)) +
 gplot
 ```
 
-Both example trials have a mean difference of zero, but the observed differences from one trial are much narrower and closer to zero, indicating that the randomised groups are too similar. Our approach models the precision (inverse-variance) and aims to detect when trials are under- or over-dispersed using the distribution of all available t-statistics.
+Both example trials have a mean difference of zero, but the observed differences from one trial are much narrower and closer to zero, indicating that the randomised groups are too similar (under-dispersed). Our approach models the precision (inverse-variance) and aims to detect when trials are under- or over-dispersed using the distribution of all available t-statistics.
 
 ## Predictors of under- or over-dispersion
 
-We examined whether there were study design characteristics that were associated with under- or over-dispersion. We used a multiple linear regression model with a dependent variable of the probability of a non-zero dispersion ($0\leq\overline{p}_i\leq 1$), and independent variables that described the paper, study design and features of the table. For the paper, we included the journal and country of first author, using a combined "other" if a journal had fewer than 10 trials and a country fewer than 20 trials. For the study design we included if the study was a pilot (based on the title), a cluster-randomised trial (based on the title and abstract), used the standard error of the mean instead of the standard deviation (based on the baseline table), or used block randomisation (based on the full text). The features of the baseline table we included as predictors were the number of rows, number of columns, sample size, largest difference in sample size between groups, proportion of continuous summary statistics and average number of decimal places for summary statistics. We selected a smaller subset of key predictors from the larger set using the elastic net as a variable selection tool [@Hastie2015].
+We examined whether there were study design characteristics associated with under- or over-dispersion. We used a multiple linear regression model with a dependent variable of the study-level probability of a non-zero dispersion ($0\leq\overline{p}_i\leq 1$), and independent variables that described the paper, study design and features of the table. We included independent variables of the journal and country of first author, using a combined "other" if a journal had fewer than 10 trials and a country fewer than 20 trials. For the study design we included if the study was a pilot (based on the title), a cluster-randomised trial (based on the title and abstract), used the standard error of the mean instead of the standard deviation (based on the baseline table), or used block randomisation (based on the full text). The features of the baseline table we included as predictors were the number of rows, number of columns, sample size, largest difference in sample size between groups, proportion of continuous summary statistics and average number of decimal places for summary statistics. We selected a smaller subset of key predictors from the larger set using the elastic net as a variable selection tool [@Hastie2015].
 
 ## Simulation study
 
-To examine using the t-distribution instead of the distribution of p-values, we simulated data using three examples described by Bland [@Bland2013] where there was no concern about randomisation but the p-value distribution would be non-uniform:
+To examine using the t-distribution instead of the distribution of p-values, we simulated data using three examples described by Bland [@Bland2013] with no concern about randomisation but the p-value distribution would be non-uniform, meaning the uniform test could return a high percentage of false positives:
 
 * Small trials with a sample size of 10 and summary statistics using binary data (e.g., percent of males)
 * Large trials with a sample size of 1,000 and summary statistics using binary data
 * Large trials with a sample size of 1,000 and summary statistics using skewed continuous data (e.g., length of hospital stay)
 
-To examine the power of our Bayesian method to detect problematic tables, we used three additional scenarios that used a mix of binary and continuous data where the summary statistics for the baseline table were: 
+To examine the power of our Bayesian method to detect problematic tables, we used three additional scenarios that used a 50:50 mix of binary and continuous data where the summary statistics for the baseline table were: 
 
-* As expected for a randomised trial
-* Under-dispersed, randomised groups were too similar
-* Over-dispersed, randomised groups were too different
+* Under-dispersed, randomised groups were too similar, achieved by copying half of the means and percentages from one group to the other.
+* Over-dispersed, randomised groups were too different, achieved by adding a large number to the means and percentages.
+* As expected for a randomised trial.
 
-The group sample sizes for these three scenarios were randomly generated using an exponentiated gamma distribution with shape of 10.7 and rate of 2.84, which gives a median sample size of 40 and inter-quartile range of 19 to 87. The number of rows per baseline table were randomly generated using a gamma distribution with shape 2.2 and rate 0.15, which gives a median number of rows of 12 and inter-quartile range of 7 to 19. The parameters for the distributions of group sample size and table rows were based on a large sample of the baseline table data from our automated extraction (see supplement).
+The split of continuous:binary summary statistics and the parameters for the distributions of group sample size and table rows were based on a large sample of baseline table data from our automated extraction (see Additional file 1). The group sample sizes for these three scenarios were randomly generated using an exponentiated gamma distribution with shape of 10.7 and rate of 2.84, which gives a median sample size of 40 and first to third quartile of 19 to 87. The number of rows per baseline table were randomly generated using a gamma distribution with shape 2.2 and rate 0.15, which gives a median number of rows of 12 and first to third quartile of 7 to 19. 
 
 To make realistic tables we rounded the mean to one decimal place and the standard deviation to 2 decimal places. To examine the effect of rounding we repeated the simulation where the dispersion was as expected with a mean rounded to zero decimal places and a standard deviation to 1 decimal place. 
 
-For all seven scenarios we created 500 simulated trials and each trial had two randomised groups with equal sample size. We compared the statistics graphically using distributions of the p-values and t-statistics. To examine the uniform approach we tested if the p-values for each study followed a uniform distribution using the Kolmogorov--Smirnov test for uniformity. We counted the number of simulations where the null hypothesis was rejected using the 0.05 threshold. All simulations were also run through the Bayesian model and we examined the number of trials where the estimate probability of the precision was over a 0.80 threshold.
+For all seven scenarios we created 500 simulated trials and each trial had two randomised groups with equal sample size. We compared the statistics graphically using distributions of the p-values and t-statistics. We tested if the p-values for each study followed a uniform distribution using the Kolmogorov--Smirnov test for uniformity, and  counted the number of simulations where the null hypothesis was rejected using the 0.05 threshold. Using our Bayesian model, we examined the number of trials where the estimated probability of the precision was above three thresholds: 0.5, 0.80 and 0.99.
 
 ## Estimation
 
@@ -240,11 +233,11 @@ ftab
 ```
 
 <!--- Using the p-value distribution did not perform as well. --->
-The results for the seven simulated scenarios are in Table&nbsp;\@ref(tab:tab-sim). Five scenarios were generated using the null hypothesis of no difference between groups. However, using the uniform distribution test did badly with high false positive percentages especially when the data were skewed. Examples for single simulations are shown in supplement&nbsp;2 and show the non-uniform distribution when the data are skewed. 
+The results for the seven simulated scenarios are in Table&nbsp;\@ref(tab:tab-sim). Five scenarios were generated using the null hypothesis of no difference between groups. The uniform distribution test did badly with high false positive percentages especially when the data were skewed. It did have a good power to detect under- and over-dispersed data. Examples for single simulations are shown in Additional file 1&nbsp;2 and show the non-uniform distribution when the data are skewed. 
 
 Our algorithm rarely flagged trials where there was no difference in groups, hence there were few false positives. 
-Our algorithm was highly successful at detecting trials that were over-dispersed, with 86.6% of the simulations flagged at the 0.80 threshold. 
-Our algorithm was less successful at detecting trials that were under-dispersed, with just 16.0% of the simulations flagged as under-dispersed at the 0.80 threshold. This reduced ability to spot under-dispersion relative to over-dispersion is because over-dispersion is unbounded and can be based on relatively large differences with a standard deviation for the t-distribution of greater than 1, whereas under-dispersion is bounded with the standard deviation being less than 1 but bounded by zero.
+Our algorithm was highly successful at detecting trials that were over-dispersed, with 85.4% of the simulations flagged at the 0.80 threshold. 
+Our algorithm was also reasonably successful at detecting trials that were under-dispersed, with 56.0% of the simulations flagged as under-dispersed at the 0.80 threshold. 
 
 ```{r, include=FALSE}
 # from 3_compare_algorithm_hand.Rmd
@@ -253,7 +246,7 @@ load('../results/pval_validation.RData')
 
 Our algorithm had a high accuracy for detecting if p-values were used in the baseline table. For all `r n_pval` available trials, the algorithm correctly estimated if a p-value was used or not every time, giving an exact 95% confidence interval for the overall accuracy of `r pval_bin$lower`% to `r pval_bin$upper`%. 
 
-## Results for real data
+## Real data results
 
 The majority of the 10,000 potential trials were excluded (Table&nbsp;\@ref(tab:excluded)). The three most common reasons were: 
 
@@ -271,7 +264,7 @@ A previous study found that 92% of trials included a baseline table [@Pocock2002
 
 The summary statistics extracted from the included trials are shown in  Table&nbsp;\@ref(tab:stats).
 
-```{r stats, tab.cap='Summary statistics from the baseline tables and those included in the Bayesian model. NEED TO ADD COLUMNS FOR NUMBERS INCLUDED.'}
+```{r stats, tab.cap='Summary statistics from the baseline tables and those included in the Bayesian model.'}
 # from 5_summary_stats.Rmd
 ftab_stats
 ```
@@ -299,7 +292,7 @@ tab_stats = group_by(table_data, pmcid) %>%
 setwd('paper') # move back to paper folder
 ```
 
-There were `r N_trials` included trials with a total of `r format(N,big.mark=',')` table rows. The median number of rows per baseline table was `r tab_stats$row` and the median number of columns was `r tab_stats$col`. The published dates of the trials were from x to y.
+There were `r N_trials` included trials with a total of `r format(N,big.mark=',')` table rows. The median number of rows per baseline table was `r tab_stats$row` and the median number of columns was `r tab_stats$col`. The central 50% of published trial dates were between 15 June 2016 and 15 June 2020.
 
 ```{r tab-real, tab.cap='Results for the trials from PubMed Central. Number and percentages of trials that were not flagged or were flagged as under- or over-dispersed. Using three thresholds for the study-specific probability of a non-zero change in the precision of 0.50, 0.80 and 0.99.'}
 # 
@@ -324,9 +317,9 @@ gplot_over = gplot_over +
 gplot_over
 ```
 
-Two trials that are flagged are due to errors in our data extraction (PMC7005701 and PMC7301747). For PMC7005701, a categorical variable is wrongly included as continuous, because the label for the variable included the word "score" which generally meant the summary statistic was continuous. The t-statistic for this row is over 400 and hence the trial is flagged as over-dispersed.  
+Two trials that are flagged are due to errors in our data extraction (PMC7005701 and PMC7301747). For PMC7005701, a categorical variable is wrongly included as continuous, because the variable label included the word "score" which generally meant the summary statistic was continuous. The t-statistic for this row is over 400 and hence the trial is flagged as over-dispersed.  
 
-The result for PMC7301747 is an example of where an error in our data extraction creates a false impression of variability. The error occurs due to large numbers such as "15,170 (7,213)" which our algorithm extracts as three statistics: 15170, 7 and 213. This is because a comma is used both for large numbers and as a separator of two statistics such as a range. The t-statistic for this row is over 1,000 and hence the trial is flagged as over-dispersed. 
+The result for PMC7301747 is an example of where an error in our data extraction creates a false impression of variability. The error occurs due to large numbers such as "15,170 (7,213)" which our algorithm extracts as three statistics: 15170, 7 and 213. This is because a comma is used both for large numbers and as a separator of two statistics such as a range within round brackets. The t-statistic for this row is over 1,000 and hence the trial is flagged as over-dispersed. 
 
 The baseline table in trial PMC7302483 had a non-standard layout with four summary statistics per group in four separate columns. The comparisons for this trial were between different summary statistics for the same group.
 
@@ -342,11 +335,11 @@ gplot_under
 
 One flagged study was not a randomised trial but was a case--control study with an age and gender matched control group (PMC2176143), hence it was not surprising that the summary statistics in the baseline table were very similar. 
 
-One trial used relatively unusual column headings for the baseline table which meant the data were read in as four rather than two groups (PMC6034465).
+One trial used non-standard column headings for the baseline table which meant the data were read in as four rather than two groups (PMC6034465).
 
-One trial labelled proportions as percentages and hence it looked as if there were lots of zero percentages which meant the two randomised groups appeared highly similar (PMC7578344).
+One trial labelled proportions ($\in [0,1]$) as percentages ($\in [0,100]$) and hence it looked as if there were lots of zero percentages which meant the two randomised groups appeared highly similar (PMC7578344).
 
-The results from Figures&nbsp;\@ref(fig:fig-examples-over) and \@ref(fig:fig-examples-under) show that the most extreme results in terms of precision and variability are often failures in the algorithm's data extraction. Hence, we next look at less extreme results by excluding flagged trials that are in the tails of the precision distribution meaning extremely under- or over-dispersed results (see supplement&nbsp;1 for the distribution). We show three other examples in  Figure&nbsp;\@ref(fig:fig-examples-over2) for over-dispersion and \@ref(fig:fig-examples-under2) for under-dispersion.
+The results from Figures&nbsp;\@ref(fig:fig-examples-over) and \@ref(fig:fig-examples-under) show that the most extreme results in terms of precision and variability are often failures in the algorithm's data extraction. Hence, we next look at less extreme results by excluding flagged trials that are in the tails of the precision distribution, which were the extremely under- or over-dispersed results (see Additional file 1&nbsp;1 for the distribution). We show three other examples in Figure&nbsp;\@ref(fig:fig-examples-over2) for over-dispersion and in Figure&nbsp;\@ref(fig:fig-examples-under2) for under-dispersion.
 
 ```{r fig-examples-over2, fig.cap='Example t-distributions for three trials flagged as over-dispersed after excluding the most extreme results. For comparison there are three randomly selected trials that were not flagged. The scales on the count axes differ by trial. The panel headings show the PubMed Central ID number.', fig.width=7, fig.height=4}
 gplot_over2 = gplot_over2 + 
@@ -370,22 +363,24 @@ gplot_under2 = gplot_under2 +
 gplot_under2
 ```
 
-Using the lower threshold of a multiplier under 10 flags a trial where the t-statistics for all four comparisons are within --0.3 to 0.3 (PMC3136532). The percentage of women was equal in both groups which the authors said was due to "block randomization", although this technique does create balance on patient characteristics, rather it helps create equally sized groups. Either the authors meant to say "stratified randomization" or the perfect balance was due to chance. 
+Using the lower threshold of a multiplier under 10 flags a trial where the t-statistics for all four comparisons are within --0.3 to 0.3 (PMC3136532). The percentage of women was equal in both groups which the authors said was due to the groups being "blocked by gender", however, we presume they meant "stratified by gender".
 <!--- One of the t-statistics in the table was also slightly wrong. --->
 
-A trial that was flagged had four t-statistics within --0.3 to 0.3 (PMC6709840). These four t-statistics were based on percentage summary statistics as most of the summary statistics in the table were medians and so could not be used in the model. However, there was also a noticeable similarity in the medians. The randomisation was stratified on age and one of the percentage variables, which somewhat explains the under-dispersion.
+A trial that was flagged had four t-statistics within --0.3 to 0.3 (PMC6709840). 
+<!---These four t-statistics were based on percentage summary statistics as most of the summary statistics in the table were medians and so could not be used in the model. However, there was also a noticeable similarity in the medians.--->
+The randomisation was stratified on age and one of the percentage variables, which somewhat explains the under-dispersion.
 
-A trial that was flagged compared only compared age and gender, but had four groups (PMC7245605). The 12 t-statistics were within --0.6 to 0.5. The trial was a mix of "healthy controls" and randomised groups, but with no mention of matching for the controls. 
+A trial that was flagged compared only compared age and gender, but had four groups (PMC7245605). The 12 t-statistics were within --0.6 to 0.5. The trial was a mix of "healthy controls" and randomised groups, but there was no mention matching for the controls which might explain the under-dispersion. 
 
 An alternative method for find under- or over-dispersed trials is to examine where the lower credible interval for the precision multiplier ($\epsilon_i$) is above 0. Example under-dispersed trials from this approach a trial with 19 t-statistics between --0.8 and 0.6 (PMC2885597), and a trial with 8 t-statistics between --0.8 and 0.6, and with clearly incorrect p-values (PMC6165973). 
 
-In the plots above we used histograms to summarise the t-statistics. An alternative approach is using a cumulative distribution function and we show an example of that in supplement&nbsp;1.
+In the plots above we used histograms to summarise the t-statistics. An alternative approach is using a cumulative distribution function and we show an example of that in the Additional file 1.
 
 ## Predictors of under- or over-dispersion
 
 We examined which study design features were associated with the probability of a non-zero dispersion parameter, indicating under- or over-dispersion. The six predictors selected by the elastic net approach are in Table&nbsp;\@ref(tab:tab-preds).
 
-```{r tab-preds, tab.cap="Estimated predictors of the probabilty of dispersion showing the mean change in probability and 95% confidence interval."}
+```{r tab-preds, tab.cap="Estimated predictors of the probability of dispersion showing the mean change in probability and 95% confidence interval."}
 # from 6_tree_regression.R
 load('../results/lasso_results.RData')
 for_table = mutate(ests, 
@@ -413,80 +408,81 @@ ftab
 
 The probability of a non-zero dispersion was much higher in baseline tables that wrongly used the standard error of the mean instead of the standard deviation. This is as expected given that the standard error will be far smaller than the standard deviation and hence small differences could look like over-dispersion.
 
-The probability increased when there were large differences in group sample size and for each additional column in the table. In both cases this could be because the trial were often not a simple comparison of, for example, treatment versus control (two columns), but might include subgroups, such as gender or disease severity. These strata will likely create over-dispersion as the comparisons are no longer between randomised groups.
+The probability increased when there were large differences in group sample size and for each additional column in the table. In both cases this could be because the trial was not a simple comparison of, for example, treatment versus control (two columns), but might include subgroups, such as gender or disease severity. These strata will likely create over-dispersion as the comparisons are no longer between randomised groups.
 
-The probability increased when the baseline table had a greater proportion of continuous variables. This is likely because of the greater statistical power for continuous variables compared with categorical. Similarly the probability increased with greater sample size and hence greater power.
+The probability increased when the baseline table had a greater proportion of continuous variables. This is likely because of the greater statistical power for continuous variables compared with categorical. Similarly the probability increased with greater sample size and hence greater power. The number of rows in the table was not a predictor, but in a separate simulation we confirmed that---as expected---the power to detect under-dispersion increased for larger tables (see Additional file 1).
 
-Block randomisation was association with a decreased probability of dispersion. Block randomisation is used to ensure equal group sizes and hence it is somewhat surprising to see that it was associated with a reduced probability of dispersion as unequal group sizes could still be highly comparable. Block randomisation may often be combined with stratification, which would increase comparability. We could not search for stratified randomisation as "stratified" was often also used to describe analyses. 
+Block randomisation was association with a decreased probability of dispersion, and this technique can help balance group characteristics when there is a strong correlation over time in the characteristics of participants. The size of this effect is surprising and it may be that some authors confused block randomisation with stratified randomisation (e.g., PMC3136532) or that these two techniques were often used in combination. We did not add stratified randomisation as a predictor, because "stratified" was often also used to describe analyses, although we could have assumed that any stratification mentioned in the analysis also meant the randomisation was stratified. 
 
-No journals or countries were selected by the elastic net variable selection, meaning none were associated with dispersion. However, the total number of trials were small for most journals and some countries. The largest number of trials for a single journal was 85. 
+No journals or countries were selected by the elastic net variable selection, meaning none were associated with dispersion. However, the total number of trials were small for most journals and some countries, which reduces the statistical power. The largest number of trials for a single journal was 85. 
 
 ## Incorrect use of p-values
 
 Many baseline tables included p-values to compare groups, despite repeated warnings against this [@deBoer2015]. The percentage including p-values in the table was `r table_pval$mean`% (95% CI `r table_pval$lower`% to `r table_pval$upper`%). With a much larger percentage including p-values in the table or in text referring to the table `r overall_pval$mean`% (95% CI `r overall_pval$lower`% to `r overall_pval$upper`%). A typical sentence from the text was: "Demographics and disease characteristics were generally balanced between the two arms, except for mean age (Pexa-Vec, 60; BSC, 55 years; p = 0.045; Table 1)" (PMC6682346).
 
-For cluster randomised trials it may be worthwhile to compare groups at baseline using statistical tests [@Bolzern2019]. Excluding the `r n_cluster` cluster randomised trials the percent including p-values in the table remained high with a mean `r table_pval_no_cluster$mean`% (95% CI `r table_pval_no_cluster$lower`% to `r table_pval_no_cluster$upper`%).
+It may be worthwhile to compare groups at baseline using statistical tests for cluster randomised trials [@Bolzern2019]. Excluding the `r n_cluster` cluster randomised trials, the percent including p-values in the table remained high with a mean `r table_pval_no_cluster$mean`% (95% CI `r table_pval_no_cluster$lower`% to `r table_pval_no_cluster$upper`%).
 
 # Discussion
 
-Our automated algorithm was able to flag baseline tables that would be worth raising with the authors during journal peer review. However, this was not always due to under- or over-dispersion but was sometimes because of an error in the table. Flagging these issues with authors at the submission stage could reduce errors. Arithmetic and calculation errors were considered an important and common mistake by medical journal editors [@FernandesTaylor2011]. 
+Our automated algorithm was able to flag baseline tables that would be worth raising with the authors during journal peer review. However, this was not always due to under- or over-dispersion but was sometimes because of an error in the table or because the authors had mislabelled their study as a trial. Flagging these issues with authors at the submission stage could reduce errors and improve reporting. Arithmetic and calculation errors were considered an important and common mistake by medical journal editors [@FernandesTaylor2011]. 
 
-Our algorithm did flag trials that appeared to be under-dispersed. Flagging trials where the baseline table is under-dispersed might protect journals from publishing fraudulent papers, as this has been a clue in previous fraud investigations []. It is far better to prevent the publication of fraudulent papers, as post-publication retractions which can be long and costly [@Carlisle2020]. A study of randomised trials submitted to the journal _Anaesthesia_, estimated that around one quarter of trials had false data that was problematic enough to invalidate the trial [@Carlisle2020]. Research fraud may be increasing due to fiercer competition for funding and promotion that often depend on publication counts [@Gopalakrishna2021]. 
+Our algorithm did flag trials that appeared to be under-dispersed. Flagging trials where the baseline table is under-dispersed might protect journals from publishing fraudulent papers, as this has been a clue in previous fraud investigations [@George2015]. It is better to prevent the publication of fraudulent papers, as post-publication retractions which can be long and costly [@Carlisle2020]. A study of randomised trials submitted to the journal _Anaesthesia_, estimated that around one quarter of trials had false data that was problematic enough to invalidate the trial [@Carlisle2020]. Research fraud may be increasing due to fiercer competition for funding and promotion that often depend on publication counts [@Gopalakrishna2021]. 
 
-Our algorithm had a relatively poor ability to detect under-dispersion in simulated trials and relatively few papers were flagged as under-dispersed in our trial sample. This lack of statistical power is due to the often small number of summary statistics in baseline tables, with a mean of 15 rows per table. The power can be increased by combining baseline tables from the same research group [@Bolland2019b]. Our algorithm has increased the statistical power compared with the uniform test, as our approach combines continuous and percentage summary statistics whereas the uniform test used continuous summary statistics alone. 
+Some of the trials flagged by the algorithm were false positives as the algorithm was unable to correctly read in the baseline table. Often this was because the authors chose a non-standard presentation, and simpler and more consistent baseline tables would improve the accuracy of our algorithm. However, journals are unlikely to prioritise consistent presentation given the many other current issues in peer review [@Tennant2020]. 
+<!---We also note that by requiring tables that are relatively well formatted, our algorithm would be applied to better formatted papers, which may be higher quality.--->
 
-Some of the trials flagged by the algorithm were false positives as the algorithm was unable to correctly read in the baseline table. Often this was because the authors chose a non-standard presentation, and simpler and more consistent baseline tables would improve the accuracy of our algorithm. However, journals are unlikely to prioritise consistent presentation given the many other current issues in peer review [@Tennant2020].
-
-At times our algorithm flagged papers where the baseline table was not a baseline table for a randomised trial, but was a study that re-used the data from a trial. For example, a study which examined responders and non-responders to a randomised treatment, and the table that we extracted which included demographics compared non-randomised groups and dispersion is likely (PMC7660513). It is challenging to exclude these studies as the abstract and title naturally talk about the randomised trial. Any automated flags raised for papers like this would need to be filtered by a person, or the authors whose study was flagged could simply explain that it was not a randomised trial.
+At times our algorithm flagged papers where the baseline table was not a baseline table for a randomised trial, but was a study that re-used the data from a trial. For example, a study which examined responders and non-responders to a randomised treatment, and the table that we extracted which included demographics compared non-randomised groups and so over-dispersion is likely (PMC7660513). It is challenging to exclude these studies as the abstract and title naturally talk about the randomised trial. Any automated flags raised for papers like this would need to be filtered by a person, or the authors whose study was flagged could simply explain that it was not a randomised trial. A group that have designed an automated procedure to detect fake papers containing "tortured phrases" use a two-stage approach where results that are flagged need to be confirmed by a person [@Cabanac2021].
 
 Publishers have trialled automated tools to check statistics and reporting completeness [@BMJOpen2017;@Frontiers2018;@Heaven2018]. If applied by a publisher, our algorithm could be adapted to suit the publisher's style; the current algorithm tried to cover all journals. The parameters that control which papers are flagged could be tuned with experience to reduce false positives, which are the threshold probability that the precision is non-zero and the size of the precision multiplier. 
 
 ## Using t-statistics
 
-In the simulation study, our model based on the distribution of t-statistics clearly outperformed using the distribution of p-values. Using t-statistics, a few unusual results can mean that the t-distribution is flagged as over-dispersed, whereas these could easily be hidden when examining the uniformity of the p-value. Our approach also dealt well with skewed data and with small samples of binary data, whereas the p-value approach often wrongly flagged simulated trials as potentially non-random.
+In the simulation study, our model based on the distribution of t-statistics clearly outperformed using the distribution of p-values. Our model dealt well with skewed data and with small samples of binary data, whereas the p-value approach often wrongly flagged these simulated trials as potentially non-random.
 
-Our model did not perform as well when summary statistics for continuous variables used too few decimal places (decimal places do not matter for percentages which are based on the integers of the numerator and denominator). Over-rounding down was relatively common in a study of abstracts, with 12% of percentages wrongly rounded down [@Barnett2018]. Authors should follow the guidelines for decimal places as this make papers more readable and facilitate checks like ours [@Cole2015]. 
+Our model did not perform as well when summary statistics for continuous variables used too few decimal places (decimal places do not matter for percentages which are based on the integers of the numerator and denominator). Over-rounding of numbers was relatively common in a study of abstracts, with 12% of percentages wrongly rounded down [@Barnett2018]. Authors should follow the guidelines for decimal places to make papers more readable and facilitate checks like ours [@Cole2015]. 
 
 A previous simulation study also found that p-values in a baseline table for categorical data can be non-uniform even for trials that were randomised, and hence recommended against including categorical data [@Bolland2019b]. Our method using t-statistics overcomes this problem, and as 54% of summary statistics were numbers or percentages (Table&nbsp;\@ref(tab:stats)) this greatly increases the available data. An advantage of including percentage summary statistics is that they do not have the same rounding issues as continuous summary statistics.
 
-We have created a shiny app where researchers can upload the summary statistics for a trial to examine the distribution of t-statistics and get the results from our Bayesian model [https://aushsi.shinyapps.io/baseline/](https://aushsi.shinyapps.io/baseline/). This avoids the errors of automated data extraction but is more labour intensive. This tool could be useful for researchers who are concerned about about an authors' corpus.
+We have created a shiny app where researchers can upload the summary statistics for a trial to examine the distribution of t-statistics and get the results from our Bayesian model [https://aushsi.shinyapps.io/baseline/](https://aushsi.shinyapps.io/baseline/). This avoids the errors of automated data extraction but is more labour intensive. This tool could be useful for researchers who are concerned about particular papers.
 
 ## Relation to previous work
 
 A number of other automated tools have been used to detect numerical problems in papers, including _statcheck_ for p-values [@Nuijten2020] and _SPRITE_ for summary statistics [@Heathers2018]. An automated check of p-values and confidence intervals found up to 5% had significant errors, suggesting there are likely tens of thousands of published papers containing significant but undetected errors [@Wren2018]. These automated checks had similar motivations to ours: to automate the laborious process of checking numerical results and improve the quality of published papers and/or correct errors in published papers. 
 
-We used t-statistics to test for issues in baseline tables, but other methods could be applied such as using Benford's law [@George2015; @Bradshaw2021].
+We used t-statistics to test for issues in baseline tables, but other methods could be applied such as Benford's law [@George2015; @Bradshaw2021].
 
-Previous studies have examined the percentage of randomised trials that erroneously used p-values to compare randomised groups [@Pocock2002;@Ahn2019]. A study of over 300 trials from 2010 to 2017 in one journal and found 27% used p-values in tables [@Ahn2019]. An older study examined 50 trials from four high profile journals and found that 48% included significance tests [@Pocock2002]. These are less than our figure of `r overall_pval$mean`% which could be because we include more journals and because we also searched for mentions of "statistical significance" not just p-values. One advantage of so many p-values being presented is that they could be compared with the p-values calculated from the t-statistics and large differences flagged. We found multiple examples where the reported p-values were incorrect.
+Previous studies have examined the percentage of randomised trials that erroneously used p-values to compare randomised groups [@Pocock2002;@Ahn2019]. A study of over 300 trials from 2010 to 2017 in one journal and found 27% used p-values in tables [@Ahn2019]. An older study examined 50 trials from four high profile journals and found that 48% included significance tests [@Pocock2002]. These are less than our figure of `r overall_pval$mean`% which could be because we include more journals and because we also searched for mentions of "statistical significance" not just p-values. One advantage of so many p-values being presented is that they could be compared with the p-values calculated from the t-statistics and large differences flagged to reduce reporting errors. We found multiple examples where the reported p-values were incorrect.
 
 ## Individual-level data
 
-Problems can be more accurately detected in individual data than summary statistics and this also avoids any rounding errors [@Buyse1999;@Carlisle2020]. Statistical approaches have been used to detect fraud in trials using individual patient data [@Buyse1999;@Wu2010;@Simonsohn2013]. Our methods could be extended to examine the dispersion in individual data at baseline, and would likely be far more accurate [@Carlisle2020]. Journals could request that authors provide the underlying trial data at submission to perform detailed checks [@Roberts2015;@Shamseer2016]. Authors may raise concerns about participant confidentiality and data security [@Hardwicke2018], but many data sets in health use anonymised data and authors need not commit to openly sharing their data or sharing any variables that include personal information. 
+Problems can be more accurately detected in individual data than summary statistics and this also avoids any rounding errors [@Buyse1999;@Carlisle2020]. Statistical approaches have been used to detect fraud in trials using individual patient data [@Buyse1999;@Wu2010;@Simonsohn2013]. Our methods could be extended to examine the dispersion in individual data at baseline, and would likely be far more accurate [@Carlisle2020]. Journals could request that authors provide the underlying trial data at submission to perform detailed checks [@Roberts2015;@Shamseer2016]. Authors may raise concerns about participant confidentiality and data security [@Hardwicke2018], but many data sets in health collect anonymised data and authors need not commit to openly sharing their data or sharing any variables that include personal information. 
 <!--- "Individual patient data increased the detection of false trial data about 20-fold compared with trials without spreadsheets." [@Carlisle2020] --->
 
 ## Improved reporting
 
 There were many potential trials that were excluded because they were not randomised trials (Table&nbsp;\@ref(tab:excluded)). Two key reasons for this were poor reporting in the title and abstract [@Glasziou2014], and studies that re-used data from a trial in other study designs (e.g., PMC6761647). Some baseline tables were also excluded because of non-standard wording in the caption or because of complex formatting in the table. There is a great variance across journals in how baseline tables are reported, including varied uses of symbols, labels and punctuation marks. 
-
 We found many mistakes in baseline tables, including misreported statistics (e.g., continuous summary statistics labelled as percentages), missing labels, typographical errors, means reported without standard deviations, zero standard deviations, incorrect confidence intervals, incorrect p-values, and percentages that did not match the numerator divided by the denominator. Researchers should take more care and accurately report their results [@Prager2018].
 
-Greater use of standardised reporting---such as recommended by CONSORT---would increase the amount and accuracy of data that can be captured using automation. The poor level of compliance with CONSORT is highlighted by the number of trials using p-values to compare randomised groups, a practice that the CONSORT statement warns against, as have multiple statisticians for decades [@Pocock2002]. Even supposedly simple statistics such as age and gender were inconsistently presented in baseline tables, and a previous study similarly found highly varied reporting in age and gender in the clinicaltrials.gov database [@Cahan2017]. Journals that wanted to use our algorithm to screen trials may need to provide more guidance to authors, although there are reports from journal editors that authors rarely read instructions [@Tobin2000], and there is no systematic study of whether journal instructions are read [@Maliki2021].
+Greater use of standardised reporting---such as recommended by CONSORT---would increase the amount and accuracy of data that can be captured using automation. The poor level of compliance with CONSORT is highlighted by the number of trials using p-values to compare randomised groups, a practice that the CONSORT statement warns against, as have multiple statisticians for decades [@Pocock2002]. Even supposedly simple statistics such as age and gender were inconsistently presented in baseline tables, and a previous study similarly found highly varied reporting in age and gender in the clinicaltrials.gov database [@Cahan2017]. Journals that wanted to use our algorithm to screen trials may need to provide more guidance to authors, although journal editors have raised concerns that authors rarely read instructions [@Tobin2000], and there is no systematic study of whether journal instructions are read [@Maliki2021].
 
-## Improvements to our algorithm
+## Limitations
+
+We categorised papers as being under- or over-dispersed which is arbitrary and does not account for the strength of the dispersion ($\epsilon_i$ in the equations). However, when dealing with thousands of papers, some automated decision making is needed. Researchers working with individual papers could focus on the continuous statistic $\epsilon_i$. 
 
 We assumed one sample size per group, but there were tables where the sample size varied by row (e.g., PMC7086156) and hence our calculated t-statistics will be inaccurate. Some trials had multiple baseline tables (e.g., PMC7908111), however we just used the first table. Some baseline tables were in an appendix and we only extracted tables from the main text in XML format.
 
+Our simulation examined seven different scenarios, but other likely scenarios could be examined. We assumed a that 50% of statistics were copied when the data were under-dispersed, but fraudsters may copy fewer statistics on average.
 
 ## Conclusion
 
-Our tool is potentially useful as an initial screening tool of randomised trials, but currently needs human validation of the trials that are flagged as the automated data extraction is imperfect. Tools like our are likely to become more widely used as journals struggle to find reviewers due to increasing submission numbers and reviewers are over-burdened [@Severin2021].   
+Our tool is potentially useful as an initial screening tool of randomised trials, but currently needs human validation of the trials that are flagged as the automated data extraction is imperfect. Similar tools are likely to become more widely used as journals struggle to find reviewers due to increasing submission numbers and over-burdened reviewers [@Severin2021].
 
 <!--- The integrity of randomised trials is key to evidence-based medicine because of their influence on practice directly and via meta-analysis.--->
 
 
 ## Acknowledgements
 
-_Any to add?_
+Thanks to John Carlisle for useful comments on the study design and first draft.
 
 ## Competing interests
 

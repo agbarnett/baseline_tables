@@ -82,7 +82,7 @@ ftab = flextable(manual) %>%
 ftab
 ```
 
-There were more trial unavailable to the algorithm as the XML file was not available whilst the online HTML version was accessible. 
+More trials were unavailable to the algorithm than the hand-entered data as the XML file was not available whilst the online HTML version was accessible. 
 <!--- Some were the algorithm could not get the full text (e.g., PMC7055925) were actually available.--->
 This could be investigated further to increase the number of trials available to the algorithm. 
 
@@ -142,17 +142,20 @@ Acronyms explained:
 ```{r, include=FALSE}
 # check combinations
 check = filter(both, algorithm == 'No baseline table', is.na(manual)) # not excluded by manual
+check = filter(both, algorithm == 'No sample size', is.na(manual)) # not excluded by manual
 ```
 
 As mentioned above, there were a relatively high number of trials that were available online for manual entry but not in XML format for the algorithm (green cell). 
 
-The algorithm failed to detect six baseline tables (yellow cell). One was a graphical table, one had a table legend that did not clearly identify it as a baseline table, 
+The algorithm failed to detect six baseline tables (yellow cell). Two tables were in online supplements which the algorithm did not search (PMC6964911, PMC7919220), two papers had no baseline table (PMC7698004, PMC7400245), one paper had a graphical table that the algorithm cannot process (PMC7310966), and one paper had a table legend that did not clearly identify it as a baseline table (PMC7468014).
+<!--- PMC7468014 used `preoperative` which could be added to patterns? --->
 
-There were seven studies where the manual entry managed to extract the sample size but the algorithm did not (red cell). This is likely because the sample size was not in the table but was in the text or footnote.
+There were five studies where the manual entry managed to extract the sample size but the algorithm did not (red cell). This was because the sample size was not in the table, title or footnote. 
+<!--- PMC7386579 used `N1=` `N2=`, could be added to program? --->
 
 # Table data 
 
-This section examines the differences in the table data.
+This section examines the differences in the table data extracted by the algorithm compared with the manually entered data.
 
 ## Differences in row and column numbers
 
@@ -197,7 +200,7 @@ This is because the algorithm excluded rows where the written percentages did no
 
 ## Differences in statistics type 
 
-This section looks at the estimated statistics type, such as "continuous" or "percent". We combine "percents" and "numbers" as they get treated the same in the analysis. We excluded 71 results where there was no statistic given for the manually entered data.
+This section looks at the estimated statistics type, such as "continuous" or "percent". I combined "percents" and "numbers" as are treated the same in the analysis. I excluded 71 results where there was no statistic given for the manually entered data.
 
 ### a) Differences per trial
 
@@ -235,15 +238,15 @@ check = filter(per_paper, p_match < 60)
 
 Poor matching was sometimes due to:
 
-* The algorithm rejected multiple rows in the data as the written percentages had not been calculated correctly (PMC7038258, PMC6966838, PMC6986109). 
+* The algorithm rejected multiple rows in the table data as the written percentages had not been calculated correctly (PMC7038258, PMC6966838, PMC6986109). 
 * The table had badly aligned columns (PMC7424488).
-* The table was split into multiple sub-tables and as the algorithm only captured the first table this created missing data (PMC7528007).
+* The table was split into multiple sub-tables and the algorithm only captured the first table, creating missing data (PMC7528007).
 
 ### b) Differences by statistic type
 
 ```{r}
 #
-types = c('continuous','median','percent','Missing')
+types = c('ci','continuous','median','percent','Missing')
 # cross-tabulation
 by_stat = group_by(matches, statistic.x, statistic.y) %>%
   tally() %>%
@@ -252,17 +255,22 @@ by_stat = group_by(matches, statistic.x, statistic.y) %>%
   pivot_wider(names_from='statistic.y', values_from='n') %>%
   rename('manual' = 'statistic.x') %>%
   select('manual', types) %>%
-  mutate_all(replace_zero)
+  ungroup() %>%
+  mutate_all(as.character) %>% # for replace_zero
+  mutate_all(replace_zero) %>%
+  mutate(manual = ifelse(manual == 'ci', 'confidence interval', manual)) %>%
+  rename('confidence interval' = 'ci') # fix ci
 
 # table
 ftab = flextable(by_stat) %>%
-  add_header_row(values=c(' ', rep('Algorithm', 4))) %>%
-  merge_at(i=1, j=2:5, part='header') %>%
+  add_header_row(values=c(' ', rep('Algorithm', 5))) %>%
+  merge_at(i=1, j=2:6, part='header') %>%
   theme_box() %>%
-  bg(i=2, j=2, part='body', bg='grey77') %>% # shade diagonals
-  bg(i=3, j=3, part='body', bg='grey77') %>% # shade diagonals
-  bg(i=4, j=4, part='body', bg='grey77') %>% # shade diagonals
-  bg(i=5, j=5, part='body', bg='grey77') %>% # shade diagonals
+  bg(i=1, j=2, part='body', bg='grey77') %>% # shade diagonals
+  bg(i=2, j=3, part='body', bg='grey77') %>% # shade diagonals
+  bg(i=3, j=4, part='body', bg='grey77') %>% # shade diagonals
+  bg(i=4, j=5, part='body', bg='grey77') %>% # shade diagonals
+  bg(i=5, j=6, part='body', bg='grey77') %>% # shade diagonals
   autofit()
 ftab
 ```
@@ -323,9 +331,9 @@ hplot
 
 Some mismatches were caused by table columns that were not aligned (PMC7424488). This could be improved by a more complex matching that used the statistics in the rows to better align the manual and algorithm data.
 
-One large error was for a table that only gave a percent and as the algorithm recalculated the numerator this causes multiple mismatches (PMC6966838).
+One large error was for a table which only gave percentages for some rows, but the algorithm recalculated the numerator which caused multiple mismatches in the statistics as the calculated numerators were compared with the percentages (PMC6966838). These mismatch errors are not a concern for the model which will use the numerators.
 
-#### Summary statistics for differences in statistics
+#### Summary statistics for close matches in statistics
 
 ```{r}
 # matching statistics numbers
@@ -338,7 +346,8 @@ stats = select(matches, pmcid, statistic.y, starts_with('match')) %>%
   group_by(statistic.y, name) %>%
   summarise(n = n(), 
             match = sum(value)) %>%
-  mutate(percent = 100*match/n,
+  mutate(statistic.y = ifelse(statistic.y == 'ci', 'confidence interval', statistic.y),
+         percent = 100*match/n,
          stat = case_when(
            name == 'match_stat1' ~ 'First',
            name == 'match_stat2' ~ 'Second'
@@ -356,7 +365,7 @@ ftab = flextable(stats) %>%
 ftab
 ```
 
-The table shows the number of close matches of an under 1% difference. The statistics are given by the statistic type and whether it was the first or second statistic. These results ignore missing data and just look at where there were two statistics to compare.
+The table shows the number of close matches of an under 1% difference. The statistics are given by the statistic type and whether it was the first or second statistic in the table cell (e.g., for continuous data it would be the mean first and standard deviation second). These results ignore missing data and just look at where there were two statistics to compare.
 
 The results were somewhat worse for the median and percentages.
 
@@ -382,7 +391,8 @@ stats = filter(matches, pmcid %in% matches_numbers) %>%
   group_by(statistic.y, name) %>%
   summarise(n = n(), 
             match = sum(value)) %>%
-  mutate(percent = 100*match/n,
+  mutate(statistic.y = ifelse(statistic.y == 'ci', 'confidence interval', statistic.y),
+        percent = 100*match/n,
          stat = case_when(
            name == 'match_stat1' ~ 'First',
            name == 'match_stat2' ~ 'Second'
@@ -400,7 +410,7 @@ ftab = flextable(stats) %>%
 ftab
 ```
 
-This table only compares baseline tables where the number of rows and columns were the same. The aim is to reduce the number of misaligned results. The table again shows the number and percent of matches within 1%.
+This table only compares baseline tables where the number of rows and columns for the algorithm and manually entered data were the same. The aim is to reduce the number of misaligned results. The table again shows the number and percent of matches within 1%.
 
 The percentage of matches is clearly better than above, confirming that the mismatching of table rows is the major issue.
 
@@ -422,57 +432,6 @@ Some differences were because the algorithm changed the two statistics of a perc
 
 <!--- There were some errors in data entry that were corrected and a few other data entry errors may have been missing. --->
 
-# P-values
-
-This section examines differences in the detection of p-values.
-
-```{r, pvalues}
-pvals = full_join(p_hand, p_algorithm, by='pmcid')
-#
-compare = group_by(pvals, in_table, reported) %>%
-  filter(pmcid != 'PMC7549819') %>% # exclude non-RCT
-  mutate(in_table = case_when(
-    in_table == TRUE ~ 'Yes',
-    in_table == FALSE ~ 'No',
-    is.na(in_table) == TRUE ~ 'Missing'
-  ),
-  reported = case_when(
-    reported == 'yes' ~ 'Yes',
-    reported == 'no' ~ 'No',
-    reported == '' ~ 'Missing', 
-    is.na(reported) == TRUE ~ 'Missing'
-  )) %>%
-  rename('Algorithm' = 'in_table',
-         'manual' = 'reported') 
-# one to check
-check_pvals = filter(compare, Algorithm != manual)
-# table
-tab = tabyl(compare, manual, Algorithm) %>%
-  adorn_totals("row") 
-#
-ftab = flextable(tab) %>%
-  add_header_row(values=c(' ', rep('Algorithm', 3))) %>%
-  merge_at(i=1, j=2:4, part='header') %>%
-  theme_box() %>%
-  autofit() %>%
-  bg(i=1, j=2, part='body', bg='grey77') %>% # shade diagonals
-  bg(i=2, j=3, part='body', bg='grey77') %>% # shade diagonals
-  bg(i=3, j=4, part='body', bg='grey77')  # shade diagonals
-ftab
-# binomial confidence interval for error
-x = filter(compare, manual == Algorithm,
-           Algorithm !='Missing',
-           manual !='Missing')
-x = nrow(x) # number of matches;
-n_pval = x
-pval_bin = binom.confint(x=x, n=x, method='exact') %>%
-  mutate(lower = roundz(lower*100,1),
-         upper = roundz(upper*100,0))
-```
-
-This table includes more results than the other analyses as we included two papers that would be excluded for our algorithm but were useful for this comparison. 
-
-The exact 95% confidence interval for the percentage of matches is `r pval_bin$lower`% to `r pval_bin$upper`%. Hence the algorithm has a high accuracy for delineating if p-values were included in baseline tables. We excluded the results that were missing for the algorithm or manual entry, as these missing were not about the p-value but about the study design and exclusion criteria.
 
 # Sample size
 
@@ -509,7 +468,7 @@ The biggest difference was due to a table with a relatively complex format that 
 
 # Trialstreamer sample size
 
-In this section I compare the total sample size from my algorithm with those from _trialstreamer_ [@Marshall2020].
+I compared the total sample size in my algorithm with that estimated by the _trialstreamer_ program [@Marshall2020] for the 1,684 trials which had estimated sample sizes from both approaches. 
 
 ```{r}
 # get the two data sets
@@ -542,9 +501,9 @@ hplot = ggplot(data= compare, aes(x=ratio))+
 hplot
 ```
 
-This is the difference in the total that the algorithm extracted from the baseline table and the number randomised estimated by _trialstreamer_. The number of comparisons was `r nrow(compare)`.
+This is the difference in the total sample size that the algorithm extracted from the baseline table and the number randomised estimated by _trialstreamer_. The number of comparisons was `r nrow(compare)`.
 
-The x-axis in the plot is on a log-scale. There were `r 100-percent_out`% of studies where the difference was within plus/minus 10%.
+The x-axis is on a log-scale (base 10). There were `r 100-percent_out`% of studies where the difference was within plus/minus 10%.
 
 Large differences were explained by:
 
@@ -553,8 +512,8 @@ Large differences were explained by:
 * because the baseline table used a subset of the full sample due to missing data or drop-out and the authors wrote the full sample in the abstract (PMC6746080). 
 
 ```{r, include=FALSE}
-# to include results in the paper
-save(pval_bin, n_pval, bin, file='results/pval_validation.RData')
+# to include results in the paper - no longer needed
+#save(pval_bin, n_pval, bin, file='results/pval_validation.RData')
 ```
 
 # Reference {#references}

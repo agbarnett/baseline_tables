@@ -1,6 +1,6 @@
 # 4_model.R
 # Fits a Bayesian model to the baseline table data extracted from RCTs published on pubmed central
-# January 2022
+# June 2022
 library(dplyr)
 library(tidyr)
 library(TeachingDemos)
@@ -11,8 +11,16 @@ source('4_MCMC_basics.R')
 source('99_functions.R')
 
 ## get the data; select which source of data to use
-sources = c('my_search', 'trialstreamer', 'validation', 'simulation', 'bland')
-source = sources[2] # controls which data source is run
+sources = c('my_search', 
+            'trialstreamer', 
+            'validation', 
+            'simulation', 
+            'bland', 
+            'simulation_two', 
+            'simulation_three', 
+            'carlisle', 
+            'saitoh')
+source = sources[5] # controls which data source is run
 stage = 'model'
 source('1_which_data_source.R') # uses `source` and `stage`
 
@@ -23,6 +31,11 @@ if(add_retracted == TRUE){
   # combine two data sets
   table_data = bind_rows(table_data, retracted_data)
 }
+
+# sensitivity analysis, are results sensitive to which simulations are included?
+# answer = yes, because of hyper-parameter for theta
+#sims_to_use = c('none','too precise','too variable')
+#table_data  =filter(table_data, issue %in% sims_to_use)
 
 # prepare the data for the Bayesian model
 for_model = make_stats_for_bayes_model(indata = table_data) # see 99_functions.R
@@ -58,7 +71,6 @@ n_removed = nrow(to_remove)
 with(for_model, plot(log2(size), t))
 with(for_model, plot(as.numeric(as.factor(pmcid)), t))
 with(for_model, plot(mdiff, log2(sem)))
-
 
 
 # temporary

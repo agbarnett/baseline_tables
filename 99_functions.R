@@ -4,6 +4,7 @@
 
 # to replace missing with zero, used by 3_compare_algorithm_hand.Rmd
 replace_zero = function(x){replace_na(x, '0')}
+replace_zero_num = function(x){replace_na(x, 0)}
 
 # simple function used by 4_model.R
 is.this = function(x, i){sum(x==i)/length(x)}
@@ -843,7 +844,7 @@ if(nrow(sample_sizes) > 0){
                 iqr = IQR(n_est),
                 sd = sd(n_est)) %>% # get mode as an estimate of sample size
       ungroup() %>%
-      filter(iqr == 0) %>% # only allow a small difference in sample sizes
+      filter(iqr < 1) %>% # only allow a small difference in sample sizes
       select(column, sample_size)
     if(nrow(numbers) > 0){return(numbers)} # use if there are any results
   }
@@ -957,18 +958,20 @@ t.test2 <- function(mean, sd, n, equal.variance=TRUE, return_what = 'difference'
 # approximation of two-sample t-test for binomial data (see D'Agostino 1998)
 t.test2.binomial <- function(a, b, c, d, return_what = 't')
 {
-  # fix for zero counts for successes or failures
-  if(a == 0){a = 0.5}
-  if(b == 0){b = 0.5}
-  if(c == 0){c = c + 0.5}
-  if(d == 0){d = d + 0.5}
   #
   m = a + c
   n = b + d
   p1 = a/m
   p2 = b/n
+  # fix to avoid zero variance (May 2022)
+  if(p1==0){p1 = 0.5/m}
+  if(p2==0){p2 = 0.5/n}
+  if(p1==1){p1 = (m-0.5)/m}
+  if(p2==1){p2 = (n-0.5)/n}
+  # calculate variance
   var1 = p1*(1-p1) # variance
   var2 = p2*(1-p2)
+  #
   pooled_var = ((m-1)*var1 + (n-1)*var2) / (m+n-2) # pooled variance
   denom = sqrt((1/m) + (1/n))
   mdiff = p1 - p2 # mean difference
@@ -1428,6 +1431,7 @@ get_affiliation = function(inpage){
 ## run the Bayesian model
 run_bugs = function(in_data,
                     debug = FALSE,
+                    single_study = FALSE,
                     find_problem = FALSE, # search for problem studies
                     batch_size = 3, # run in batches if looking for a problem 
                     p_precision = 0.05 # prior probabilities that the study precision is too wide or too narrow
@@ -1440,6 +1444,7 @@ run_bugs = function(in_data,
                        study = as.numeric(as.factor(study))) # re-number, just in case missing numbers
     bugs = run_bugs_one(in_data = in_data,
                         debug = debug,
+                        single_study = single_study,
                         p_precision = p_precision)
   }
   
@@ -1465,6 +1470,8 @@ run_bugs = function(in_data,
 ## run a single version of the model
 run_bugs_one = function(in_data,
                         debug = debug,
+                        single_study = FALSE,
+                        hyper_theta = FALSE, # hyper-parameter for theta?
                     p_precision = NA # prior probabilities that the study precision is: too wide, zero, too narrow
 ){
 # prepare the data for Winbugs
@@ -1481,13 +1488,36 @@ bdata = list(N = N,
 mu.var = matrix(data=NA, ncol=2, nrow=N_studies) # start with NA
 mu.var[,2] = 0.1 # small positive
 #
+if(hyper_theta == TRUE){
 inits = list(p_precision = p_precision,
              mu.var = mu.var, 
              var.flag = rep(0, N_studies))  # start all with no flag for mean or variance
+}
+if(hyper_theta == FALSE){
+  inits = list(mu.var = mu.var, 
+               var.flag = rep(0, N_studies))  # start all with no flag for mean or variance
+}
+if(single_study == TRUE){
+  inits = list(mu.var = c(NA, 0.1), 
+               var.flag = 0)  # start all with no flag for mean or variance
+}
 inits = rep(list(inits), n.chains) # repeat per chains
 
-parms = c('var.flag','mu.var','p_precision')
-bugs = bugs(data=bdata, inits=inits, parameters=parms, model.file=bfile, DIC=FALSE,
+if(hyper_theta == TRUE){
+  model.file = bfile # see 4_make_winbugs.R
+  parms = c('var.flag','mu.var','p_precision')
+}
+if(hyper_theta == FALSE){
+  model.file = bfile_no_hyper
+  parms = c('var.flag','mu.var')
+}
+if(single_study == TRUE){
+  model.file = bfile_no_hyper_single
+  parms = c('var.flag','mu.var')
+  bdata$N_studies = NULL # remove, not needed for single study
+  bdata$study = NULL # remove
+}
+bugs = bugs(data=bdata, inits=inits, parameters=parms, model.file=model.file, DIC=FALSE,
             n.chains=n.chains, n.iter=MCMC*thin*2, n.thin=thin, bugs.seed=seed, debug=debug,
             bugs.directory="c:/Program Files/WinBUGS14")
 

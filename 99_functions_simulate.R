@@ -1,6 +1,6 @@
 # 99_functions_simulate.R
 # functions for simulating baseline table data
-# November 2021
+# February 2022
 
 ### simulate baseline table data from one paper in the same format as extracted data
 simulate_table1 = function(
@@ -169,20 +169,186 @@ simulate_table1_alternative = function(
                  mean = mean1[k],  # assume same mean in two groups
                  sd = sd[k]) # use multivariate normal to create correlated groups
       m_1 = c(m_1, mean(m1))
+      m_2 = c(m_2, mean(m2))
       sd_1 = c(sd_1, sd(m1))
       sd_2 = c(sd_2, sd(m2))
-      mean2 = mean(m2)
-      # then create statistics in group 2 (if there's an issue) ... (only change mean, not SD)
-      # addition scaled to the SD; centred on mean for group 1
-      if(issue == 'too variable'){ # add a big number
-        scale = 1
-        mean2 = mean1 + sample(x=c(-sd[k]/scale, 0, sd[k]/scale), size=1) # add relatively large number
+    }
+    # then create statistics in group 2 (if there's an issue) ... (only change mean, not SD)
+    # addition scaled to the SD; centred on mean for group 1
+    if(issue == 'too variable'){ # add a big number
+      scale = 1
+      m_2 = m_1 + sample(x=c(-sd[k]/scale, 0, sd[k]/scale), size=1) # add relatively large number
+    }
+    if(issue == 'too precise'){ # add a small number
+      scale = 10
+      m_2 = m_1 + sample(x=c(-sd[k]/scale, 0, sd[k]/scale), size=1) # add small number
+    }
+    # round to mimic journal presentation
+    m_1 = round(m_1, dp)
+    m_2 = round(m_2, dp)
+    sd_1 = round(sd_1, dp+1)
+    sd_2 = round(sd_2, dp+1)
+    # create data with structure to match automatically extracted data
+    m_frame_1 = data.frame(statistic='continuous', row=n_percent + (1:n_continuous), column=1, stat1=m_1, stat2=sd_1, sample_size = sample_size)
+    m_frame_2 = data.frame(statistic='continuous', row=n_percent + (1:n_continuous), column=2, stat1=m_2, stat2=sd_2, sample_size = sample_size)
+    ## concatenate data
+    sim_data = bind_rows(sim_data, m_frame_1, m_frame_2)
+  }
+  
+  # create dummy pmcid that includes the issue
+  pmcid = paste(issue, loop, sep='', collapse = '') # using the loop number
+  pmcid = gsub(pattern=' ', replacement = '', pmcid) # remove spaces
+  sim_data$issue = issue
+  sim_data$pmcid = pmcid
+  return(sim_data)
+  
+} # end of function
+
+### simulate categorical variables, e.g., ethnicity
+simulate_table1_categorical = function(
+    loop = NA, # for numbering studies
+    gamma_table = c(2.2, 0.15), # gamma shape and rate for the number of table rows (based on real data)
+    gamma_sample_size = c(10.7, 2.84), # gamma shape and rate for the log-transformed sample size (based on real data)
+    exp_sample_size = TRUE, # exponentiate sample size (if parameters above are on log-scale)
+    min_sample_size = 4 # minimum sample size to avoid errors
+  
+){
+  
+  sim_data = NULL
+  
+  # number of categories for the categorical variable
+  n_cats = 3
+  
+  # generate number of rows per baseline table 
+  n_rows = round(rgamma(n=1, shape = gamma_table[1], rate=gamma_table[2]))
+  n_rows = round(n_rows / n_cats) # divide by the number of categories to maintain overall table size
+  if(n_rows <= 2){n_rows = 3} # prevent missing or very small tables
+  
+  # randomly generate sample size per groups using gamma (assume the same sample size in both columns)
+  sample_size = rgamma(n = 1, shape = gamma_sample_size[1], rate=gamma_sample_size[2])
+  if(exp_sample_size == TRUE){sample_size = exp(sample_size)}
+  sample_size = max(round(sample_size), min_sample_size)
+  
+  ## create multiple categorical variables
+  for (i in 1:n_rows){
+    probs = rpois(n=n_cats, lambda = 3^(1:n_cats)) + 1 # random p's for three groups, plus one to avoid zeros, increasing lambda by category
+    probs = probs / sum(probs) # multinomial
+    cum_r_1 = cum_r_2 = 0
+    for (g in 1:(n_cats-1)){
+      r_1 = rbinom(n=1, size=sample_size, prob=probs[g]) # Numbers in group 1
+      r_2 = rbinom(n=1, size=sample_size, prob=probs[g]) # Numbers in group 2 (start as no issue)
+      # create data with structure to match automatically extracted data
+      p_frame_1 = data.frame(statistic='percent', row=i+(g/(n_cats+1)), column=1, stat1=r_1, sample_size = sample_size)
+      p_frame_2 = data.frame(statistic='percent', row=i+(g/(n_cats+1)), column=2, stat1=r_2, sample_size = sample_size)
+      ## concatenate data
+      sim_data = bind_rows(sim_data, p_frame_1, p_frame_2)
+      cum_r_1 = cum_r_1 + r_1 # keep track of totals
+      cum_r_2 = cum_r_2 + r_2
+    }
+    # last row is remainder to ensure numbers add up
+    r_1 = sample_size - cum_r_1 # Numbers in group 1
+    r_2 = sample_size - cum_r_2
+    # create data with structure to match automatically extracted data
+    g = n_cats
+    p_frame_1 = data.frame(statistic='percent', row=i+(g/(n_cats+1)), column=1, stat1=r_1, sample_size = sample_size)
+    p_frame_2 = data.frame(statistic='percent', row=i+(g/(n_cats+1)), column=2, stat1=r_2, sample_size = sample_size)
+    ## concatenate data
+    sim_data = bind_rows(sim_data, p_frame_1, p_frame_2)
+    
+  }
+  sim_data = mutate(sim_data, row = as.numeric(as.factor(row))) # renumber rows to integers
+  
+  # create dummy pmcid that includes the issue
+  pmcid = paste('categorical', loop, sep='', collapse = '') # using the loop number
+  pmcid = gsub(pattern=' ', replacement = '', pmcid) # remove spaces
+  sim_data$issue = 'categorical'
+  sim_data$pmcid = pmcid
+  return(sim_data)
+  
+} # end of function
+
+
+### another alternative that mimics under-dispersion by copying some results
+simulate_table1_alternative2 = function(
+  loop = NA, # for numbering studies
+  prop_copy = 0.5, # proportion of results to copy for under-dispersed
+  prop_continuous = 0.33, # what proportion of statistics are continuous (remainder are percent)
+  gamma_table = c(2.2, 0.15), # gamma shape and rate for the number of table rows (based on real data)
+  gamma_sample_size = c(10.7, 2.84), # gamma shape and rate for the log-transformed sample size (based on real data)
+  exp_sample_size = TRUE, # exponentiate sample size (if parameters above are on log-scale)
+  min_sample_size = 4, # minimum sample size to avoid errors
+  dp = 1, # decimal places for rounding
+  issue = 'none' # issue with the data, `none`, `too variable` for groups are too different, `too precise` for groups are too similar
+){
+  
+  sim_data = NULL
+  
+  # generate number of rows per baseline table 
+  n_rows = round(rgamma(n=1, shape = gamma_table[1], rate=gamma_table[2]))
+  if(n_rows <= 2){n_rows = 3} # prevent missing or very small tables
+  
+  # generate statistic for each row
+  statistic = rbinom(n=n_rows, size=1, prob=prop_continuous) 
+  statistic = c('percent','continuous')[statistic+1]
+  
+  # randomly generate sample size per groups using gamma (assume the same sample size in both columns)
+  sample_size = rgamma(n = 1, shape = gamma_sample_size[1], rate=gamma_sample_size[2])
+  if(exp_sample_size == TRUE){sample_size = exp(sample_size)}
+  sample_size = max(round(sample_size), min_sample_size)
+  
+  ## for percents
+  n_percent = sum(statistic == 'percent')
+  if(n_percent > 0){
+    p_1 = runif(n=n_percent, min=0, max=1) # random p's from 0 to 1
+    r_1 = rbinom(n=n_percent, size=sample_size, prob=p_1) # Numbers in group 1
+    r_2 = rbinom(n=n_percent, size=sample_size, prob=p_1) # Numbers in group 2 (start as no issue)
+    # then create numbers in group 2 ... (centred on count for group 1)
+    if(issue == 'too variable'){ # add a big number
+      r_2 = r_1 + sample(x=c(-sample_size/2,0,sample_size/2), replace=TRUE, size=n_percent) # add relatively large number to either side
+    }
+    if(issue == 'too precise'){ # 
+      n_copy = round(prop_copy*n_percent) # number to copy
+      if(n_copy > 0){
+        r_2[1:n_copy] = r_1[1:n_copy]
       }
-      if(issue == 'too precise'){ # add a small number
-        scale = 10
-        mean2 = mean1 + sample(x=c(-sd[k]/scale, 0, sd[k]/scale), size=1) # add small number
-      }
-      m_2 = c(m_2, mean2)
+    }
+    # avoid impossible numbers (needed as r_2 is perturbed):
+    r_2 = pmax(r_2, 0)
+    r_2 = pmin(r_2, sample_size)
+    # create data with structure to match automatically extracted data
+    p_frame_1 = data.frame(statistic='percent', row=1:n_percent, column=1, stat1=r_1, sample_size = sample_size)
+    p_frame_2 = data.frame(statistic='percent', row=1:n_percent, column=2, stat1=r_2, sample_size = sample_size)
+    ## concatenate data
+    sim_data = bind_rows(sim_data, p_frame_1, p_frame_2)
+  }
+  
+  ## for continuous
+  n_continuous = sum(statistic == 'continuous')
+  n_copy = round(prop_copy*n_continuous) # number to copy
+  if(n_continuous > 0){
+    mean1 = rnorm(n=n_continuous, mean=50, sd=60) # mean can be pretty much anywhere, more often positive
+    sd = rgamma(n=n_continuous, shape=5, rate=1) # must be positive
+    m_1 = m_2 = sd_1 = sd_2 = NULL
+    for (k in 1:n_continuous){ # simulate individual observations; have to loop through rows
+      m1 = rnorm(n = sample_size, 
+                 mean = mean1[k], # 
+                 sd = sd[k]) # 
+      m2 = rnorm(n = sample_size, 
+                 mean = mean1[k],  # assume same mean in two groups
+                 sd = sd[k]) # use multivariate normal to create correlated groups
+      m_1 = c(m_1, mean(m1))
+      m_2 = c(m_2, mean(m2))
+      sd_1 = c(sd_1, sd(m1))
+      sd_2 = c(sd_2, sd(m2))
+    }
+    # then create statistics in group 2 (if there's an issue) ... (only change mean, not SD)
+    # addition scaled to the SD; centred on mean for group 1
+    if(issue == 'too variable'){ # add a big number
+      scale = 1
+      m_2 = m_1 + sample(x=c(-sd[k]/scale, 0, sd[k]/scale), size=1) # add relatively large number
+    }
+    if(issue == 'too precise'){ 
+      m_2[1:n_copy] = m_1[1:n_copy] # only copy up to n_copy
     }
     # round to mimic journal presentation
     m_1 = round(m_1, dp)
