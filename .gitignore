@@ -13,7 +13,7 @@ temp3.R
 temp4.R
 latex*.txt
 5_summary_results*.docx
-/baseline
-/paper
-/references
-/web
+baseline/
+paper/
+references/
+web/
