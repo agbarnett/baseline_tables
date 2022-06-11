@@ -20,6 +20,7 @@ model.file = 'bugs_model_no_hyper_single_study.txt' # bugs model for single file
 
 # get the data
 source = 'saitoh'
+#source = 'hiruntrakul'
 stage = 'model'
 source('1_which_data_source.R') # uses `source` and `stage`
 
@@ -27,18 +28,6 @@ source('1_which_data_source.R') # uses `source` and `stage`
 table_data = mutate(table_data,
                     trial_num = as.numeric(str_remove(pattern='saitoh', pmcid))) # make trial numbers
 n_trials = max(table_data$trial_num)
-
-# function to make nice results
-neaten_results = function(in_res, type, n_table_rows){
-  store = data.frame(in_res$summary[,c(1,3,7)])
-  names(store)[2:3] =  c('lower','upper')
-  store$var = rownames(store)
-  store = mutate(store, 
-                 n_table_rows = n_table_rows,
-                 type = type)
-  row.names(store) = NULL
-  return(store)
-}
 
 # cumulative loop through trials in date order 
 bayes_results = unif_results = NULL
@@ -154,3 +143,15 @@ check_plot = ggplot(data=filter(bayes_results, !str_detect(var, 'flag')),
 
 # output to table?
 filter(bayes_results, str_detect(var, 'flag')) %>% select(n_trials, type, mean)
+
+# number of table rows
+filter(table_data, trial_num  <=10) %>%
+  select(trial_num , row) %>%
+  unique() %>%
+  nrow()
+# statistics
+filter(table_data, trial_num  <=10) %>%
+  select(trial_num , row, statistic) %>%
+  unique() %>%
+  group_by(statistic) %>%
+  tally()

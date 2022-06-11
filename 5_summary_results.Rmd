@@ -297,6 +297,8 @@ gplot_over = ggplot(data=selected_papers, aes(x=t, fill=factor(type)))+
 gplot_over
 ```
 
+The probability of over-dispersion is 1 for all three trials.
+
 # a2) Over-dispersed after excluding extremely small multipliers
 
 ```{r, fig.width=10, fig.height=7}
@@ -326,6 +328,7 @@ gplot_over2
 ```
 
 The plot above is after excluded precision multipliers that were smaller than `r exclude`.
+The probability of over-dispersion is 1 for all three trials.
 
 # b1) Under-dispersed
 
@@ -352,6 +355,9 @@ gplot_under = ggplot(data=selected_papers, aes(x=t, fill=factor(type)))+
   theme(panel.grid.minor = element_blank())
 gplot_under
 ```
+
+The probability of under-dispersion is 1 for all three trials.
+
 
 # b2) Under-dispersed after excluding large precision multipliers
 
@@ -380,6 +386,8 @@ gplot_under2 = ggplot(data=selected_papers, aes(x=t, fill=factor(type)))+
   theme(panel.grid.minor = element_blank())
 gplot_under2
 ```
+
+The probability of under-dispersion is 1 for all three trials.
 
 We exclude multipliers over `r exclude`.
 

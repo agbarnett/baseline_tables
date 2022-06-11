@@ -1801,3 +1801,15 @@ t_stats = bind_rows(t_stats_flagged, t_stats_not_flagged, .id='type') %>%
 
 return(t_stats)
 }
+
+# function to make nice results from winbugs, used by 4_model_cumulative.R
+neaten_results = function(in_res, type, n_table_rows){
+  store = data.frame(in_res$summary[,c(1,3,7)])
+  names(store)[2:3] =  c('lower','upper')
+  store$var = rownames(store)
+  store = mutate(store, 
+                 n_table_rows = n_table_rows,
+                 type = type)
+  row.names(store) = NULL
+  return(store)
+}
