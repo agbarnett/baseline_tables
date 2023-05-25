@@ -222,6 +222,24 @@ baseline_table = function(webpage, # paper tables in xml format
   #table1 = mutate_all(table1, flag_median_function) # caused occasional errors so changed to below ...
   table1 = mutate(table1, across(everything(), flag_median_function))
 
+  ## combine columns if there are columns of numbers, followed by columns in brackets
+  columns = as.matrix(table1)[,-1] # without first column
+  bcounts = colSums(apply(columns, FUN=str_count, MARGIN=2, pattern='\\('),na.rm = TRUE)
+  proportions = bcounts / nrow(columns)
+  n.cols = ncol(columns)
+  no_brackets = proportions < 0.05 | bcounts<=1 # changed March 2023 due to 
+  with_brackets = proportions > 0.75
+  index = which(no_brackets[1:(n.cols-1)] + with_brackets[2:n.cols] == 2) # any columns of non-brackets followed by brackets
+  if(length(index) > 0){ # combine
+    index = as.numeric(index) + 1 + 1 # plus one because of missing first column; plus another to move to right column
+    tnames = names(table1)
+    for (i in rev(index)){ # work backwards (from right to left)
+      newname = paste(tnames[i-1], tnames[i])
+      table1 = unite(table1, newname, (i-1):i, sep=' ') 
+      names(table1)[names(table1) == 'newname'] = newname # rename column
+    }
+  }
+  
   ## if both plus/minus and `n (%)` formats (but without percent in text) then add % to help stats detector ...
   # ... or if percent mentioned in footnote
   any_plus_minus = any(str_detect(as.character(table1), pattern=paste(plus_minus, collapse='|')))
@@ -987,6 +1005,7 @@ t.test2.binomial <- function(a, b, c, d, return_what = 't')
 
 ### get the table data ready for the Bayesian model
 make_stats_for_bayes_model = function(indata, 
+                                      symmetrize  = FALSE, # symmetrize distribution to avoid false positives, did not work, but kept 
                                       test_run = FALSE # a test run on a sample of 50
                                       ){
   # sub-sample
@@ -995,7 +1014,7 @@ make_stats_for_bayes_model = function(indata,
     indata = filter(indata, pmcid %in% to_include)
   }
   
-  # create all possible comparisons of two columns
+  # create all possible comparisons of two columns (g1 vs g2, g1 vs g3, etc)
   max_columns = group_by(indata, pmcid) %>%
     summarise(max_columns = max(column)) %>%
     ungroup()
@@ -1008,9 +1027,9 @@ make_stats_for_bayes_model = function(indata,
   if(nrow(over_two_max) > 0){
     pmcids_to_loop = unique(over_two_max$pmcid)
     for(this_pmcid in pmcids_to_loop){
-      this_data = filter(over_two_max, pmcid==this_pmcid) # select one study
+      this_data = filter(over_two_max, pmcid == this_pmcid) # select one study
       combs = combn(1:this_data$max_columns[1], 2) # all pairs of columns
-      for (i in 1:ncol(combs)){
+      for (i in 1:ncol(combs)){ # loop through combinations
         extra_columns = filter(this_data, column %in% combs[,i]) %>%
           mutate(row = row + ((i-1)/ncol(combs)), # slightly alter row number
                  column = as.numeric(as.factor(column))) # column should be 1 or 2
@@ -1030,19 +1049,25 @@ make_stats_for_bayes_model = function(indata,
   
 # a) continuous (including CIs which have been changed to mean (SD))
   cstats = filter(bind_data,
-                   statistic %in% c('ci','continuous')) %>% # must have positive SD
-  group_by(pmcid, row, statistic) %>%
-  summarise(
-    size = sum(sample_size), # total sample size
-    mdiff = t.test2(mean=stat1, sd=stat2, n=sample_size, return_what = 'difference'),
-    sem = t.test2(mean=stat1, sd=stat2, n=sample_size, return_what = 'se'),
-    t = t.test2(mean=stat1, sd=stat2, n=sample_size, return_what = 't'),
-    p = t.test2(mean=stat1, sd=stat2, n=sample_size, return_what = 'p'),
-    sem2 = sem^2) %>% # squared
-  filter(!is.na(mdiff),
-         !is.na(sem2)) %>%
-  ungroup() 
-
+                    statistic %in% c('ci','continuous')) %>% # must have positive SD
+      group_by(pmcid, row, statistic) %>%
+      summarise(
+        size = sum(sample_size), # total sample size
+        mdiff = t.test2(mean=stat1, sd=stat2, n=sample_size, return_what = 'difference'),
+        sem = t.test2(mean=stat1, sd=stat2, n=sample_size, return_what = 'se'),
+        t = t.test2(mean=stat1, sd=stat2, n=sample_size, return_what = 't'),
+        p = t.test2(mean=stat1, sd=stat2, n=sample_size, return_what = 'p'),
+        sem2 = sem^2) %>% # squared
+      filter(!is.na(mdiff),
+             !is.na(sem2)) %>%
+      ungroup() 
+  if(symmetrize == TRUE & is.null(cstats)==FALSE){ # create approximately symmetric distribution
+    cstats = arrange(cstats, pmcid, t) %>% # order by t
+      mutate(even = 1:n()%%2,# make odd/even
+             mdiff = ifelse(even==1, abs(mdiff), -1*abs(mdiff)),
+             t = ifelse(even==1, abs(t), -1*abs(t))) # alternative negative and positive results
+  }
+  
   # percentages
   pstats = NULL
   if(any(bind_data$statistic %in% c('percent','numbers')) == TRUE){ # needed because simulations may have no percents
@@ -1066,6 +1091,13 @@ make_stats_for_bayes_model = function(indata,
            !is.na(sem2),
            sem2 > 0) %>%
     ungroup() 
+  }
+  ## not yet checked
+  if(symmetrize == TRUE & is.null(pstats)==FALSE){ # create approximately symmetric distribution
+    pstats = arrange(pstats, pmcid, t) %>% # arrange by t-statistic
+      mutate(even = 1:n()%%2,# make odd/even
+             mdiff = ifelse(even==1, abs(mdiff), -1*abs(mdiff)), # alternative negative and positive results
+             t = ifelse(even==1, abs(t), -1*abs(t)))
   }
   
   # combine
@@ -1208,12 +1240,12 @@ combine_columns = function(intable, stat1='', stat2='', reverse=FALSE){
   if(str_detect(string=pat_stat1, '\\%') | str_detect(string=pat_stat2, '\\%')){
     percents = (str_count(intable, pattern='[0-9]\\%') / nrow(intable)) > 0.5 # more than 50% match; gives warning, but works
     if(any(percents) == TRUE){
-      if(str_detect(string=pat_stat1, '\\%')){ # % in first search
+      if(str_detect(string=pat_stat1, '\\%') & !str_detect(string=pat_stat1, 'CI')){ # % in first search
         test_stat1_row2[which(percents)] = TRUE
         test_stat1_row[which(percents)] = TRUE
         test_stat1_header[which(percents)] = TRUE
       }
-      if(str_detect(string=pat_stat2, '\\%')){ # % in first search
+      if(str_detect(string=pat_stat2, '\\%') & !str_detect(string=pat_stat2, 'CI')){ # % in second search, but not confidence interval
         test_stat2_row2[which(percents)] = TRUE # apply to header and row
         test_stat2_row[which(percents)] = TRUE # 
         test_stat2_header[which(percents)] = TRUE
@@ -1431,7 +1463,8 @@ get_affiliation = function(inpage){
 ## run the Bayesian model
 run_bugs = function(in_data,
                     debug = FALSE,
-                    single_study = FALSE,
+                    single_study = FALSE, # running for a single study
+                    study_specific = TRUE, # study-specific probability of dispersion
                     find_problem = FALSE, # search for problem studies
                     batch_size = 3, # run in batches if looking for a problem 
                     p_precision = 0.05 # prior probabilities that the study precision is too wide or too narrow
@@ -1439,16 +1472,17 @@ run_bugs = function(in_data,
 
   #
   
-  if(find_problem == FALSE){
+  if(find_problem == FALSE){ # 
     in_data = mutate(in_data,
                        study = as.numeric(as.factor(study))) # re-number, just in case missing numbers
     bugs = run_bugs_one(in_data = in_data,
                         debug = debug,
+                        study_specific = study_specific,
                         single_study = single_study,
                         p_precision = p_precision)
   }
   
-  if(find_problem == TRUE){
+  if(find_problem == TRUE){ # search for problem studies
     debug = FALSE # takes too long if true
     n_studies = max(in_data$study)
      for (k in 1:(n_studies/batch_size)){
@@ -1459,6 +1493,7 @@ run_bugs = function(in_data,
         mutate(study = as.numeric(as.factor(study))) # re-number
       bugs = run_bugs_one(in_data = this_data,
                           debug = debug,
+                          study_specific = study_specific,
                           p_precision = p_precision)
     }
   }
@@ -1470,11 +1505,15 @@ run_bugs = function(in_data,
 ## run a single version of the model
 run_bugs_one = function(in_data,
                         debug = debug,
+                        study_specific = FALSE, # study specific prior probability for theta
                         single_study = FALSE,
                         hyper_theta = FALSE, # hyper-parameter for theta?
                     p_precision = NA # prior probabilities that the study precision is: too wide, zero, too narrow
 ){
 # prepare the data for Winbugs
+#sample = sample(unique(in_data$pmcid), 10) # temporary
+#in_data = filter(in_data, pmcid %in% sample) %>%
+#  mutate(study = as.numeric(as.factor(study))) # renumber
 N = nrow(in_data) # number of statistics
 N_studies = length(unique(in_data$study)) # number of studies
 bdata = list(N = N, 
@@ -1497,6 +1536,9 @@ if(hyper_theta == FALSE){
   inits = list(mu.var = mu.var, 
                var.flag = rep(0, N_studies))  # start all with no flag for mean or variance
 }
+if(study_specific==TRUE){
+  inits$theta = rep(0.5, N_studies)
+}
 if(single_study == TRUE){
   inits = list(mu.var = c(NA, 0.1), 
                var.flag = 0)  # start all with no flag for mean or variance
@@ -1510,6 +1552,10 @@ if(hyper_theta == TRUE){
 if(hyper_theta == FALSE){
   model.file = bfile_no_hyper
   parms = c('var.flag','mu.var')
+}
+if(study_specific == TRUE){
+  model.file = bfile_study_specific
+  parms = c('var.flag','mu.var','theta')
 }
 if(single_study == TRUE){
   model.file = bfile_no_hyper_single

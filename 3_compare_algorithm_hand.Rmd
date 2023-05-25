@@ -231,6 +231,10 @@ hplot = ggplot(per_paper, aes(x=p_match))+
   xlab('Match per trial (%)')+
   ylab('Count')
 hplot
+# export
+jpeg('figures/match_algorithm_hand.jpg', width=4.5, height=3.5, units='in', res=500, quality=100)
+print(hplot)
+invisible(dev.off())
 
 # checks
 check = filter(per_paper, p_match < 60)

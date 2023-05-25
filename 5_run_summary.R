@@ -4,8 +4,8 @@
 library(markdown)
 
 ## get the data; select which source of data to use
-sources = c('my_search', 'trialstreamer', 'validation', 'simulation', 'bland', 'simulation_two', 'simulation_three', 'carlisle')
-source = sources[2]
+sources = c('my_search', 'trialstreamer', 'validation', 'simulation', 'bland', 'simulation_two', 'simulation_three', 'carlisle', 'correlated')
+source = sources[9]
 stage = 'plot'
 source('1_which_data_source.R') # uses `source` and `stage`
 

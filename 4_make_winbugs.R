@@ -92,11 +92,11 @@ cat('model
   # spike-slab for inverse-variance
       log(inv.var[j]) <- mu.var[j, pick[j]]
       pick[j] <- var.flag[j] + 1
-      var.flag[j] ~ dbern(0.5) # 
+      var.flag[j] ~ dbern(', prior, ') # 
       mu.var[j,1] <- 0 # spike at zero (no change in precision)
       mu.var[j,2] ~ dnorm(0, 0.1) # "slab"
   }
-}', file=bugs)
+}', sep='', file=bugs)
 close(bugs)
 
 # as previous, but for a single study (no vectors)
@@ -111,8 +111,29 @@ cat('model
   # spike-slab for inverse-variance
   log(inv.var) <- mu.var[pick]
   pick <- var.flag + 1
-  var.flag ~ dbern(0.5) # 
+  var.flag ~ dbern(', prior, ') # 
   mu.var[1] <- 0 # spike at zero (no change in precision)
   mu.var[2] ~ dnorm(0, 0.1) # "slab"
-}', file=bugs)
+}', sep='', file=bugs)
+close(bugs)
+
+# version for multiple studies with study-specific probability; results show no big difference compared with fixed var.flag[j] ~ dbern(0.5)
+bfile_study_specific = 'bugs_model_study_specific.txt'
+bugs = file(bfile_study_specific, 'w')
+cat('model
+{
+  for(i in 1:N){
+      mdiff[i] ~ dt(0, tau[i], df[i])
+      tau[i] <- inv.sem2[i] * inv.var[study[i]] # precision
+  }
+  for(j in 1:N_studies){
+  # spike-slab for inverse-variance
+      log(inv.var[j]) <- mu.var[j, pick[j]]
+      pick[j] <- var.flag[j] + 1
+      var.flag[j] ~ dbern(theta[j]) # 
+      theta[j] ~ dbeta(1,1)
+      mu.var[j,1] <- 0 # spike at zero (no change in precision)
+      mu.var[j,2] ~ dnorm(0, 0.1) # "slab"
+  }
+}', sep='', file=bugs)
 close(bugs)

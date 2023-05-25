@@ -1,11 +1,12 @@
 # 4_model.R
 # Fits a Bayesian model to the baseline table data extracted from RCTs published on pubmed central
-# June 2022
+# September 2022
 library(dplyr)
 library(tidyr)
 library(TeachingDemos)
 seed = char2seed('cobblers') # random number seed for computational reproducibility
 library(R2WinBUGS)
+prior = 0.5 # prior for Bernoulli
 source('4_make_winbugs.R')
 source('4_MCMC_basics.R')
 source('99_functions.R')
@@ -19,8 +20,9 @@ sources = c('my_search',
             'simulation_two', 
             'simulation_three', 
             'carlisle', 
-            'saitoh')
-source = sources[2] # controls which data source is run
+            'saitoh',
+            'correlated')
+source = sources[5] # controls which data source is run
 stage = 'model'
 source('1_which_data_source.R') # uses `source` and `stage`
 
@@ -38,7 +40,7 @@ if(add_retracted == TRUE){
 #table_data  =filter(table_data, issue %in% sims_to_use)
 
 # prepare the data for the Bayesian model
-for_model = make_stats_for_bayes_model(indata = table_data) # see 99_functions.R
+for_model = make_stats_for_bayes_model(indata = table_data, symmetrize = FALSE) # see 99_functions.R
 
 ## check for missing rows in model after calculation of t-statistics
 table_counts = filter(table_data, statistic %in% c('continuous','percent','numbers')) %>%
@@ -77,7 +79,7 @@ with(for_model, plot(mdiff, log2(sem)))
 #for_model_small = filter(for_model, study <= 300)
 
 # run the model
-bugs = run_bugs(in_data = for_model, debug=TRUE)
+bugs = run_bugs(in_data = for_model, debug = TRUE)
 
 # can remove some results from bugs to save room
 bugs$sims.array = NULL

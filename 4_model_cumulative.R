@@ -13,6 +13,7 @@ library(tidyr)
 library(TeachingDemos)
 seed = char2seed('cobblers') # random number seed for computational reproducibility
 library(R2WinBUGS)
+prior = 0.5
 source('4_make_winbugs.R')
 source('4_MCMC_basics.R')
 source('99_functions.R')
@@ -69,7 +70,7 @@ for (c in 1:n_trials){
 
 ## plot the results
 # bayesian flag
-colours = c('dark orange','darkseagreen')
+colours = c('gold','darkseagreen4') # make contrast for black and white
 cum_plot_flag = ggplot(data=filter(bayes_results, str_detect(var, 'flag')), aes(x=n_trials, y=mean, col=type))+
   geom_point(size=2)+
   geom_line(size=1.05)+
@@ -122,7 +123,12 @@ cum_plot_mult = cum_plot_mult + theme(legend.position='none') # now remove legen
 jpeg('figures/saitoh.jpg', width=6, height=6, units='in', res=500)
 grid.arrange(cum_plot_flag, cum_plot_pval, cum_plot_mult, legend, nrow=2, ncol=2)
 dev.off()
-
+# alternative version for slide
+jpeg('U:\\Research\\Projects\\ihbi\\aushsi\\aushsi_barnetta\\meta.research\\presentations\\talks\\vicbiostats\\figures\\saitoh_slide.jpg', width=8, height=6, units='in', res=500)
+lay <- rbind(c(1,1,1), # layout with legend on top
+             c(2,3,4))
+grid.arrange(legend, cum_plot_flag, cum_plot_mult, cum_plot_pval, layout_matrix = lay, heights=c(1,3))
+dev.off()
 
 # quick check of t-stats
 tplot = ggplot(data= for_model, aes(x=row, y=t, col=statistic))+
@@ -155,3 +161,42 @@ filter(table_data, trial_num  <=10) %>%
   unique() %>%
   group_by(statistic) %>%
   tally()
+
+
+#### simpler plot with just bayesian and continuous results ###
+## plot the results
+# bayesian flag
+
+cum_plot_flag_simple = ggplot(data=filter(bayes_results, str_detect(var, 'flag'), type == 'Continuous and categorical'), 
+                       aes(x=n_trials, y=mean))+
+  geom_point(size=2, col='darkorange2')+
+  geom_line(size=1.05, col='darkorange2')+
+  scale_x_continuous(breaks=1:10)+
+  scale_y_continuous(limits=c(0,1))+
+  ggtitle('Probability of under- or over-dispersion')+
+  xlab('Cumulative number of trials')+
+  ylab('Probability')+
+  g.theme+
+  theme(legend.position='none',
+        plot.title = element_text(size = 9))
+cum_plot_flag_simple
+# bayesian precision multiplier (with intervals)
+labels = data.frame(x=0.5, y=c(1.1,0.9), lower=0, upper=0, label=c('Under-dispersion','Over-dispersion'))
+cum_plot_mult_simple = ggplot(data=filter(bayes_results, !str_detect(var, 'flag'), type == 'Continuous and categorical'), 
+                       aes(x=n_trials, y=exp(mean), ymin=exp(lower), ymax=exp(upper)))+
+  geom_point(size=2, position = position_dodge(width=0.3), col='darkorange2')+
+  geom_errorbar(size=1.05, width=0, position = position_dodge(width=0.3), col='darkorange2')+
+  scale_x_continuous(breaks=1:10)+
+  scale_y_log10()+
+  geom_line(size=1.05, col='darkorange2')+
+  geom_hline(lty=2, yintercept=1)+
+  geom_text(data = labels, aes(x=x, y=y, label=label), col='grey22', size=2.5, adj=0, angle=0)+
+  ggtitle('Precision')+
+  xlab('Cumulative number of trials')+
+  ylab('Precision multiplier (log scale)')+
+  g.theme
+cum_plot_mult_simple
+# export
+jpeg('figures/saitoh_simple.jpg', width=6, height=4.5, units='in', res=500)
+grid.arrange(cum_plot_flag_simple, cum_plot_mult_simple, ncol=2)
+dev.off()

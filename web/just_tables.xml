@@ -1,1084 +1,277 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN" "http://www.w3.org/TR/REC-html40/loose.dtd">
-<?xml version="1.0" encoding="UTF-8"?><html><body><just-tables><table-wrap id="nutrients-12-02614-t001" orientation="portrait" position="float"><object-id pub-id-type="pii">nutrients-12-02614-t001_Table 1</object-id><label>Table 1</label>
-              <caption> Demographic characteristics of the groups.</caption>
-              <table frame="hsides" rules="groups">
-<thead><tr>
-<th align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin" rowspan="1" colspan="1">
-</th>
-                    <th align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin" rowspan="1" colspan="1">SRP Plus Fish Oil</th>
-                    <th align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin" rowspan="1" colspan="1">SRP Alone</th>
-                    <th align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin" rowspan="1" colspan="1">p Value</th>
-                  </tr></thead>
-<tbody>
-<tr>
-<td align="center" valign="middle" rowspan="1" colspan="1">Age (years; mean ± SD)</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">45 ± 8</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">54 ± 11</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">0.005</td>
-                  </tr>
-<tr>
-<td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Sex (% of females)</td>
-                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">50</td>
-                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">43</td>
-                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.349</td>
-                  </tr>
-</tbody>
-</table></table-wrap><table-wrap id="nutrients-12-02614-t002" orientation="portrait" position="float"><object-id pub-id-type="pii">nutrients-12-02614-t002_Table 2</object-id><label>Table 2</label>
-              <caption> Mean scores of clinical parameters with their Δ at baseline and three months in the test (SRP plus fish oil) and control (SRP alone) groups. Data are mean ± SD.</caption>
-              <table frame="hsides" rules="groups">
-<thead><tr>
-<th align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin" rowspan="1" colspan="1">Variables</th>
-                    <th align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin" rowspan="1" colspan="1">SRP Plus Fish Oil n = 16</th>
-                    <th align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin" rowspan="1" colspan="1">SRP Alone n = 14</th>
-                    <th align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin" rowspan="1" colspan="1">Inter-Group Comparisons p Value</th>
-                  </tr></thead>
-<tbody>
-<tr>
-<td colspan="4" align="center" valign="middle" style="border-bottom:solid thin" rowspan="1">Number of PD ≥ 4 mm</td>
-                  </tr>
-<tr>
-<td align="center" valign="middle" rowspan="1" colspan="1">Baseline</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">55 ± 29</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">52 ± 17</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">0.337</td>
-                  </tr>
-<tr>
-<td align="center" valign="middle" rowspan="1" colspan="1">3 months</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">32 ± 21</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">32 ± 17</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">0.461</td>
-                  </tr>
-<tr>
-<td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Δ baseline–3 months</td>
-                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">24 ± 18</td>
-                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">20 ± 7</td>
-                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.222</td>
-                  </tr>
-<tr>
-<td colspan="4" align="center" valign="middle" style="border-bottom:solid thin" rowspan="1">PD (mm)</td>
-                  </tr>
-<tr>
-<td align="center" valign="middle" rowspan="1" colspan="1">Baseline</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">5.0 ± 0.5</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">5.1 ± 0.8</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">0.426</td>
-                  </tr>
-<tr>
-<td align="center" valign="middle" rowspan="1" colspan="1">3 months</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">3.7 ± 0.7</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">4.0 ± 0.7</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">0.461</td>
-                  </tr>
-<tr>
-<td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Δ baseline–3 months</td>
-                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">1.3 ± 0.7</td>
-                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">1.1 ± 0.4</td>
-                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.124</td>
-                  </tr>
-<tr>
-<td colspan="4" align="center" valign="middle" style="border-bottom:solid thin" rowspan="1">REC (mm)</td>
-                  </tr>
-<tr>
-<td align="center" valign="middle" rowspan="1" colspan="1">Baseline</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">0.8 ± 0.6</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">1.1 ± 0.9</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">0.121</td>
-                  </tr>
-<tr>
-<td align="center" valign="middle" rowspan="1" colspan="1">3 months</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">0.8 ± 0.5</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">1.3 ± 0.7</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">0.023</td>
-                  </tr>
-<tr>
-<td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Δ baseline–3 months</td>
-                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.1 ± 0.3</td>
-                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.2 ± 0.4</td>
-                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.115</td>
-                  </tr>
-<tr>
-<td colspan="4" align="center" valign="middle" style="border-bottom:solid thin" rowspan="1">CAL (mm)</td>
-                  </tr>
-<tr>
-<td align="center" valign="middle" rowspan="1" colspan="1">Baseline</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">5.8 ± 0.8</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">6.1 ± 1.1</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">0.144</td>
-                  </tr>
-<tr>
-<td align="center" valign="middle" rowspan="1" colspan="1">3 months</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">4.4 ± 1.1</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">5.3 ± 1.0</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">0.017</td>
-                  </tr>
-<tr>
-<td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Δ baseline–3 months</td>
-                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">1.3 ± 0.7</td>
-                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.9 ± 0.4</td>
-                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.021</td>
-                  </tr>
-<tr>
-<td colspan="4" align="center" valign="middle" style="border-bottom:solid thin" rowspan="1">BOP (%)</td>
-                  </tr>
-<tr>
-<td align="center" valign="middle" rowspan="1" colspan="1">Baseline</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">28 ± 16</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">36 ± 19</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">0.069</td>
-                  </tr>
-<tr>
-<td align="center" valign="middle" rowspan="1" colspan="1">3 months</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">14 ± 6</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">21 ± 7</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">0.004</td>
-                  </tr>
-<tr>
-<td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Δ baseline–3 months</td>
-                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">13 ± 15</td>
-                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">16 ± 21</td>
-                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.335</td>
-                  </tr>
-<tr>
-<td colspan="4" align="center" valign="middle" style="border-bottom:solid thin" rowspan="1">FMPI (%)</td>
-                  </tr>
-<tr>
-<td align="center" valign="middle" rowspan="1" colspan="1">Baseline</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">35 ± 21</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">49 ± 19</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">0.031</td>
-                  </tr>
-<tr>
-<td align="center" valign="middle" rowspan="1" colspan="1">3 months</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">17 ± 9</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">34 ± 16</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">00004</td>
-                  </tr>
-<tr>
-<td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Δ baseline–3 months</td>
-                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">18 ± 19</td>
-                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">15 ± 23</td>
-                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.345</td>
-                  </tr>
-<tr>
-<td colspan="4" align="center" valign="middle" style="border-bottom:solid thin" rowspan="1">Closed pockets (%) with PD ≤4 mm and no BOP</td>
-                  </tr>
-<tr>
-<td align="center" valign="middle" rowspan="1" colspan="1">Baseline</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">0</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">0</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">-</td>
-                  </tr>
-<tr>
-<td align="center" valign="middle" rowspan="1" colspan="1">3 months</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">58 ± 17</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">49 ± 11</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">0.042</td>
-                  </tr>
-<tr>
-<td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Δ baseline–3 months</td>
-                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">58 ± 17</td>
-                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">49 ± 11</td>
-                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">0.042</td>
-                  </tr>
-</tbody>
-</table>
-<table-wrap-foot><fn><p>Abbreviations: probing depth (PD), gingival recession (REC), clinical attachment level (CAL), bleeding on probing (BOP), full-mouth plaque index (FMPI).</p>
-                </fn></table-wrap-foot></table-wrap><table-wrap id="nutrients-12-02614-t003" orientation="portrait" position="float"><object-id pub-id-type="pii">nutrients-12-02614-t003_Table 3</object-id><label>Table 3</label>
-              <caption> The profile of salivary cytokines, chemokines and growth factors at baseline and three months. Data are presented in pg/mL as means ± SD.</caption>
-              <table frame="hsides" rules="groups">
+<?xml version="1.0" encoding="UTF-8"?><html><body><just-tables><table-wrap id="Tab1"><label>Table 1</label><caption> Baseline characteristics of the intention to treat sample</caption>
+<table frame="hsides" rules="groups">
 <thead>
 <tr>
-<th rowspan="2" align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin" colspan="1">
-</th>
-                    <th colspan="2" align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin" rowspan="1">SRP Plus Fish Oil</th>
-                    <th colspan="2" align="center" valign="middle" style="border-top:solid thin;border-bottom:solid thin" rowspan="1">SRP Alone</th>
-                  </tr>
+<th align="left" rowspan="2">Variable</th>
+<th align="left" rowspan="2" colspan="2">BPT (n = 79)</th>
+<th align="left" rowspan="2" colspan="2">EP (n = 77)</th>
+<th align="left" rowspan="2" colspan="2">CBT (n = 77)</th>
+<th align="left" rowspan="2" colspan="2">Total (n = 233)</th>
+<th align="left" colspan="3">Test of group differences</th>
+</tr>
 <tr>
-<th align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Baseline</th>
-                    <th align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">3 Months</th>
-                    <th align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">Baseline</th>
-                    <th align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">3 Months</th>
-                  </tr>
+<th align="left">Fa</th>
+<th align="left">χ2 b</th>
+<th align="left">p</th>
+</tr>
 </thead>
 <tbody>
 <tr>
-<td colspan="5" align="center" valign="middle" rowspan="1">Cytokines</td>
-                  </tr>
+<td align="left">Age a, M (SD)</td>
+<td align="left">41.75</td>
+<td align="left">(12.66)</td>
+<td align="left">42.68</td>
+<td align="left">(12.52)</td>
+<td align="left">40.25</td>
+<td align="left">(11.35)</td>
+<td align="left">41.56</td>
+<td align="left">(12.18)</td>
+<td align="left">0.78</td>
+<td align="left"></td>
+<td align="left">.461</td>
+</tr>
 <tr>
-<td align="center" valign="middle" style="border-top:solid thin" rowspan="1" colspan="1">
-                      <styled-content style="color:#00B050">IL-1β</styled-content>
-</td>
-                    <td align="center" valign="middle" style="border-top:solid thin" rowspan="1" colspan="1">
-                      <styled-content style="color:#00B050">223 ± 147</styled-content>
-</td>
-                    <td align="center" valign="middle" style="border-top:solid thin" rowspan="1" colspan="1">
-                      <styled-content style="color:#00B050">206 ± 144</styled-content>
-</td>
-                    <td align="center" valign="middle" style="border-top:solid thin" rowspan="1" colspan="1">
-                      <styled-content style="color:#00B050">330 ± 273</styled-content>
-</td>
-                    <td align="center" valign="middle" style="border-top:solid thin" rowspan="1" colspan="1">
-                      <styled-content style="color:#00B050">199 ± 176 †</styled-content>
-</td>
-                  </tr>
+<td align="left">Sex: female, n (%)</td>
+<td align="left">54</td>
+<td align="left">(68 4)</td>
+<td align="left">52</td>
+<td align="left">(67.5)</td>
+<td align="left">51</td>
+<td align="left">(66.2)</td>
+<td align="left">157</td>
+<td align="left">(67.4)</td>
+<td align="left"></td>
+<td align="left">0.08</td>
+<td align="left">.960</td>
+</tr>
 <tr>
-<td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#FF3399">IL-1RA</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#FF3399">5764 ± 2186</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#FF3399">6804 ± 3095</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#FF3399">5555 ± 3851</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#FF3399">5671 ± 3235</styled-content>
-</td>
-                  </tr>
+<td align="left">BMI, M (SD)</td>
+<td align="left">23.92</td>
+<td align="left">(3.37)</td>
+<td align="left">24.98</td>
+<td align="left">(4.33)</td>
+<td align="left">24.57</td>
+<td align="left">(4.17)</td>
+<td align="left">24.49</td>
+<td align="left">(3.98)</td>
+<td align="left">1.41</td>
+<td align="left"></td>
+<td align="left">.245</td>
+</tr>
 <tr>
-<td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#00B050">IL-2</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#00B050">21 ± 12</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#00B050">13 ± 4 †</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#00B050">15 ± 5</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#00B050">15 ± 8</styled-content>
-</td>
-                  </tr>
+<td align="left">School education, n (%)</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">5.12</td>
+<td align="left">.529</td>
+</tr>
 <tr>
-<td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#00B050">IL-4</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#00B050">22 ± 12</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#00B050">18 ± 5</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#00B050">17 ± 10</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#00B050">15 ± 4</styled-content>
-</td>
-                  </tr>
+<td align="left">  &lt; 9 years</td>
+<td align="left">0</td>
+<td align="left">(0.0)</td>
+<td align="left">1</td>
+<td align="left">(1.3)</td>
+<td align="left">0</td>
+<td align="left">(0.0)</td>
+<td align="left">1</td>
+<td align="left">(0.4)</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
 <tr>
-<td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#00B050">IL-5</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#00B050">7.6 ± 5.7</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#00B050">9.4 ± 5.8</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#00B050">5.4 ± 4.8</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#00B050">7.1 ± 5.5</styled-content>
-</td>
-                  </tr>
+<td align="left"> 9 years</td>
+<td align="left">9</td>
+<td align="left">(11.4)</td>
+<td align="left">5</td>
+<td align="left">(6.5)</td>
+<td align="left">9</td>
+<td align="left">(11.7)</td>
+<td align="left">23</td>
+<td align="left">(9.9)</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
 <tr>
-<td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#70AD47">IL-6</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#70AD47">110 ± 82</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#70AD47">139 ± 115</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#70AD47">193 ± 150</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#70AD47">133 ± 137</styled-content>
-</td>
-                  </tr>
+<td align="left"> 10 years</td>
+<td align="left">18</td>
+<td align="left">(22.8)</td>
+<td align="left">24</td>
+<td align="left">(31.2)</td>
+<td align="left">17</td>
+<td align="left">(22.1)</td>
+<td align="left">59</td>
+<td align="left">(25.3)</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
 <tr>
-<td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#00B050">IL-7</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#00B050">31 ± 20</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#00B050">26 ± 15</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#00B050">20 ± 10</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#00B050">48 ± 13</styled-content>
-</td>
-                  </tr>
+<td align="left">  ≥ 12 years</td>
+<td align="left">52</td>
+<td align="left">(65.8)</td>
+<td align="left">47</td>
+<td align="left">(61.0)</td>
+<td align="left">51</td>
+<td align="left">(66.2)</td>
+<td align="left">150</td>
+<td align="left">(64.4)</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
 <tr>
-<td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#00B050">IL-9</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#00B050">11 ± 6</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#00B050">14 ± 8</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#00B050">10 ± 4</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#00B050">12 ± 6</styled-content>
-</td>
-                  </tr>
+<td align="left">Employed: yes, n (%)</td>
+<td align="left">50</td>
+<td align="left">(63.3)</td>
+<td align="left">42</td>
+<td align="left">(54.5)</td>
+<td align="left">45</td>
+<td align="left">(58.4)</td>
+<td align="left">137</td>
+<td align="left">(58.8)</td>
+<td align="left"></td>
+<td align="left">3.44</td>
+<td align="left">.488</td>
+</tr>
 <tr>
-<td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#FF3399">IL-10</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#FF3399">149 ± 51</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#FF3399">211 ± 65 *,†</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#FF3399">133 ± 34</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#FF3399">129 ± 44</styled-content>
-</td>
-                  </tr>
+<td align="left">Additional psychotherapy: yes, n (%)</td>
+<td align="left">42</td>
+<td align="left">(53.2)</td>
+<td align="left">27</td>
+<td align="left">(35.1)</td>
+<td align="left">38</td>
+<td align="left">(49.4)</td>
+<td align="left">107</td>
+<td align="left">(45.9)</td>
+<td align="left"></td>
+<td align="left">5.69</td>
+<td align="left">.058</td>
+</tr>
 <tr>
-<td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#70AD47">IL-12</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#70AD47">1.7 ± 1.3</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#70AD47">3.2 ± 1.8 *,†</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#70AD47">0.9 ± 0.5</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#70AD47">1.6 ± 0.9 †</styled-content>
-</td>
-                  </tr>
+<td align="left">Antidepressants: yes, n (%)</td>
+<td align="left">41</td>
+<td align="left">(51.9)</td>
+<td align="left">37</td>
+<td align="left">(48.1)</td>
+<td align="left">39</td>
+<td align="left">(50.6)</td>
+<td align="left">117</td>
+<td align="left">(50.2)</td>
+<td align="left"></td>
+<td align="left">0.24</td>
+<td align="left">.887</td>
+</tr>
 <tr>
-<td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#00B050">IL-13</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#00B050">0.5 ± 0.2</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#00B050">0.5 ± 0.4</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#00B050">0.5 ± 0.2</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#00B050">0.5 ± 0.6</styled-content>
-</td>
-                  </tr>
+<td align="left">Depression at baseline (t0)</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
 <tr>
-<td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#00B050">IL-15</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#00B050">nd</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#00B050">44 ± 37</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#00B050">nd</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#00B050">49 ± 13</styled-content>
-</td>
-                  </tr>
+<td align="left"> MADRS, M (SD)</td>
+<td align="left">23.46</td>
+<td align="left">(8.93)</td>
+<td align="left">22.27</td>
+<td align="left">(9.12)</td>
+<td align="left">24.04</td>
+<td align="left">(7.69)</td>
+<td align="left">23.26</td>
+<td align="left">(8.60)</td>
+<td align="left">0.43</td>
+<td align="left"></td>
+<td align="left">.432</td>
+</tr>
 <tr>
-<td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#00B050">IL-16</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#00B050">2600 ± 2680</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#00B050">1228 ± 872</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#00B050">1163 ± 754</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#00B050">1556 ± 1596</styled-content>
-</td>
-                  </tr>
+<td align="left"> PHQ-9, M (SD)</td>
+<td align="left">13.66</td>
+<td align="left">(5.49)</td>
+<td align="left">13.36</td>
+<td align="left">(5.15)</td>
+<td align="left">13.81</td>
+<td align="left">(4.65)</td>
+<td align="left">13.61</td>
+<td align="left">(5.09)</td>
+<td align="left">0.15</td>
+<td align="left"></td>
+<td align="left">.861</td>
+</tr>
 <tr>
-<td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#00B050">IL-17</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#00B050">17 ± 8</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#00B050">8 ± 3 *,†</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#00B050">12 ± 3</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#00B050">11 ± 2</styled-content>
-</td>
-                  </tr>
+<td align="left">Study center, n (%)</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left">10.99</td>
+<td align="left">.027*</td>
+</tr>
 <tr>
-<td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#00B050">IFN-γ</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#00B050">38 ± 17</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#00B050">46 ± 29</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#00B050">46 ± 21</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#00B050">38 ± 16</styled-content>
-</td>
-                  </tr>
+<td align="left"> Erlangen/Nürnberg/Fürth</td>
+<td align="left">39</td>
+<td align="left">(49.4)</td>
+<td align="left">52</td>
+<td align="left">(67.5)</td>
+<td align="left">37</td>
+<td align="left">(48.1)</td>
+<td align="left">128</td>
+<td align="left">(54.9)</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
 <tr>
-<td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#00B050">MIF</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#00B050">677488 ± 645516</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#00B050">445004 ± 302624</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#00B050">345344 ± 289914</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#00B050">280090 ± 287976</styled-content>
-</td>
-                  </tr>
+<td align="left"> Weyarn/Munich</td>
+<td align="left">20</td>
+<td align="left">(25.3)</td>
+<td align="left">12</td>
+<td align="left">(15.6)</td>
+<td align="left">27</td>
+<td align="left">(35.1)</td>
+<td align="left">59</td>
+<td align="left">(25.3)</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
 <tr>
-<td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
-                      <styled-content style="color:#00B050">TNF-α</styled-content>
-</td>
-                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
-                      <styled-content style="color:#00B050">54 ± 29</styled-content>
-</td>
-                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
-                      <styled-content style="color:#00B050">41 ± 26 †</styled-content>
-</td>
-                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
-                      <styled-content style="color:#00B050">37 ± 13</styled-content>
-</td>
-                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
-                      <styled-content style="color:#00B050">33 ± 10</styled-content>
-</td>
-                  </tr>
-<tr>
-<td colspan="5" align="center" valign="middle" style="border-bottom:solid thin" rowspan="1">Chemokines</td>
-                  </tr>
-<tr>
-<td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">CCL1/I-309</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">38 ± 12</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">34 ± 9</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">29 ± 10</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">27 ± 9</styled-content>
-</td>
-                  </tr>
-<tr>
-<td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">CCL2/MCP-1</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">1205 ± 870</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">1515 ± 1795</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">1194 ± 689</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">1642 ± 1579</styled-content>
-</td>
-                  </tr>
-<tr>
-<td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">CCL3/MIP-1 α</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">33 ± 31</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">47 ± 63</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">16 ± 10</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">17 ± 16</styled-content>
-</td>
-                  </tr>
-<tr>
-<td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">CCL4/MIP-1 β</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">8.7 ± 5.8</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">18 ± 16 †</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">7.3 ± 1.7</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">9.4 ± 5.1</styled-content>
-</td>
-                  </tr>
-<tr>
-<td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">CCL5/RANTES</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">4.8 ± 2.3</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">7.2 ± 1.6 *,†</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">4.2 ± 3.5</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">4.2 ± 2.3</styled-content>
-</td>
-                  </tr>
-<tr>
-<td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">CCL7/MCP-3</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">33 ± 27</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">28 ± 23</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">24 ± 10</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">26 ± 11</styled-content>
-</td>
-                  </tr>
-<tr>
-<td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">CCL8/MCP-2</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">3.9 ± 5.0</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">2.4 ± 1.5</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">1.6 ± 1.0</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">2.1 ± 1.4</styled-content>
-</td>
-                  </tr>
-<tr>
-<td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">CCL11/Eotaxin</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">28 ± 8</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">28 ± 8</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">24 ± 7</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">23 ± 5</styled-content>
-</td>
-                  </tr>
-<tr>
-<td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">CCL13/MCP-4</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">98 ± 63</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">96 ± 68</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">57 ± 34</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">70 ± 42</styled-content>
-</td>
-                  </tr>
-<tr>
-<td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">CCL15/</styled-content><styled-content style="color:#4472C4">MIP-1delta</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">127 ± 87</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">268 ± 196 †</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">271 ± 319</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">181 ± 166</styled-content>
-</td>
-                  </tr>
-<tr>
-<td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">CCL17/TARC</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">7.2 ± 7.4</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">2.3 ± 2.9</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">7.3 ± 4.6</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">2.8 ± 3.1</styled-content>
-</td>
-                  </tr>
-<tr>
-<td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">CCL19/MIP-3 β</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">124 ± 51</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">119 ± 52</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">99 ± 34</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">153 ± 101</styled-content>
-</td>
-                  </tr>
-<tr>
-<td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">CCL20/MIP-3 α</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">6.7 ± 6.0</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">10 ± 20</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">3.8 ± 3.2</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">3.6 ± 3.4</styled-content>
-</td>
-                  </tr>
-<tr>
-<td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">CCL21/6Ckine</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">2329 ± 1891</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">1297 ± 746 †</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">1370 ± 861</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">1750 ± 1119</styled-content>
-</td>
-                  </tr>
-<tr>
-<td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">CCL22/MDC</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">32 ± 12</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">33 ± 16 *</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">25 ± 10</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">21 ± 7</styled-content>
-</td>
-                  </tr>
-<tr>
-<td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">CCL23/MPIF-1</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">30 ± 170</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">26 ± 14</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">25 ± 10</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">17 ± 7</styled-content>
-</td>
-                  </tr>
-<tr>
-<td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">CCL24/Eotaxin-2</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">25 ± 31</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">20 ± 8</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">18 ± 6</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">23 ± 5 †</styled-content>
-</td>
-                  </tr>
-<tr>
-<td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">CCL25/TECK</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">827 ± 316</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">843 ± 408*,†</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">533 ± 126</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">523 ± 142</styled-content>
-</td>
-                  </tr>
-<tr>
-<td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">CCL26/Eotaxin-3</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">24 ± 10</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">15 ± 7 †</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">13 ± 5</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">12 ± 4</styled-content>
-</td>
-                  </tr>
-<tr>
-<td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">CCL27/CTACK</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">18 ± 12</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">11 ± 7 †</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">14 ± 9</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#4472C4">12 ± 9</styled-content>
-</td>
-                  </tr>
-<tr>
-<td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#0070C0">CX3CL1/</styled-content><styled-content style="color:#0070C0">Factalkine</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#0070C0">1858 ± 1336</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#0070C0">2625 ± 1791*,†</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#0070C0">1422 ± 874</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:#0070C0">1187 ± 828</styled-content>
-</td>
-                  </tr>
-<tr>
-<td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:red">CXCL1/Gro-alpha</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:red">10812 ± 11390</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:red">5212 ± 5106 †</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:red">3113 ± 1802</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:red">3626 ± 3493</styled-content>
-</td>
-                  </tr>
-<tr>
-<td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:red">CXCL2/Gro-beta</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:red">1115 ± 1329</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:red">669 ± 705</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:red">591 ± 371</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:red">439 ± 369</styled-content>
-</td>
-                  </tr>
-<tr>
-<td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:red">CXCL5/ENA-78</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:red">20513 ± 21340</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:red">19718 ± 24877</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:red">12199 ± 14653</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:red">16399 ± 18018</styled-content>
-</td>
-                  </tr>
-<tr>
-<td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:red">CXCL6/GCP-2</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:red">163 ± 200</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:red">188 ± 339</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:red">22 ± 18</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:red">50 ± 60</styled-content>
-</td>
-                  </tr>
-<tr>
-<td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:red">CXCL8/IL-8</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:red">20811 ± 18099</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:red">8580 ± 10551 *,†</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:red">41658 ± 37582</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:red">29557 ± 28905</styled-content>
-</td>
-                  </tr>
-<tr>
-<td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:red">CXCL9/MIG</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:red">562 ± 470</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:red">625 ± 509</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:red">384 ± 416</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:red">330 ± 350</styled-content>
-</td>
-                  </tr>
-<tr>
-<td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:red">CXCL10/IP-10</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:red">287 ± 267</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:red">173 ± 216†</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:red">153 ± 78</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:red">140 ± 95</styled-content>
-</td>
-                  </tr>
-<tr>
-<td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:red">CXCL11/I-TAC</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:red">4.0 ± 3.3</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:red">3.2 ± 3.2</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:red">2.3 ± 2.4</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:red">1.7 ± 1.0</styled-content>
-</td>
-                  </tr>
-<tr>
-<td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:red">CXCL12/SDF-1 α</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:red">81 ± 34</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:red">84 ± 40</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:red">78 ± 23</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:red">68 ± 21</styled-content>
-</td>
-                  </tr>
-<tr>
-<td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:red">CXCL13/BCA-1</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:red">5.1 ± 4.8</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:red">4.4 ± 5.0</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:red">3.1 ± 2.8</styled-content>
-</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">
-                      <styled-content style="color:red">4.3 ± 8.4</styled-content>
-</td>
-                  </tr>
-<tr>
-<td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
-                      <styled-content style="color:red">CXCL16/SCYB16</styled-content>
-</td>
-                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
-                      <styled-content style="color:red">158 ± 136</styled-content>
-</td>
-                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
-                      <styled-content style="color:red">88 ± 74 †</styled-content>
-</td>
-                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
-                      <styled-content style="color:red">100 ± 93</styled-content>
-</td>
-                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">
-                      <styled-content style="color:red">107 ± 147</styled-content>
-</td>
-                  </tr>
-<tr>
-<td colspan="5" align="center" valign="middle" style="border-bottom:solid thin" rowspan="1">Growth factors</td>
-                  </tr>
-<tr>
-<td align="center" valign="middle" rowspan="1" colspan="1">FGF2</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">35 ± 10</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">40 ± 11 *</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">29 ± 12</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">29 ± 9</td>
-                  </tr>
-<tr>
-<td align="center" valign="middle" rowspan="1" colspan="1">G-CSF</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">358 ± 196</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">222 ± 84 *,†</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">299 ± 142</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">410 ± 308</td>
-                  </tr>
-<tr>
-<td align="center" valign="middle" rowspan="1" colspan="1">GM-CSF</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">22 ± 9</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">24 ± 19</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">20 ± 7</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">17 ± 5</td>
-                  </tr>
-<tr>
-<td align="center" valign="middle" rowspan="1" colspan="1">PDGF-BB</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">13 ± 6</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">18 ± 13</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">10 ± 9</td>
-                    <td align="center" valign="middle" rowspan="1" colspan="1">12 ± 9</td>
-                  </tr>
-<tr>
-<td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">VEGF</td>
-                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">317 ± 228</td>
-                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">330 ± 199</td>
-                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">293 ± 147</td>
-                    <td align="center" valign="middle" style="border-bottom:solid thin" rowspan="1" colspan="1">282 ± 219</td>
-                  </tr>
+<td align="left"> Berlin</td>
+<td align="left">20</td>
+<td align="left">(25.3)</td>
+<td align="left">13</td>
+<td align="left">(16.9)</td>
+<td align="left">13</td>
+<td align="left">(16.9)</td>
+<td align="left">46</td>
+<td align="left">(19.7)</td>
+<td align="left"></td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
 </tbody>
 </table>
-<table-wrap-foot><fn><p>* Statistically significant differences to SRP alone; † statistically significant differences between baseline and three months; nd, non detectable; green font—proinflammatory cytokines; pink font—anti-inflammatory cytokines; red font—CXC type chemokines (associated with recruitment of neutrophils and lymphocytes); blue font—CC type chemokines (associated with recruitment of lymphocytes, monocytes, mast cells and eosinophils); black font—growth factors. Abbreviations: interleukin-1 receptor antagonist (IL-1RA), interferon (IFN), macrophage migration inhibitory factor (MIF), granulocyte-macrophage colony-stimulating factor (GM-CSF), platelet-derived growth factor BB (PDGF-BB), vascular endothelial growth factor (VEGF).</p>
-                </fn></table-wrap-foot></table-wrap></just-tables></body></html>
+<table-wrap-foot><p> BMI = Body Mass Index; MADRS = Montgomery and Åsberg Depression Rating Scale, higher scores indicate more severe depressive symptoms, range: 0–60; PHQ-9 = The 9-item depression module of the Patient Health Questionnaire, higher scores indicate more depressive symptoms, range: 0–27</p>
+<p>*p &lt; .05, significant p-values are printed in bold; n = 233 (intention to treat)</p>
+<p>aF value from an univariate ANOVA with the between-subject factor group (BPT, EP, CBT)</p>
+<p>bChi-square (χ2) value from a chi-square test</p></table-wrap-foot></table-wrap></just-tables></body></html>

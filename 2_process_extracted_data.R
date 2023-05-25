@@ -9,7 +9,7 @@ library(stringr)
 ## get the data
 # select which source of data to use
 sources = c('my_search', 'trialstreamer', 'validation', 'carlisle', 'saitoh')
-source = sources[5]
+source = sources[2]
 stage = 'processing'
 source('1_which_data_source.R') # uses `source` and `stage`
 

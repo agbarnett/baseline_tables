@@ -109,3 +109,19 @@ ests = tidy(model,conf.int = TRUE) %>%
 
 # save for paper and appendix
 save(ests, cvfit, gfit, file='results/lasso_results.RData')
+
+
+## postscript, look at correlation in predictors, in response to reviewers
+library(plotly)
+library(GGally)
+selected = c('s_size','d_size_cat','sem','n_cols','p_cont')
+to_plot = select(flag_stats, all_of(selected)) %>%
+  filter(!is.na(d_size_cat)) # remove one missing
+p <- ggpairs(to_plot) 
+p = p + theme_bw() +
+  ggtitle('')
+# export figure
+jpeg('figures/predictors_matrix.jpg', quality=100, width=6, height=6, units='in', res=400)
+print(p)
+dev.off()
+

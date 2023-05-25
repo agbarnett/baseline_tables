@@ -167,7 +167,7 @@ simulate_table1_alternative = function(
                 sd = sd[k]) # 
       m2 = rnorm(n = sample_size, 
                  mean = mean1[k],  # assume same mean in two groups
-                 sd = sd[k]) # use multivariate normal to create correlated groups
+                 sd = sd[k]) # 
       m_1 = c(m_1, mean(m1))
       m_2 = c(m_2, mean(m2))
       sd_1 = c(sd_1, sd(m1))
@@ -335,7 +335,7 @@ simulate_table1_alternative2 = function(
                  sd = sd[k]) # 
       m2 = rnorm(n = sample_size, 
                  mean = mean1[k],  # assume same mean in two groups
-                 sd = sd[k]) # use multivariate normal to create correlated groups
+                 sd = sd[k]) #
       m_1 = c(m_1, mean(m1))
       m_2 = c(m_2, mean(m2))
       sd_1 = c(sd_1, sd(m1))
@@ -360,6 +360,161 @@ simulate_table1_alternative2 = function(
     m_frame_2 = data.frame(statistic='continuous', row=n_percent + (1:n_continuous), column=2, stat1=m_2, stat2=sd_2, sample_size = sample_size)
     ## concatenate data
     sim_data = bind_rows(sim_data, m_frame_1, m_frame_2)
+  }
+  
+  # create dummy pmcid that includes the issue
+  pmcid = paste(issue, loop, sep='', collapse = '') # using the loop number
+  pmcid = gsub(pattern=' ', replacement = '', pmcid) # remove spaces
+  sim_data$issue = issue
+  sim_data$pmcid = pmcid
+  return(sim_data)
+  
+} # end of function
+
+### alternative that creates correlated continuous data
+simulate_table1_correlated = function(
+    loop = NA, # for numbering studies
+    gamma_table = c(2.2, 0.15), # gamma shape and rate for the number of table rows (based on real data)
+    gamma_sample_size = c(10.7, 2.84), # gamma shape and rate for the log-transformed sample size (based on real data)
+    exp_sample_size = TRUE, # exponentiate sample size (if parameters above are on log-scale)
+    min_sample_size = 4, # minimum sample size to avoid errors
+    within_corr = 0.2, # within-participant correlation
+    dp = 1, # decimal places for rounding
+    issue = ''
+){
+  
+  sim_data = NULL
+  
+  # generate number of rows per baseline table 
+  n_rows = round(rgamma(n=1, shape = gamma_table[1], rate=gamma_table[2]))
+  if(n_rows <= 2){n_rows = 3} # prevent missing or very small tables
+  
+  # randomly generate sample size per groups using gamma (assume the same sample size in both columns)
+  sample_size = rgamma(n = 1, shape = gamma_sample_size[1], rate=gamma_sample_size[2])
+  if(exp_sample_size == TRUE){sample_size = exp(sample_size)}
+  sample_size = max(round(sample_size), min_sample_size)
+  
+  ## generate original data ...
+  Sigma = toeplitz(c(1, rep(within_corr, n_rows-1))) # exchangeable correlation
+  mu = rep(0, n_rows)
+  original = MASS::mvrnorm(n = sample_size*2, mu = mu, Sigma = Sigma)
+  
+  ## ... then take summary statistics
+  # split groups
+  g1 = original[1:sample_size,]
+  g2 = original[(sample_size+1):nrow(original),]
+  # loop through variables
+  m_1 = m_2 = sd_1 = sd_2 = NULL
+  for (k in 1:n_rows){ # simulate individual observations; have to loop through rows
+    m_1 = c(m_1, mean(g1[,k]))
+    m_2 = c(m_2, mean(g2[,k]))
+    sd_1 = c(sd_1, sd(g1[,k]))
+    sd_2 = c(sd_2, sd(g2[,k]))
+  }
+  # round to mimic journal presentation
+  m_1 = round(m_1, dp)
+  m_2 = round(m_2, dp)
+  sd_1 = round(sd_1, dp+1)
+  sd_2 = round(sd_2, dp+1)
+  # create data with structure to match automatically extracted data
+  m_frame_1 = data.frame(statistic='continuous', row=1:n_rows, column=1, stat1=m_1, stat2=sd_1, sample_size = sample_size)
+  m_frame_2 = data.frame(statistic='continuous', row=1:n_rows, column=2, stat1=m_2, stat2=sd_2, sample_size = sample_size)
+  ## concatenate data
+  sim_data = bind_rows(sim_data, m_frame_1, m_frame_2)
+  
+  # create dummy pmcid that includes the issue
+  pmcid = paste(issue, loop, sep='', collapse = '') # using the loop number
+  pmcid = gsub(pattern=' ', replacement = '', pmcid) # remove spaces
+  sim_data$issue = issue
+  sim_data$pmcid = pmcid
+  return(sim_data)
+  
+} # end of function
+
+
+### simulating studies with 3 arms (others are all 2 arms)
+simulate_table1_3arms = function(
+    loop = NA, # for numbering studies
+    prop_continuous = 0.5, # what proportion of statistics are continuous (remainder are percent)
+    gamma_table = c(2.2, 0.15), # gamma shape and rate for the number of table rows (based on real data)
+    gamma_sample_size = c(10.7, 2.84), # gamma shape and rate for the log-transformed sample size (based on real data)
+    exp_sample_size = TRUE, # exponentiate sample size (if parameters above are on log-scale)
+    min_sample_size = 4, # minimum sample size to avoid errors
+    dp = 1, # decimal places for rounding
+    issue = '3arms'
+){
+  
+  sim_data = NULL
+  
+  # generate number of rows per baseline table 
+  n_rows = round(rgamma(n=1, shape = gamma_table[1], rate=gamma_table[2]))
+  if(n_rows <= 2){n_rows = 3} # prevent missing or very small tables
+  
+  # generate statistic for each row
+  statistic = rbinom(n=n_rows, size=1, prob=prop_continuous) 
+  statistic = c('percent','continuous')[statistic+1]
+  
+  # randomly generate sample size per groups using gamma (assume the same sample size in both columns)
+  sample_size = rgamma(n = 1, shape = gamma_sample_size[1], rate=gamma_sample_size[2])
+  if(exp_sample_size == TRUE){sample_size = exp(sample_size)}
+  sample_size = max(round(sample_size), min_sample_size)
+  
+  ## for percents - not updated after using correlation approach
+  n_percent = sum(statistic == 'percent')
+  if(n_percent > 0){
+    p_1 = runif(n=n_percent, min=0, max=1) # random p's from 0 to 1
+    r_1 = rbinom(n=n_percent, size=sample_size, prob=p_1) # Numbers in group 1
+    r_2 = rbinom(n=n_percent, size=sample_size, prob=p_1) # Numbers in group 2
+    r_3 = rbinom(n=n_percent, size=sample_size, prob=p_1) # Numbers in group 3
+    # avoid impossible numbers:
+    r_2 = pmax(r_2, 0)
+    r_2 = pmin(r_2, sample_size)
+    r_3 = pmax(r_3, 0)
+    r_3 = pmin(r_3, sample_size)
+    # create data with structure to match automatically extracted data
+    p_frame_1 = data.frame(statistic='percent', row=1:n_percent, column=1, stat1=r_1, sample_size = sample_size)
+    p_frame_2 = data.frame(statistic='percent', row=1:n_percent, column=2, stat1=r_2, sample_size = sample_size)
+    p_frame_3 = data.frame(statistic='percent', row=1:n_percent, column=3, stat1=r_3, sample_size = sample_size)
+    ## concatenate data
+    sim_data = bind_rows(sim_data, p_frame_1, p_frame_2, p_frame_3)
+  }
+  
+  ## for continuous
+  n_continuous = sum(statistic == 'continuous')
+  if(n_continuous > 0){
+    mean1 = rnorm(n=n_continuous, mean=50, sd=60) # mean can be pretty much anywhere, more often positive
+    sd = rgamma(n=n_continuous, shape=5, rate=1) # must be positive
+    m_1 = m_2 = m_3 = sd_1 = sd_2 = sd_3 = NULL
+    for (k in 1:n_continuous){ # simulate individual observations; have to loop through rows
+      m1 = rnorm(n = sample_size, 
+                 mean = mean1[k], # 
+                 sd = sd[k]) # 
+      m2 = rnorm(n = sample_size, 
+                 mean = mean1[k],  # assume same mean in all groups
+                 sd = sd[k]) # 
+      m3 = rnorm(n = sample_size, 
+                 mean = mean1[k],  # assume same mean in all groups
+                 sd = sd[k]) # 
+      m_1 = c(m_1, mean(m1))
+      m_2 = c(m_2, mean(m2))
+      m_3 = c(m_3, mean(m3))
+      sd_1 = c(sd_1, sd(m1))
+      sd_2 = c(sd_2, sd(m2))
+      sd_3 = c(sd_3, sd(m3))
+    }
+    # round to mimic journal presentation
+    m_1 = round(m_1, dp)
+    m_2 = round(m_2, dp)
+    m_3 = round(m_3, dp)
+    sd_1 = round(sd_1, dp+1)
+    sd_2 = round(sd_2, dp+1)
+    sd_3 = round(sd_3, dp+1)
+    # create data with structure to match automatically extracted data
+    m_frame_1 = data.frame(statistic='continuous', row=n_percent + (1:n_continuous), column=1, stat1=m_1, stat2=sd_1, sample_size = sample_size)
+    m_frame_2 = data.frame(statistic='continuous', row=n_percent + (1:n_continuous), column=2, stat1=m_2, stat2=sd_2, sample_size = sample_size)
+    m_frame_3 = data.frame(statistic='continuous', row=n_percent + (1:n_continuous), column=3, stat1=m_3, stat2=sd_3, sample_size = sample_size)
+    ## concatenate data
+    sim_data = bind_rows(sim_data, m_frame_1, m_frame_2, m_frame_3)
   }
   
   # create dummy pmcid that includes the issue

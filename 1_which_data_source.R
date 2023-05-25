@@ -104,6 +104,10 @@ if(stage == 'model'){
     infile = 'data/simulated_data_bland.RData' # from 0_simulated_data_bland.R
     outfile = 'results/bugs_real_bland.RData'
   }
+  if (source == 'correlated' ){ 
+    infile = 'data/simulated_data_extra.RData' # from  0_simulated_data_extra.R
+    outfile = 'results/bugs_real_extra.RData'
+  }
   if(source == 'carlisle'){
     infile = 'data/analysis_ready_carlisle.RData' # 2_process_extracted_data.R
     outfile = 'results/bugs_real_carlisle.RData'
@@ -182,6 +186,17 @@ if(stage == 'plot'){
     supplement_outfile = 'results/supplement_simulation_three.RData'
     simulation = TRUE
   }
+  if(source == 'correlated'){
+    infile = 'results/bugs_real_extra.RData' # from 4_model.R
+    outjpg = 'figures/flagged_papers_simulation_extra.jpg'
+    outfile = '5_summary_results_extra.docx'
+    tree_outfile = 'data/tree_ready_extra.RData'
+    results_outfile = 'results/uniform_extra.RData'
+    example_outfile = 'results/example_extra.RData'
+    supplement_outfile = 'results/supplement_extra.RData'
+    precision_outfile = 'results/precision_extra.RData'
+    simulation = TRUE
+  }  
   if(source == 'bland'){
     infile = 'results/bugs_real_bland.RData' # from 4_model.R
     outjpg = 'figures/flagged_papers_simulation_bland.jpg'

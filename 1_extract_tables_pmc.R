@@ -18,7 +18,7 @@ load('data/emails_and_states.RData') # from 0_country_email.R, used for affiliat
 
 # select which source of data to use
 sources = c('my_search', 'trialstreamer', 'validation')
-source = sources[2]
+source = sources[3]
 stage = 'data'
 source('1_which_data_source.R') # uses `source` and `stage`
 

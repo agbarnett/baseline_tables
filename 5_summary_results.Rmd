@@ -59,7 +59,9 @@ str_detect(pmcid, pattern='rounded') ~ 'No',
 str_detect(pmcid, pattern='^none') ~ 'No',
 str_detect(pmcid, pattern='precise') ~ 'Yes',
 str_detect(pmcid, pattern='variable') ~ 'Yes',
-str_detect(pmcid, pattern='categorical') ~ 'No'
+str_detect(pmcid, pattern='categorical') ~ 'No',
+str_detect(pmcid, pattern='Correlated') ~ 'No',
+str_detect(pmcid, pattern='3arms') ~ 'No'
   ),
       sgroup = case_when( # group for plotting
 str_detect(pmcid, pattern='small') ~ 'Small binary',
@@ -76,7 +78,10 @@ str_detect(pmcid, pattern='precise[0-9]?[0-9]\\.2') ~ 'Under-dispersed 2',
 str_detect(pmcid, pattern='precise[0-9]?[0-9]\\.3') ~ 'Under-dispersed 3',
 str_detect(pmcid, pattern='precise') ~ 'Under-dispersed',
 str_detect(pmcid, pattern='variable') ~ 'Over-dispersed',
-str_detect(pmcid, pattern='categorical') ~ 'Correlated categorical'
+str_detect(pmcid, pattern='categorical') ~ 'Correlated categorical',
+str_detect(pmcid, pattern='Correlated0\\.2') ~ 'Correlated continuous 0.2',
+str_detect(pmcid, pattern='Correlated0\\.6') ~ 'Correlated continuous 0.6',
+str_detect(pmcid, pattern='3arms') ~ 'Three arms'
   ))
 }
 
@@ -243,7 +248,7 @@ ftab_results
 
 ```
 
-We used three thresholds of `r paste(threshold, collapse=' and ', sep='')` for the trial-level probability of an additional precision.
+We used a threshold of `r paste(threshold, collapse=' and ', sep='')` for the trial-level probability of an additional precision.
 
 #### Plot of above
 
@@ -423,7 +428,9 @@ str_detect(pmcid, pattern='rounded') ~ 'No',
 str_detect(pmcid, pattern='^none') ~ 'No',
 str_detect(pmcid, pattern='precise') ~ 'Yes',
 str_detect(pmcid, pattern='variable') ~ 'Yes',
-str_detect(pmcid, pattern='categorical') ~ 'No'
+str_detect(pmcid, pattern='categorical') ~ 'No',
+str_detect(pmcid, pattern='Correlated') ~ 'No',
+str_detect(pmcid, pattern='3arms') ~ 'No'
 ),
       sgroup = case_when( # group for plotting
 str_detect(pmcid, pattern='small') ~ 'Small binary',
@@ -440,7 +447,10 @@ str_detect(pmcid, pattern='precise[0-9]?[0-9]\\.1') ~ 'Under-dispersed 1',
 str_detect(pmcid, pattern='precise[0-9]?[0-9]\\.2') ~ 'Under-dispersed 2',
 str_detect(pmcid, pattern='precise[0-9]?[0-9]\\.3') ~ 'Under-dispersed 3',
 str_detect(pmcid, pattern='precise') ~ 'Under-dispersed',
-str_detect(pmcid, pattern='variable') ~ 'Over-dispersed'
+str_detect(pmcid, pattern='variable') ~ 'Over-dispersed',
+str_detect(pmcid, pattern='Correlated0\\.2') ~ 'Correlated continuous 0.2',
+str_detect(pmcid, pattern='Correlated0\\.6') ~ 'Correlated continuous 0.6',
+str_detect(pmcid, pattern='3arms') ~ 'Three arms'
   ))
 }
 # show example distribution for each issue
@@ -497,19 +507,20 @@ save(tdist, pdist, file=supplement_outfile)
 
 The red line is a standard normal distribution and the blue line is a normal distribution fitted to the observed density. 
 
-### Testing that p-values for a uniform distribution
+### Testing that p-values follow a uniform distribution
 
 To summarise the simulations we tested if the p-values for each study followed a uniform distribution using the Kolmogorov--Smirnov test for uniformity. The table below shows the frequency that were statistically significant using a 0.05 threshold. This result is more relevant for the simulation data than the real data.
 
 ```{r}
 # test uniform distribution for p-values
 unif_pvals = group_by(for_model, h0, sgroup, pmcid) %>%
-  summarise(p = kolmogorov.unif.test(p, nrepl=2000, k=0)$p.value)
+  summarise(n= n(),
+            p = kolmogorov.unif.test(p, nrepl=2000, k=0)$p.value)
 # summary stats
 unif_tab = mutate(unif_pvals, sig = p < 0.05) %>%
   summarise(below = sum(sig), n=n()) %>%
   mutate(prop = roundz(100*below/n, 1),
-         cell = paste(below, ' (', prop, ')', sep='')) %>%
+         cell = paste(below, ' / ', n, ' (', prop, ')', sep='')) %>%
   arrange(h0, sgroup, below) 
 renamed = select(unif_tab, h0, sgroup, cell) %>%
   rename('H0' = 'h0',
@@ -566,3 +577,44 @@ save(tdist, pdist, overall_table, ftab_results, hplot, file=results_outfile)
 ```
 
 For simulated results the histograms are split by the simulation type.
+
+### Testing that p-values follow a uniform distribution, excluding categorical results
+
+The tests above use all available p-values, but the original uniform test can only use continuous summary statistics. Hence, below we re-run the tests after excluding the categorical summary statistics.
+
+```{r}
+# test uniform distribution for p-values
+unif_pvals_continuous_only = filter(for_model, statistic == 'continuous') %>%
+  group_by(h0, sgroup, pmcid) %>%
+  summarise(n=n(), p = kolmogorov.unif.test(p, nrepl=2000, k=0)$p.value) %>%
+  filter(n >= 3) # Must be at least three statistics
+
+# summary stats
+unif_tab_continuous_only = mutate(unif_pvals_continuous_only, sig = p < 0.05) %>%
+  summarise(below = sum(sig), n=n()) %>%
+  mutate(prop = roundz(100*below/n, 1),
+         cell = paste(below, ' / ', n, ' (', prop, ')', sep='')) %>%
+  arrange(h0, sgroup, below) 
+renamed = select(unif_tab_continuous_only, h0, sgroup, cell) %>%
+  rename('H0' = 'h0',
+    'Simulation' = 'sgroup',
+    'n (%)' = 'cell')
+# nice table  
+if(simulation==FALSE){
+  ftab = select(renamed, -Simulation, -H0) %>%
+    flextable() %>%
+    theme_box() %>%
+    merge_v(j=1) %>%
+    autofit()
+  ftab
+}
+if(simulation==TRUE){
+  ftab = flextable(renamed) %>%
+    theme_box() %>%
+    merge_v(j=1) %>%
+    autofit()
+  ftab
+}
+```
+
+The cells show the number of positive tests and the number of simulations. For some simulated scenarios, the uniform test could not be run due to a lack of observations, hence the varying denominator. 
